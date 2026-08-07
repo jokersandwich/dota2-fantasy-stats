@@ -37,6 +37,8 @@ export const translations = {
     league: '联赛',
     languageSwitchText: 'EN',
     languageSwitchAria: '切换为英文',
+    scrollTableLeft: '向左滚动数据表',
+    scrollTableRight: '向右滚动数据表',
     table: {
       rank: '排名',
       team: '队伍',
@@ -113,6 +115,8 @@ export const translations = {
     league: 'LEAGUE',
     languageSwitchText: '中文',
     languageSwitchAria: 'Switch to Simplified Chinese',
+    scrollTableLeft: 'Scroll data table left',
+    scrollTableRight: 'Scroll data table right',
     table: {
       rank: 'Rank',
       team: 'Team',

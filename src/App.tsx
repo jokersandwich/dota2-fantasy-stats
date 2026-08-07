@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import roleRankingsData from '../data/processed/role-fantasy-rankings.json'
 import { useLanguage } from './i18n/useLanguage'
 import type { Translation } from './i18n/translations'
@@ -164,6 +164,7 @@ function formatNumber(value: number, maximumFractionDigits = 2) {
   return new Intl.NumberFormat('en-US', {
     minimumFractionDigits: 0,
     maximumFractionDigits,
+    useGrouping: false,
   }).format(value)
 }
 
@@ -209,6 +210,8 @@ function App() {
   const [performanceMode, setPerformanceMode] = useState<PerformanceMode>('average')
   const [sortKey, setSortKey] = useState<SortKey>('gpm')
   const [sortDirection, setSortDirection] = useState<SortDirection>('desc')
+  const [tableScrollEdges, setTableScrollEdges] = useState({ canScrollLeft: false, canScrollRight: true })
+  const tableScrollRef = useRef<HTMLDivElement>(null)
 
   const columns = useMemo(() => createColumns(translation), [translation])
 
@@ -230,6 +233,40 @@ function App() {
     ),
     [visibleColumns],
   )
+
+  const updateTableScrollEdges = useCallback(() => {
+    const scrollContainer = tableScrollRef.current
+    if (!scrollContainer) return
+
+    const maximumScrollLeft = scrollContainer.scrollWidth - scrollContainer.clientWidth
+    const nextEdges = {
+      canScrollLeft: scrollContainer.scrollLeft > 1,
+      canScrollRight: scrollContainer.scrollLeft < maximumScrollLeft - 1,
+    }
+
+    setTableScrollEdges((currentEdges) =>
+      currentEdges.canScrollLeft === nextEdges.canScrollLeft &&
+      currentEdges.canScrollRight === nextEdges.canScrollRight
+        ? currentEdges
+        : nextEdges,
+    )
+  }, [])
+
+  useEffect(() => {
+    const scrollContainer = tableScrollRef.current
+    if (!scrollContainer) return
+
+    const animationFrame = window.requestAnimationFrame(updateTableScrollEdges)
+    const resizeObserver = new ResizeObserver(updateTableScrollEdges)
+    resizeObserver.observe(scrollContainer)
+    const table = scrollContainer.querySelector('table')
+    if (table) resizeObserver.observe(table)
+
+    return () => {
+      window.cancelAnimationFrame(animationFrame)
+      resizeObserver.disconnect()
+    }
+  }, [language, updateTableScrollEdges, visibleColumns.length])
 
   const roleFilters: { key: RoleFilter; label: string }[] = [
     { key: 'all', label: translation.roleFilters.all },
@@ -270,6 +307,16 @@ function App() {
     }
     setSortKey(key)
     setSortDirection(key === 'teamName' || key === 'members' || key === 'role' ? 'asc' : 'desc')
+  }
+
+  function scrollTable(direction: 'left' | 'right') {
+    const scrollContainer = tableScrollRef.current
+    if (!scrollContainer) return
+
+    scrollContainer.scrollBy({
+      left: (direction === 'left' ? -1 : 1) * Math.max(280, scrollContainer.clientWidth * 0.55),
+      behavior: 'smooth',
+    })
   }
 
   return (
@@ -350,8 +397,14 @@ function App() {
           <p>{translation.selectColumnToSort} <span aria-hidden="true">↕</span></p>
         </div>
 
-        <div className="table-scroll">
-          <table className="player-table">
+        <div className="table-scroll-shell">
+          <div
+            id="fantasy-rankings-scroll"
+            ref={tableScrollRef}
+            className="table-scroll"
+            onScroll={updateTableScrollEdges}
+          >
+            <table className="player-table">
             <thead>
               <tr>
                 {visibleColumns.map((column) => {
@@ -413,7 +466,30 @@ function App() {
                 </tr>
               ))}
             </tbody>
-          </table>
+            </table>
+          </div>
+          <button
+            type="button"
+            className="table-scroll-control table-scroll-control-left"
+            onClick={() => scrollTable('left')}
+            disabled={!tableScrollEdges.canScrollLeft}
+            aria-label={translation.scrollTableLeft}
+            aria-controls="fantasy-rankings-scroll"
+            title={translation.scrollTableLeft}
+          >
+            <span aria-hidden="true">‹</span>
+          </button>
+          <button
+            type="button"
+            className="table-scroll-control table-scroll-control-right"
+            onClick={() => scrollTable('right')}
+            disabled={!tableScrollEdges.canScrollRight}
+            aria-label={translation.scrollTableRight}
+            aria-controls="fantasy-rankings-scroll"
+            title={translation.scrollTableRight}
+          >
+            <span aria-hidden="true">›</span>
+          </button>
         </div>
 
         <footer className="table-footer">

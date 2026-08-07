@@ -16,3 +16,6 @@ __pycache__/
 # Cached OpenDota payloads can be regenerated and may be large.
 data/raw/**/*.json
 !data/raw/.gitkeep
+
+# Local Netlify folder
+.netlify
