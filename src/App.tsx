@@ -1,12 +1,7 @@
 import { useMemo, useState } from 'react'
 import roleRankingsData from '../data/processed/role-fantasy-rankings.json'
-import {
-  metricLabels,
-  performanceLabels,
-  roleFilterLabels,
-  roleLabels,
-  uiLabels,
-} from './config/labels'
+import { useLanguage } from './i18n/useLanguage'
+import type { Translation } from './i18n/translations'
 
 type PerformanceMode = 'best' | 'average'
 type Role = 'core' | 'mid' | 'support'
@@ -96,60 +91,37 @@ interface Column {
 
 const payload = roleRankingsData as unknown as RoleRankingsPayload
 
-const columns: Column[] = [
-  { key: 'teamName', label: uiLabels.team, align: 'left' },
-  { key: 'members', label: uiLabels.players, align: 'left' },
-  { key: 'role', label: uiLabels.role, align: 'center' },
-  { key: 'gamesPlayedTogether', label: uiLabels.games, align: 'right' },
-  { key: 'kills', label: metricLabels.kills, metric: 'kills', align: 'right' },
-  { key: 'deaths', label: metricLabels.deaths, metric: 'deaths', align: 'right' },
-  { key: 'lastHitsAndDenies', label: metricLabels.lastHitsAndDenies, metric: 'lastHitsAndDenies', align: 'right' },
-  { key: 'gpm', label: metricLabels.gpm, metric: 'gpm', align: 'right' },
-  { key: 'madstones', label: metricLabels.madstones, metric: 'madstones', align: 'right' },
-  { key: 'towerKills', label: metricLabels.towerKills, metric: 'towerKills', align: 'right' },
-  { key: 'observerWards', label: metricLabels.observerWards, metric: 'observerWards', align: 'right' },
-  { key: 'campsStacked', label: metricLabels.campsStacked, metric: 'campsStacked', align: 'right' },
-  { key: 'runes', label: metricLabels.runes, metric: 'runes', align: 'right' },
-  { key: 'watchers', label: metricLabels.watchers, metric: 'watchers', align: 'right' },
-  { key: 'lotuses', label: metricLabels.lotuses, metric: 'lotuses', align: 'right' },
-  { key: 'roshanKills', label: metricLabels.roshanKills, metric: 'roshanKills', align: 'right' },
+function createColumns(translation: Translation): Column[] {
+  return [
+  { key: 'teamName', label: translation.table.team, align: 'left' },
+  { key: 'members', label: translation.table.players, align: 'left' },
+  { key: 'role', label: translation.table.role, align: 'center' },
+  { key: 'gamesPlayedTogether', label: translation.table.games, align: 'right' },
+  { key: 'kills', label: translation.metrics.kills, metric: 'kills', align: 'right' },
+  { key: 'deaths', label: translation.metrics.deaths, metric: 'deaths', align: 'right' },
+  { key: 'lastHitsAndDenies', label: translation.metrics.lastHitsAndDenies, metric: 'lastHitsAndDenies', align: 'right' },
+  { key: 'gpm', label: translation.metrics.gpm, metric: 'gpm', align: 'right' },
+  { key: 'madstones', label: translation.metrics.madstones, metric: 'madstones', align: 'right' },
+  { key: 'towerKills', label: translation.metrics.towerKills, metric: 'towerKills', align: 'right' },
+  { key: 'observerWards', label: translation.metrics.observerWards, metric: 'observerWards', align: 'right' },
+  { key: 'campsStacked', label: translation.metrics.campsStacked, metric: 'campsStacked', align: 'right' },
+  { key: 'runes', label: translation.metrics.runes, metric: 'runes', align: 'right' },
+  { key: 'watchers', label: translation.metrics.watchers, metric: 'watchers', align: 'right' },
+  { key: 'lotuses', label: translation.metrics.lotuses, metric: 'lotuses', align: 'right' },
+  { key: 'roshanKills', label: translation.metrics.roshanKills, metric: 'roshanKills', align: 'right' },
   {
     key: 'teamfightParticipation',
-    label: metricLabels.teamfightParticipation,
+    label: translation.metrics.teamfightParticipation,
     metric: 'teamfightParticipation',
     align: 'right',
   },
-  { key: 'stunDuration', label: metricLabels.stunDuration, metric: 'stunDuration', align: 'right' },
-  { key: 'tormentorKills', label: metricLabels.tormentorKills, metric: 'tormentorKills', align: 'right' },
-  { key: 'courierKills', label: metricLabels.courierKills, metric: 'courierKills', align: 'right' },
-  { key: 'firstBlood', label: metricLabels.firstBlood, metric: 'firstBlood', align: 'right' },
-  { key: 'smokes', label: metricLabels.smokes, metric: 'smokes', align: 'right' },
-]
-
-const visibleColumns = columns.filter(
-  (column) =>
-    !column.metric ||
-    payload.roleUnits.some((unit) => {
-      const metric = unit.metrics[column.metric as MetricKey]
-      return metric.best !== null || metric.average !== null
-    }),
-)
-
-const metricColumns = visibleColumns.filter(
-  (column): column is Column & { metric: MetricKey } => Boolean(column.metric),
-)
-
-const roleFilters: { key: RoleFilter; label: string }[] = [
-  { key: 'all', label: roleFilterLabels.all },
-  { key: 'core', label: roleFilterLabels.core },
-  { key: 'mid', label: roleFilterLabels.mid },
-  { key: 'support', label: roleFilterLabels.support },
-]
-
-const performanceModes: { key: PerformanceMode; label: string }[] = [
-  { key: 'best', label: performanceLabels.best },
-  { key: 'average', label: performanceLabels.average },
-]
+  { key: 'stunDuration', label: translation.metrics.stunDuration, metric: 'stunDuration', align: 'right' },
+  { key: 'tormentorKills', label: translation.metrics.tormentorKills, metric: 'tormentorKills', align: 'right' },
+  { key: 'courierKills', label: translation.metrics.courierKills, metric: 'courierKills', align: 'right' },
+  { key: 'firstBlood', label: translation.metrics.firstBlood, metric: 'firstBlood', align: 'right' },
+  { key: 'smokes', label: translation.metrics.smokes, metric: 'smokes', align: 'right' },
+  ]
+}
 
 const teamLogoUrls: Record<number, string> = {
   9467224: 'https://cdn.steamusercontent.com/ugc/13052583756685508/22B0338D7E09FB2F021E5DB5BBEFFD170D5E5E1A/',
@@ -202,28 +174,74 @@ function formatRawValue(value: number, metric: MetricKey, performanceMode: Perfo
   return formatNumber(value, metric === 'gpm' ? 1 : 2)
 }
 
-function formatFantasyScore(value: number) {
-  return `${formatNumber(value, 2)} 分`
+function formatFantasyScore(value: number, scoreSuffix: string) {
+  return `${formatNumber(value, 2)} ${scoreSuffix}`
 }
 
-function MetricCell({ metric, metricKey, mode }: { metric: RoleMetric; metricKey: MetricKey; mode: PerformanceMode }) {
+function MetricCell({
+  metric,
+  metricKey,
+  mode,
+  scoreSuffix,
+  unavailableLabel,
+}: {
+  metric: RoleMetric
+  metricKey: MetricKey
+  mode: PerformanceMode
+  scoreSuffix: string
+  unavailableLabel: string
+}) {
   const value = getMetricDisplayValue(metric, mode)
   if (!value || !Number.isFinite(value.rawValue) || !Number.isFinite(value.fantasyScore)) {
-    return <span className="unavailable-value">—</span>
+    return <span className="unavailable-value" title={unavailableLabel}>—</span>
   }
   return (
     <span className="metric-value-stack">
-      <span className="metric-fantasy-score">{formatFantasyScore(value.fantasyScore)}</span>
+      <span className="metric-fantasy-score">{formatFantasyScore(value.fantasyScore, scoreSuffix)}</span>
       <span className="metric-raw-value">{formatRawValue(value.rawValue, metricKey, mode)}</span>
     </span>
   )
 }
 
 function App() {
+  const { language, toggleLanguage, translation } = useLanguage()
   const [roleFilter, setRoleFilter] = useState<RoleFilter>('all')
   const [performanceMode, setPerformanceMode] = useState<PerformanceMode>('average')
   const [sortKey, setSortKey] = useState<SortKey>('gpm')
   const [sortDirection, setSortDirection] = useState<SortDirection>('desc')
+
+  const columns = useMemo(() => createColumns(translation), [translation])
+
+  const visibleColumns = useMemo(
+    () => columns.filter(
+      (column) =>
+        !column.metric ||
+        payload.roleUnits.some((unit) => {
+          const metric = unit.metrics[column.metric as MetricKey]
+          return metric.best !== null || metric.average !== null
+        }),
+    ),
+    [columns],
+  )
+
+  const metricColumns = useMemo(
+    () => visibleColumns.filter(
+      (column): column is Column & { metric: MetricKey } => Boolean(column.metric),
+    ),
+    [visibleColumns],
+  )
+
+  const roleFilters: { key: RoleFilter; label: string }[] = [
+    { key: 'all', label: translation.roleFilters.all },
+    { key: 'core', label: translation.roleFilters.core },
+    { key: 'mid', label: translation.roleFilters.mid },
+    { key: 'support', label: translation.roleFilters.support },
+  ]
+
+  const performanceModes: { key: PerformanceMode; label: string }[] = [
+    { key: 'best', label: translation.performance.best },
+    { key: 'average', label: translation.performance.average },
+  ]
 
   const visibleUnits = useMemo(() => {
     const direction = sortDirection === 'asc' ? 1 : -1
@@ -255,24 +273,34 @@ function App() {
   }
 
   return (
-    <main className="app-shell">
+    <main className={`app-shell lang-${language}`}>
       <header className="site-header">
         <div className="brand-mark" aria-hidden="true">TI</div>
         <div className="brand-copy">
-          <p>TI15 / 梦幻挑战数据</p>
-          <span>OpenDota 联赛 19785</span>
+          <p>{translation.brandTitle}</p>
+          <span>{translation.leagueLabel} 19785</span>
         </div>
+        <button
+          type="button"
+          className="language-switch"
+          onClick={toggleLanguage}
+          aria-label={translation.languageSwitchAria}
+          title={translation.languageSwitchAria}
+        >
+          <span aria-hidden="true">文</span>
+          {translation.languageSwitchText}
+        </button>
       </header>
 
       <section className="hero">
         <div>
-          <p className="eyebrow">选手表现指数</p>
-          <h1>TI15 梦幻挑战 <span>— EWC 2026 选手数据</span></h1>
-          <p className="lede">TI15 梦幻挑战选手表现指数仅依据 EWC 2026 比赛数据进行评估。</p>
+          <p className="eyebrow">{translation.eyebrow}</p>
+          <h1>{translation.heroTitle} <span>{translation.heroSubtitle}</span></h1>
+          <p className="lede">{translation.heroDescription}</p>
         </div>
         <dl className="hero-stats">
-          <div><dt>比赛</dt><dd>{payload.source.matchesProcessed}<span>/{payload.source.matchesProcessed}</span></dd></div>
-          <div><dt>选手组合</dt><dd>{payload.roleUnits.length}</dd></div>
+          <div><dt>{translation.matches}</dt><dd>{payload.source.matchesProcessed}<span>/{payload.source.matchesProcessed}</span></dd></div>
+          <div><dt>{translation.roleUnits}</dt><dd>{payload.roleUnits.length}</dd></div>
         </dl>
       </section>
 
@@ -280,8 +308,8 @@ function App() {
         <div className="table-toolbar">
           <div className="toolbar-controls">
             <div>
-              <p className="section-label">{uiLabels.roleFilter}</p>
-              <div className="filter-group" role="group" aria-label="筛选选手组合">
+              <p className="section-label">{translation.roleFilter}</p>
+              <div className="filter-group" role="group" aria-label={translation.roleFilterAria}>
                 {roleFilters.map((filter) => (
                   <button
                     type="button"
@@ -296,8 +324,8 @@ function App() {
               </div>
             </div>
             <div>
-              <p className="section-label">{uiLabels.performanceMode}</p>
-              <div className="filter-group mode-group" role="group" aria-label="选择数据类型">
+              <p className="section-label">{translation.dataType}</p>
+              <div className="filter-group mode-group" role="group" aria-label={translation.dataTypeAria}>
                 {performanceModes.map((mode) => (
                   <button
                     type="button"
@@ -316,10 +344,10 @@ function App() {
 
         <div className="table-heading">
           <div>
-            <p className="section-label">{uiLabels.fantasyRankings}</p>
-            <h2 id="player-table-title">{performanceLabels[performanceMode]}</h2>
+            <p className="section-label">{translation.fantasyRankings}</p>
+            <h2 id="player-table-title">{translation.performance[performanceMode]}</h2>
           </div>
-          <p>{uiLabels.selectColumnToSort} <span aria-hidden="true">↕</span></p>
+          <p>{translation.selectColumnToSort} <span aria-hidden="true">↕</span></p>
         </div>
 
         <div className="table-scroll">
@@ -332,10 +360,10 @@ function App() {
                     <th
                       key={column.key}
                       scope="col"
-                      className={`align-${column.align ?? 'left'} ${column.metric ? 'metric-header' : ''} ${active ? 'sorted' : ''}`}
+                      className={`align-${column.align ?? 'left'} ${column.metric ? `metric-header metric-${column.metric}` : ''} ${active ? 'sorted' : ''}`}
                       aria-sort={active ? (sortDirection === 'asc' ? 'ascending' : 'descending') : 'none'}
                     >
-                      <button type="button" onClick={() => handleSort(column.key)}>
+                      <button type="button" onClick={() => handleSort(column.key)} title={column.label}>
                         <span className="label-full">{column.label}</span>
                         <span className="label-short">{column.shortLabel ?? column.label}</span>
                         <span className="sort-indicator" aria-hidden="true">{active ? (sortDirection === 'asc' ? '↑' : '↓') : '↕'}</span>
@@ -347,7 +375,7 @@ function App() {
             </thead>
             <tbody>
               {visibleUnits.length === 0 ? (
-                <tr><td className="state-cell" colSpan={visibleColumns.length}>{uiLabels.noData}</td></tr>
+                <tr><td className="state-cell" colSpan={visibleColumns.length}>{translation.noData}</td></tr>
               ) : null}
               {visibleUnits.map((unit, index) => (
                 <tr key={`${unit.teamId}-${unit.role}`}>
@@ -369,11 +397,17 @@ function App() {
                   <td className={`players-cell ${sortKey === 'members' ? 'sorted-column' : ''}`}>
                     <span className="member-names">{unit.members.map((member) => member.playerName).join(' & ')}</span>
                   </td>
-                  <td className={`align-center role-cell ${sortKey === 'role' ? 'sorted-column' : ''}`}><span className={`role-badge role-${unit.role}`}>{roleLabels[unit.role]}</span></td>
+                  <td className={`align-center role-cell ${sortKey === 'role' ? 'sorted-column' : ''}`}><span className={`role-badge role-${unit.role}`}>{translation.roles[unit.role]}</span></td>
                   <td className={`align-right games-cell ${sortKey === 'gamesPlayedTogether' ? 'sorted-column' : ''}`}>{unit.gamesPlayedTogether}</td>
                   {metricColumns.map((column) => (
                     <td key={column.key} className={`align-right metric-cell ${sortKey === column.metric ? 'sorted-column' : ''}`}>
-                      <MetricCell metric={unit.metrics[column.metric]} metricKey={column.metric} mode={performanceMode} />
+                      <MetricCell
+                        metric={unit.metrics[column.metric]}
+                        metricKey={column.metric}
+                        mode={performanceMode}
+                        scoreSuffix={translation.scoreSuffix}
+                        unavailableLabel={translation.unavailable}
+                      />
                     </td>
                   ))}
                 </tr>
@@ -383,14 +417,14 @@ function App() {
         </div>
 
         <footer className="table-footer">
-          <span>{performanceMode === 'average' ? uiLabels.averageSummary : uiLabels.bestSummary}</span>
-          <span>{uiLabels.valueLegend}</span>
+          <span>{performanceMode === 'average' ? translation.averageSummary : translation.bestSummary}</span>
+          <span>{translation.valueLegend}</span>
         </footer>
       </section>
 
       <footer className="site-footer">
-        <span>TI15 梦幻挑战 / EWC 2026</span>
-        <span>数据：OpenDota · 联赛 {payload.source.leagueId}</span>
+        <span>{translation.footerTitle}</span>
+        <span>{translation.dataSource}: OpenDota · {translation.league} {payload.source.leagueId}</span>
       </footer>
     </main>
   )
