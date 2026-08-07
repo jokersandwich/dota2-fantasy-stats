@@ -1,0 +1,18 @@
+node_modules/
+.pnpm-store/
+dist/
+.vite/
+*.tsbuildinfo
+.env
+.env.*
+!.env.example
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.vscode/
+.DS_Store
+
+# Cached OpenDota payloads can be regenerated and may be large.
+data/raw/**/*.json
+!data/raw/.gitkeep

@@ -1,0 +1,1718 @@
+{
+  "status": "passed",
+  "generated_at": "2026-08-07T01:51:54.365099+00:00",
+  "seed": 20260807,
+  "matches_checked": 5,
+  "match_ids": [
+    8885183102,
+    8885411801,
+    8885665054,
+    8890206902,
+    8893070561
+  ],
+  "players_checked": 10,
+  "player_match_rows_checked": 10,
+  "assertions_passed": 460,
+  "players": [
+    {
+      "account_id": 56351509,
+      "name_from_opendota": "DM",
+      "match_ids": [
+        8893070561
+      ],
+      "stats": {
+        "kills": {
+          "availability": "available",
+          "unit": "count",
+          "observed_games": 1,
+          "total": 5,
+          "average_per_game": 5,
+          "p50": 5,
+          "p75": 5,
+          "p90": 5
+        },
+        "deaths": {
+          "availability": "available",
+          "unit": "count",
+          "observed_games": 1,
+          "total": 2,
+          "average_per_game": 2,
+          "p50": 2,
+          "p75": 2,
+          "p90": 2
+        },
+        "assists": {
+          "availability": "available",
+          "unit": "count",
+          "observed_games": 1,
+          "total": 14,
+          "average_per_game": 14,
+          "p50": 14,
+          "p75": 14,
+          "p90": 14
+        },
+        "creep_score": {
+          "availability": "available",
+          "unit": "count",
+          "observed_games": 1,
+          "total": 301,
+          "average_per_game": 301,
+          "p50": 301,
+          "p75": 301,
+          "p90": 301
+        },
+        "gpm": {
+          "availability": "available",
+          "unit": "gold_per_minute",
+          "observed_games": 1,
+          "total": 645,
+          "average_per_game": 645,
+          "p50": 645,
+          "p75": 645,
+          "p90": 645
+        },
+        "runes": {
+          "availability": "available",
+          "unit": "count",
+          "observed_games": 1,
+          "total": 3,
+          "average_per_game": 3,
+          "p50": 3,
+          "p75": 3,
+          "p90": 3
+        },
+        "teamfight_participation": {
+          "availability": "available",
+          "unit": "ratio",
+          "observed_games": 1,
+          "total": 0.487179,
+          "average_per_game": 0.487179,
+          "p50": 0.487179,
+          "p75": 0.487179,
+          "p90": 0.487179
+        },
+        "wards": {
+          "availability": "available",
+          "unit": "count",
+          "observed_games": 1,
+          "total": 0,
+          "average_per_game": 0,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0
+        },
+        "camps_stacked": {
+          "availability": "available",
+          "unit": "count",
+          "observed_games": 1,
+          "total": 1,
+          "average_per_game": 1,
+          "p50": 1,
+          "p75": 1,
+          "p90": 1
+        },
+        "smokes": {
+          "availability": "available",
+          "unit": "count",
+          "observed_games": 1,
+          "total": 0,
+          "average_per_game": 0,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0
+        },
+        "roshan_kills": {
+          "availability": "available",
+          "unit": "count",
+          "observed_games": 1,
+          "total": 0,
+          "average_per_game": 0,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0
+        },
+        "tormentor_kills": {
+          "availability": "unavailable",
+          "unit": "count",
+          "observed_games": 0,
+          "total": null,
+          "average_per_game": null,
+          "p50": null,
+          "p75": null,
+          "p90": null,
+          "reason": "OpenDota cannot reliably provide this metric"
+        },
+        "courier_kills": {
+          "availability": "available",
+          "unit": "count",
+          "observed_games": 1,
+          "total": 0,
+          "average_per_game": 0,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0
+        },
+        "stuns": {
+          "availability": "available",
+          "unit": "seconds",
+          "observed_games": 1,
+          "total": 24.90037,
+          "average_per_game": 24.90037,
+          "p50": 24.90037,
+          "p75": 24.90037,
+          "p90": 24.90037
+        },
+        "first_blood": {
+          "availability": "available",
+          "unit": "count",
+          "observed_games": 1,
+          "total": 0,
+          "average_per_game": 0,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0
+        },
+        "buybacks": {
+          "availability": "available",
+          "unit": "count",
+          "observed_games": 1,
+          "total": 0,
+          "average_per_game": 0,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0
+        }
+      }
+    },
+    {
+      "account_id": 81475303,
+      "name_from_opendota": "Yamsun",
+      "match_ids": [
+        8885665054
+      ],
+      "stats": {
+        "kills": {
+          "availability": "available",
+          "unit": "count",
+          "observed_games": 1,
+          "total": 0,
+          "average_per_game": 0,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0
+        },
+        "deaths": {
+          "availability": "available",
+          "unit": "count",
+          "observed_games": 1,
+          "total": 7,
+          "average_per_game": 7,
+          "p50": 7,
+          "p75": 7,
+          "p90": 7
+        },
+        "assists": {
+          "availability": "available",
+          "unit": "count",
+          "observed_games": 1,
+          "total": 2,
+          "average_per_game": 2,
+          "p50": 2,
+          "p75": 2,
+          "p90": 2
+        },
+        "creep_score": {
+          "availability": "available",
+          "unit": "count",
+          "observed_games": 1,
+          "total": 86,
+          "average_per_game": 86,
+          "p50": 86,
+          "p75": 86,
+          "p90": 86
+        },
+        "gpm": {
+          "availability": "available",
+          "unit": "gold_per_minute",
+          "observed_games": 1,
+          "total": 283,
+          "average_per_game": 283,
+          "p50": 283,
+          "p75": 283,
+          "p90": 283
+        },
+        "runes": {
+          "availability": "available",
+          "unit": "count",
+          "observed_games": 1,
+          "total": 0,
+          "average_per_game": 0,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0
+        },
+        "teamfight_participation": {
+          "availability": "available",
+          "unit": "ratio",
+          "observed_games": 1,
+          "total": 0.333333,
+          "average_per_game": 0.333333,
+          "p50": 0.333333,
+          "p75": 0.333333,
+          "p90": 0.333333
+        },
+        "wards": {
+          "availability": "available",
+          "unit": "count",
+          "observed_games": 1,
+          "total": 11,
+          "average_per_game": 11,
+          "p50": 11,
+          "p75": 11,
+          "p90": 11
+        },
+        "camps_stacked": {
+          "availability": "available",
+          "unit": "count",
+          "observed_games": 1,
+          "total": 4,
+          "average_per_game": 4,
+          "p50": 4,
+          "p75": 4,
+          "p90": 4
+        },
+        "smokes": {
+          "availability": "available",
+          "unit": "count",
+          "observed_games": 1,
+          "total": 3,
+          "average_per_game": 3,
+          "p50": 3,
+          "p75": 3,
+          "p90": 3
+        },
+        "roshan_kills": {
+          "availability": "available",
+          "unit": "count",
+          "observed_games": 1,
+          "total": 0,
+          "average_per_game": 0,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0
+        },
+        "tormentor_kills": {
+          "availability": "unavailable",
+          "unit": "count",
+          "observed_games": 0,
+          "total": null,
+          "average_per_game": null,
+          "p50": null,
+          "p75": null,
+          "p90": null,
+          "reason": "OpenDota cannot reliably provide this metric"
+        },
+        "courier_kills": {
+          "availability": "available",
+          "unit": "count",
+          "observed_games": 1,
+          "total": 0,
+          "average_per_game": 0,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0
+        },
+        "stuns": {
+          "availability": "available",
+          "unit": "seconds",
+          "observed_games": 1,
+          "total": 27.399704,
+          "average_per_game": 27.399704,
+          "p50": 27.399704,
+          "p75": 27.399704,
+          "p90": 27.399704
+        },
+        "first_blood": {
+          "availability": "available",
+          "unit": "count",
+          "observed_games": 1,
+          "total": 0,
+          "average_per_game": 0,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0
+        },
+        "buybacks": {
+          "availability": "available",
+          "unit": "count",
+          "observed_games": 1,
+          "total": 1,
+          "average_per_game": 1,
+          "p50": 1,
+          "p75": 1,
+          "p90": 1
+        }
+      }
+    },
+    {
+      "account_id": 86698277,
+      "name_from_opendota": "33",
+      "match_ids": [
+        8893070561
+      ],
+      "stats": {
+        "kills": {
+          "availability": "available",
+          "unit": "count",
+          "observed_games": 1,
+          "total": 3,
+          "average_per_game": 3,
+          "p50": 3,
+          "p75": 3,
+          "p90": 3
+        },
+        "deaths": {
+          "availability": "available",
+          "unit": "count",
+          "observed_games": 1,
+          "total": 8,
+          "average_per_game": 8,
+          "p50": 8,
+          "p75": 8,
+          "p90": 8
+        },
+        "assists": {
+          "availability": "available",
+          "unit": "count",
+          "observed_games": 1,
+          "total": 6,
+          "average_per_game": 6,
+          "p50": 6,
+          "p75": 6,
+          "p90": 6
+        },
+        "creep_score": {
+          "availability": "available",
+          "unit": "count",
+          "observed_games": 1,
+          "total": 194,
+          "average_per_game": 194,
+          "p50": 194,
+          "p75": 194,
+          "p90": 194
+        },
+        "gpm": {
+          "availability": "available",
+          "unit": "gold_per_minute",
+          "observed_games": 1,
+          "total": 455,
+          "average_per_game": 455,
+          "p50": 455,
+          "p75": 455,
+          "p90": 455
+        },
+        "runes": {
+          "availability": "available",
+          "unit": "count",
+          "observed_games": 1,
+          "total": 0,
+          "average_per_game": 0,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0
+        },
+        "teamfight_participation": {
+          "availability": "available",
+          "unit": "ratio",
+          "observed_games": 1,
+          "total": 0.818182,
+          "average_per_game": 0.818182,
+          "p50": 0.818182,
+          "p75": 0.818182,
+          "p90": 0.818182
+        },
+        "wards": {
+          "availability": "available",
+          "unit": "count",
+          "observed_games": 1,
+          "total": 0,
+          "average_per_game": 0,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0
+        },
+        "camps_stacked": {
+          "availability": "available",
+          "unit": "count",
+          "observed_games": 1,
+          "total": 1,
+          "average_per_game": 1,
+          "p50": 1,
+          "p75": 1,
+          "p90": 1
+        },
+        "smokes": {
+          "availability": "available",
+          "unit": "count",
+          "observed_games": 1,
+          "total": 1,
+          "average_per_game": 1,
+          "p50": 1,
+          "p75": 1,
+          "p90": 1
+        },
+        "roshan_kills": {
+          "availability": "available",
+          "unit": "count",
+          "observed_games": 1,
+          "total": 0,
+          "average_per_game": 0,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0
+        },
+        "tormentor_kills": {
+          "availability": "unavailable",
+          "unit": "count",
+          "observed_games": 0,
+          "total": null,
+          "average_per_game": null,
+          "p50": null,
+          "p75": null,
+          "p90": null,
+          "reason": "OpenDota cannot reliably provide this metric"
+        },
+        "courier_kills": {
+          "availability": "available",
+          "unit": "count",
+          "observed_games": 1,
+          "total": 0,
+          "average_per_game": 0,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0
+        },
+        "stuns": {
+          "availability": "available",
+          "unit": "seconds",
+          "observed_games": 1,
+          "total": 8.499651,
+          "average_per_game": 8.499651,
+          "p50": 8.499651,
+          "p75": 8.499651,
+          "p90": 8.499651
+        },
+        "first_blood": {
+          "availability": "available",
+          "unit": "count",
+          "observed_games": 1,
+          "total": 0,
+          "average_per_game": 0,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0
+        },
+        "buybacks": {
+          "availability": "available",
+          "unit": "count",
+          "observed_games": 1,
+          "total": 0,
+          "average_per_game": 0,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0
+        }
+      }
+    },
+    {
+      "account_id": 87063175,
+      "name_from_opendota": "Lelis",
+      "match_ids": [
+        8885665054
+      ],
+      "stats": {
+        "kills": {
+          "availability": "available",
+          "unit": "count",
+          "observed_games": 1,
+          "total": 2,
+          "average_per_game": 2,
+          "p50": 2,
+          "p75": 2,
+          "p90": 2
+        },
+        "deaths": {
+          "availability": "available",
+          "unit": "count",
+          "observed_games": 1,
+          "total": 8,
+          "average_per_game": 8,
+          "p50": 8,
+          "p75": 8,
+          "p90": 8
+        },
+        "assists": {
+          "availability": "available",
+          "unit": "count",
+          "observed_games": 1,
+          "total": 3,
+          "average_per_game": 3,
+          "p50": 3,
+          "p75": 3,
+          "p90": 3
+        },
+        "creep_score": {
+          "availability": "available",
+          "unit": "count",
+          "observed_games": 1,
+          "total": 62,
+          "average_per_game": 62,
+          "p50": 62,
+          "p75": 62,
+          "p90": 62
+        },
+        "gpm": {
+          "availability": "available",
+          "unit": "gold_per_minute",
+          "observed_games": 1,
+          "total": 247,
+          "average_per_game": 247,
+          "p50": 247,
+          "p75": 247,
+          "p90": 247
+        },
+        "runes": {
+          "availability": "available",
+          "unit": "count",
+          "observed_games": 1,
+          "total": 1,
+          "average_per_game": 1,
+          "p50": 1,
+          "p75": 1,
+          "p90": 1
+        },
+        "teamfight_participation": {
+          "availability": "available",
+          "unit": "ratio",
+          "observed_games": 1,
+          "total": 0.833333,
+          "average_per_game": 0.833333,
+          "p50": 0.833333,
+          "p75": 0.833333,
+          "p90": 0.833333
+        },
+        "wards": {
+          "availability": "available",
+          "unit": "count",
+          "observed_games": 1,
+          "total": 34,
+          "average_per_game": 34,
+          "p50": 34,
+          "p75": 34,
+          "p90": 34
+        },
+        "camps_stacked": {
+          "availability": "available",
+          "unit": "count",
+          "observed_games": 1,
+          "total": 4,
+          "average_per_game": 4,
+          "p50": 4,
+          "p75": 4,
+          "p90": 4
+        },
+        "smokes": {
+          "availability": "available",
+          "unit": "count",
+          "observed_games": 1,
+          "total": 4,
+          "average_per_game": 4,
+          "p50": 4,
+          "p75": 4,
+          "p90": 4
+        },
+        "roshan_kills": {
+          "availability": "available",
+          "unit": "count",
+          "observed_games": 1,
+          "total": 0,
+          "average_per_game": 0,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0
+        },
+        "tormentor_kills": {
+          "availability": "unavailable",
+          "unit": "count",
+          "observed_games": 0,
+          "total": null,
+          "average_per_game": null,
+          "p50": null,
+          "p75": null,
+          "p90": null,
+          "reason": "OpenDota cannot reliably provide this metric"
+        },
+        "courier_kills": {
+          "availability": "available",
+          "unit": "count",
+          "observed_games": 1,
+          "total": 1,
+          "average_per_game": 1,
+          "p50": 1,
+          "p75": 1,
+          "p90": 1
+        },
+        "stuns": {
+          "availability": "available",
+          "unit": "seconds",
+          "observed_games": 1,
+          "total": 59.898342,
+          "average_per_game": 59.898342,
+          "p50": 59.898342,
+          "p75": 59.898342,
+          "p90": 59.898342
+        },
+        "first_blood": {
+          "availability": "available",
+          "unit": "count",
+          "observed_games": 1,
+          "total": 0,
+          "average_per_game": 0,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0
+        },
+        "buybacks": {
+          "availability": "available",
+          "unit": "count",
+          "observed_games": 1,
+          "total": 0,
+          "average_per_game": 0,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0
+        }
+      }
+    },
+    {
+      "account_id": 126212866,
+      "name_from_opendota": "Saberlight",
+      "match_ids": [
+        8890206902
+      ],
+      "stats": {
+        "kills": {
+          "availability": "available",
+          "unit": "count",
+          "observed_games": 1,
+          "total": 6,
+          "average_per_game": 6,
+          "p50": 6,
+          "p75": 6,
+          "p90": 6
+        },
+        "deaths": {
+          "availability": "available",
+          "unit": "count",
+          "observed_games": 1,
+          "total": 1,
+          "average_per_game": 1,
+          "p50": 1,
+          "p75": 1,
+          "p90": 1
+        },
+        "assists": {
+          "availability": "available",
+          "unit": "count",
+          "observed_games": 1,
+          "total": 11,
+          "average_per_game": 11,
+          "p50": 11,
+          "p75": 11,
+          "p90": 11
+        },
+        "creep_score": {
+          "availability": "available",
+          "unit": "count",
+          "observed_games": 1,
+          "total": 339,
+          "average_per_game": 339,
+          "p50": 339,
+          "p75": 339,
+          "p90": 339
+        },
+        "gpm": {
+          "availability": "available",
+          "unit": "gold_per_minute",
+          "observed_games": 1,
+          "total": 695,
+          "average_per_game": 695,
+          "p50": 695,
+          "p75": 695,
+          "p90": 695
+        },
+        "runes": {
+          "availability": "available",
+          "unit": "count",
+          "observed_games": 1,
+          "total": 3,
+          "average_per_game": 3,
+          "p50": 3,
+          "p75": 3,
+          "p90": 3
+        },
+        "teamfight_participation": {
+          "availability": "available",
+          "unit": "ratio",
+          "observed_games": 1,
+          "total": 0.68,
+          "average_per_game": 0.68,
+          "p50": 0.68,
+          "p75": 0.68,
+          "p90": 0.68
+        },
+        "wards": {
+          "availability": "available",
+          "unit": "count",
+          "observed_games": 1,
+          "total": 0,
+          "average_per_game": 0,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0
+        },
+        "camps_stacked": {
+          "availability": "available",
+          "unit": "count",
+          "observed_games": 1,
+          "total": 4,
+          "average_per_game": 4,
+          "p50": 4,
+          "p75": 4,
+          "p90": 4
+        },
+        "smokes": {
+          "availability": "available",
+          "unit": "count",
+          "observed_games": 1,
+          "total": 0,
+          "average_per_game": 0,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0
+        },
+        "roshan_kills": {
+          "availability": "available",
+          "unit": "count",
+          "observed_games": 1,
+          "total": 1,
+          "average_per_game": 1,
+          "p50": 1,
+          "p75": 1,
+          "p90": 1
+        },
+        "tormentor_kills": {
+          "availability": "unavailable",
+          "unit": "count",
+          "observed_games": 0,
+          "total": null,
+          "average_per_game": null,
+          "p50": null,
+          "p75": null,
+          "p90": null,
+          "reason": "OpenDota cannot reliably provide this metric"
+        },
+        "courier_kills": {
+          "availability": "available",
+          "unit": "count",
+          "observed_games": 1,
+          "total": 2,
+          "average_per_game": 2,
+          "p50": 2,
+          "p75": 2,
+          "p90": 2
+        },
+        "stuns": {
+          "availability": "available",
+          "unit": "seconds",
+          "observed_games": 1,
+          "total": 41.30156,
+          "average_per_game": 41.30156,
+          "p50": 41.30156,
+          "p75": 41.30156,
+          "p90": 41.30156
+        },
+        "first_blood": {
+          "availability": "available",
+          "unit": "count",
+          "observed_games": 1,
+          "total": 0,
+          "average_per_game": 0,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0
+        },
+        "buybacks": {
+          "availability": "available",
+          "unit": "count",
+          "observed_games": 1,
+          "total": 0,
+          "average_per_game": 0,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0
+        }
+      }
+    },
+    {
+      "account_id": 171262902,
+      "name_from_opendota": "医者watson`",
+      "match_ids": [
+        8893070561
+      ],
+      "stats": {
+        "kills": {
+          "availability": "available",
+          "unit": "count",
+          "observed_games": 1,
+          "total": 11,
+          "average_per_game": 11,
+          "p50": 11,
+          "p75": 11,
+          "p90": 11
+        },
+        "deaths": {
+          "availability": "available",
+          "unit": "count",
+          "observed_games": 1,
+          "total": 2,
+          "average_per_game": 2,
+          "p50": 2,
+          "p75": 2,
+          "p90": 2
+        },
+        "assists": {
+          "availability": "available",
+          "unit": "count",
+          "observed_games": 1,
+          "total": 7,
+          "average_per_game": 7,
+          "p50": 7,
+          "p75": 7,
+          "p90": 7
+        },
+        "creep_score": {
+          "availability": "available",
+          "unit": "count",
+          "observed_games": 1,
+          "total": 391,
+          "average_per_game": 391,
+          "p50": 391,
+          "p75": 391,
+          "p90": 391
+        },
+        "gpm": {
+          "availability": "available",
+          "unit": "gold_per_minute",
+          "observed_games": 1,
+          "total": 751,
+          "average_per_game": 751,
+          "p50": 751,
+          "p75": 751,
+          "p90": 751
+        },
+        "runes": {
+          "availability": "available",
+          "unit": "count",
+          "observed_games": 1,
+          "total": 7,
+          "average_per_game": 7,
+          "p50": 7,
+          "p75": 7,
+          "p90": 7
+        },
+        "teamfight_participation": {
+          "availability": "available",
+          "unit": "ratio",
+          "observed_games": 1,
+          "total": 0.461538,
+          "average_per_game": 0.461538,
+          "p50": 0.461538,
+          "p75": 0.461538,
+          "p90": 0.461538
+        },
+        "wards": {
+          "availability": "available",
+          "unit": "count",
+          "observed_games": 1,
+          "total": 0,
+          "average_per_game": 0,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0
+        },
+        "camps_stacked": {
+          "availability": "available",
+          "unit": "count",
+          "observed_games": 1,
+          "total": 7,
+          "average_per_game": 7,
+          "p50": 7,
+          "p75": 7,
+          "p90": 7
+        },
+        "smokes": {
+          "availability": "available",
+          "unit": "count",
+          "observed_games": 1,
+          "total": 0,
+          "average_per_game": 0,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0
+        },
+        "roshan_kills": {
+          "availability": "available",
+          "unit": "count",
+          "observed_games": 1,
+          "total": 1,
+          "average_per_game": 1,
+          "p50": 1,
+          "p75": 1,
+          "p90": 1
+        },
+        "tormentor_kills": {
+          "availability": "unavailable",
+          "unit": "count",
+          "observed_games": 0,
+          "total": null,
+          "average_per_game": null,
+          "p50": null,
+          "p75": null,
+          "p90": null,
+          "reason": "OpenDota cannot reliably provide this metric"
+        },
+        "courier_kills": {
+          "availability": "available",
+          "unit": "count",
+          "observed_games": 1,
+          "total": 0,
+          "average_per_game": 0,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0
+        },
+        "stuns": {
+          "availability": "available",
+          "unit": "seconds",
+          "observed_games": 1,
+          "total": 28.401388,
+          "average_per_game": 28.401388,
+          "p50": 28.401388,
+          "p75": 28.401388,
+          "p90": 28.401388
+        },
+        "first_blood": {
+          "availability": "available",
+          "unit": "count",
+          "observed_games": 1,
+          "total": 0,
+          "average_per_game": 0,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0
+        },
+        "buybacks": {
+          "availability": "available",
+          "unit": "count",
+          "observed_games": 1,
+          "total": 0,
+          "average_per_game": 0,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0
+        }
+      }
+    },
+    {
+      "account_id": 172099728,
+      "name_from_opendota": "Kiritych~",
+      "match_ids": [
+        8885183102
+      ],
+      "stats": {
+        "kills": {
+          "availability": "available",
+          "unit": "count",
+          "observed_games": 1,
+          "total": 11,
+          "average_per_game": 11,
+          "p50": 11,
+          "p75": 11,
+          "p90": 11
+        },
+        "deaths": {
+          "availability": "available",
+          "unit": "count",
+          "observed_games": 1,
+          "total": 3,
+          "average_per_game": 3,
+          "p50": 3,
+          "p75": 3,
+          "p90": 3
+        },
+        "assists": {
+          "availability": "available",
+          "unit": "count",
+          "observed_games": 1,
+          "total": 10,
+          "average_per_game": 10,
+          "p50": 10,
+          "p75": 10,
+          "p90": 10
+        },
+        "creep_score": {
+          "availability": "available",
+          "unit": "count",
+          "observed_games": 1,
+          "total": 460,
+          "average_per_game": 460,
+          "p50": 460,
+          "p75": 460,
+          "p90": 460
+        },
+        "gpm": {
+          "availability": "available",
+          "unit": "gold_per_minute",
+          "observed_games": 1,
+          "total": 723,
+          "average_per_game": 723,
+          "p50": 723,
+          "p75": 723,
+          "p90": 723
+        },
+        "runes": {
+          "availability": "available",
+          "unit": "count",
+          "observed_games": 1,
+          "total": 6,
+          "average_per_game": 6,
+          "p50": 6,
+          "p75": 6,
+          "p90": 6
+        },
+        "teamfight_participation": {
+          "availability": "available",
+          "unit": "ratio",
+          "observed_games": 1,
+          "total": 0.7,
+          "average_per_game": 0.7,
+          "p50": 0.7,
+          "p75": 0.7,
+          "p90": 0.7
+        },
+        "wards": {
+          "availability": "available",
+          "unit": "count",
+          "observed_games": 1,
+          "total": 0,
+          "average_per_game": 0,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0
+        },
+        "camps_stacked": {
+          "availability": "available",
+          "unit": "count",
+          "observed_games": 1,
+          "total": 1,
+          "average_per_game": 1,
+          "p50": 1,
+          "p75": 1,
+          "p90": 1
+        },
+        "smokes": {
+          "availability": "available",
+          "unit": "count",
+          "observed_games": 1,
+          "total": 0,
+          "average_per_game": 0,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0
+        },
+        "roshan_kills": {
+          "availability": "available",
+          "unit": "count",
+          "observed_games": 1,
+          "total": 2,
+          "average_per_game": 2,
+          "p50": 2,
+          "p75": 2,
+          "p90": 2
+        },
+        "tormentor_kills": {
+          "availability": "unavailable",
+          "unit": "count",
+          "observed_games": 0,
+          "total": null,
+          "average_per_game": null,
+          "p50": null,
+          "p75": null,
+          "p90": null,
+          "reason": "OpenDota cannot reliably provide this metric"
+        },
+        "courier_kills": {
+          "availability": "available",
+          "unit": "count",
+          "observed_games": 1,
+          "total": 0,
+          "average_per_game": 0,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0
+        },
+        "stuns": {
+          "availability": "available",
+          "unit": "seconds",
+          "observed_games": 1,
+          "total": 15.467113,
+          "average_per_game": 15.467113,
+          "p50": 15.467113,
+          "p75": 15.467113,
+          "p90": 15.467113
+        },
+        "first_blood": {
+          "availability": "available",
+          "unit": "count",
+          "observed_games": 1,
+          "total": 0,
+          "average_per_game": 0,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0
+        },
+        "buybacks": {
+          "availability": "available",
+          "unit": "count",
+          "observed_games": 1,
+          "total": 0,
+          "average_per_game": 0,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0
+        }
+      }
+    },
+    {
+      "account_id": 195108598,
+      "name_from_opendota": "Noticed",
+      "match_ids": [
+        8885665054
+      ],
+      "stats": {
+        "kills": {
+          "availability": "available",
+          "unit": "count",
+          "observed_games": 1,
+          "total": 5,
+          "average_per_game": 5,
+          "p50": 5,
+          "p75": 5,
+          "p90": 5
+        },
+        "deaths": {
+          "availability": "available",
+          "unit": "count",
+          "observed_games": 1,
+          "total": 1,
+          "average_per_game": 1,
+          "p50": 1,
+          "p75": 1,
+          "p90": 1
+        },
+        "assists": {
+          "availability": "available",
+          "unit": "count",
+          "observed_games": 1,
+          "total": 11,
+          "average_per_game": 11,
+          "p50": 11,
+          "p75": 11,
+          "p90": 11
+        },
+        "creep_score": {
+          "availability": "available",
+          "unit": "count",
+          "observed_games": 1,
+          "total": 439,
+          "average_per_game": 439,
+          "p50": 439,
+          "p75": 439,
+          "p90": 439
+        },
+        "gpm": {
+          "availability": "available",
+          "unit": "gold_per_minute",
+          "observed_games": 1,
+          "total": 636,
+          "average_per_game": 636,
+          "p50": 636,
+          "p75": 636,
+          "p90": 636
+        },
+        "runes": {
+          "availability": "available",
+          "unit": "count",
+          "observed_games": 1,
+          "total": 3,
+          "average_per_game": 3,
+          "p50": 3,
+          "p75": 3,
+          "p90": 3
+        },
+        "teamfight_participation": {
+          "availability": "available",
+          "unit": "ratio",
+          "observed_games": 1,
+          "total": 0.695652,
+          "average_per_game": 0.695652,
+          "p50": 0.695652,
+          "p75": 0.695652,
+          "p90": 0.695652
+        },
+        "wards": {
+          "availability": "available",
+          "unit": "count",
+          "observed_games": 1,
+          "total": 0,
+          "average_per_game": 0,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0
+        },
+        "camps_stacked": {
+          "availability": "available",
+          "unit": "count",
+          "observed_games": 1,
+          "total": 1,
+          "average_per_game": 1,
+          "p50": 1,
+          "p75": 1,
+          "p90": 1
+        },
+        "smokes": {
+          "availability": "available",
+          "unit": "count",
+          "observed_games": 1,
+          "total": 4,
+          "average_per_game": 4,
+          "p50": 4,
+          "p75": 4,
+          "p90": 4
+        },
+        "roshan_kills": {
+          "availability": "available",
+          "unit": "count",
+          "observed_games": 1,
+          "total": 1,
+          "average_per_game": 1,
+          "p50": 1,
+          "p75": 1,
+          "p90": 1
+        },
+        "tormentor_kills": {
+          "availability": "unavailable",
+          "unit": "count",
+          "observed_games": 0,
+          "total": null,
+          "average_per_game": null,
+          "p50": null,
+          "p75": null,
+          "p90": null,
+          "reason": "OpenDota cannot reliably provide this metric"
+        },
+        "courier_kills": {
+          "availability": "available",
+          "unit": "count",
+          "observed_games": 1,
+          "total": 0,
+          "average_per_game": 0,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0
+        },
+        "stuns": {
+          "availability": "available",
+          "unit": "seconds",
+          "observed_games": 1,
+          "total": 9.798951,
+          "average_per_game": 9.798951,
+          "p50": 9.798951,
+          "p75": 9.798951,
+          "p90": 9.798951
+        },
+        "first_blood": {
+          "availability": "available",
+          "unit": "count",
+          "observed_games": 1,
+          "total": 0,
+          "average_per_game": 0,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0
+        },
+        "buybacks": {
+          "availability": "available",
+          "unit": "count",
+          "observed_games": 1,
+          "total": 0,
+          "average_per_game": 0,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0
+        }
+      }
+    },
+    {
+      "account_id": 320219866,
+      "name_from_opendota": "kaori",
+      "match_ids": [
+        8885411801
+      ],
+      "stats": {
+        "kills": {
+          "availability": "available",
+          "unit": "count",
+          "observed_games": 1,
+          "total": 2,
+          "average_per_game": 2,
+          "p50": 2,
+          "p75": 2,
+          "p90": 2
+        },
+        "deaths": {
+          "availability": "available",
+          "unit": "count",
+          "observed_games": 1,
+          "total": 8,
+          "average_per_game": 8,
+          "p50": 8,
+          "p75": 8,
+          "p90": 8
+        },
+        "assists": {
+          "availability": "available",
+          "unit": "count",
+          "observed_games": 1,
+          "total": 17,
+          "average_per_game": 17,
+          "p50": 17,
+          "p75": 17,
+          "p90": 17
+        },
+        "creep_score": {
+          "availability": "available",
+          "unit": "count",
+          "observed_games": 1,
+          "total": 71,
+          "average_per_game": 71,
+          "p50": 71,
+          "p75": 71,
+          "p90": 71
+        },
+        "gpm": {
+          "availability": "available",
+          "unit": "gold_per_minute",
+          "observed_games": 1,
+          "total": 396,
+          "average_per_game": 396,
+          "p50": 396,
+          "p75": 396,
+          "p90": 396
+        },
+        "runes": {
+          "availability": "available",
+          "unit": "count",
+          "observed_games": 1,
+          "total": 5,
+          "average_per_game": 5,
+          "p50": 5,
+          "p75": 5,
+          "p90": 5
+        },
+        "teamfight_participation": {
+          "availability": "available",
+          "unit": "ratio",
+          "observed_games": 1,
+          "total": 0.633333,
+          "average_per_game": 0.633333,
+          "p50": 0.633333,
+          "p75": 0.633333,
+          "p90": 0.633333
+        },
+        "wards": {
+          "availability": "available",
+          "unit": "count",
+          "observed_games": 1,
+          "total": 29,
+          "average_per_game": 29,
+          "p50": 29,
+          "p75": 29,
+          "p90": 29
+        },
+        "camps_stacked": {
+          "availability": "available",
+          "unit": "count",
+          "observed_games": 1,
+          "total": 0,
+          "average_per_game": 0,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0
+        },
+        "smokes": {
+          "availability": "available",
+          "unit": "count",
+          "observed_games": 1,
+          "total": 4,
+          "average_per_game": 4,
+          "p50": 4,
+          "p75": 4,
+          "p90": 4
+        },
+        "roshan_kills": {
+          "availability": "available",
+          "unit": "count",
+          "observed_games": 1,
+          "total": 0,
+          "average_per_game": 0,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0
+        },
+        "tormentor_kills": {
+          "availability": "unavailable",
+          "unit": "count",
+          "observed_games": 0,
+          "total": null,
+          "average_per_game": null,
+          "p50": null,
+          "p75": null,
+          "p90": null,
+          "reason": "OpenDota cannot reliably provide this metric"
+        },
+        "courier_kills": {
+          "availability": "available",
+          "unit": "count",
+          "observed_games": 1,
+          "total": 1,
+          "average_per_game": 1,
+          "p50": 1,
+          "p75": 1,
+          "p90": 1
+        },
+        "stuns": {
+          "availability": "available",
+          "unit": "seconds",
+          "observed_games": 1,
+          "total": 0,
+          "average_per_game": 0,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0
+        },
+        "first_blood": {
+          "availability": "available",
+          "unit": "count",
+          "observed_games": 1,
+          "total": 0,
+          "average_per_game": 0,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0
+        },
+        "buybacks": {
+          "availability": "available",
+          "unit": "count",
+          "observed_games": 1,
+          "total": 0,
+          "average_per_game": 0,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0
+        }
+      }
+    },
+    {
+      "account_id": 458287006,
+      "name_from_opendota": "423",
+      "match_ids": [
+        8890206902
+      ],
+      "stats": {
+        "kills": {
+          "availability": "available",
+          "unit": "count",
+          "observed_games": 1,
+          "total": 1,
+          "average_per_game": 1,
+          "p50": 1,
+          "p75": 1,
+          "p90": 1
+        },
+        "deaths": {
+          "availability": "available",
+          "unit": "count",
+          "observed_games": 1,
+          "total": 2,
+          "average_per_game": 2,
+          "p50": 2,
+          "p75": 2,
+          "p90": 2
+        },
+        "assists": {
+          "availability": "available",
+          "unit": "count",
+          "observed_games": 1,
+          "total": 0,
+          "average_per_game": 0,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0
+        },
+        "creep_score": {
+          "availability": "available",
+          "unit": "count",
+          "observed_games": 1,
+          "total": 437,
+          "average_per_game": 437,
+          "p50": 437,
+          "p75": 437,
+          "p90": 437
+        },
+        "gpm": {
+          "availability": "available",
+          "unit": "gold_per_minute",
+          "observed_games": 1,
+          "total": 567,
+          "average_per_game": 567,
+          "p50": 567,
+          "p75": 567,
+          "p90": 567
+        },
+        "runes": {
+          "availability": "available",
+          "unit": "count",
+          "observed_games": 1,
+          "total": 3,
+          "average_per_game": 3,
+          "p50": 3,
+          "p75": 3,
+          "p90": 3
+        },
+        "teamfight_participation": {
+          "availability": "available",
+          "unit": "ratio",
+          "observed_games": 1,
+          "total": 0.5,
+          "average_per_game": 0.5,
+          "p50": 0.5,
+          "p75": 0.5,
+          "p90": 0.5
+        },
+        "wards": {
+          "availability": "available",
+          "unit": "count",
+          "observed_games": 1,
+          "total": 0,
+          "average_per_game": 0,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0
+        },
+        "camps_stacked": {
+          "availability": "available",
+          "unit": "count",
+          "observed_games": 1,
+          "total": 5,
+          "average_per_game": 5,
+          "p50": 5,
+          "p75": 5,
+          "p90": 5
+        },
+        "smokes": {
+          "availability": "available",
+          "unit": "count",
+          "observed_games": 1,
+          "total": 0,
+          "average_per_game": 0,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0
+        },
+        "roshan_kills": {
+          "availability": "available",
+          "unit": "count",
+          "observed_games": 1,
+          "total": 0,
+          "average_per_game": 0,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0
+        },
+        "tormentor_kills": {
+          "availability": "unavailable",
+          "unit": "count",
+          "observed_games": 0,
+          "total": null,
+          "average_per_game": null,
+          "p50": null,
+          "p75": null,
+          "p90": null,
+          "reason": "OpenDota cannot reliably provide this metric"
+        },
+        "courier_kills": {
+          "availability": "available",
+          "unit": "count",
+          "observed_games": 1,
+          "total": 0,
+          "average_per_game": 0,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0
+        },
+        "stuns": {
+          "availability": "available",
+          "unit": "seconds",
+          "observed_games": 1,
+          "total": 22.666748,
+          "average_per_game": 22.666748,
+          "p50": 22.666748,
+          "p75": 22.666748,
+          "p90": 22.666748
+        },
+        "first_blood": {
+          "availability": "available",
+          "unit": "count",
+          "observed_games": 1,
+          "total": 1,
+          "average_per_game": 1,
+          "p50": 1,
+          "p75": 1,
+          "p90": 1
+        },
+        "buybacks": {
+          "availability": "available",
+          "unit": "count",
+          "observed_games": 1,
+          "total": 0,
+          "average_per_game": 0,
+          "p50": 0,
+          "p75": 0,
+          "p90": 0
+        }
+      }
+    }
+  ]
+}
