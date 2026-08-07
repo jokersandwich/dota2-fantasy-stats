@@ -256,7 +256,6 @@ function App() {
           <p>THE INTERNATIONAL 2026 / FANTASY LAB</p>
           <span>OpenDota League 19785</span>
         </div>
-        <div className="header-status"><span aria-hidden="true" /> EWC DATA</div>
       </header>
 
       <section className="hero">
@@ -268,7 +267,6 @@ function App() {
         <dl className="hero-stats">
           <div><dt>Matches</dt><dd>{payload.source.matchesProcessed}<span>/{payload.source.matchesProcessed}</span></dd></div>
           <div><dt>Role Units</dt><dd>{payload.roleUnits.length}</dd></div>
-          <div><dt>Default view</dt><dd className="text-value">AVG / GAME</dd></div>
         </dl>
       </section>
 
