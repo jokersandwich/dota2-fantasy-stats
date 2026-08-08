@@ -3,7 +3,7 @@
   "generatedAt": "2026-08-07T05:39:46.897460+00:00",
   "source": {
     "leagueId": 19785,
-    "matchScoreFile": "C:/Users/41011/Documents/Project/ti15-ewc-stats/public/data/fantasy-match-scores.json",
+    "matchScoreFile": "public/data/fantasy-match-scores.json",
     "matchesProcessed": 157,
     "ti15Players": 80
   },

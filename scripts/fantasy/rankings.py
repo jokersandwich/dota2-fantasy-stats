@@ -25,6 +25,14 @@ AUDIT_PLAYER_COUNT = 10
 AUDIT_METRICS = ("deaths", "gpm", "firstBlood", "teamfightParticipation", "runes")
 
 
+def _portable_path(path: Path) -> str:
+    resolved = path.resolve()
+    try:
+        return resolved.relative_to(ROOT).as_posix()
+    except ValueError:
+        return f"<external>/{resolved.name}"
+
+
 def _read_json(path: Path) -> Any:
     with path.open("r", encoding="utf-8") as handle:
         return json.load(handle)
@@ -213,7 +221,7 @@ def build_rankings(match_scores_path: Path, roster_path: Path) -> tuple[dict[str
         "generatedAt": datetime.now(timezone.utc).isoformat(),
         "source": {
             "leagueId": match_scores.get("source", {}).get("leagueId"),
-            "matchScoreFile": match_scores_path.as_posix(),
+            "matchScoreFile": _portable_path(match_scores_path),
             "matchesProcessed": match_scores.get("source", {}).get("matchesProcessed"),
             "ti15Players": len(output_players),
         },
@@ -366,7 +374,7 @@ def validation_markdown(validation: dict[str, Any], payload: dict[str, Any], out
         f"- TI15 选手：{validation['players']}",
         f"- 有 EWC 比赛的选手：{validation['playersWithGames']}",
         f"- 没有 EWC 比赛的选手：{validation['playersWithoutGames']}",
-        f"- 数据文件：`{output_path.as_posix()}`",
+        f"- 数据文件：`{_portable_path(output_path)}`",
         "",
         "## 验证项目",
         "",

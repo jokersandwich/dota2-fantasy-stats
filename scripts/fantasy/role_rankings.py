@@ -29,6 +29,14 @@ EXPECTED_TEAMS = 16
 EXPECTED_ROLE_UNITS = EXPECTED_TEAMS * len(ROLE_POSITIONS)
 
 
+def _portable_path(path: Path) -> str:
+    resolved = path.resolve()
+    try:
+        return resolved.relative_to(ROOT).as_posix()
+    except ValueError:
+        return f"<external>/{resolved.name}"
+
+
 def _read_json(path: Path) -> Any:
     with path.open("r", encoding="utf-8") as handle:
         return json.load(handle)
@@ -460,7 +468,7 @@ def validation_markdown(validation: dict[str, Any], payload: dict[str, Any], out
         f"- 已复核 available 的逐场 Role 指标：{validation['availableRoleMatchesChecked']}",
         f"- 已复核 null 传播的逐场 Role 指标：{validation['unavailableRoleMatchesChecked']}",
         f"- 已复核 MID 单成员恒等计算：{validation['midIdentityChecks']}",
-        f"- 输出文件：`{output_path.as_posix()}`",
+        f"- 输出文件：`{_portable_path(output_path)}`",
         "",
         "## 必检项目",
         "",

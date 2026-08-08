@@ -22,6 +22,14 @@ EXPECTED_PLAYERS_PER_MATCH = 10
 _MISSING = object()
 
 
+def _portable_path(path: Path) -> str:
+    resolved = path.resolve()
+    try:
+        return resolved.relative_to(ROOT).as_posix()
+    except ValueError:
+        return f"<external>/{resolved.name}"
+
+
 def _decimal(value: Any, *, allow_boolean: bool) -> Decimal | None:
     if isinstance(value, bool):
         return Decimal(int(value)) if allow_boolean else None
@@ -476,7 +484,7 @@ def validation_markdown(validation: dict[str, Any], output_path: Path) -> str:
             "",
             "数据集可稳定生成，没有 NaN、Infinity、undefined 或负 Fantasy 分数。发现的唯一原始负数已被隔离为 unavailable。各指标最大值已列在上表供人工复核，未发现违反明确字段边界（例如团战参与率 0–1、第一滴血 0/1）的数量。",
             "",
-            f"生成的数据文件：`{output_path.as_posix()}`",
+            f"生成的数据文件：`{_portable_path(output_path)}`",
             "",
         ]
     )

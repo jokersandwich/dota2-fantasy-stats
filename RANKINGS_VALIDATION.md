@@ -6,7 +6,7 @@
 - TI15 选手：80
 - 有 EWC 比赛的选手：74
 - 没有 EWC 比赛的选手：6
-- 数据文件：`C:/Users/41011/Documents/Project/ti15-ewc-stats/data/processed/player-fantasy-rankings.json`
+- 数据文件：`data/processed/player-fantasy-rankings.json`
 
 ## 验证项目
 

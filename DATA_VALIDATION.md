@@ -71,4 +71,4 @@ OpenDota 原始数据中有 1 条被隔离的非法原始值：match `8885614030
 
 数据集可稳定生成，没有 NaN、Infinity、undefined 或负 Fantasy 分数。发现的唯一原始负数已被隔离为 unavailable。各指标最大值已列在上表供人工复核，未发现违反明确字段边界（例如团战参与率 0–1、第一滴血 0/1）的数量。
 
-生成的数据文件：`C:/Users/41011/Documents/Project/ti15-ewc-stats/public/data/fantasy-match-scores.json`
+生成的数据文件：`public/data/fantasy-match-scores.json`

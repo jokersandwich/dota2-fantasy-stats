@@ -9,7 +9,7 @@
 - 已复核 available 的逐场 Role 指标：9389
 - 已复核 null 传播的逐场 Role 指标：1879
 - 已复核 MID 单成员恒等计算：3180
-- 输出文件：`C:/Users/41011/Documents/Project/ti15-ewc-stats/data/processed/role-fantasy-rankings.json`
+- 输出文件：`data/processed/role-fantasy-rankings.json`
 
 ## 必检项目
 
