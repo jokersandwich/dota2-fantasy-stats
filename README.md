@@ -9,7 +9,7 @@ https://ti15-ewc-stats.netlify.app/
 
 pc:
 
-<img width="1917" height="1268" alt="ti15-ewc-stats-pc" src="https://github.com/user-attachments/assets/a637d237-4fc1-4a9f-8ffb-a7d6fcb75094" />
+<img width="831" height="550" alt="ti15-ewc-stats-pc" src="https://github.com/user-attachments/assets/a637d237-4fc1-4a9f-8ffb-a7d6fcb75094" />
 
 
 mobile:
