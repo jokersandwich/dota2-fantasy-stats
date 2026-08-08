@@ -7,7 +7,13 @@ configuration.
 
 https://ti15-ewc-stats.netlify.app/
 
+pc:
+
 <img width="1917" height="1268" alt="ti15-ewc-stats-pc" src="https://github.com/user-attachments/assets/a637d237-4fc1-4a9f-8ffb-a7d6fcb75094" />
+
+
+mobile:
+
 <img width="252" height="550" alt="ti15-ewc-stats-mobile" src="https://github.com/user-attachments/assets/033e42a3-29cb-44a4-b50f-d513d73e5b43" />
 <img width="252" height="550" alt="ti15-ewc-stats-mobile-2" src="https://github.com/user-attachments/assets/d9eb7f9e-7856-41c9-acd3-72a3364c11f1" />
 
