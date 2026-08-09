@@ -138,6 +138,24 @@ class PlayerMatchScoringTests(unittest.TestCase):
         self.assertIsNone(result["baseFantasyScore"])
         self.assertGreater(result["availableBaseFantasyScore"], 0)
 
+    def test_dataset_override_marks_first_blood_unavailable_without_changing_other_metrics(self) -> None:
+        result = score_player_match(
+            self.match,
+            self.player,
+            metric_availability_overrides={
+                "first_blood": "OpenDota First Blood attribution is missing for this match"
+            },
+        )
+        first_blood = result["fantasy"]["first_blood"]
+        self.assertEqual(first_blood["dataAvailability"], "unavailable")
+        self.assertIsNone(first_blood["rawValue"])
+        self.assertIsNone(first_blood["baseFantasyScore"])
+        self.assertEqual(
+            first_blood["reason"],
+            "OpenDota First Blood attribution is missing for this match",
+        )
+        self.assertEqual(result["fantasy"]["kills"]["baseFantasyScore"], 856)
+
 
 if __name__ == "__main__":
     unittest.main()

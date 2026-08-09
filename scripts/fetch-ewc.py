@@ -179,6 +179,16 @@ def main() -> int:
                 )
             )
         all_ids = sorted(all_ids_set - source.excluded_match_ids)
+        if source.manifest_match_ids is not None:
+            manifest_ids = list(source.manifest_match_ids)
+            if all_ids != manifest_ids:
+                missing = sorted(set(manifest_ids) - set(all_ids))
+                unexpected = sorted(set(all_ids) - set(manifest_ids))
+                raise RuntimeError(
+                    "OpenDota league index differs from the frozen manifest: "
+                    f"missing={missing}, unexpected={unexpected}"
+                )
+            all_ids = manifest_ids
         selected = choose_matches(all_ids, args.sample_size, args.seed)
         fetched, reused = fetch_matches(
             selected,

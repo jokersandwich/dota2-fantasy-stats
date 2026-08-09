@@ -162,6 +162,7 @@ def score_player_match(
     match: dict[str, Any],
     player: dict[str, Any],
     ruleset: FantasyRuleset = TI15_BASE_V1,
+    metric_availability_overrides: dict[str, str] | None = None,
 ) -> dict[str, Any]:
     stats: dict[str, int | float | None] = {}
     fantasy: dict[str, dict[str, Any]] = {}
@@ -170,8 +171,13 @@ def score_player_match(
 
     for metric_key in ruleset.metric_keys:
         rule = ruleset.rules[metric_key]
-        raw_value, extraction_reason = extract_raw_value(match, player, rule)
-        result = calculate_stat_score(metric_key, raw_value, ruleset=ruleset)
+        override_reason = (metric_availability_overrides or {}).get(metric_key)
+        if override_reason is not None:
+            raw_value, extraction_reason = None, override_reason
+            result = _unavailable(override_reason)
+        else:
+            raw_value, extraction_reason = extract_raw_value(match, player, rule)
+            result = calculate_stat_score(metric_key, raw_value, ruleset=ruleset)
         if result["dataAvailability"] == "unavailable" and extraction_reason:
             result["reason"] = extraction_reason
         if (
@@ -239,6 +245,7 @@ def load_matches(
     raw_dir: Path,
     league_ids: tuple[int, ...] = (19785,),
     excluded_match_ids: frozenset[int] = frozenset(),
+    manifest_match_ids: tuple[int, ...] | None = None,
 ) -> tuple[list[int], list[dict[str, Any]]]:
     discovered_ids: set[int] = set()
     for league_id in league_ids:
@@ -251,6 +258,10 @@ def load_matches(
             and row["match_id"] not in excluded_match_ids
         )
     match_ids = sorted(discovered_ids)
+    if manifest_match_ids is not None and match_ids != list(manifest_match_ids):
+        missing = sorted(set(manifest_match_ids) - set(match_ids))
+        unexpected = sorted(set(match_ids) - set(manifest_match_ids))
+        raise ValueError(f"League cache differs from frozen manifest: missing={missing}, unexpected={unexpected}")
     matches: list[dict[str, Any]] = []
     allowed_leagues = set(league_ids)
     for match_id in match_ids:
@@ -264,6 +275,10 @@ def load_matches(
             and match.get("leagueid") in allowed_leagues
         ):
             matches.append(match)
+    if manifest_match_ids is not None and len(matches) != len(manifest_match_ids):
+        loaded_ids = {int(match["match_id"]) for match in matches}
+        missing_payloads = sorted(set(manifest_match_ids) - loaded_ids)
+        raise ValueError(f"Frozen manifest payloads are incomplete or invalid: missing={missing_payloads}")
     return match_ids, matches
 
 
@@ -296,14 +311,25 @@ def build_dataset(
     selected = config or load_dataset()
     match_source = selected.match_source
     ruleset = selected.ruleset
-    match_ids, matches = load_matches(raw_dir, match_source.league_ids, match_source.excluded_match_ids)
+    match_ids, matches = load_matches(
+        raw_dir,
+        match_source.league_ids,
+        match_source.excluded_match_ids,
+        match_source.manifest_match_ids,
+    )
     match_outputs: list[dict[str, Any]] = []
     player_rows: list[dict[str, Any]] = []
     match_player_count_issues: list[dict[str, int]] = []
 
     for match in matches:
         players = match.get("players") if isinstance(match.get("players"), list) else []
-        scored_players = [score_player_match(match, player, ruleset) for player in players if isinstance(player, dict)]
+        match_id = int(match["match_id"])
+        availability_overrides = selected.availability_overrides_for_match(match_id)
+        scored_players = [
+            score_player_match(match, player, ruleset, availability_overrides)
+            for player in players
+            if isinstance(player, dict)
+        ]
         if len(scored_players) != match_source.expected_players_per_match:
             match_player_count_issues.append({"matchId": int(match["match_id"]), "players": len(scored_players)})
         player_rows.extend(scored_players)

@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "matchSourceId": "ti14-2025-opendota",
+  "competition": {
+    "code": "TI14",
+    "season": 2025
+  },
+  "provider": {
+    "id": "OpenDota",
+    "apiBase": "https://api.opendota.com/api",
+    "leagueIds": [18324]
+  },
+  "cacheNamespace": "ti14-2025-opendota",
+  "matchManifest": "data/manifests/ti14-2025-opendota.json",
+  "matchSelection": {
+    "stages": "all",
+    "excludedMatchIds": []
+  },
+  "expectations": {
+    "playersPerMatch": 10
+  }
+}

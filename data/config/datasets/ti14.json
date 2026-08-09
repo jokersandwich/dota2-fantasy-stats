@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "datasetId": "ti14",
+  "status": "verified",
+  "rosterSourceId": "ti14-2025",
+  "matchSourceId": "ti14-2025-opendota",
+  "rulesetId": "ti15-base-v1",
+  "populationPolicy": {
+    "playerRankings": "all-roster-participants",
+    "roleRankings": "configured-role-lineups",
+    "crossDatasetIntersection": false
+  },
+  "metricAvailabilityOverrides": [
+    {
+      "metric": "first_blood",
+      "matchIds": [8446311496, 8457152687, 8457241577],
+      "reason": "OpenDota First Blood attribution is missing for this match"
+    }
+  ],
+  "validationProfile": "ti14"
+}

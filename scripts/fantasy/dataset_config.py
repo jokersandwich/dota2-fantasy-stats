@@ -6,7 +6,8 @@ import json
 import re
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Any
+from types import MappingProxyType
+from typing import Any, Mapping
 
 from .rulesets import FantasyRuleset, get_ruleset
 
@@ -87,6 +88,14 @@ class DatasetPaths:
     def role_validation(self) -> Path:
         return self.reports_dir / "ROLE_RANKINGS_VALIDATION.md"
 
+    @property
+    def payload_audit_json(self) -> Path:
+        return self.reports_dir / "PAYLOAD_AUDIT.json"
+
+    @property
+    def payload_audit_markdown(self) -> Path:
+        return self.reports_dir / "PAYLOAD_AUDIT.md"
+
 
 @dataclass(frozen=True, slots=True)
 class RosterSource:
@@ -114,6 +123,8 @@ class MatchSource:
     legacy_raw_dir: Path | None
     excluded_match_ids: frozenset[int]
     expected_players_per_match: int
+    manifest_path: Path | None
+    manifest_match_ids: tuple[int, ...] | None
 
     def raw_dir_for_processing(self) -> Path:
         if any(_league_cache_exists(self.namespaced_raw_dir, league_id) for league_id in self.league_ids):
@@ -136,6 +147,7 @@ class DatasetConfig:
     player_ranking_policy: str
     role_ranking_policy: str
     cross_dataset_intersection: bool
+    metric_availability_overrides: Mapping[str, Mapping[int, str]]
     paths: DatasetPaths
 
     @property
@@ -145,6 +157,13 @@ class DatasetConfig:
             "rosterSourceId": self.roster.roster_source_id,
             "matchSourceId": self.match_source.match_source_id,
             "rulesetId": self.ruleset.ruleset_id,
+        }
+
+    def availability_overrides_for_match(self, match_id: int) -> dict[str, str]:
+        return {
+            metric_key: reasons[match_id]
+            for metric_key, reasons in self.metric_availability_overrides.items()
+            if match_id in reasons
         }
 
 
@@ -201,6 +220,8 @@ def _load_roster_source(roster_source_id: str) -> RosterSource:
             if position is not None:
                 validated_position = _positive_int(position, "roster player position")
                 players_by_position.setdefault(validated_position, []).append(account_id)
+            if "actualGames" in player:
+                _positive_int(player.get("actualGames"), "roster player actualGames")
 
         lineup = team.get("roleLineup")
         if lineup is None:
@@ -227,6 +248,32 @@ def _load_roster_source(roster_source_id: str) -> RosterSource:
                 raise ValueError(f"Team {team.get('name')} roleLineup must contain unique players")
     if len(account_ids) != len(set(account_ids)):
         raise ValueError("Roster account_id values must be globally unique")
+
+    provenance = payload.get("provenance")
+    if provenance is not None:
+        _object(provenance, "roster provenance")
+    roster_changes = payload.get("rosterChanges", [])
+    if not isinstance(roster_changes, list):
+        raise ValueError("rosterChanges must be an array")
+    final_accounts = set(account_ids)
+    for index, change in enumerate(roster_changes):
+        change_payload = _object(change, f"rosterChanges[{index}]")
+        if not isinstance(change_payload.get("changeType"), str) or not change_payload["changeType"]:
+            raise ValueError(f"rosterChanges[{index}].changeType must be non-empty")
+        out = change_payload.get("out")
+        incoming = change_payload.get("in")
+        if not isinstance(out, dict) or not isinstance(incoming, dict):
+            raise ValueError(f"rosterChanges[{index}] must contain structured out and in objects")
+        out_account = out.get("account_id")
+        in_account = incoming.get("account_id")
+        if out_account is not None:
+            validated_out = _positive_int(out_account, f"rosterChanges[{index}].out.account_id")
+            if validated_out in final_accounts:
+                raise ValueError("A replaced rosterChanges out player must not be in the final ranking roster")
+        if in_account is not None:
+            validated_in = _positive_int(in_account, f"rosterChanges[{index}].in.account_id")
+            if validated_in not in final_accounts:
+                raise ValueError("A rosterChanges in player must be in the final ranking roster")
 
     return RosterSource(
         roster_source_id=roster_source_id,
@@ -278,6 +325,28 @@ def _load_match_source(match_source_id: str) -> MatchSource:
     expected_players = _positive_int(expectations.get("playersPerMatch"), "expectations.playersPerMatch")
     legacy_value = payload.get("legacyCachePath")
     legacy_raw_dir = _repo_path(legacy_value, "legacyCachePath") if legacy_value is not None else None
+    manifest_value = payload.get("matchManifest")
+    manifest_path = _repo_path(manifest_value, "matchManifest") if manifest_value is not None else None
+    manifest_match_ids: tuple[int, ...] | None = None
+    if manifest_path is not None:
+        manifest = _object(_read_json(manifest_path), f"Match manifest {manifest_path.name}")
+        if manifest.get("schemaVersion") != 1:
+            raise ValueError("Match manifest must use schemaVersion 1")
+        if manifest.get("matchSourceId") != match_source_id:
+            raise ValueError("Match manifest matchSourceId does not match its match source")
+        if manifest.get("provider") != provider_id:
+            raise ValueError("Match manifest provider does not match its match source")
+        if manifest.get("leagueIds") != list(validated_league_ids):
+            raise ValueError("Match manifest leagueIds do not match its match source")
+        manifest_ids = manifest.get("matchIds")
+        if not isinstance(manifest_ids, list) or not manifest_ids:
+            raise ValueError("Match manifest matchIds must be a non-empty array")
+        validated_manifest_ids = tuple(_positive_int(match_id, "manifest match ID") for match_id in manifest_ids)
+        if validated_manifest_ids != tuple(sorted(set(validated_manifest_ids))):
+            raise ValueError("Match manifest matchIds must be unique and sorted")
+        if excluded_ids.intersection(validated_manifest_ids):
+            raise ValueError("Match manifest must not include excluded match IDs")
+        manifest_match_ids = validated_manifest_ids
     return MatchSource(
         match_source_id=match_source_id,
         competition_code=competition_code,
@@ -290,6 +359,8 @@ def _load_match_source(match_source_id: str) -> MatchSource:
         legacy_raw_dir=legacy_raw_dir,
         excluded_match_ids=excluded_ids,
         expected_players_per_match=expected_players,
+        manifest_path=manifest_path,
+        manifest_match_ids=manifest_match_ids,
     )
 
 
@@ -339,16 +410,56 @@ def load_dataset(dataset_id: str | None = None) -> DatasetConfig:
     if validation_payload.get("schemaVersion") != 1 or validation_payload.get("validationProfile") != validation_profile:
         raise ValueError(f"Invalid validation profile: {validation_profile}")
 
+    ruleset = get_ruleset(ruleset_id)
+    override_rows = payload.get("metricAvailabilityOverrides", [])
+    if not isinstance(override_rows, list):
+        raise ValueError("metricAvailabilityOverrides must be an array")
+    mutable_overrides: dict[str, dict[int, str]] = {}
+    for index, row in enumerate(override_rows):
+        override = _object(row, f"metricAvailabilityOverrides[{index}]")
+        metric_key = override.get("metric")
+        if not isinstance(metric_key, str) or metric_key not in ruleset.rules:
+            raise ValueError(f"metricAvailabilityOverrides[{index}].metric is not in the ruleset")
+        if metric_key in mutable_overrides:
+            raise ValueError(f"Duplicate metric availability override: {metric_key}")
+        match_ids = override.get("matchIds")
+        if not isinstance(match_ids, list) or not match_ids:
+            raise ValueError(f"metricAvailabilityOverrides[{index}].matchIds must be a non-empty array")
+        validated_ids = tuple(_positive_int(match_id, "availability override match ID") for match_id in match_ids)
+        if validated_ids != tuple(sorted(set(validated_ids))):
+            raise ValueError("Availability override match IDs must be unique and sorted")
+        reason = override.get("reason")
+        if not isinstance(reason, str) or not reason.strip():
+            raise ValueError(f"metricAvailabilityOverrides[{index}].reason must be non-empty")
+        mutable_overrides[metric_key] = {match_id: reason for match_id in validated_ids}
+
+    match_source = _load_match_source(match_source_id)
+    if mutable_overrides and match_source.manifest_match_ids is None:
+        raise ValueError("Metric availability overrides require a frozen match manifest")
+    manifest_ids = set(match_source.manifest_match_ids or ())
+    unknown_override_ids = sorted(
+        match_id
+        for reasons in mutable_overrides.values()
+        for match_id in reasons
+        if match_id not in manifest_ids
+    )
+    if unknown_override_ids:
+        raise ValueError(f"Availability overrides reference matches outside the manifest: {unknown_override_ids}")
+    immutable_overrides = MappingProxyType(
+        {metric: MappingProxyType(reasons) for metric, reasons in mutable_overrides.items()}
+    )
+
     return DatasetConfig(
         dataset_id=selected_id,
         status=status,
         roster=_load_roster_source(roster_source_id),
-        match_source=_load_match_source(match_source_id),
-        ruleset=get_ruleset(ruleset_id),
+        match_source=match_source,
+        ruleset=ruleset,
         validation_profile=validation_profile,
         player_ranking_policy=player_policy,
         role_ranking_policy=role_policy,
         cross_dataset_intersection=cross_dataset,
+        metric_availability_overrides=immutable_overrides,
         paths=DatasetPaths(
             generated_dir=ROOT / "data" / "generated" / "datasets" / selected_id,
             reports_dir=ROOT / "reports" / selected_id,
@@ -372,3 +483,12 @@ def load_validation_expectations(config: DatasetConfig) -> dict[str, int]:
             "validation expected.playersWithoutGames",
         )
     return result
+
+
+def load_payload_audit_expectations(config: DatasetConfig) -> dict[str, Any]:
+    path = CONFIG_ROOT / "validation-profiles" / f"{config.validation_profile}.json"
+    payload = _object(_read_json(path), "validation profile")
+    audit = payload.get("payloadAudit")
+    if audit is None:
+        return {}
+    return _object(audit, "validation payloadAudit")

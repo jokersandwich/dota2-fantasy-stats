@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "validationProfile": "ti14",
+  "expected": {
+    "matchesDiscovered": 144,
+    "matchesProcessed": 144,
+    "playerMatchRows": 1440,
+    "rosterPlayers": 80,
+    "playersWithGames": 80,
+    "playersWithoutGames": 0,
+    "teams": 16,
+    "roleUnits": 48
+  },
+  "payloadAudit": {
+    "series": 58,
+    "parsedMatches": 144,
+    "uniqueAccountIds": 80,
+    "teamfightOutOfRangeRows": 1,
+    "negativeStunRows": 12
+  }
+}

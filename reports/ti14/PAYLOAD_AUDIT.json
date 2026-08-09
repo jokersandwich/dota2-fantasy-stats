@@ -1,0 +1,150 @@
+{
+  "datasetId": "ti14",
+  "rosterSourceId": "ti14-2025",
+  "matchSourceId": "ti14-2025-opendota",
+  "rulesetId": "ti15-base-v1",
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-09T08:03:19.465046+00:00",
+  "status": "passed",
+  "errors": [],
+  "scope": {
+    "leagueRows": 144,
+    "manifestMatches": 144,
+    "payloadMatches": 144,
+    "playerMatchRows": 1440,
+    "uniqueAccountIds": 80,
+    "teams": 16,
+    "series": 58,
+    "parsedMatches": 144,
+    "minimumDuration": 1352,
+    "maximumDuration": 4694,
+    "firstStartTime": 1756973096,
+    "lastStartTime": 1757872818
+  },
+  "roster": {
+    "configuredPlayers": 80,
+    "configuredTeams": 16,
+    "rosterChanges": 4,
+    "missingAccounts": [],
+    "unexpectedAccounts": [],
+    "gamesMismatches": []
+  },
+  "fieldCoverage": {
+    "requiredSourceMissing": {},
+    "smokeRows": 628,
+    "smokeTotal": 2043,
+    "madstoneCandidateRows": 1267,
+    "madstoneCandidateTotal": 14318,
+    "watcherItemUsePaths": 0,
+    "lotusItemUsePaths": 87,
+    "tormentorRows": 245,
+    "tormentorTotal": 299,
+    "roshanPlayerTotal": 342,
+    "roshanObjectiveEvents": 342,
+    "objectiveTypes": {
+      "CHAT_MESSAGE_AEGIS": 328,
+      "CHAT_MESSAGE_AEGIS_STOLEN": 14,
+      "CHAT_MESSAGE_COURIER_LOST": 447,
+      "CHAT_MESSAGE_FIRSTBLOOD": 141,
+      "CHAT_MESSAGE_ROSHAN_KILL": 342,
+      "building_kill": 2615
+    }
+  },
+  "anomalies": {
+    "firstBlood": [
+      {
+        "matchId": 8446311496,
+        "firstBloodTime": 236,
+        "claimedPlayers": 0,
+        "objectiveEvents": 0
+      },
+      {
+        "matchId": 8457152687,
+        "firstBloodTime": 237,
+        "claimedPlayers": 0,
+        "objectiveEvents": 0
+      },
+      {
+        "matchId": 8457241577,
+        "firstBloodTime": 79,
+        "claimedPlayers": 0,
+        "objectiveEvents": 0
+      }
+    ],
+    "firstBloodPolicyMatchIds": [
+      8446311496,
+      8457152687,
+      8457241577
+    ],
+    "teamfightParticipation": [
+      {
+        "matchId": 8446312823,
+        "accountId": 101259972,
+        "value": 1.1333333
+      }
+    ],
+    "negativeStuns": [
+      {
+        "matchId": 8446684731,
+        "accountId": 898455820,
+        "value": -2.133521
+      },
+      {
+        "matchId": 8446865588,
+        "accountId": 137129583,
+        "value": -1.5845165
+      },
+      {
+        "matchId": 8447594081,
+        "accountId": 160119017,
+        "value": -4.887581e-05
+      },
+      {
+        "matchId": 8447689339,
+        "accountId": 292921272,
+        "value": -3.0798824
+      },
+      {
+        "matchId": 8447703577,
+        "accountId": 137129583,
+        "value": -6.5208673
+      },
+      {
+        "matchId": 8447807379,
+        "accountId": 106573901,
+        "value": -0.93311
+      },
+      {
+        "matchId": 8448175133,
+        "accountId": 131303632,
+        "value": -0.5670165
+      },
+      {
+        "matchId": 8449478853,
+        "accountId": 858106446,
+        "value": -0.6164062
+      },
+      {
+        "matchId": 8450578598,
+        "accountId": 858106446,
+        "value": -1.6870155
+      },
+      {
+        "matchId": 8456356386,
+        "accountId": 137129583,
+        "value": -5.5816774
+      },
+      {
+        "matchId": 8457152687,
+        "accountId": 140297552,
+        "value": -1.0484662
+      },
+      {
+        "matchId": 8458567498,
+        "accountId": 480412663,
+        "value": -2.4170802
+      }
+    ],
+    "matchPlayerCount": []
+  }
+}

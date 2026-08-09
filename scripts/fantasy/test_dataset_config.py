@@ -26,6 +26,23 @@ class DatasetConfigTests(unittest.TestCase):
         self.assertEqual(tuple(ruleset.rules), tuple(RULES))
         self.assertIs(ruleset.rules["kills"], RULES["kills"])
 
+    def test_ti14_composes_independent_sources_with_shared_ruleset(self) -> None:
+        config = load_dataset("ti14")
+        self.assertEqual(config.dataset_id, "ti14")
+        self.assertEqual(config.roster.roster_source_id, "ti14-2025")
+        self.assertEqual(config.match_source.match_source_id, "ti14-2025-opendota")
+        self.assertEqual(config.match_source.league_ids, (18324,))
+        self.assertEqual(config.ruleset.ruleset_id, "ti15-base-v1")
+        self.assertEqual(config.roster.player_count, 80)
+        self.assertEqual(len(config.match_source.manifest_match_ids or ()), 144)
+
+    def test_ti14_first_blood_override_is_manifest_bounded(self) -> None:
+        config = load_dataset("ti14")
+        expected_ids = {8446311496, 8457152687, 8457241577}
+        actual_ids = set(config.metric_availability_overrides["first_blood"])
+        self.assertEqual(actual_ids, expected_ids)
+        self.assertTrue(actual_ids.issubset(set(config.match_source.manifest_match_ids or ())))
+
     def test_validation_profile_matches_frozen_scope(self) -> None:
         expected = load_validation_expectations(load_dataset())
         self.assertEqual(expected["matchesProcessed"], 157)

@@ -1,0 +1,239 @@
+{
+  "schemaVersion": 1,
+  "rosterSourceId": "ti14-2025",
+  "competition": {
+    "code": "TI14",
+    "edition": 14,
+    "season": 2025
+  },
+  "status": "verified",
+  "lastVerified": "2026-08-09",
+  "provenance": {
+    "universePolicy": "The final 80 players who actually represented the 16 teams in OpenDota league 18324",
+    "rankingExclusions": "Pre-event replaced players and withdrawn teams with zero league 18324 games are metadata only",
+    "sources": [
+      "https://www.dota2.com/esports/ti14/watch/18324",
+      "https://liquipedia.net/dota2/The_International/2025",
+      "https://api.opendota.com/api/leagues/18324/matches"
+    ]
+  },
+  "expectations": {
+    "teamCount": 16,
+    "requiredPositions": [1, 2, 3, 4, 5],
+    "accountIdsUnique": true
+  },
+  "rosterChanges": [
+    {
+      "changeType": "team-replacement",
+      "effective": "pre-event",
+      "out": { "team": "Gaimin Gladiators", "league18324Games": 0 },
+      "in": { "team": "Yakutou Brothers", "team_id": 9351740, "league18324Games": 16 },
+      "reason": "Gaimin Gladiators withdrew and Yakutou Brothers received the event place"
+    },
+    {
+      "changeType": "player-stand-in",
+      "effective": "pre-event",
+      "team": "Tundra Esports",
+      "position": 5,
+      "out": { "account_id": 136829091, "name": "Whitemon", "league18324Games": 0 },
+      "in": { "account_id": 140288368, "name": "Tobi", "league18324Games": 21 },
+      "reason": "Visa-related stand-in"
+    },
+    {
+      "changeType": "player-stand-in",
+      "effective": "pre-event",
+      "team": "Xtreme Gaming",
+      "position": 5,
+      "out": { "account_id": 76904792, "name": "poloson", "league18324Games": 0 },
+      "in": { "account_id": 94296097, "name": "xNova", "league18324Games": 26 },
+      "reason": "Health-related stand-in"
+    },
+    {
+      "changeType": "player-stand-in",
+      "effective": "pre-event",
+      "team": "Nigma Galaxy",
+      "position": 1,
+      "out": { "account_id": 105248644, "name": "Miracle-", "league18324Games": 0 },
+      "in": { "account_id": 206642367, "name": "Ghost", "league18324Games": 24 },
+      "reason": "Ghost was the final active TI14 Position 1"
+    }
+  ],
+  "teams": [
+    {
+      "name": "Team Liquid",
+      "team_id": 2163,
+      "players": [
+        { "account_id": 152962063, "name": "miCKe", "position": 1, "actualGames": 16 },
+        { "account_id": 201358612, "name": "Nisha", "position": 2, "actualGames": 16 },
+        { "account_id": 126212866, "name": "SaberLight", "position": 3, "actualGames": 16 },
+        { "account_id": 77490514, "name": "Boxi", "position": 4, "actualGames": 16 },
+        { "account_id": 54580962, "name": "Insania", "position": 5, "actualGames": 16 }
+      ]
+    },
+    {
+      "name": "PVISION",
+      "team_id": 9572001,
+      "players": [
+        { "account_id": 1044002267, "name": "Satanic", "position": 1, "actualGames": 23 },
+        { "account_id": 106573901, "name": "No[o]ne-", "position": 2, "actualGames": 23 },
+        { "account_id": 56351509, "name": "DM", "position": 3, "actualGames": 23 },
+        { "account_id": 164199202, "name": "9Class", "position": 4, "actualGames": 23 },
+        { "account_id": 73401082, "name": "Dukalis", "position": 5, "actualGames": 23 }
+      ]
+    },
+    {
+      "name": "BB Team",
+      "team_id": 8255888,
+      "players": [
+        { "account_id": 331855530, "name": "Pure", "position": 1, "actualGames": 23 },
+        { "account_id": 480412663, "name": "gpk~", "position": 2, "actualGames": 23 },
+        { "account_id": 165564598, "name": "MieRo", "position": 3, "actualGames": 23 },
+        { "account_id": 317880638, "name": "Save-", "position": 4, "actualGames": 23 },
+        { "account_id": 196878136, "name": "Kataomi", "position": 5, "actualGames": 23 }
+      ]
+    },
+    {
+      "name": "Team Tidebound",
+      "team_id": 9640842,
+      "players": [
+        { "account_id": 320252024, "name": "shiro", "position": 1, "actualGames": 16 },
+        { "account_id": 173978074, "name": "NothingToSay", "position": 2, "actualGames": 16 },
+        { "account_id": 118134220, "name": "Bach", "position": 3, "actualGames": 16 },
+        { "account_id": 150961567, "name": "planet", "position": 4, "actualGames": 16 },
+        { "account_id": 111114687, "name": "y`", "position": 5, "actualGames": 16 }
+      ]
+    },
+    {
+      "name": "Team Spirit",
+      "team_id": 7119388,
+      "players": [
+        { "account_id": 321580662, "name": "Yatoro", "position": 1, "actualGames": 14 },
+        { "account_id": 106305042, "name": "Larl", "position": 2, "actualGames": 14 },
+        { "account_id": 302214028, "name": "Collapse", "position": 3, "actualGames": 14 },
+        { "account_id": 847565596, "name": "rue", "position": 4, "actualGames": 14 },
+        { "account_id": 113331514, "name": "Miposhka", "position": 5, "actualGames": 14 }
+      ]
+    },
+    {
+      "name": "Team Falcons",
+      "team_id": 9247354,
+      "players": [
+        { "account_id": 100058342, "name": "skiter", "position": 1, "actualGames": 29 },
+        { "account_id": 898455820, "name": "Malr1ne", "position": 2, "actualGames": 29 },
+        { "account_id": 183719386, "name": "ATF", "position": 3, "actualGames": 29 },
+        { "account_id": 25907144, "name": "Cr1t-", "position": 4, "actualGames": 29 },
+        { "account_id": 10366616, "name": "Sneyking", "position": 5, "actualGames": 29 }
+      ]
+    },
+    {
+      "name": "Tundra Esports",
+      "team_id": 8291895,
+      "players": [
+        { "account_id": 127617979, "name": "Crystallis", "position": 1, "actualGames": 21 },
+        { "account_id": 93618577, "name": "bzm", "position": 2, "actualGames": 21 },
+        { "account_id": 86698277, "name": "33", "position": 3, "actualGames": 21 },
+        { "account_id": 103735745, "name": "Saksa", "position": 4, "actualGames": 21 },
+        { "account_id": 140288368, "name": "Tobi", "position": 5, "actualGames": 21 }
+      ]
+    },
+    {
+      "name": "Yakutou Brothers",
+      "team_id": 9351740,
+      "players": [
+        { "account_id": 168028715, "name": "flyfly", "position": 1, "actualGames": 16 },
+        { "account_id": 202217968, "name": "Emo", "position": 2, "actualGames": 16 },
+        { "account_id": 139031324, "name": "Beyond", "position": 3, "actualGames": 16 },
+        { "account_id": 207829314, "name": "BoBoKa", "position": 4, "actualGames": 16 },
+        { "account_id": 101259972, "name": "Oli", "position": 5, "actualGames": 16 }
+      ]
+    },
+    {
+      "name": "Natus Vincere",
+      "team_id": 36,
+      "players": [
+        { "account_id": 957204049, "name": "gotthejuice", "position": 1, "actualGames": 13 },
+        { "account_id": 185590374, "name": "Niku", "position": 2, "actualGames": 13 },
+        { "account_id": 835864135, "name": "pma", "position": 3, "actualGames": 13 },
+        { "account_id": 111030315, "name": "Zayac", "position": 4, "actualGames": 13 },
+        { "account_id": 130991304, "name": "Riddys", "position": 5, "actualGames": 13 }
+      ]
+    },
+    {
+      "name": "Nigma Galaxy",
+      "team_id": 7554697,
+      "players": [
+        { "account_id": 206642367, "name": "Ghost", "position": 1, "actualGames": 24 },
+        { "account_id": 111620041, "name": "SumaiL", "position": 2, "actualGames": 24 },
+        { "account_id": 140297552, "name": "No!ob", "position": 3, "actualGames": 24 },
+        { "account_id": 152168157, "name": "OmaR", "position": 4, "actualGames": 24 },
+        { "account_id": 101356886, "name": "GH", "position": 5, "actualGames": 24 }
+      ]
+    },
+    {
+      "name": "Aurora Gaming",
+      "team_id": 9467224,
+      "players": [
+        { "account_id": 124801257, "name": "Nightfall", "position": 1, "actualGames": 13 },
+        { "account_id": 858106446, "name": "kiyotaka", "position": 2, "actualGames": 13 },
+        { "account_id": 431770905, "name": "TORONTOTOKYO", "position": 3, "actualGames": 13 },
+        { "account_id": 256156323, "name": "Mira", "position": 4, "actualGames": 13 },
+        { "account_id": 108958769, "name": "panto", "position": 5, "actualGames": 13 }
+      ]
+    },
+    {
+      "name": "Xtreme Gaming",
+      "team_id": 8261500,
+      "players": [
+        { "account_id": 898754153, "name": "Ame", "position": 1, "actualGames": 26 },
+        { "account_id": 137129583, "name": "Xm", "position": 2, "actualGames": 26 },
+        { "account_id": 129958758, "name": "Xxs", "position": 3, "actualGames": 26 },
+        { "account_id": 157475523, "name": "XinQ", "position": 4, "actualGames": 26 },
+        { "account_id": 94296097, "name": "xNova", "position": 5, "actualGames": 26 }
+      ]
+    },
+    {
+      "name": "Team Nemesis",
+      "team_id": 9691969,
+      "players": [
+        { "account_id": 330534326, "name": "Akashi", "position": 1, "actualGames": 10 },
+        { "account_id": 104512126, "name": "Mac", "position": 2, "actualGames": 10 },
+        { "account_id": 132309493, "name": "Raven", "position": 3, "actualGames": 10 },
+        { "account_id": 219755398, "name": "Jing", "position": 4, "actualGames": 10 },
+        { "account_id": 100598959, "name": "Erice", "position": 5, "actualGames": 10 }
+      ]
+    },
+    {
+      "name": "BOOM Esports",
+      "team_id": 7732977,
+      "players": [
+        { "account_id": 392565237, "name": "JaCkky", "position": 1, "actualGames": 12 },
+        { "account_id": 164532005, "name": "Armel", "position": 2, "actualGames": 12 },
+        { "account_id": 100471531, "name": "Jabz", "position": 3, "actualGames": 12 },
+        { "account_id": 155494381, "name": "TIMS", "position": 4, "actualGames": 12 },
+        { "account_id": 148526973, "name": "Jaunuel", "position": 5, "actualGames": 12 }
+      ]
+    },
+    {
+      "name": "Wildcard",
+      "team_id": 9651185,
+      "players": [
+        { "account_id": 81475303, "name": "Yamsun", "position": 1, "actualGames": 13 },
+        { "account_id": 154974246, "name": "RCY", "position": 2, "actualGames": 13 },
+        { "account_id": 160119017, "name": "Fayde", "position": 3, "actualGames": 13 },
+        { "account_id": 90423751, "name": "Bignum", "position": 4, "actualGames": 13 },
+        { "account_id": 191362875, "name": "Speeed", "position": 5, "actualGames": 13 }
+      ]
+    },
+    {
+      "name": "HEROIC",
+      "team_id": 9303484,
+      "players": [
+        { "account_id": 177203952, "name": "Yuma", "position": 1, "actualGames": 19 },
+        { "account_id": 131303632, "name": "4nalog", "position": 2, "actualGames": 19 },
+        { "account_id": 292921272, "name": "Wisper", "position": 3, "actualGames": 19 },
+        { "account_id": 157989498, "name": "Scofield", "position": 4, "actualGames": 19 },
+        { "account_id": 81306398, "name": "KJ", "position": 5, "actualGames": 19 }
+      ]
+    }
+  ]
+}
