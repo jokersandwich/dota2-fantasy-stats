@@ -60,6 +60,16 @@ function createColumns(translation: Translation): Column[] {
 }
 
 const teamLogoUrls: Record<number, string> = {
+  36: 'https://steamcdn-a.akamaihd.net/apps/dota2/images/team_logos/36.png',
+  7554697: 'https://cdn.steamusercontent.com/ugc/1827894588975105240/421C0D8318D71D5DD31FD08A7933AB622AE26590/',
+  7732977: 'https://cdn.steamusercontent.com/ugc/2916748038054832/52C6F6228C73CDB6855C04B64FF21D061D2C15A9/',
+  8291895: 'https://cdn.steamusercontent.com/ugc/2031716132171967904/07B168B8063D9B22CDAD53AB421ECAF3D4B2E07E/',
+  9303484: 'https://cdn.steamusercontent.com/ugc/2471984170520125054/B066431AF4D322D300DD5180CEC8F6BA0E85A7F5/',
+  9351740: 'https://cdn.steamusercontent.com/ugc/18179376480673513766/A3EDE6125A651D94E1DAAF0F3361ACEB9FB858C4/',
+  9572001: 'https://cdn.steamusercontent.com/ugc/10380389074903512947/5D074799695A862D17D4205285315FE20399B28D/',
+  9640842: 'https://cdn.steamusercontent.com/ugc/12094940740270677482/9AD05F0A80A562EE4A833375BF1783B52B3D4C30/',
+  9651185: 'https://cdn.steamusercontent.com/ugc/14173210407158797/EAFCC9BE14FBFC9DC1EA3D03D62772D38F7DF15F/',
+  9691969: 'https://cdn.steamusercontent.com/ugc/16578975333650734744/040492179D9E0E83DA0559848D88CFC17A1EFCAC/',
   9467224: 'https://cdn.steamusercontent.com/ugc/13052583756685508/22B0338D7E09FB2F021E5DB5BBEFFD170D5E5E1A/',
   8255888: 'https://cdn.steamusercontent.com/ugc/9995426432403529725/51E13136D4CCC8C7D8062861541A1D13B8ED87E0/',
   10182357: 'https://cdn.steamusercontent.com/ugc/10678669599334676082/E48827F4A163D4D02F817EA3C32166D5F1D5FC98/',
@@ -158,8 +168,11 @@ function App() {
   const [performanceMode, setPerformanceMode] = useState<PerformanceMode>('average')
   const [sortKey, setSortKey] = useState<SortKey>('gpm')
   const [sortDirection, setSortDirection] = useState<SortDirection>('desc')
+  const [datasetMenuOpen, setDatasetMenuOpen] = useState(false)
   const [tableScrollEdges, setTableScrollEdges] = useState({ canScrollLeft: false, canScrollRight: true })
   const tableScrollRef = useRef<HTMLDivElement>(null)
+  const datasetMenuRef = useRef<HTMLDivElement>(null)
+  const datasetTriggerRef = useRef<HTMLButtonElement>(null)
 
   const activeDatasetName = datasetDisplayName(translation.datasetNames, activeDatasetId)
   const failedDatasetName = loadError
@@ -167,6 +180,32 @@ function App() {
     : null
 
   const columns = useMemo(() => createColumns(translation), [translation])
+
+  useEffect(() => {
+    if (!datasetMenuOpen) return
+
+    const closeOnOutsidePointer = (event: PointerEvent) => {
+      if (!datasetMenuRef.current?.contains(event.target as Node)) {
+        setDatasetMenuOpen(false)
+      }
+    }
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key !== 'Escape') return
+      setDatasetMenuOpen(false)
+      datasetTriggerRef.current?.focus()
+    }
+
+    document.addEventListener('pointerdown', closeOnOutsidePointer)
+    document.addEventListener('keydown', closeOnEscape)
+    return () => {
+      document.removeEventListener('pointerdown', closeOnOutsidePointer)
+      document.removeEventListener('keydown', closeOnEscape)
+    }
+  }, [datasetMenuOpen])
+
+  useEffect(() => {
+    setDatasetMenuOpen(false)
+  }, [activeDatasetId])
 
   const visibleColumns = useMemo(
     () => columns.filter(
@@ -309,72 +348,90 @@ function App() {
         </button>
       </header>
 
-      <section
-        className={`dataset-bar ${loadError ? 'has-error' : ''}`}
-        aria-label={translation.datasetSelectorAria}
-        data-active-dataset={activeDatasetId}
-      >
-        <div className="dataset-bar-main">
-          <div className="dataset-context">
-            <span className="dataset-signal" aria-hidden="true" />
-            <div>
-              <p className="section-label">{translation.datasetLabel}</p>
-              <span>{activeDatasetName}</span>
-            </div>
-          </div>
-          <div
-            className="dataset-options"
-            role="group"
-            aria-label={translation.datasetSelectorAria}
-            aria-busy={pendingDatasetId !== null}
-          >
-            {DATASETS.map((dataset) => {
-              const name = datasetDisplayName(translation.datasetNames, dataset.id)
-              const active = dataset.id === activeDatasetId
-              const pending = dataset.id === pendingDatasetId
-              return (
-                <button
-                  type="button"
-                  key={dataset.id}
-                  className={`${active ? 'active' : ''} ${pending ? 'loading' : ''}`}
-                  onClick={() => void selectDataset(dataset.id)}
-                  aria-pressed={active}
-                  aria-label={pending ? datasetText(translation.datasetCopy.loading, name) : name}
-                  title={pending ? datasetText(translation.datasetCopy.loading, name) : name}
-                  data-dataset-id={dataset.id}
-                >
-                  <span>{name}</span>
-                  {pending ? <span className="dataset-loading-dot" aria-hidden="true" /> : null}
-                </button>
-              )
-            })}
-          </div>
-        </div>
-        {loadError && failedDatasetName ? (
-          <div className="dataset-error" role="alert">
-            <span>{datasetText(translation.datasetCopy.loadError, failedDatasetName)}</span>
-            <button type="button" onClick={() => void retryDataset()}>
-              {translation.datasetCopy.retry}
-            </button>
-          </div>
-        ) : null}
-      </section>
-
       <section className="hero">
         <div>
           <p className="eyebrow">{translation.eyebrow}</p>
-          <h1>
-            {translation.heroTitle}{' '}
-            <span>{datasetText(translation.datasetCopy.heroSubtitle, activeDatasetName)}</span>
-          </h1>
+          <h1>{translation.heroTitle}</h1>
           <p className="lede">
             {datasetText(translation.datasetCopy.heroDescription, activeDatasetName)}
           </p>
         </div>
-        <dl className="hero-stats">
-          <div><dt>{translation.matches}</dt><dd>{payload.source.matchesProcessed}<span>/{payload.source.matchesProcessed}</span></dd></div>
-          <div><dt>{translation.roleUnits}</dt><dd>{payload.roleUnits.length}</dd></div>
-        </dl>
+        <div className="hero-data-controls">
+          <div className="hero-stats">
+            <div className="hero-stat-card hero-match-card">
+              <span className="hero-stat-label">{translation.matches}</span>
+              <span className="hero-stat-value">
+                {payload.source.matchesProcessed}
+                <small>/{payload.source.matchesProcessed}</small>
+              </span>
+            </div>
+            <div
+              className="hero-dataset-card"
+              data-active-dataset={activeDatasetId}
+              ref={datasetMenuRef}
+            >
+              <button
+                type="button"
+                ref={datasetTriggerRef}
+                className="hero-dataset-trigger"
+                onClick={() => setDatasetMenuOpen((open) => !open)}
+                aria-label={translation.datasetSelectorAria}
+                aria-haspopup="listbox"
+                aria-expanded={datasetMenuOpen}
+                aria-controls="hero-dataset-menu"
+                aria-busy={pendingDatasetId !== null}
+              >
+                <span className="hero-stat-label">{translation.datasetLabel}</span>
+                <span className="hero-stat-value hero-dataset-current">
+                  <span>{activeDatasetName}</span>
+                  {pendingDatasetId ? <span className="dataset-loading-dot" aria-hidden="true" /> : null}
+                  <span className="hero-dataset-caret" aria-hidden="true" />
+                </span>
+              </button>
+              {datasetMenuOpen ? (
+                <div className="hero-dataset-menu" id="hero-dataset-menu" role="listbox">
+                  <button
+                    type="button"
+                    role="option"
+                    aria-selected="false"
+                    aria-disabled="true"
+                    disabled
+                  >
+                    <span>{translation.datasetCopy.ti15Upcoming}</span>
+                  </button>
+                  {DATASETS.map((dataset) => {
+                    const name = datasetDisplayName(translation.datasetNames, dataset.id)
+                    const active = dataset.id === activeDatasetId
+                    return (
+                      <button
+                        type="button"
+                        key={dataset.id}
+                        role="option"
+                        aria-selected={active}
+                        className={active ? 'active' : ''}
+                        onClick={() => {
+                          setDatasetMenuOpen(false)
+                          void selectDataset(dataset.id)
+                        }}
+                      >
+                        <span>{name}</span>
+                        {active ? <span aria-hidden="true">✓</span> : null}
+                      </button>
+                    )
+                  })}
+                </div>
+              ) : null}
+            </div>
+          </div>
+          {loadError && failedDatasetName ? (
+            <div className="hero-dataset-error" role="alert">
+              <span>{datasetText(translation.datasetCopy.loadError, failedDatasetName)}</span>
+              <button type="button" onClick={() => void retryDataset()}>
+                {translation.datasetCopy.retry}
+              </button>
+            </div>
+          ) : null}
+        </div>
       </section>
 
       <section className="data-panel" aria-labelledby="player-table-title">

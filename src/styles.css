@@ -53,37 +53,36 @@ body::before {
 .language-switch span { color: var(--accent); font-family: var(--font-ui); font-size: 0.7rem; font-weight: 800; }
 .language-switch:hover { border-color: #5b6572; background: #15191f; color: #fff; }
 
-.dataset-bar { margin-top: 14px; overflow: hidden; border: 1px solid var(--line); background: rgba(13, 16, 20, 0.88); }
-.dataset-bar-main { display: flex; min-height: 58px; align-items: center; justify-content: space-between; gap: 28px; padding: 9px 12px 9px 16px; }
-.dataset-context { display: flex; min-width: 150px; align-items: center; gap: 12px; }
-.dataset-signal { width: 3px; height: 30px; flex: 0 0 3px; background: var(--accent); box-shadow: 0 0 18px rgba(240, 90, 67, 0.34); }
-.dataset-context > div { display: flex; flex-direction: column; gap: 4px; }
-.dataset-context > div > span { color: #dce0e6; font-family: var(--font-data); font-size: 0.72rem; font-weight: 650; letter-spacing: 0.02em; }
-.dataset-options { display: flex; min-width: 0; justify-content: flex-end; gap: 5px; overflow-x: auto; scrollbar-width: thin; }
-.dataset-options button { position: relative; display: inline-flex; min-width: 108px; min-height: 36px; flex: 0 0 auto; align-items: center; justify-content: center; gap: 9px; padding: 7px 16px; border: 1px solid var(--line); background: #0a0d11; color: var(--muted-bright); cursor: pointer; font-family: var(--font-display); font-size: 0.76rem; font-weight: 800; letter-spacing: 0.055em; transition: border-color 140ms ease, background 140ms ease, color 140ms ease; }
-.dataset-options button::before { content: ""; position: absolute; inset: -1px -1px auto; height: 2px; background: transparent; }
-.dataset-options button:hover { border-color: #596370; background: #15191f; color: #fff; }
-.dataset-options button.active { border-color: #704239; background: var(--accent-soft); color: #fff; }
-.dataset-options button.active::before { background: var(--accent); }
-.dataset-options button.loading { color: #f0b0a4; }
-.dataset-loading-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--accent); animation: dataset-pulse 900ms ease-in-out infinite alternate; }
-.dataset-error { display: flex; align-items: center; justify-content: space-between; gap: 18px; padding: 10px 14px 10px 18px; border-top: 1px solid rgba(240, 90, 67, 0.28); background: rgba(240, 90, 67, 0.075); color: #dca59c; font-size: 0.74rem; line-height: 1.4; }
-.dataset-error button { flex: 0 0 auto; padding: 5px 11px; border: 1px solid rgba(240, 90, 67, 0.52); background: transparent; color: #ff9b89; cursor: pointer; font-family: var(--font-display); font-size: 0.7rem; font-weight: 800; letter-spacing: 0.05em; }
-.dataset-error button:hover { background: var(--accent); color: #fff; }
-.dataset-bar + .hero { padding-top: 38px; }
-
 .hero { display: grid; grid-template-columns: minmax(0, 1.38fr) minmax(420px, 0.62fr); gap: 56px; align-items: end; padding: 52px 0 38px; }
 .eyebrow, .section-label, .dialog-kicker { margin: 0; color: var(--accent); font-family: var(--font-display); font-size: 0.71rem; font-weight: 850; letter-spacing: 0.17em; }
 .hero h1 { max-width: 920px; margin: 11px 0 0; font-family: var(--font-display); font-size: clamp(2.5rem, 4.35vw, 4.8rem); font-weight: 750; line-height: 0.98; letter-spacing: -0.035em; }
-.hero h1 span { display: block; color: #7e8794; font-weight: 420; }
-.lede { max-width: 680px; margin: 18px 0 0; color: var(--muted-bright); font-size: 0.93rem; line-height: 1.55; }
-.hero-stats { display: grid; width: min(100%, 320px); grid-template-columns: repeat(2, minmax(0, 1fr)); justify-self: end; margin: 0; border: 1px solid var(--line); background: rgba(16, 19, 24, 0.74); }
-.hero-stats > div { min-width: 0; padding: 16px 17px; border-left: 1px solid var(--line); }
+.lede { max-width: 720px; margin: 19px 0 0; color: var(--muted-bright); font-size: clamp(0.84rem, calc(0.64rem + 0.45vw), 1.02rem); line-height: 1.62; letter-spacing: 0.006em; }
+.hero-data-controls { width: min(100%, 320px); justify-self: end; }
+.hero-stats { display: grid; width: 100%; grid-template-columns: repeat(2, minmax(0, 1fr)); margin: 0; border: 1px solid var(--line); background: rgba(16, 19, 24, 0.74); }
+.hero-stats > div { min-width: 0; border-left: 1px solid var(--line); }
 .hero-stats > div:first-child { border-left: 0; }
-.hero-stats dt { margin-bottom: 8px; color: var(--muted); font-family: var(--font-display); font-size: 0.68rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; }
-.hero-stats dd { margin: 0; font-family: var(--font-data); font-size: 1.28rem; font-variant-numeric: tabular-nums; font-weight: 700; letter-spacing: -0.04em; }
-.hero-stats dd span { color: #68707b; font-size: 0.8rem; }
-.hero-stats .text-value { color: var(--green); font-family: var(--font-display); font-size: 0.78rem; line-height: 1.7; letter-spacing: 0.08em; white-space: nowrap; }
+.hero-stat-card, .hero-dataset-trigger { display: flex; min-height: 83px; flex-direction: column; align-items: stretch; justify-content: center; padding: 16px 17px; }
+.hero-stat-value { display: flex; min-width: 0; min-height: 24px; align-items: center; color: #eef0f4; font-family: var(--font-data); font-size: 1.05rem; font-variant-numeric: tabular-nums; font-weight: 700; line-height: 1; letter-spacing: -0.04em; }
+.hero-stat-value small { color: #68707b; font-size: 0.7rem; }
+.hero-dataset-card { position: relative; padding: 0 !important; }
+.hero-dataset-trigger { width: 100%; height: 100%; border: 0; background: transparent; color: inherit; cursor: pointer; text-align: left; }
+.hero-dataset-trigger:hover, .hero-dataset-trigger[aria-expanded="true"] { background: rgba(255, 255, 255, 0.025); }
+.hero-stat-label { margin-bottom: 8px; color: var(--muted); font-family: var(--font-display); font-size: 0.68rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; }
+.hero-dataset-current { gap: 8px; }
+.hero-dataset-current > span:first-child { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.hero-dataset-caret { width: 0; height: 0; flex: 0 0 auto; margin-left: auto; border-top: 6px solid #d9dde3; border-right: 5px solid transparent; border-left: 5px solid transparent; transition: transform 140ms ease, border-color 140ms ease; }
+.hero-dataset-trigger[aria-expanded="true"] .hero-dataset-caret { border-top-color: var(--accent); transform: rotate(180deg); }
+.hero-dataset-menu { position: absolute; top: 100%; left: -1px; z-index: 20; width: calc(100% + 2px); border: 1px solid var(--line-strong); background: #0f1217; box-shadow: 0 14px 28px rgba(0, 0, 0, 0.42); }
+.hero-dataset-menu button { display: flex; width: 100%; min-height: 42px; align-items: center; justify-content: space-between; gap: 12px; padding: 10px 16px; border: 0; border-top: 1px solid var(--line); background: transparent; color: var(--muted-bright); cursor: pointer; font-family: var(--font-data); font-size: 0.82rem; font-weight: 700; text-align: left; }
+.hero-dataset-menu button:first-child { border-top: 0; }
+.hero-dataset-menu button:hover, .hero-dataset-menu button:focus-visible { background: #171b21; color: #fff; }
+.hero-dataset-menu button.active { background: var(--accent-soft); color: #fff; }
+.hero-dataset-menu button.active span:last-child { color: var(--accent); }
+.hero-dataset-menu button:disabled { background: #0c0f13; color: #59616c; cursor: not-allowed; }
+.dataset-loading-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--accent); animation: dataset-pulse 900ms ease-in-out infinite alternate; }
+.hero-dataset-error { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-top: -1px; padding: 9px 11px 9px 14px; border: 1px solid rgba(240, 90, 67, 0.3); background: rgba(240, 90, 67, 0.075); color: #dca59c; font-size: 0.7rem; line-height: 1.4; }
+.hero-dataset-error button { flex: 0 0 auto; padding: 5px 10px; border: 1px solid rgba(240, 90, 67, 0.52); background: transparent; color: #ff9b89; cursor: pointer; font-family: var(--font-display); font-size: 0.68rem; font-weight: 800; letter-spacing: 0.05em; }
+.hero-dataset-error button:hover { background: var(--accent); color: #fff; }
 
 .data-panel { overflow: hidden; border: 1px solid var(--line); background: rgba(14, 17, 22, 0.95); box-shadow: 0 18px 56px rgba(0, 0, 0, 0.22); }
 .table-toolbar { display: flex; align-items: end; padding: 17px 22px; border-bottom: 1px solid var(--line); background: #11151a; }
@@ -217,7 +216,7 @@ body::before {
 
 @media (max-width: 1100px) {
   .hero { grid-template-columns: 1fr; gap: 24px; }
-  .hero-stats { justify-self: start; }
+  .hero-data-controls { justify-self: start; }
 }
 
 @media (max-width: 680px) {
@@ -227,20 +226,13 @@ body::before {
   .brand-mark { width: 38px; height: 38px; }
   .brand-copy p { max-width: 230px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: 0.68rem; letter-spacing: 0.07em; }
   .language-switch { min-width: 54px; min-height: 32px; padding-inline: 9px; }
-  .dataset-bar { width: calc(100% + 24px); margin-inline: -12px; border-inline: 0; }
-  .dataset-bar-main { min-height: 56px; gap: 12px; padding: 8px 12px; }
-  .dataset-context { min-width: 100px; gap: 9px; }
-  .dataset-signal { height: 27px; }
-  .dataset-context > div > span { font-size: 0.66rem; }
-  .dataset-options { justify-content: flex-start; padding-bottom: 1px; }
-  .dataset-options button { min-width: 94px; min-height: 34px; padding-inline: 12px; }
-  .dataset-error { align-items: flex-start; padding-inline: 12px; }
-  .dataset-bar + .hero { padding-top: 27px; }
   .hero { gap: 20px; padding: 31px 0 26px; }
   .hero h1 { font-size: clamp(2.2rem, 11.5vw, 3.25rem); line-height: 1; }
-  .lede { margin-top: 15px; font-size: 0.86rem; line-height: 1.52; }
-  .hero-stats { grid-template-columns: 1fr 1fr; }
-  .hero-stats > div { padding: 14px 16px; }
+  .lede { margin-top: 16px; line-height: 1.58; }
+  .hero-data-controls { width: 100%; }
+  .hero-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .hero-stat-card, .hero-dataset-trigger { min-height: 77px; padding: 14px 16px; }
+  .hero-dataset-error { align-items: flex-start; padding-inline: 12px; }
   .table-toolbar { align-items: flex-end; padding: 15px 14px; }
   .toolbar-controls { width: 100%; gap: 14px; }
   .toolbar-controls > div { min-width: 0; }
