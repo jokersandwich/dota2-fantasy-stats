@@ -1,9 +1,11 @@
-# TI15 Fantasy — EWC 2026 Player Stats
+# Dota2 Fantasy Stats
 
-A React + TypeScript + Vite frontend backed by a build-time Python data
-pipeline. The pipeline uses EWC 2026 Dota 2 matches from OpenDota league
+A React + TypeScript + Vite frontend backed by build-time Python data
+pipelines for Dota 2 Fantasy analysis. The current published dataset is TI15
+Fantasy player performance based on EWC 2026 matches from OpenDota league
 `19785`, while including only players listed in the independent TI15 roster
-configuration.
+configuration. The project name is tournament-neutral so additional TI14 and
+future TI15 datasets can be added without renaming the application again.
 
 https://ti15-ewc-stats.netlify.app/
 

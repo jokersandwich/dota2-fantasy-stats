@@ -6,10 +6,10 @@ export type Language = 'zh-CN' | 'en'
 export const translations = {
   'zh-CN': {
     meta: {
-      title: 'TI15 梦幻挑战 — EWC 2026 选手数据',
-      description: '基于 EWC 2026 Dota 2 比赛数据的 TI15 梦幻挑战排行榜。',
+      title: 'Dota2 Fantasy Stats — TI15 / EWC 2026',
+      description: 'Dota2 Fantasy Stats：基于 EWC 2026 Dota 2 比赛数据的 TI15 梦幻挑战排行榜。',
     },
-    brandTitle: 'TI15 / 梦幻挑战数据',
+    brandTitle: 'Dota2 Fantasy Stats',
     leagueLabel: 'OpenDota 联赛',
     eyebrow: '选手表现指数',
     heroTitle: 'TI15 梦幻挑战',
@@ -84,10 +84,10 @@ export const translations = {
   },
   en: {
     meta: {
-      title: 'TI15 Fantasy — EWC 2026 Player Stats',
-      description: 'TI15 Fantasy rankings based on EWC 2026 Dota 2 match data.',
+      title: 'Dota2 Fantasy Stats — TI15 / EWC 2026',
+      description: 'Dota2 Fantasy Stats: TI15 Fantasy rankings based on EWC 2026 Dota 2 match data.',
     },
-    brandTitle: 'TI15 / FANTASY DATA',
+    brandTitle: 'Dota2 Fantasy Stats',
     leagueLabel: 'OpenDota League',
     eyebrow: 'PLAYER PERFORMANCE INDEX',
     heroTitle: 'TI15 Fantasy',

@@ -48,7 +48,7 @@ def api_url(base: str, route: str, api_key: str | None) -> str:
 
 
 def get_json(url: str, retries: int, timeout: float) -> Any:
-    request = urllib.request.Request(url, headers={"User-Agent": "ti15-ewc-stats/0.2"})
+    request = urllib.request.Request(url, headers={"User-Agent": "dota2-fantasy-stats/0.2"})
     for attempt in range(retries + 1):
         try:
             with urllib.request.urlopen(request, timeout=timeout) as response:
