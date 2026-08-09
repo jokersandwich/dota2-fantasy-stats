@@ -1,85 +1,23 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
-import roleRankingsData from '../data/processed/role-fantasy-rankings.json'
+import defaultRoleRankingsData from '../data/processed/role-fantasy-rankings.json'
+import {
+  DATASETS,
+  datasetDisplayName,
+  type MetricKey,
+  type Role,
+  type RoleMetric,
+  type RoleRankingsPayload,
+  type RoleUnit,
+} from './data/datasets'
+import { useDataset } from './hooks/useDataset'
 import { useLanguage } from './i18n/useLanguage'
 import type { Translation } from './i18n/translations'
 
 type PerformanceMode = 'best' | 'average'
-type Role = 'core' | 'mid' | 'support'
 type RoleFilter = 'all' | Role
 type SortDirection = 'asc' | 'desc'
 
-type MetricKey =
-  | 'kills'
-  | 'deaths'
-  | 'lastHitsAndDenies'
-  | 'gpm'
-  | 'madstones'
-  | 'towerKills'
-  | 'observerWards'
-  | 'campsStacked'
-  | 'runes'
-  | 'watchers'
-  | 'lotuses'
-  | 'roshanKills'
-  | 'teamfightParticipation'
-  | 'stunDuration'
-  | 'tormentorKills'
-  | 'courierKills'
-  | 'firstBlood'
-  | 'smokes'
-
 type SortKey = 'teamName' | 'members' | 'role' | 'gamesPlayedTogether' | MetricKey
-
-interface RoleMember {
-  playerAccountId: number
-  playerName: string
-  position: 1 | 2 | 3 | 4 | 5
-}
-
-interface BestMetricMember {
-  playerAccountId: number
-  playerName: string
-  rawValue: number | null
-  fantasyScore: number | null
-}
-
-interface BestMetricValue {
-  matchId: number
-  members: BestMetricMember[]
-  rawValue: number
-  fantasyScore: number
-}
-
-interface AverageMetricValue {
-  rawValue: number
-  fantasyScore: number
-  validGames: number
-}
-
-interface RoleMetric {
-  best: BestMetricValue | null
-  average: AverageMetricValue | null
-}
-
-interface RoleUnit {
-  teamId: number | null
-  teamName: string
-  role: Role
-  members: RoleMember[]
-  gamesPlayedTogether: number
-  metrics: Record<MetricKey, RoleMetric>
-}
-
-interface RoleRankingsPayload {
-  schemaVersion: number
-  generatedAt: string
-  source: {
-    leagueId: number
-    matchesProcessed: number
-    roleUnits: number
-  }
-  roleUnits: RoleUnit[]
-}
 
 interface Column {
   key: SortKey
@@ -88,8 +26,6 @@ interface Column {
   metric?: MetricKey
   align?: 'left' | 'right' | 'center'
 }
-
-const payload = roleRankingsData as unknown as RoleRankingsPayload
 
 function createColumns(translation: Translation): Column[] {
   return [
@@ -179,6 +115,10 @@ function formatFantasyScore(value: number, scoreSuffix: string) {
   return `${formatNumber(value, 2)} ${scoreSuffix}`
 }
 
+function datasetText(template: string, datasetName: string) {
+  return template.replaceAll('{dataset}', datasetName)
+}
+
 function MetricCell({
   metric,
   metricKey,
@@ -206,12 +146,25 @@ function MetricCell({
 
 function App() {
   const { language, toggleLanguage, translation } = useLanguage()
+  const {
+    activeDatasetId,
+    payload,
+    pendingDatasetId,
+    loadError,
+    selectDataset,
+    retryDataset,
+  } = useDataset(defaultRoleRankingsData as unknown as RoleRankingsPayload)
   const [roleFilter, setRoleFilter] = useState<RoleFilter>('all')
   const [performanceMode, setPerformanceMode] = useState<PerformanceMode>('average')
   const [sortKey, setSortKey] = useState<SortKey>('gpm')
   const [sortDirection, setSortDirection] = useState<SortDirection>('desc')
   const [tableScrollEdges, setTableScrollEdges] = useState({ canScrollLeft: false, canScrollRight: true })
   const tableScrollRef = useRef<HTMLDivElement>(null)
+
+  const activeDatasetName = datasetDisplayName(translation.datasetNames, activeDatasetId)
+  const failedDatasetName = loadError
+    ? datasetDisplayName(translation.datasetNames, loadError.datasetId)
+    : null
 
   const columns = useMemo(() => createColumns(translation), [translation])
 
@@ -224,7 +177,7 @@ function App() {
           return metric.best !== null || metric.average !== null
         }),
     ),
-    [columns],
+    [columns, payload],
   )
 
   const metricColumns = useMemo(
@@ -266,7 +219,24 @@ function App() {
       window.cancelAnimationFrame(animationFrame)
       resizeObserver.disconnect()
     }
-  }, [language, updateTableScrollEdges, visibleColumns.length])
+  }, [activeDatasetId, language, updateTableScrollEdges, visibleColumns.length])
+
+  useEffect(() => {
+    const scrollContainer = tableScrollRef.current
+    if (!scrollContainer) return
+    scrollContainer.scrollLeft = 0
+    updateTableScrollEdges()
+  }, [activeDatasetId, updateTableScrollEdges])
+
+  useEffect(() => {
+    document.title = datasetText(translation.datasetCopy.metaTitle, activeDatasetName)
+    document
+      .querySelector('meta[name="description"]')
+      ?.setAttribute(
+        'content',
+        datasetText(translation.datasetCopy.metaDescription, activeDatasetName),
+      )
+  }, [activeDatasetName, translation])
 
   const roleFilters: { key: RoleFilter; label: string }[] = [
     { key: 'all', label: translation.roleFilters.all },
@@ -298,7 +268,7 @@ function App() {
         const teamComparison = left.teamName.localeCompare(right.teamName, 'en', { sensitivity: 'base' })
         return teamComparison || roleOrder[left.role] - roleOrder[right.role]
       })
-  }, [performanceMode, roleFilter, sortDirection, sortKey])
+  }, [payload, performanceMode, roleFilter, sortDirection, sortKey])
 
   function handleSort(key: SortKey) {
     if (sortKey === key) {
@@ -325,7 +295,7 @@ function App() {
         <div className="brand-mark" aria-hidden="true">TI</div>
         <div className="brand-copy">
           <p>{translation.brandTitle}</p>
-          <span>{translation.leagueLabel} 19785</span>
+          <span>{translation.leagueLabel} {payload.source.leagueId}</span>
         </div>
         <button
           type="button"
@@ -339,11 +309,67 @@ function App() {
         </button>
       </header>
 
+      <section
+        className={`dataset-bar ${loadError ? 'has-error' : ''}`}
+        aria-label={translation.datasetSelectorAria}
+        data-active-dataset={activeDatasetId}
+      >
+        <div className="dataset-bar-main">
+          <div className="dataset-context">
+            <span className="dataset-signal" aria-hidden="true" />
+            <div>
+              <p className="section-label">{translation.datasetLabel}</p>
+              <span>{activeDatasetName}</span>
+            </div>
+          </div>
+          <div
+            className="dataset-options"
+            role="group"
+            aria-label={translation.datasetSelectorAria}
+            aria-busy={pendingDatasetId !== null}
+          >
+            {DATASETS.map((dataset) => {
+              const name = datasetDisplayName(translation.datasetNames, dataset.id)
+              const active = dataset.id === activeDatasetId
+              const pending = dataset.id === pendingDatasetId
+              return (
+                <button
+                  type="button"
+                  key={dataset.id}
+                  className={`${active ? 'active' : ''} ${pending ? 'loading' : ''}`}
+                  onClick={() => void selectDataset(dataset.id)}
+                  aria-pressed={active}
+                  aria-label={pending ? datasetText(translation.datasetCopy.loading, name) : name}
+                  title={pending ? datasetText(translation.datasetCopy.loading, name) : name}
+                  data-dataset-id={dataset.id}
+                >
+                  <span>{name}</span>
+                  {pending ? <span className="dataset-loading-dot" aria-hidden="true" /> : null}
+                </button>
+              )
+            })}
+          </div>
+        </div>
+        {loadError && failedDatasetName ? (
+          <div className="dataset-error" role="alert">
+            <span>{datasetText(translation.datasetCopy.loadError, failedDatasetName)}</span>
+            <button type="button" onClick={() => void retryDataset()}>
+              {translation.datasetCopy.retry}
+            </button>
+          </div>
+        ) : null}
+      </section>
+
       <section className="hero">
         <div>
           <p className="eyebrow">{translation.eyebrow}</p>
-          <h1>{translation.heroTitle} <span>{translation.heroSubtitle}</span></h1>
-          <p className="lede">{translation.heroDescription}</p>
+          <h1>
+            {translation.heroTitle}{' '}
+            <span>{datasetText(translation.datasetCopy.heroSubtitle, activeDatasetName)}</span>
+          </h1>
+          <p className="lede">
+            {datasetText(translation.datasetCopy.heroDescription, activeDatasetName)}
+          </p>
         </div>
         <dl className="hero-stats">
           <div><dt>{translation.matches}</dt><dd>{payload.source.matchesProcessed}<span>/{payload.source.matchesProcessed}</span></dd></div>
@@ -493,13 +519,17 @@ function App() {
         </div>
 
         <footer className="table-footer">
-          <span>{performanceMode === 'average' ? translation.averageSummary : translation.bestSummary}</span>
+          <span>
+            {performanceMode === 'average'
+              ? datasetText(translation.datasetCopy.averageSummary, activeDatasetName)
+              : translation.bestSummary}
+          </span>
           <span>{translation.valueLegend}</span>
         </footer>
       </section>
 
       <footer className="site-footer">
-        <span>{translation.footerTitle}</span>
+        <span>{datasetText(translation.datasetCopy.footerTitle, activeDatasetName)}</span>
         <span>{translation.dataSource}: OpenDota · {translation.league} {payload.source.leagueId}</span>
       </footer>
     </main>

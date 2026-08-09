@@ -24,8 +24,6 @@ export function useLanguage() {
 
   useEffect(() => {
     document.documentElement.lang = language
-    document.title = translation.meta.title
-    document.querySelector('meta[name="description"]')?.setAttribute('content', translation.meta.description)
 
     try {
       window.localStorage.setItem(LANGUAGE_STORAGE_KEY, language)
