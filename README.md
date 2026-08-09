@@ -7,7 +7,7 @@ Fantasy player performance based on EWC 2026 matches from OpenDota league
 configuration. The project name is tournament-neutral so additional TI14 and
 future TI15 datasets can be added without renaming the application again.
 
-https://ti15-ewc-stats.netlify.app/
+https://dota2-fantasy-stats.netlify.app/
 
 pc:
 
