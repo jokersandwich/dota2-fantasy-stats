@@ -1,4 +1,4 @@
-export const LANGUAGE_STORAGE_KEY = 'ti15-fantasy-language'
+export const LANGUAGE_STORAGE_KEY = 'dota2-fantasy-language'
 export const DEFAULT_LANGUAGE = 'zh-CN' as const
 
 export type Language = 'zh-CN' | 'en'
