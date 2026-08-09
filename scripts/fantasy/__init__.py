@@ -1,4 +1,4 @@
-"""TI15 Fantasy base-scoring package."""
+"""Multi-dataset pipeline using the shared TI15 Fantasy scoring rules."""
 
 from .rules import RULES, FantasyRule
 

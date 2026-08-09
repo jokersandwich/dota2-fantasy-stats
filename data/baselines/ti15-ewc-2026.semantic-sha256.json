@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "datasetId": "ti15-ewc-2026",
+  "normalization": {
+    "ignoredRootKeys": [
+      "datasetId",
+      "generatedAt",
+      "matchSourceId",
+      "rosterSourceId",
+      "rulesetId"
+    ],
+    "ignoredSourceKeys": [
+      "leagueIds",
+      "matchScoreFile"
+    ],
+    "compatibilityTransforms": {
+      "playerFantasyRankings": "source.rosterPlayers -> source.ti15Players"
+    },
+    "numericComparison": "exact-json-value",
+    "arrayOrder": "significant"
+  },
+  "artifacts": {
+    "fantasyMatchScores": {
+      "path": "public/data/fantasy-match-scores.json",
+      "semanticSha256": "7aebb938e3f343547e3bbcd5d4c9c9907d64f94312c6b86c68a82e71155de298",
+      "summary": {
+        "matches": 157,
+        "playerMatchRows": 1570
+      }
+    },
+    "playerFantasyRankings": {
+      "path": "data/processed/player-fantasy-rankings.json",
+      "semanticSha256": "9a4df3344c1e2826c0b513355f896102c42130abc0d420f528573449675dcf01",
+      "summary": {
+        "players": 80,
+        "playersWithGames": 74,
+        "playersWithoutGames": 6
+      }
+    },
+    "roleFantasyRankings": {
+      "path": "data/processed/role-fantasy-rankings.json",
+      "semanticSha256": "5ecbf6f1c0cbef7df2cb32085c20a2b789a994c1625c2f9602dda20c1a17c396",
+      "summary": {
+        "teams": 16,
+        "roleUnits": 48
+      }
+    }
+  }
+}

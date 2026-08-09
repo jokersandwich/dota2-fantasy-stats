@@ -10,15 +10,15 @@ from decimal import Decimal, InvalidOperation, ROUND_HALF_UP
 from pathlib import Path
 from typing import Any, Literal
 
-from .rules import METRIC_KEYS, RULES, SCORE_DECIMAL_PLACES, FantasyRule
+from .dataset_config import DatasetConfig, load_dataset
+from .rules import METRIC_KEYS, SCORE_DECIMAL_PLACES, FantasyRule
+from .rulesets import FantasyRuleset, TI15_BASE_V1
 
 
 ROOT = Path(__file__).resolve().parents[2]
-LEAGUE_ID = 19785
 DEFAULT_RAW_DIR = ROOT / "data" / "raw"
 DEFAULT_OUTPUT = ROOT / "public" / "data" / "fantasy-match-scores.json"
 DEFAULT_VALIDATION_OUTPUT = ROOT / "DATA_VALIDATION.md"
-EXPECTED_PLAYERS_PER_MATCH = 10
 _MISSING = object()
 
 
@@ -79,11 +79,12 @@ def calculate_stat_score(
     raw_value: Any,
     *,
     calculation_mode: Literal["match", "average"] = "match",
+    ruleset: FantasyRuleset = TI15_BASE_V1,
 ) -> dict[str, Any]:
     """Calculate one metric's base Fantasy score without bonuses."""
-    if metric_key not in RULES:
+    if metric_key not in ruleset.rules:
         raise KeyError(f"Unknown Fantasy metric: {metric_key}")
-    rule = RULES[metric_key]
+    rule = ruleset.rules[metric_key]
     if rule.score_formula == "unavailable":
         return _unavailable(rule.unavailable_reason or "metric is unavailable")
     if raw_value is None:
@@ -157,16 +158,20 @@ def extract_raw_value(match: dict[str, Any], player: dict[str, Any], rule: Fanta
     return value, None
 
 
-def score_player_match(match: dict[str, Any], player: dict[str, Any]) -> dict[str, Any]:
+def score_player_match(
+    match: dict[str, Any],
+    player: dict[str, Any],
+    ruleset: FantasyRuleset = TI15_BASE_V1,
+) -> dict[str, Any]:
     stats: dict[str, int | float | None] = {}
     fantasy: dict[str, dict[str, Any]] = {}
     available_scores: list[Decimal] = []
     data_issues: list[dict[str, Any]] = []
 
-    for metric_key in METRIC_KEYS:
-        rule = RULES[metric_key]
+    for metric_key in ruleset.metric_keys:
+        rule = ruleset.rules[metric_key]
         raw_value, extraction_reason = extract_raw_value(match, player, rule)
-        result = calculate_stat_score(metric_key, raw_value)
+        result = calculate_stat_score(metric_key, raw_value, ruleset=ruleset)
         if result["dataAvailability"] == "unavailable" and extraction_reason:
             result["reason"] = extraction_reason
         if (
@@ -225,27 +230,46 @@ def _write_json(path: Path, payload: Any) -> None:
     temporary.replace(path)
 
 
-def load_matches(raw_dir: Path) -> tuple[list[int], list[dict[str, Any]]]:
-    league_payload = _read_json(raw_dir / f"league_{LEAGUE_ID}_matches.json")
-    league_ids = sorted(
-        int(row["match_id"])
-        for row in league_payload
-        if isinstance(row, dict) and isinstance(row.get("match_id"), int)
-    )
+def _league_cache_path(raw_dir: Path, league_id: int) -> Path:
+    namespaced = raw_dir / "leagues" / f"{league_id}.json"
+    return namespaced if namespaced.exists() else raw_dir / f"league_{league_id}_matches.json"
+
+
+def load_matches(
+    raw_dir: Path,
+    league_ids: tuple[int, ...] = (19785,),
+    excluded_match_ids: frozenset[int] = frozenset(),
+) -> tuple[list[int], list[dict[str, Any]]]:
+    discovered_ids: set[int] = set()
+    for league_id in league_ids:
+        league_payload = _read_json(_league_cache_path(raw_dir, league_id))
+        discovered_ids.update(
+            int(row["match_id"])
+            for row in league_payload
+            if isinstance(row, dict)
+            and isinstance(row.get("match_id"), int)
+            and row["match_id"] not in excluded_match_ids
+        )
+    match_ids = sorted(discovered_ids)
     matches: list[dict[str, Any]] = []
-    for match_id in league_ids:
+    allowed_leagues = set(league_ids)
+    for match_id in match_ids:
         path = raw_dir / "matches" / f"{match_id}.json"
         if not path.exists():
             continue
         match = _read_json(path)
-        if isinstance(match, dict) and match.get("match_id") == match_id and match.get("leagueid") == LEAGUE_ID:
+        if (
+            isinstance(match, dict)
+            and match.get("match_id") == match_id
+            and match.get("leagueid") in allowed_leagues
+        ):
             matches.append(match)
-    return league_ids, matches
+    return match_ids, matches
 
 
-def _rule_catalog() -> dict[str, Any]:
+def _rule_catalog(ruleset: FantasyRuleset = TI15_BASE_V1) -> dict[str, Any]:
     catalog: dict[str, Any] = {}
-    for key, rule in RULES.items():
+    for key, rule in ruleset.rules.items():
         catalog[key] = {
             "label": rule.label,
             "rawFormula": rule.raw_formula,
@@ -265,16 +289,22 @@ def _rule_catalog() -> dict[str, Any]:
     return catalog
 
 
-def build_dataset(raw_dir: Path) -> tuple[dict[str, Any], dict[str, Any]]:
-    league_ids, matches = load_matches(raw_dir)
+def build_dataset(
+    raw_dir: Path,
+    config: DatasetConfig | None = None,
+) -> tuple[dict[str, Any], dict[str, Any]]:
+    selected = config or load_dataset()
+    match_source = selected.match_source
+    ruleset = selected.ruleset
+    match_ids, matches = load_matches(raw_dir, match_source.league_ids, match_source.excluded_match_ids)
     match_outputs: list[dict[str, Any]] = []
     player_rows: list[dict[str, Any]] = []
     match_player_count_issues: list[dict[str, int]] = []
 
     for match in matches:
         players = match.get("players") if isinstance(match.get("players"), list) else []
-        scored_players = [score_player_match(match, player) for player in players if isinstance(player, dict)]
-        if len(scored_players) != EXPECTED_PLAYERS_PER_MATCH:
+        scored_players = [score_player_match(match, player, ruleset) for player in players if isinstance(player, dict)]
+        if len(scored_players) != match_source.expected_players_per_match:
             match_player_count_issues.append({"matchId": int(match["match_id"]), "players": len(scored_players)})
         player_rows.extend(scored_players)
         match_outputs.append(
@@ -289,23 +319,26 @@ def build_dataset(raw_dir: Path) -> tuple[dict[str, Any], dict[str, Any]]:
         )
 
     validation = validate_dataset(
-        discovered_matches=len(league_ids),
+        discovered_matches=len(match_ids),
         processed_matches=len(matches),
         player_rows=player_rows,
         match_player_count_issues=match_player_count_issues,
+        metric_keys=ruleset.metric_keys,
     )
     payload = {
+        **selected.provenance,
         "schemaVersion": 1,
         "generatedAt": datetime.now(timezone.utc).isoformat(),
         "source": {
             "provider": "OpenDota",
-            "leagueId": LEAGUE_ID,
-            "matchesDiscovered": len(league_ids),
+            "leagueId": match_source.league_ids[0] if len(match_source.league_ids) == 1 else None,
+            "leagueIds": list(match_source.league_ids),
+            "matchesDiscovered": len(match_ids),
             "matchesProcessed": len(matches),
             "playerMatchRows": len(player_rows),
         },
         "scope": "Base Fantasy scores only; no banner quality, banner traits, or coach-title bonuses.",
-        "rules": _rule_catalog(),
+        "rules": _rule_catalog(ruleset),
         "matches": match_outputs,
     }
     _assert_json_finite(payload)
@@ -329,13 +362,14 @@ def validate_dataset(
     processed_matches: int,
     player_rows: list[dict[str, Any]],
     match_player_count_issues: list[dict[str, int]],
+    metric_keys: tuple[str, ...] = METRIC_KEYS,
 ) -> dict[str, Any]:
     metric_summary: dict[str, Any] = {}
     negative_scores: list[dict[str, Any]] = []
     nonfinite_values: list[dict[str, Any]] = []
     invalid_unavailable_values: list[dict[str, Any]] = []
 
-    for metric_key in METRIC_KEYS:
+    for metric_key in metric_keys:
         available_raw: list[float] = []
         available_scores: list[float] = []
         unavailable = 0
@@ -407,20 +441,25 @@ def validate_dataset(
     }
 
 
-def validation_markdown(validation: dict[str, Any], output_path: Path) -> str:
+def validation_markdown(
+    validation: dict[str, Any],
+    output_path: Path,
+    config: DatasetConfig | None = None,
+) -> str:
+    selected = config or load_dataset()
     summary = validation["metricSummary"]
     quarantined = validation["quarantinedSourceAnomalies"]
     lines = [
-        "# TI15 Fantasy 数据验证",
+        f"# {selected.roster.tournament_code} Fantasy 数据验证",
         "",
-        "本报告由 `python -m scripts.fantasy.scoring` 对完整 EWC 2026 OpenDota 缓存生成。",
+        f"本报告由 `python -m scripts.fantasy.scoring` 对完整 {selected.match_source.competition_code} {selected.match_source.season} OpenDota 缓存生成。",
         "",
         "## 处理范围",
         "",
         f"- 发现比赛：{validation['discoveredMatches']}",
         f"- 成功处理比赛：{validation['processedMatches']}",
         f"- 玩家比赛记录：{validation['playerMatchRows']}",
-        f"- 每场不是 {EXPECTED_PLAYERS_PER_MATCH} 名玩家的比赛：{len(validation['matchPlayerCountIssues'])}",
+        f"- 每场不是 {selected.match_source.expected_players_per_match} 名玩家的比赛：{len(validation['matchPlayerCountIssues'])}",
         "- 仅计算基础积分；未加入战旗品质、战旗特性或指导员称号加成",
         "",
         "## 自动检查结果",
@@ -440,7 +479,7 @@ def validation_markdown(validation: dict[str, Any], output_path: Path) -> str:
         "| 指标 | available | unavailable | raw min | raw max | score min | score max |",
         "|---|---:|---:|---:|---:|---:|---:|",
     ]
-    for metric_key in METRIC_KEYS:
+    for metric_key in selected.ruleset.metric_keys:
         row = summary[metric_key]
         lines.append(
             f"| `{metric_key}` | {row['availableRows']} | {row['unavailableRows']} | "
@@ -501,24 +540,30 @@ def _display(value: Any) -> str:
 
 def parser() -> argparse.ArgumentParser:
     result = argparse.ArgumentParser(description=__doc__)
-    result.add_argument("--raw-dir", type=Path, default=DEFAULT_RAW_DIR)
-    result.add_argument("--output", type=Path, default=DEFAULT_OUTPUT)
-    result.add_argument("--validation-output", type=Path, default=DEFAULT_VALIDATION_OUTPUT)
+    result.add_argument("--dataset", help="Dataset ID; defaults to the registry default.")
+    result.add_argument("--raw-dir", type=Path, help="Override the configured match-source cache directory.")
+    result.add_argument("--output", type=Path, help="Override the dataset-namespaced output path.")
+    result.add_argument("--validation-output", type=Path, help="Override the dataset validation report path.")
     return result
 
 
 def main() -> int:
     args = parser().parse_args()
     try:
-        payload, validation = build_dataset(args.raw_dir)
-        _write_json(args.output, payload)
-        report = validation_markdown(validation, args.output)
-        args.validation_output.write_text(report, encoding="utf-8")
+        config = load_dataset(args.dataset)
+        raw_dir = args.raw_dir or config.match_source.raw_dir_for_processing()
+        output = args.output or config.paths.match_scores
+        validation_output = args.validation_output or config.paths.data_validation
+        payload, validation = build_dataset(raw_dir, config)
+        _write_json(output, payload)
+        report = validation_markdown(validation, output, config)
+        validation_output.parent.mkdir(parents=True, exist_ok=True)
+        validation_output.write_text(report, encoding="utf-8")
         print(
             f"Processed {payload['source']['matchesProcessed']} matches and "
-            f"{payload['source']['playerMatchRows']} player-match rows; wrote {args.output}"
+            f"{payload['source']['playerMatchRows']} player-match rows; wrote {output}"
         )
-        print(f"Validation report: {args.validation_output}")
+        print(f"Validation report: {validation_output}")
         return 0
     except (OSError, ValueError, KeyError, json.JSONDecodeError) as error:
         print(f"error: {error}")

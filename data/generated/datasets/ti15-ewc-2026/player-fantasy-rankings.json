@@ -9,7 +9,7 @@
     "leagueId": 19785,
     "matchScoreFile": "data/generated/datasets/ti15-ewc-2026/fantasy-match-scores.json",
     "matchesProcessed": 157,
-    "ti15Players": 80
+    "rosterPlayers": 80
   },
   "bestDefinition": "Maximum per-match Fantasy score; ties use the metric's raw-value direction, then the smallest matchId.",
   "averageDefinition": "Arithmetic mean of available raw values; Fantasy score is recalculated by the shared scoring engine.",

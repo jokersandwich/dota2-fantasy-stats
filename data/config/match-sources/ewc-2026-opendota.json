@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "matchSourceId": "ewc-2026-opendota",
+  "competition": {
+    "code": "EWC",
+    "season": 2026
+  },
+  "provider": {
+    "id": "OpenDota",
+    "apiBase": "https://api.opendota.com/api",
+    "leagueIds": [19785]
+  },
+  "cacheNamespace": "ewc-2026-opendota",
+  "legacyCachePath": "data/raw",
+  "matchSelection": {
+    "stages": "all",
+    "excludedMatchIds": []
+  },
+  "expectations": {
+    "playersPerMatch": 10
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "datasetId": "ti15-ewc-2026",
+  "status": "published",
+  "rosterSourceId": "ti15-2026",
+  "matchSourceId": "ewc-2026-opendota",
+  "rulesetId": "ti15-base-v1",
+  "populationPolicy": {
+    "playerRankings": "all-roster-participants",
+    "roleRankings": "configured-role-lineups",
+    "crossDatasetIntersection": false
+  },
+  "validationProfile": "ti15-ewc-2026"
+}

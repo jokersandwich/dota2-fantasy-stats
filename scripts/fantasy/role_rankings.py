@@ -10,7 +10,9 @@ from decimal import Decimal, ROUND_HALF_UP
 from pathlib import Path
 from typing import Any, Iterable
 
-from .rules import METRIC_KEYS, RULES, SCORE_DECIMAL_PLACES, FantasyRule
+from .dataset_config import DatasetConfig, load_dataset
+from .rules import METRIC_KEYS, SCORE_DECIMAL_PLACES, FantasyRule
+from .rulesets import FantasyRuleset, TI15_BASE_V1
 
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -103,9 +105,10 @@ def build_role_match_values(
     members: list[dict[str, Any]],
     rows_by_account: dict[int, list[dict[str, Any]]],
     metric_key: str,
+    ruleset: FantasyRuleset = TI15_BASE_V1,
 ) -> list[dict[str, Any]]:
     """Build per-match role values using only exact matchId intersections."""
-    if metric_key not in RULES:
+    if metric_key not in ruleset.rules:
         raise KeyError(f"Unknown Fantasy metric: {metric_key}")
     if len(members) not in {1, 2}:
         raise ValueError("A fixed Role Unit must contain one or two members")
@@ -214,19 +217,49 @@ def _load_rows(path: Path) -> tuple[dict[str, Any], dict[int, list[dict[str, Any
     return payload, rows_by_account
 
 
-def load_role_units(roster_path: Path) -> list[dict[str, Any]]:
+def load_role_units(
+    roster_path: Path,
+    expected_teams: int = EXPECTED_TEAMS,
+    required_positions: tuple[int, ...] = (1, 2, 3, 4, 5),
+) -> list[dict[str, Any]]:
     payload = _read_json(roster_path)
     teams = payload.get("teams") if isinstance(payload, dict) else None
-    if not isinstance(teams, list) or len(teams) != EXPECTED_TEAMS:
-        raise ValueError(f"Roster must contain exactly {EXPECTED_TEAMS} teams")
+    if not isinstance(teams, list) or len(teams) != expected_teams:
+        raise ValueError(f"Roster must contain exactly {expected_teams} teams")
     units: list[dict[str, Any]] = []
     for team in teams:
         players = team.get("players") if isinstance(team, dict) else None
-        if not isinstance(players, list) or len(players) != 5:
-            raise ValueError(f"Team {team.get('name')} must have exactly five players")
-        by_position = {player.get("position"): player for player in players if isinstance(player, dict)}
-        if set(by_position) != {1, 2, 3, 4, 5}:
-            raise ValueError(f"Team {team.get('name')} must contain positions 1 through 5")
+        if not isinstance(players, list) or not players:
+            raise ValueError(f"Team {team.get('name')} must contain players")
+        players_by_account = {
+            player.get("account_id"): player
+            for player in players
+            if isinstance(player, dict) and isinstance(player.get("account_id"), int)
+        }
+        lineup = team.get("roleLineup")
+        if isinstance(lineup, dict):
+            if set(lineup) != {str(position) for position in required_positions}:
+                raise ValueError(f"Team {team.get('name')} roleLineup must configure every required position")
+            by_position = {
+                position: players_by_account.get(lineup[str(position)])
+                for position in required_positions
+            }
+            if any(player is None for player in by_position.values()):
+                raise ValueError(f"Team {team.get('name')} roleLineup references a non-roster player")
+        else:
+            candidates_by_position = {
+                position: [
+                    player
+                    for player in players
+                    if isinstance(player, dict) and player.get("position") == position
+                ]
+                for position in required_positions
+            }
+            if any(len(candidates) != 1 for candidates in candidates_by_position.values()):
+                raise ValueError(
+                    f"Team {team.get('name')} needs one player per required position or an explicit roleLineup"
+                )
+            by_position = {position: candidates[0] for position, candidates in candidates_by_position.items()}
         for role in ROLE_ORDER:
             positions = ROLE_POSITIONS[role]
             members = [
@@ -245,25 +278,36 @@ def load_role_units(roster_path: Path) -> list[dict[str, Any]]:
                     "members": members,
                 }
             )
-    if len(units) != EXPECTED_ROLE_UNITS:
-        raise ValueError(f"Expected {EXPECTED_ROLE_UNITS} Role Units; found {len(units)}")
+    expected_role_units = expected_teams * len(ROLE_POSITIONS)
+    if len(units) != expected_role_units:
+        raise ValueError(f"Expected {expected_role_units} Role Units; found {len(units)}")
     return units
 
 
 def build_role_rankings(
     match_scores_path: Path,
     roster_path: Path,
+    config: DatasetConfig | None = None,
 ) -> tuple[dict[str, Any], dict[int, list[dict[str, Any]]]]:
+    selected = config or load_dataset()
+    ruleset = selected.ruleset
     match_scores, rows_by_account = _load_rows(match_scores_path)
-    units = load_role_units(roster_path)
+    for key, expected in selected.provenance.items():
+        if match_scores.get(key) != expected:
+            raise ValueError(f"Match-score {key} does not match dataset config")
+    units = load_role_units(
+        roster_path,
+        selected.roster.expected_team_count,
+        selected.roster.required_positions,
+    )
     output_units: list[dict[str, Any]] = []
 
     for unit in units:
         together_ids = common_match_ids(unit["members"], rows_by_account)
         metrics: dict[str, Any] = {}
-        for metric_key in METRIC_KEYS:
-            rule = RULES[metric_key]
-            role_matches = build_role_match_values(unit["members"], rows_by_account, metric_key)
+        for metric_key in ruleset.metric_keys:
+            rule = ruleset.rules[metric_key]
+            role_matches = build_role_match_values(unit["members"], rows_by_account, metric_key, ruleset)
             if [match["matchId"] for match in role_matches] != together_ids:
                 raise ValueError(f"Internal matchId JOIN mismatch for {unit['teamName']}/{unit['role']}")
             metrics[rule.output_key] = summarize_role_metric(rule, role_matches)
@@ -276,6 +320,7 @@ def build_role_rankings(
         )
 
     payload = {
+        **selected.provenance,
         "schemaVersion": 1,
         "generatedAt": datetime.now(timezone.utc).isoformat(),
         "source": {
@@ -337,11 +382,14 @@ def _independent_summary(rule: FantasyRule, role_matches: list[dict[str, Any]]) 
 def validate_role_rankings(
     payload: dict[str, Any],
     rows_by_account: dict[int, list[dict[str, Any]]],
+    ruleset: FantasyRuleset = TI15_BASE_V1,
+    expected_teams: int = EXPECTED_TEAMS,
 ) -> dict[str, Any]:
     errors: list[str] = []
     units = payload.get("roleUnits")
-    if not isinstance(units, list) or len(units) != EXPECTED_ROLE_UNITS:
-        errors.append(f"Expected {EXPECTED_ROLE_UNITS} Role Units")
+    expected_role_units = expected_teams * len(ROLE_POSITIONS)
+    if not isinstance(units, list) or len(units) != expected_role_units:
+        errors.append(f"Expected {expected_role_units} Role Units")
         units = units if isinstance(units, list) else []
 
     team_roles: dict[str, list[str]] = {}
@@ -351,7 +399,7 @@ def validate_role_rankings(
     mid_identity_checks = 0
     metric_valid_ranges = {
         rule.output_key: {"minimum": None, "maximum": None, "allUnavailableUnits": 0}
-        for rule in RULES.values()
+        for rule in ruleset.rules.values()
     }
 
     for unit in units:
@@ -366,10 +414,10 @@ def validate_role_rankings(
             errors.append(f"gamesPlayedTogether mismatch for {unit['teamName']}/{unit['role']}")
         joint_matches_checked += len(together_ids)
 
-        for metric_key in METRIC_KEYS:
-            rule = RULES[metric_key]
+        for metric_key in ruleset.metric_keys:
+            rule = ruleset.rules[metric_key]
             output_key = rule.output_key
-            role_matches = build_role_match_values(unit["members"], rows_by_account, metric_key)
+            role_matches = build_role_match_values(unit["members"], rows_by_account, metric_key, ruleset)
             if [match["matchId"] for match in role_matches] != together_ids:
                 errors.append(f"Non-identical matchId join for {unit['teamName']}/{unit['role']}/{output_key}")
 
@@ -414,8 +462,8 @@ def validate_role_rankings(
             if valid_games == 0:
                 stat["allUnavailableUnits"] += 1
 
-    if len(team_roles) != EXPECTED_TEAMS:
-        errors.append(f"Expected {EXPECTED_TEAMS} teams; found {len(team_roles)}")
+    if len(team_roles) != expected_teams:
+        errors.append(f"Expected {expected_teams} teams; found {len(team_roles)}")
     for team, roles in team_roles.items():
         if sorted(roles) != sorted(ROLE_ORDER):
             errors.append(f"Team {team} does not have exactly core/mid/support: {roles}")
@@ -433,10 +481,17 @@ def validate_role_rankings(
     }
 
 
-def validation_markdown(validation: dict[str, Any], payload: dict[str, Any], output_path: Path) -> str:
+def validation_markdown(
+    validation: dict[str, Any],
+    payload: dict[str, Any],
+    output_path: Path,
+    config: DatasetConfig | None = None,
+) -> str:
+    selected = config or load_dataset()
+    expected_role_units = selected.roster.expected_team_count * len(ROLE_POSITIONS)
     checks = [
-        ("正好有 48 个 Role Units", validation["roleUnits"] == EXPECTED_ROLE_UNITS),
-        ("每支队伍正好包含 Core、Mid、Support", validation["teams"] == EXPECTED_TEAMS),
+        (f"正好有 {expected_role_units} 个 Role Units", validation["roleUnits"] == expected_role_units),
+        ("每支队伍正好包含 Core、Mid、Support", validation["teams"] == selected.roster.expected_team_count),
         ("Core 严格由 Position 1 + 3 构成", True),
         ("Mid 严格由 Position 2 构成", True),
         ("Support 严格由 Position 4 + 5 构成", True),
@@ -457,7 +512,7 @@ def validation_markdown(validation: dict[str, Any], payload: dict[str, Any], out
         checks = [(label, False) for label, _passed in checks]
 
     lines = [
-        "# TI15 Fantasy Role 排名验证",
+        f"# {selected.roster.tournament_code} Fantasy Role 排名验证",
         "",
         "## 结果",
         "",
@@ -486,7 +541,7 @@ def validation_markdown(validation: dict[str, Any], payload: dict[str, Any], out
             "",
             "所有 CORE/SUPPORT 共同比赛均通过成员 `matchId` 集合交集生成，没有使用 start_time、series_id、比赛顺序或 game number。",
             "",
-            "## 48 个 Role Units",
+            f"## {expected_role_units} 个 Role Units",
             "",
             "| Team | Role | Positions | Members | gamesPlayedTogether |",
             "|---|---|---|---|---:|",
@@ -518,7 +573,7 @@ def validation_markdown(validation: dict[str, Any], payload: dict[str, Any], out
             "",
             "- CORE/SUPPORT 任一成员在同一 matchId 的指标 unavailable，则该场 Role 指标整体 unavailable，并从 Best/Average 排除。",
             "- MID 完全继承 Position 2 的单局 availability。",
-            "- `madstones`、`watchers`、`lotuses` 对全部 48 个 Role Units 均保持 `{\"best\": null, \"average\": null}`。",
+            f"- `madstones`、`watchers`、`lotuses` 对全部 {expected_role_units} 个 Role Units 均保持 `{{\"best\": null, \"average\": null}}`。",
             "- 没有共同比赛的固定成员组合仍保留为 Role Unit，`gamesPlayedTogether` 为 0。",
             "",
             "## 错误",
@@ -532,27 +587,38 @@ def validation_markdown(validation: dict[str, Any], payload: dict[str, Any], out
 
 def parser() -> argparse.ArgumentParser:
     result = argparse.ArgumentParser(description=__doc__)
-    result.add_argument("--match-scores", type=Path, default=DEFAULT_MATCH_SCORES)
-    result.add_argument("--roster", type=Path, default=DEFAULT_ROSTER)
-    result.add_argument("--output", type=Path, default=DEFAULT_OUTPUT)
-    result.add_argument("--validation-output", type=Path, default=DEFAULT_VALIDATION)
+    result.add_argument("--dataset", help="Dataset ID; defaults to the registry default.")
+    result.add_argument("--match-scores", type=Path, help="Override the dataset match-score input.")
+    result.add_argument("--roster", type=Path, help="Override the configured roster source.")
+    result.add_argument("--output", type=Path, help="Override the dataset-namespaced output path.")
+    result.add_argument("--validation-output", type=Path, help="Override the dataset validation report path.")
     return result
 
 
 def main() -> int:
     args = parser().parse_args()
     try:
-        payload, rows_by_account = build_role_rankings(args.match_scores, args.roster)
-        validation = validate_role_rankings(payload, rows_by_account)
+        config = load_dataset(args.dataset)
+        match_scores = args.match_scores or config.paths.match_scores
+        roster = args.roster or config.roster.path
+        output = args.output or config.paths.role_rankings
+        validation_output = args.validation_output or config.paths.role_validation
+        payload, rows_by_account = build_role_rankings(match_scores, roster, config)
+        validation = validate_role_rankings(
+            payload,
+            rows_by_account,
+            config.ruleset,
+            config.roster.expected_team_count,
+        )
         if validation["status"] != "passed":
             raise ValueError("Role ranking validation failed: " + "; ".join(validation["errors"][:10]))
-        _write_json(args.output, payload)
-        _write_text(args.validation_output, validation_markdown(validation, payload, args.output))
+        _write_json(output, payload)
+        _write_text(validation_output, validation_markdown(validation, payload, output, config))
         print(
-            f"Wrote {len(payload['roleUnits'])} Role Units to {args.output}; "
+            f"Wrote {len(payload['roleUnits'])} Role Units to {output}; "
             f"validated {validation['availableRoleMatchesChecked']} available role-metric matches"
         )
-        print(f"Validation report: {args.validation_output}")
+        print(f"Validation report: {validation_output}")
         return 0
     except (OSError, ValueError, KeyError, json.JSONDecodeError) as error:
         print(f"error: {error}")

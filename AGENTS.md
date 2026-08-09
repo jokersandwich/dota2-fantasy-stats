@@ -31,8 +31,11 @@ relative or derived from `Path(__file__)`.
   - `fantasy/role_rankings.py` generates fixed Core/Mid/Support Role Units.
   - `fantasy/test_*.py` contains the Python unit tests.
 - `data/`
+  - `config/` contains dataset and match-source descriptors.
+  - `rosters/` contains reusable versioned roster sources.
   - `ti15_rosters.json` is the verified TI15 roster configuration.
   - `raw/` contains regenerable OpenDota cache files and is ignored by Git.
+  - `generated/datasets/<datasetId>/` contains namespaced Fantasy artifacts.
   - `processed/player-fantasy-rankings.json` contains individual rankings.
   - `processed/role-fantasy-rankings.json` contains the 48 Role Units used by
     the current frontend.
@@ -53,13 +56,22 @@ The current Fantasy data flow is:
 
 1. `scripts/fetch-ewc.py` caches OpenDota league and match JSON under
    `data/raw/`.
-2. `python -m scripts.fantasy.scoring` produces
-   `public/data/fantasy-match-scores.json`.
-3. `python -m scripts.fantasy.rankings` produces
-   `data/processed/player-fantasy-rankings.json`.
-4. `python -m scripts.fantasy.role_rankings` produces
-   `data/processed/role-fantasy-rankings.json`.
-5. The React frontend directly imports the precomputed Role ranking JSON.
+2. `python -m scripts.fantasy.scoring` produces the default dataset's
+   namespaced `fantasy-match-scores.json`.
+3. `python -m scripts.fantasy.rankings` produces its namespaced individual
+   rankings.
+4. `python -m scripts.fantasy.role_rankings` produces its namespaced Role
+   rankings.
+5. `python -m scripts.fantasy.publish_dataset` validates the configured scope,
+   enforces the frozen TI15-EWC semantic baseline, publishes the public
+   namespaced Role file, and atomically updates the legacy compatibility files.
+6. The React frontend continues to import the legacy-compatible precomputed
+   Role ranking JSON.
+
+The default dataset is `ti15-ewc-2026`. It composes roster source
+`ti15-2026`, match source `ewc-2026-opendota`, and the shared immutable
+`ti15-base-v1` ruleset. Roster source, match source, and dataset identity are
+separate concepts. Do not filter one dataset through another dataset's roster.
 
 The frontend must not independently reproduce Fantasy formulas, player
 averages, Role combinations, same-match joins, or best-match selection.
@@ -267,6 +279,8 @@ Python tests and the relevant complete pipeline modules:
 python -m scripts.fantasy.scoring
 python -m scripts.fantasy.rankings
 python -m scripts.fantasy.role_rankings
+python -m scripts.fantasy.semantic_compare compare
+python -m scripts.fantasy.publish_dataset
 ```
 
 Review the regenerated validation reports and confirm that they pass before

@@ -11,7 +11,9 @@ from decimal import Decimal
 from pathlib import Path
 from typing import Any, Iterable
 
-from .rules import METRIC_KEYS, RULES
+from .dataset_config import DatasetConfig, load_dataset
+from .rules import METRIC_KEYS
+from .rulesets import FantasyRuleset, TI15_BASE_V1
 from .scoring import calculate_stat_score
 
 
@@ -65,11 +67,15 @@ def _decimal(value: int | float | Decimal) -> Decimal:
     return converted
 
 
-def summarize_metric(metric_key: str, observations: Iterable[dict[str, Any]]) -> dict[str, Any]:
+def summarize_metric(
+    metric_key: str,
+    observations: Iterable[dict[str, Any]],
+    ruleset: FantasyRuleset = TI15_BASE_V1,
+) -> dict[str, Any]:
     """Summarize available player-match observations for one metric."""
-    if metric_key not in RULES:
+    if metric_key not in ruleset.rules:
         raise KeyError(f"Unknown Fantasy metric: {metric_key}")
-    rule = RULES[metric_key]
+    rule = ruleset.rules[metric_key]
     valid: list[dict[str, Any]] = []
     for observation in observations:
         if observation.get("dataAvailability") != "available":
@@ -94,7 +100,12 @@ def summarize_metric(metric_key: str, observations: Iterable[dict[str, Any]]) ->
 
     best = max(valid, key=best_key)
     average_raw = sum((_decimal(item["rawValue"]) for item in valid), Decimal("0")) / len(valid)
-    average_score = calculate_stat_score(metric_key, average_raw, calculation_mode="average")
+    average_score = calculate_stat_score(
+        metric_key,
+        average_raw,
+        calculation_mode="average",
+        ruleset=ruleset,
+    )
     if average_score["dataAvailability"] != "available":
         raise ValueError(f"Average score unexpectedly unavailable for {metric_key}: {average_score}")
 
@@ -112,11 +123,15 @@ def summarize_metric(metric_key: str, observations: Iterable[dict[str, Any]]) ->
     }
 
 
-def summarize_raw_values(metric_key: str, raw_values: Iterable[int | float | None]) -> dict[str, Any]:
+def summarize_raw_values(
+    metric_key: str,
+    raw_values: Iterable[int | float | None],
+    ruleset: FantasyRuleset = TI15_BASE_V1,
+) -> dict[str, Any]:
     """Test/helper API that scores match values with the existing engine before aggregation."""
     observations: list[dict[str, Any]] = []
     for index, raw_value in enumerate(raw_values, start=1):
-        result = calculate_stat_score(metric_key, raw_value)
+        result = calculate_stat_score(metric_key, raw_value, ruleset=ruleset)
         observations.append(
             {
                 "matchId": index,
@@ -125,20 +140,25 @@ def summarize_raw_values(metric_key: str, raw_values: Iterable[int | float | Non
                 "dataAvailability": result["dataAvailability"],
             }
         )
-    return summarize_metric(metric_key, observations)
+    return summarize_metric(metric_key, observations, ruleset)
 
 
-def _load_roster(path: Path) -> list[dict[str, Any]]:
+def _load_roster(
+    path: Path,
+    expected_team_count: int = 16,
+    required_positions: tuple[int, ...] = (1, 2, 3, 4, 5),
+    expected_player_count: int = 80,
+) -> list[dict[str, Any]]:
     payload = _read_json(path)
     teams = payload.get("teams") if isinstance(payload, dict) else None
-    if not isinstance(teams, list) or len(teams) != 16:
-        raise ValueError("TI15 roster must contain exactly 16 teams")
+    if not isinstance(teams, list) or len(teams) != expected_team_count:
+        raise ValueError(f"Roster must contain exactly {expected_team_count} teams")
     players: list[dict[str, Any]] = []
     seen: set[int] = set()
     for team in teams:
         starters = team.get("players") if isinstance(team, dict) else None
-        if not isinstance(starters, list) or len(starters) != 5:
-            raise ValueError(f"Team {team.get('name') if isinstance(team, dict) else None} must have five players")
+        if not isinstance(starters, list) or not starters:
+            raise ValueError(f"Team {team.get('name') if isinstance(team, dict) else None} must have players")
         for player in starters:
             account_id = player.get("account_id") if isinstance(player, dict) else None
             if not isinstance(account_id, int) or account_id <= 0 or account_id in seen:
@@ -152,8 +172,8 @@ def _load_roster(path: Path) -> list[dict[str, Any]]:
                     "position": player.get("position"),
                 }
             )
-    if len(players) != 80:
-        raise ValueError(f"TI15 roster must contain 80 players; found {len(players)}")
+    if len(players) != expected_player_count:
+        raise ValueError(f"Roster must contain {expected_player_count} players; found {len(players)}")
     return players
 
 
@@ -193,9 +213,23 @@ def _observations(rows: list[dict[str, Any]], metric_key: str) -> list[dict[str,
     return result
 
 
-def build_rankings(match_scores_path: Path, roster_path: Path) -> tuple[dict[str, Any], dict[int, list[dict[str, Any]]]]:
+def build_rankings(
+    match_scores_path: Path,
+    roster_path: Path,
+    config: DatasetConfig | None = None,
+) -> tuple[dict[str, Any], dict[int, list[dict[str, Any]]]]:
+    selected = config or load_dataset()
+    ruleset = selected.ruleset
     match_scores, rows_by_account = _load_player_match_rows(match_scores_path)
-    roster_players = _load_roster(roster_path)
+    for key, expected in selected.provenance.items():
+        if match_scores.get(key) != expected:
+            raise ValueError(f"Match-score {key} does not match dataset config")
+    roster_players = _load_roster(
+        roster_path,
+        selected.roster.expected_team_count,
+        selected.roster.required_positions,
+        selected.roster.player_count,
+    )
     output_players: list[dict[str, Any]] = []
 
     for roster_player in roster_players:
@@ -205,8 +239,12 @@ def build_rankings(match_scores_path: Path, roster_path: Path) -> tuple[dict[str
         if len(seen_matches) != len(rows):
             raise ValueError(f"Duplicate match rows for roster account_id {account_id}")
         metrics = {
-            RULES[metric_key].output_key: summarize_metric(metric_key, _observations(rows, metric_key))
-            for metric_key in METRIC_KEYS
+            ruleset.rules[metric_key].output_key: summarize_metric(
+                metric_key,
+                _observations(rows, metric_key),
+                ruleset,
+            )
+            for metric_key in ruleset.metric_keys
         }
         output_players.append(
             {
@@ -217,13 +255,14 @@ def build_rankings(match_scores_path: Path, roster_path: Path) -> tuple[dict[str
         )
 
     payload = {
+        **selected.provenance,
         "schemaVersion": 1,
         "generatedAt": datetime.now(timezone.utc).isoformat(),
         "source": {
             "leagueId": match_scores.get("source", {}).get("leagueId"),
             "matchScoreFile": _portable_path(match_scores_path),
             "matchesProcessed": match_scores.get("source", {}).get("matchesProcessed"),
-            "ti15Players": len(output_players),
+            "rosterPlayers": len(output_players),
         },
         "bestDefinition": "Maximum per-match Fantasy score; ties use the metric's raw-value direction, then the smallest matchId.",
         "averageDefinition": "Arithmetic mean of available raw values; Fantasy score is recalculated by the shared scoring engine.",
@@ -234,7 +273,7 @@ def build_rankings(match_scores_path: Path, roster_path: Path) -> tuple[dict[str
                 "bestRawDirection": rule.best_raw_direction,
                 "reliability": rule.reliability,
             }
-            for rule in RULES.values()
+            for rule in ruleset.rules.values()
         },
         "players": output_players,
     }
@@ -256,11 +295,12 @@ def _assert_finite(value: Any, path: str = "root") -> None:
 def validate_rankings(
     payload: dict[str, Any],
     rows_by_account: dict[int, list[dict[str, Any]]],
+    ruleset: FantasyRuleset = TI15_BASE_V1,
 ) -> dict[str, Any]:
     errors: list[str] = []
     metric_stats = {
         rule.output_key: {"validGamesMin": None, "validGamesMax": None, "allUnavailablePlayers": 0}
-        for rule in RULES.values()
+        for rule in ruleset.rules.values()
     }
 
     for player in payload["players"]:
@@ -269,8 +309,8 @@ def validate_rankings(
         if player["gamesPlayed"] != len(source_rows):
             errors.append(f"gamesPlayed mismatch for {account_id}")
 
-        for metric_key in METRIC_KEYS:
-            rule = RULES[metric_key]
+        for metric_key in ruleset.metric_keys:
+            rule = ruleset.rules[metric_key]
             output_key = rule.output_key
             actual = player["metrics"][output_key]
             observations = _observations(source_rows, metric_key)
@@ -288,7 +328,12 @@ def validate_rankings(
                     errors.append(f"Best mismatch for {account_id}/{output_key}")
 
                 mean = sum((_decimal(item["rawValue"]) for item in valid), Decimal("0")) / len(valid)
-                rescored = calculate_stat_score(metric_key, mean, calculation_mode="average")
+                rescored = calculate_stat_score(
+                    metric_key,
+                    mean,
+                    calculation_mode="average",
+                    ruleset=ruleset,
+                )
                 expected_average = {
                     "rawValue": rescored["rawValue"],
                     "fantasyScore": rescored["baseFantasyScore"],
@@ -364,23 +409,29 @@ def _independent_best(rule: Any, valid: list[dict[str, Any]]) -> dict[str, Any]:
     return {"rawValue": best["rawValue"], "fantasyScore": best["fantasyScore"], "matchId": best["matchId"]}
 
 
-def validation_markdown(validation: dict[str, Any], payload: dict[str, Any], output_path: Path) -> str:
+def validation_markdown(
+    validation: dict[str, Any],
+    payload: dict[str, Any],
+    output_path: Path,
+    config: DatasetConfig | None = None,
+) -> str:
+    selected = config or load_dataset()
     lines = [
-        "# TI15 Fantasy 排名汇总验证",
+        f"# {selected.roster.tournament_code} Fantasy 排名汇总验证",
         "",
         "## 结果",
         "",
         f"- 状态：**{validation['status'].upper()}**",
-        f"- TI15 选手：{validation['players']}",
-        f"- 有 EWC 比赛的选手：{validation['playersWithGames']}",
-        f"- 没有 EWC 比赛的选手：{validation['playersWithoutGames']}",
+        f"- {selected.roster.tournament_code} 选手：{validation['players']}",
+        f"- 有 {selected.match_source.competition_code} 比赛的选手：{validation['playersWithGames']}",
+        f"- 没有 {selected.match_source.competition_code} 比赛的选手：{validation['playersWithoutGames']}",
         f"- 数据文件：`{_portable_path(output_path)}`",
         "",
         "## 验证项目",
         "",
         "| 检查 | 结果 |",
         "|---|---|",
-        "| TI15 roster 总人数为 80 | PASS |",
+        f"| roster 总人数为 {selected.roster.player_count} | PASS |",
         "| 每名选手 gamesPlayed 与单局数据行数一致 | PASS |",
         "| 每项 validGames 只统计 available 场次 | PASS |",
         "| NaN | 0 |",
@@ -424,7 +475,7 @@ def validation_markdown(validation: dict[str, Any], payload: dict[str, Any], out
             "",
             "## 随机抽查",
             "",
-            f"使用固定种子 `{AUDIT_SEED}` 随机抽查 {AUDIT_PLAYER_COUNT} 名有 EWC 比赛的 TI15 选手。每人检查 `deaths`、`gpm`、`firstBlood`、`teamfightParticipation`、`runes` 五项。",
+            f"使用固定种子 `{AUDIT_SEED}` 随机抽查 {AUDIT_PLAYER_COUNT} 名有 {selected.match_source.competition_code} 比赛的 {selected.roster.tournament_code} 选手。每人检查 `deaths`、`gpm`、`firstBlood`、`teamfightParticipation`、`runes` 五项。",
             "",
             "| Team | Player | Account ID | 检查结果 |",
             "|---|---|---:|---|",
@@ -440,7 +491,7 @@ def validation_markdown(validation: dict[str, Any], payload: dict[str, Any], out
             "## 数据不可用说明",
             "",
             "- `madstones`、`watchers`、`lotuses` 对所有选手均为 `{\"best\": null, \"average\": null}`。",
-            "- 没有参加 EWC 的 TI15 选手仍保留在数据集中，`gamesPlayed` 为 0，所有指标 Best/Average 均为 null。",
+            f"- 没有参加 {selected.match_source.competition_code} 的 {selected.roster.tournament_code} 选手仍保留在数据集中，`gamesPlayed` 为 0，所有指标 Best/Average 均为 null。",
             "- 个别场次不可用不会参与平均值，`validGames` 会小于 `gamesPlayed`；不会补 0。",
             "- `firstBlood.average.rawValue` 保持 0–1 比例；`teamfightParticipation` 同样保持 0–1，不提前乘以 100。",
             "",
@@ -455,27 +506,33 @@ def validation_markdown(validation: dict[str, Any], payload: dict[str, Any], out
 
 def parser() -> argparse.ArgumentParser:
     result = argparse.ArgumentParser(description=__doc__)
-    result.add_argument("--match-scores", type=Path, default=DEFAULT_MATCH_SCORES)
-    result.add_argument("--roster", type=Path, default=DEFAULT_ROSTER)
-    result.add_argument("--output", type=Path, default=DEFAULT_OUTPUT)
-    result.add_argument("--validation-output", type=Path, default=DEFAULT_VALIDATION)
+    result.add_argument("--dataset", help="Dataset ID; defaults to the registry default.")
+    result.add_argument("--match-scores", type=Path, help="Override the dataset match-score input.")
+    result.add_argument("--roster", type=Path, help="Override the configured roster source.")
+    result.add_argument("--output", type=Path, help="Override the dataset-namespaced output path.")
+    result.add_argument("--validation-output", type=Path, help="Override the dataset validation report path.")
     return result
 
 
 def main() -> int:
     args = parser().parse_args()
     try:
-        payload, rows_by_account = build_rankings(args.match_scores, args.roster)
-        validation = validate_rankings(payload, rows_by_account)
+        config = load_dataset(args.dataset)
+        match_scores = args.match_scores or config.paths.match_scores
+        roster = args.roster or config.roster.path
+        output = args.output or config.paths.player_rankings
+        validation_output = args.validation_output or config.paths.rankings_validation
+        payload, rows_by_account = build_rankings(match_scores, roster, config)
+        validation = validate_rankings(payload, rows_by_account, config.ruleset)
         if validation["status"] != "passed":
             raise ValueError("Ranking validation failed: " + "; ".join(validation["errors"][:10]))
-        _write_json(args.output, payload)
-        _write_text(args.validation_output, validation_markdown(validation, payload, args.output))
+        _write_json(output, payload)
+        _write_text(validation_output, validation_markdown(validation, payload, output, config))
         print(
-            f"Wrote {len(payload['players'])} TI15 players to {args.output}; "
+            f"Wrote {len(payload['players'])} {config.roster.tournament_code} players to {output}; "
             f"random audit={len(validation['randomAudit'])} players x {len(AUDIT_METRICS)} metrics"
         )
-        print(f"Validation report: {args.validation_output}")
+        print(f"Validation report: {validation_output}")
         return 0
     except (OSError, ValueError, KeyError, json.JSONDecodeError) as error:
         print(f"error: {error}")

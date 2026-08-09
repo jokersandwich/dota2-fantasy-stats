@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "validationProfile": "ti15-ewc-2026",
+  "expected": {
+    "matchesDiscovered": 157,
+    "matchesProcessed": 157,
+    "playerMatchRows": 1570,
+    "rosterPlayers": 80,
+    "playersWithGames": 74,
+    "playersWithoutGames": 6,
+    "teams": 16,
+    "roleUnits": 48
+  }
+}

@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
-"""Cache EWC 2026 (OpenDota league 19785) match payloads.
+"""Cache OpenDota match payloads for a configured dataset.
 
-This script only fetches data. Statistical processing lives in process-data.py.
-Existing JSON files are reused unless the corresponding refresh flag is set.
+The registry default remains TI15-EWC (EWC 2026 league 19785). This script only
+fetches data into the match source's namespace. Existing JSON files are reused
+unless the corresponding refresh flag is set.
 """
 
 from __future__ import annotations
@@ -21,7 +22,12 @@ from typing import Any
 
 
 ROOT = Path(__file__).resolve().parents[1]
-LEAGUE_ID = 19785
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+
+from scripts.fantasy.dataset_config import load_dataset
+
+
 DEFAULT_API_BASE = "https://api.opendota.com/api"
 DEFAULT_RAW_DIR = ROOT / "data" / "raw"
 
@@ -65,6 +71,7 @@ def get_json(url: str, retries: int, timeout: float) -> Any:
 
 
 def league_match_ids(
+    league_id: int,
     raw_dir: Path,
     api_base: str,
     api_key: str | None,
@@ -72,9 +79,9 @@ def league_match_ids(
     retries: int,
     timeout: float,
 ) -> list[int]:
-    cache = raw_dir / "league_19785_matches.json"
+    cache = raw_dir / "leagues" / f"{league_id}.json"
     if refresh or not cache.exists():
-        payload = get_json(api_url(api_base, f"leagues/{LEAGUE_ID}/matches", api_key), retries, timeout)
+        payload = get_json(api_url(api_base, f"leagues/{league_id}/matches", api_key), retries, timeout)
         if not isinstance(payload, list):
             raise RuntimeError("OpenDota league endpoint did not return an array.")
         write_json(cache, payload)
@@ -88,7 +95,7 @@ def league_match_ids(
         }
     )
     if not match_ids:
-        raise RuntimeError(f"No match IDs found for league {LEAGUE_ID}.")
+        raise RuntimeError(f"No match IDs found for league {league_id}.")
     return match_ids
 
 
@@ -137,8 +144,9 @@ def fetch_matches(
 
 def parser() -> argparse.ArgumentParser:
     result = argparse.ArgumentParser(description=__doc__)
-    result.add_argument("--raw-dir", type=Path, default=DEFAULT_RAW_DIR)
-    result.add_argument("--api-base", default=DEFAULT_API_BASE)
+    result.add_argument("--dataset", help="Dataset ID; defaults to the registry default.")
+    result.add_argument("--raw-dir", type=Path, help="Override the configured namespaced cache directory.")
+    result.add_argument("--api-base", help="Override the configured OpenDota API base URL.")
     result.add_argument("--api-key", default=os.environ.get("OPENDOTA_API_KEY"))
     result.add_argument("--refresh-league", action="store_true")
     result.add_argument("--refresh-matches", action="store_true")
@@ -153,19 +161,29 @@ def parser() -> argparse.ArgumentParser:
 def main() -> int:
     args = parser().parse_args()
     try:
-        all_ids = league_match_ids(
-            args.raw_dir,
-            args.api_base,
-            args.api_key,
-            args.refresh_league,
-            args.retries,
-            args.timeout,
-        )
+        config = load_dataset(args.dataset)
+        source = config.match_source
+        raw_dir = args.raw_dir or source.namespaced_raw_dir
+        api_base = args.api_base or source.api_base
+        all_ids_set: set[int] = set()
+        for league_id in source.league_ids:
+            all_ids_set.update(
+                league_match_ids(
+                    league_id,
+                    raw_dir,
+                    api_base,
+                    args.api_key,
+                    args.refresh_league,
+                    args.retries,
+                    args.timeout,
+                )
+            )
+        all_ids = sorted(all_ids_set - source.excluded_match_ids)
         selected = choose_matches(all_ids, args.sample_size, args.seed)
         fetched, reused = fetch_matches(
             selected,
-            args.raw_dir,
-            args.api_base,
+            raw_dir,
+            api_base,
             args.api_key,
             args.refresh_matches,
             args.delay,
@@ -173,7 +191,8 @@ def main() -> int:
             args.timeout,
         )
         print(
-            f"League {LEAGUE_ID}: discovered={len(all_ids)}, selected={len(selected)}, "
+            f"Dataset {config.dataset_id}, leagues={list(source.league_ids)}: "
+            f"discovered={len(all_ids)}, selected={len(selected)}, "
             f"fetched={fetched}, cached={reused}"
         )
         return 0
