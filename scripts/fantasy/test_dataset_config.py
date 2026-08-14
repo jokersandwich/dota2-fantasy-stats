@@ -45,7 +45,7 @@ class DatasetConfigTests(unittest.TestCase):
 
     def test_validation_profile_matches_frozen_scope(self) -> None:
         expected = load_validation_expectations(load_dataset())
-        self.assertEqual(expected["matchesProcessed"], 29)
+        self.assertEqual(expected["matchesProcessed"], 59)
         self.assertEqual(expected["rosterPlayers"], 80)
         self.assertEqual(expected["roleUnits"], 48)
 

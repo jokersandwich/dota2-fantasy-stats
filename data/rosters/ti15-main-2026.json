@@ -9,8 +9,8 @@
   "status": "verified",
   "lastVerified": "2026-08-14",
   "provenance": {
-    "universePolicy": "The 80 players who actually represented the 16 teams on TI15 Day 1 in OpenDota league 19719",
-    "rankingExclusions": "Pre-event replaced players with zero TI15 Day 1 games are metadata only",
+    "universePolicy": "The 80 players who actually represented the 16 teams through TI15 Day 2 in OpenDota league 19719",
+    "rankingExclusions": "Pre-event replaced players with zero TI15 games through Day 2 are metadata only",
     "sources": [
       "https://www.dota2.com/esports/ti15/watch/19719",
       "https://liquipedia.net/dota2/The_International/2026",
@@ -28,9 +28,9 @@
       "effective": "pre-event",
       "team": "LGD Gaming",
       "position": 2,
-      "out": { "account_id": 1026694469, "name": "TaiLung", "league19719Day1Games": 0 },
-      "in": { "account_id": 94054712, "name": "Topson", "league19719Day1Games": 6 },
-      "reason": "Topson played all of LGD Gaming's TI15 Day 1 matches"
+      "out": { "account_id": 1026694469, "name": "TaiLung", "league19719Day1Games": 0, "league19719GamesThroughDay2": 0 },
+      "in": { "account_id": 94054712, "name": "Topson", "league19719Day1Games": 6, "league19719GamesThroughDay2": 8 },
+      "reason": "Topson played all of LGD Gaming's TI15 matches through Day 2"
     },
     {
       "changeType": "team-identity-correction",
@@ -52,176 +52,176 @@
       "name": "Aurora Gaming",
       "team_id": 9467224,
       "players": [
-        { "account_id": 124801257, "name": "Nightfall", "position": 1, "actualGames": 2 },
-        { "account_id": 301750126, "name": "Mikoto", "position": 2, "actualGames": 2 },
-        { "account_id": 126842529, "name": "Ws", "position": 3, "actualGames": 2 },
-        { "account_id": 256156323, "name": "Mira", "position": 4, "actualGames": 2 },
-        { "account_id": 320219866, "name": "kaori", "position": 5, "actualGames": 2 }
+        { "account_id": 124801257, "name": "Nightfall", "position": 1, "actualGames": 7 },
+        { "account_id": 301750126, "name": "Mikoto", "position": 2, "actualGames": 7 },
+        { "account_id": 126842529, "name": "Ws", "position": 3, "actualGames": 7 },
+        { "account_id": 256156323, "name": "Mira", "position": 4, "actualGames": 7 },
+        { "account_id": 320219866, "name": "kaori", "position": 5, "actualGames": 7 }
       ]
     },
     {
       "name": "BoomBoys",
       "team_id": 8255888,
       "players": [
-        { "account_id": 172099728, "name": "Kiritych~", "position": 1, "actualGames": 5 },
-        { "account_id": 480412663, "name": "gpk~", "position": 2, "actualGames": 5 },
-        { "account_id": 165564598, "name": "MieRo", "position": 3, "actualGames": 5 },
-        { "account_id": 317880638, "name": "Save-", "position": 4, "actualGames": 5 },
-        { "account_id": 196878136, "name": "Kataomi", "position": 5, "actualGames": 5 }
+        { "account_id": 172099728, "name": "Kiritych~", "position": 1, "actualGames": 7 },
+        { "account_id": 480412663, "name": "gpk~", "position": 2, "actualGames": 7 },
+        { "account_id": 165564598, "name": "MieRo", "position": 3, "actualGames": 7 },
+        { "account_id": 317880638, "name": "Save-", "position": 4, "actualGames": 7 },
+        { "account_id": 196878136, "name": "Kataomi", "position": 5, "actualGames": 7 }
       ]
     },
     {
       "name": "Iron Wing",
       "team_id": 10150413,
       "players": [
-        { "account_id": 331855530, "name": "Pure", "position": 1, "actualGames": 5 },
-        { "account_id": 93618577, "name": "bzm", "position": 2, "actualGames": 5 },
-        { "account_id": 86698277, "name": "33", "position": 3, "actualGames": 5 },
-        { "account_id": 346412363, "name": "Ari", "position": 4, "actualGames": 5 },
-        { "account_id": 136829091, "name": "Whitemon", "position": 5, "actualGames": 5 }
+        { "account_id": 331855530, "name": "Pure", "position": 1, "actualGames": 8 },
+        { "account_id": 93618577, "name": "bzm", "position": 2, "actualGames": 8 },
+        { "account_id": 86698277, "name": "33", "position": 3, "actualGames": 8 },
+        { "account_id": 346412363, "name": "Ari", "position": 4, "actualGames": 8 },
+        { "account_id": 136829091, "name": "Whitemon", "position": 5, "actualGames": 8 }
       ]
     },
     {
       "name": "Team Falcons",
       "team_id": 9247354,
       "players": [
-        { "account_id": 100058342, "name": "skiter", "position": 1, "actualGames": 6 },
-        { "account_id": 898455820, "name": "Malr1ne", "position": 2, "actualGames": 6 },
-        { "account_id": 183719386, "name": "ATF", "position": 3, "actualGames": 6 },
-        { "account_id": 25907144, "name": "Cr1t-", "position": 4, "actualGames": 6 },
-        { "account_id": 10366616, "name": "Sneyking", "position": 5, "actualGames": 6 }
+        { "account_id": 100058342, "name": "skiter", "position": 1, "actualGames": 9 },
+        { "account_id": 898455820, "name": "Malr1ne", "position": 2, "actualGames": 9 },
+        { "account_id": 183719386, "name": "ATF", "position": 3, "actualGames": 9 },
+        { "account_id": 25907144, "name": "Cr1t-", "position": 4, "actualGames": 9 },
+        { "account_id": 10366616, "name": "Sneyking", "position": 5, "actualGames": 9 }
       ]
     },
     {
       "name": "Team Liquid",
       "team_id": 2163,
       "players": [
-        { "account_id": 152962063, "name": "m1CKe", "position": 1, "actualGames": 2 },
-        { "account_id": 201358612, "name": "Nisha", "position": 2, "actualGames": 2 },
-        { "account_id": 97590558, "name": "Ace", "position": 3, "actualGames": 2 },
-        { "account_id": 77490514, "name": "Boxi", "position": 4, "actualGames": 2 },
-        { "account_id": 16497807, "name": "tOfu", "position": 5, "actualGames": 2 }
+        { "account_id": 152962063, "name": "m1CKe", "position": 1, "actualGames": 8 },
+        { "account_id": 201358612, "name": "Nisha", "position": 2, "actualGames": 8 },
+        { "account_id": 97590558, "name": "Ace", "position": 3, "actualGames": 8 },
+        { "account_id": 77490514, "name": "Boxi", "position": 4, "actualGames": 8 },
+        { "account_id": 16497807, "name": "tOfu", "position": 5, "actualGames": 8 }
       ]
     },
     {
       "name": "Team Yandex",
       "team_id": 9823272,
       "players": [
-        { "account_id": 171262902, "name": "watson", "position": 1, "actualGames": 2 },
-        { "account_id": 312436974, "name": "CHIRA_JUNIOR", "position": 2, "actualGames": 2 },
-        { "account_id": 56351509, "name": "DM", "position": 3, "actualGames": 2 },
-        { "account_id": 103735745, "name": "Saksa", "position": 4, "actualGames": 2 },
-        { "account_id": 93817671, "name": "Malady", "position": 5, "actualGames": 2 }
+        { "account_id": 171262902, "name": "watson", "position": 1, "actualGames": 8 },
+        { "account_id": 312436974, "name": "CHIRA_JUNIOR", "position": 2, "actualGames": 8 },
+        { "account_id": 56351509, "name": "DM", "position": 3, "actualGames": 8 },
+        { "account_id": 103735745, "name": "Saksa", "position": 4, "actualGames": 8 },
+        { "account_id": 93817671, "name": "Malady", "position": 5, "actualGames": 8 }
       ]
     },
     {
       "name": "Xtreme Gaming",
       "team_id": 8261500,
       "players": [
-        { "account_id": 898754153, "name": "Ame", "position": 1, "actualGames": 2 },
-        { "account_id": 173978074, "name": "NothingToSay", "position": 2, "actualGames": 2 },
-        { "account_id": 129958758, "name": "Xxs", "position": 3, "actualGames": 2 },
-        { "account_id": 101695162, "name": "fy", "position": 4, "actualGames": 2 },
-        { "account_id": 94296097, "name": "xNova", "position": 5, "actualGames": 2 }
+        { "account_id": 898754153, "name": "Ame", "position": 1, "actualGames": 6 },
+        { "account_id": 173978074, "name": "NothingToSay", "position": 2, "actualGames": 6 },
+        { "account_id": 129958758, "name": "Xxs", "position": 3, "actualGames": 6 },
+        { "account_id": 101695162, "name": "fy", "position": 4, "actualGames": 6 },
+        { "account_id": 94296097, "name": "xNova", "position": 5, "actualGames": 6 }
       ]
     },
     {
       "name": "Team Spirit",
       "team_id": 7119388,
       "players": [
-        { "account_id": 321580662, "name": "Yatoro", "position": 1, "actualGames": 2 },
-        { "account_id": 106305042, "name": "Larl", "position": 2, "actualGames": 2 },
-        { "account_id": 302214028, "name": "Collapse", "position": 3, "actualGames": 2 },
-        { "account_id": 218231587, "name": "not me", "position": 4, "actualGames": 2 },
-        { "account_id": 847565596, "name": "rue", "position": 5, "actualGames": 2 }
+        { "account_id": 321580662, "name": "Yatoro", "position": 1, "actualGames": 7 },
+        { "account_id": 106305042, "name": "Larl", "position": 2, "actualGames": 7 },
+        { "account_id": 302214028, "name": "Collapse", "position": 3, "actualGames": 7 },
+        { "account_id": 218231587, "name": "not me", "position": 4, "actualGames": 7 },
+        { "account_id": 847565596, "name": "rue", "position": 5, "actualGames": 7 }
       ]
     },
     {
       "name": "TEAM VISION",
       "team_id": 9572001,
       "players": [
-        { "account_id": 1044002267, "name": "Satanic", "position": 1, "actualGames": 6 },
-        { "account_id": 106573901, "name": "No[o]ne-", "position": 2, "actualGames": 6 },
-        { "account_id": 195108598, "name": "Noticed", "position": 3, "actualGames": 6 },
-        { "account_id": 164199202, "name": "9Class", "position": 4, "actualGames": 6 },
-        { "account_id": 73401082, "name": "Dukalis", "position": 5, "actualGames": 6 }
+        { "account_id": 1044002267, "name": "Satanic", "position": 1, "actualGames": 8 },
+        { "account_id": 106573901, "name": "No[o]ne-", "position": 2, "actualGames": 8 },
+        { "account_id": 195108598, "name": "Noticed", "position": 3, "actualGames": 8 },
+        { "account_id": 164199202, "name": "9Class", "position": 4, "actualGames": 8 },
+        { "account_id": 73401082, "name": "Dukalis", "position": 5, "actualGames": 8 }
       ]
     },
     {
       "name": "Nigma Galaxy",
       "team_id": 10136357,
       "players": [
-        { "account_id": 111620041, "name": "SumaiL", "position": 1, "actualGames": 4 },
-        { "account_id": 210053851, "name": "lorenof", "position": 2, "actualGames": 4 },
-        { "account_id": 138880576, "name": "Davai", "position": 3, "actualGames": 4 },
-        { "account_id": 152168157, "name": "OmaR", "position": 4, "actualGames": 4 },
-        { "account_id": 101356886, "name": "GH", "position": 5, "actualGames": 4 }
+        { "account_id": 111620041, "name": "SumaiL", "position": 1, "actualGames": 6 },
+        { "account_id": 210053851, "name": "lorenof", "position": 2, "actualGames": 6 },
+        { "account_id": 138880576, "name": "Davai", "position": 3, "actualGames": 6 },
+        { "account_id": 152168157, "name": "OmaR", "position": 4, "actualGames": 6 },
+        { "account_id": 101356886, "name": "GH", "position": 5, "actualGames": 6 }
       ]
     },
     {
       "name": "HULIGANI",
       "team_id": 10149530,
       "players": [
-        { "account_id": 320017600, "name": "ssnovv1", "position": 1, "actualGames": 2 },
-        { "account_id": 140251702, "name": "Mirage`", "position": 2, "actualGames": 2 },
-        { "account_id": 92487440, "name": "Corrupted", "position": 3, "actualGames": 2 },
-        { "account_id": 145065875, "name": "sayuw", "position": 4, "actualGames": 2 },
-        { "account_id": 123787715, "name": "RESPECT", "position": 5, "actualGames": 2 }
+        { "account_id": 320017600, "name": "ssnovv1", "position": 1, "actualGames": 7 },
+        { "account_id": 140251702, "name": "Mirage`", "position": 2, "actualGames": 7 },
+        { "account_id": 92487440, "name": "Corrupted", "position": 3, "actualGames": 7 },
+        { "account_id": 145065875, "name": "sayuw", "position": 4, "actualGames": 7 },
+        { "account_id": 123787715, "name": "RESPECT", "position": 5, "actualGames": 7 }
       ]
     },
     {
       "name": "Team Resilience",
       "team_id": 5017210,
       "players": [
-        { "account_id": 170896543, "name": "YSR-04E", "position": 1, "actualGames": 6 },
-        { "account_id": 315272623, "name": "Echozz", "position": 2, "actualGames": 6 },
-        { "account_id": 145957968, "name": "niu", "position": 3, "actualGames": 6 },
-        { "account_id": 150961567, "name": "planet", "position": 4, "actualGames": 6 },
-        { "account_id": 249835593, "name": "zzq", "position": 5, "actualGames": 6 }
+        { "account_id": 170896543, "name": "YSR-04E", "position": 1, "actualGames": 8 },
+        { "account_id": 315272623, "name": "Echozz", "position": 2, "actualGames": 8 },
+        { "account_id": 145957968, "name": "niu", "position": 3, "actualGames": 8 },
+        { "account_id": 150961567, "name": "planet", "position": 4, "actualGames": 8 },
+        { "account_id": 249835593, "name": "zzq", "position": 5, "actualGames": 8 }
       ]
     },
     {
       "name": "Vici Gaming",
       "team_id": 726228,
       "players": [
-        { "account_id": 320252024, "name": "shiro", "position": 1, "actualGames": 2 },
-        { "account_id": 137129583, "name": "Xm", "position": 2, "actualGames": 2 },
-        { "account_id": 118134220, "name": "Bach", "position": 3, "actualGames": 2 },
-        { "account_id": 157475523, "name": "XinQ", "position": 4, "actualGames": 2 },
-        { "account_id": 111114687, "name": "y`", "position": 5, "actualGames": 2 }
+        { "account_id": 320252024, "name": "shiro", "position": 1, "actualGames": 8 },
+        { "account_id": 137129583, "name": "Xm", "position": 2, "actualGames": 8 },
+        { "account_id": 118134220, "name": "Bach", "position": 3, "actualGames": 8 },
+        { "account_id": 157475523, "name": "XinQ", "position": 4, "actualGames": 8 },
+        { "account_id": 111114687, "name": "y`", "position": 5, "actualGames": 8 }
       ]
     },
     {
       "name": "LGD Gaming",
       "team_id": 10150538,
       "players": [
-        { "account_id": 177203952, "name": "Yuma", "position": 1, "actualGames": 6 },
-        { "account_id": 94054712, "name": "Topson", "position": 2, "actualGames": 6 },
-        { "account_id": 292921272, "name": "Wisper", "position": 3, "actualGames": 6 },
-        { "account_id": 105045291, "name": "Thiolicor", "position": 4, "actualGames": 6 },
-        { "account_id": 81306398, "name": "KJ", "position": 5, "actualGames": 6 }
+        { "account_id": 177203952, "name": "Yuma", "position": 1, "actualGames": 8 },
+        { "account_id": 94054712, "name": "Topson", "position": 2, "actualGames": 8 },
+        { "account_id": 292921272, "name": "Wisper", "position": 3, "actualGames": 8 },
+        { "account_id": 105045291, "name": "Thiolicor", "position": 4, "actualGames": 8 },
+        { "account_id": 81306398, "name": "KJ", "position": 5, "actualGames": 8 }
       ]
     },
     {
       "name": "GamerLegion",
       "team_id": 9964962,
       "players": [
-        { "account_id": 206642367, "name": "Ghost", "position": 1, "actualGames": 2 },
-        { "account_id": 154974246, "name": "RCY", "position": 2, "actualGames": 2 },
-        { "account_id": 160119017, "name": "Fayde", "position": 3, "actualGames": 2 },
-        { "account_id": 90423751, "name": "Bignum", "position": 4, "actualGames": 2 },
-        { "account_id": 191362875, "name": "Speeed", "position": 5, "actualGames": 2 }
+        { "account_id": 206642367, "name": "Ghost", "position": 1, "actualGames": 7 },
+        { "account_id": 154974246, "name": "RCY", "position": 2, "actualGames": 7 },
+        { "account_id": 160119017, "name": "Fayde", "position": 3, "actualGames": 7 },
+        { "account_id": 90423751, "name": "Bignum", "position": 4, "actualGames": 7 },
+        { "account_id": 191362875, "name": "Speeed", "position": 5, "actualGames": 7 }
       ]
     },
     {
       "name": "OG",
       "team_id": 2586976,
       "players": [
-        { "account_id": 355168766, "name": "Natsumi", "position": 1, "actualGames": 4 },
-        { "account_id": 324277900, "name": "Yopaj-", "position": 2, "actualGames": 4 },
-        { "account_id": 132309493, "name": "Raven", "position": 3, "actualGames": 4 },
-        { "account_id": 155494381, "name": "TIMS", "position": 4, "actualGames": 4 },
-        { "account_id": 100594231, "name": "skem", "position": 5, "actualGames": 4 }
+        { "account_id": 355168766, "name": "Natsumi", "position": 1, "actualGames": 6 },
+        { "account_id": 324277900, "name": "Yopaj-", "position": 2, "actualGames": 6 },
+        { "account_id": 132309493, "name": "Raven", "position": 3, "actualGames": 6 },
+        { "account_id": 155494381, "name": "TIMS", "position": 4, "actualGames": 6 },
+        { "account_id": 100594231, "name": "skem", "position": 5, "actualGames": 6 }
       ]
     }
   ]
