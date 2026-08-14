@@ -44,7 +44,7 @@ describe('App dataset switching', () => {
     fireEvent.click(screen.getByRole('button', { name: 'Support' }))
     fireEvent.click(screen.getByTitle('First Blood'))
 
-    chooseDataset(container, 'TI15 · EWC')
+    chooseDataset(container, 'EWC')
     await waitFor(() => {
       expect(container.querySelector('.hero-dataset-card')?.getAttribute('data-active-dataset')).toBe('ti15-ewc-2026')
     })
@@ -110,7 +110,7 @@ describe('App dataset switching', () => {
 
     expect(document.documentElement.lang).toBe('zh-CN')
     expect(screen.getByRole('heading', { level: 1 }).textContent).toBe('TI15 梦幻挑战选手数据')
-    expect(screen.getByText('统一使用 TI15 梦幻挑战规则评估 TI14 参赛选手的比赛表现。')).toBeTruthy()
+    expect(screen.getByText('使用 TI15 梦幻挑战规则评估选手在TI15、EWC、TI14的比赛表现。')).toBeTruthy()
     expect(within(container.querySelector('.hero-stats')!).getByText('144')).toBeTruthy()
   })
 
@@ -126,7 +126,7 @@ describe('App dataset switching', () => {
     expect(ti15LogoSources.size).toBe(16)
     expect(Array.from(ti15LogoSources).every((source) => source?.startsWith('/assets/team-logos/ti15/'))).toBe(true)
 
-    chooseDataset(container, 'TI15 · EWC')
+    chooseDataset(container, 'EWC')
     await waitFor(() => {
       expect(container.querySelector('.hero-dataset-card')?.getAttribute('data-active-dataset')).toBe('ti15-ewc-2026')
     })
@@ -153,7 +153,7 @@ describe('App dataset switching', () => {
     const options = screen.getAllByRole('option')
     expect(options).toHaveLength(3)
     expect(options[0].textContent).toContain('TI15')
-    expect(options[1].textContent).toBe('TI15 · EWC')
+    expect(options[1].textContent).toBe('EWC')
     expect(options[2].textContent).toBe('TI14')
     expect(options.every((option) => !(option as HTMLButtonElement).disabled)).toBe(true)
   })
@@ -164,6 +164,7 @@ describe('App dataset switching', () => {
     const { container } = render(<App />)
 
     await waitFor(() => expect(container.querySelectorAll('.team-cell')).toHaveLength(48))
+    expect(screen.getByTitle('Kills').closest('th')?.getAttribute('aria-sort')).toBe('descending')
     const firstBloodHeader = screen.getByTitle('First Blood').closest('th')
     fireEvent.click(screen.getByTitle('First Blood'))
     expect(firstBloodHeader?.getAttribute('aria-sort')).toBe('descending')

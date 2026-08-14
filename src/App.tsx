@@ -193,7 +193,7 @@ function App() {
   } = useDataset()
   const [roleFilter, setRoleFilter] = useState<RoleFilter>('all')
   const [performanceMode, setPerformanceMode] = useState<PerformanceMode>('best')
-  const [sortKey, setSortKey] = useState<SortKey>('gpm')
+  const [sortKey, setSortKey] = useState<SortKey>('kills')
   const [sortDirection, setSortDirection] = useState<SortDirection>('desc')
   const [datasetMenuOpen, setDatasetMenuOpen] = useState(false)
   const [tableScrollEdges, setTableScrollEdges] = useState({ canScrollLeft: false, canScrollRight: true })

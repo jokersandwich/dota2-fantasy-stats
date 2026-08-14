@@ -14,7 +14,7 @@ export const translations = {
     datasetSelectorAria: '选择赛事数据',
     datasetNames: {
       ti15: 'TI15',
-      'ti15-ewc-2026': 'TI15 · EWC',
+      'ti15-ewc-2026': 'EWC',
       ti14: 'TI14',
     } as Readonly<Record<string, string>>,
     datasetCopy: {
@@ -22,7 +22,7 @@ export const translations = {
       loadError: '{dataset} 数据加载失败。当前赛事数据保持不变。',
       retry: '重试',
       ti15Upcoming: 'TI15 (未开始)',
-      heroDescription: '统一使用 TI15 梦幻挑战规则评估 {dataset} 参赛选手的比赛表现。',
+      heroDescription: '使用 TI15 梦幻挑战规则评估选手在TI15、EWC、TI14的比赛表现。',
       averageSummary: '基于 {dataset} 有效共同场次的平均表现',
       footerTitle: 'TI15 梦幻挑战 / {dataset}',
       metaTitle: 'Dota2 Fantasy Stats — {dataset}',
@@ -109,7 +109,7 @@ export const translations = {
     datasetSelectorAria: 'Select tournament dataset',
     datasetNames: {
       ti15: 'TI15',
-      'ti15-ewc-2026': 'TI15 · EWC',
+      'ti15-ewc-2026': 'EWC',
       ti14: 'TI14',
     } as Readonly<Record<string, string>>,
     datasetCopy: {
