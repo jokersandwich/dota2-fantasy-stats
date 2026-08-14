@@ -87,6 +87,34 @@ const teamLogoUrls: Record<number, string> = {
   2586976: 'https://steamcdn-a.akamaihd.net/apps/dota2/images/team_logos/2586976.png',
 }
 
+const ti15TeamLogoFiles: Record<number, string> = {
+  2163: '2163.png',
+  726228: '726228.png',
+  2586976: '2586976.png',
+  5017210: '5017210.png',
+  7119388: '7119388.png',
+  8255888: '8255888.png',
+  8261500: '8261500.png',
+  9247354: '9247354.png',
+  9467224: '9467224.png',
+  9572001: '9572001.png',
+  9823272: '9823272.png',
+  9964962: '9964962.svg',
+  10136357: '10136357.png',
+  10149530: '10149530.png',
+  10150413: '10150413.png',
+  10150538: '10150538.png',
+}
+
+function getTeamLogoUrl(datasetId: string, teamId: number | null) {
+  if (teamId === null) return null
+  const ti15LogoFile = ti15TeamLogoFiles[teamId]
+  if (datasetId === 'ti15' && ti15LogoFile) {
+    return `${import.meta.env.BASE_URL}assets/team-logos/ti15/${ti15LogoFile}`
+  }
+  return teamLogoUrls[teamId] ?? null
+}
+
 const roleOrder: Record<Role, number> = { core: 1, mid: 2, support: 3 }
 
 function getMetricDisplayValue(metric: RoleMetric, performanceMode: PerformanceMode) {
@@ -164,7 +192,7 @@ function App() {
     retryDataset,
   } = useDataset()
   const [roleFilter, setRoleFilter] = useState<RoleFilter>('all')
-  const [performanceMode, setPerformanceMode] = useState<PerformanceMode>('average')
+  const [performanceMode, setPerformanceMode] = useState<PerformanceMode>('best')
   const [sortKey, setSortKey] = useState<SortKey>('gpm')
   const [sortDirection, setSortDirection] = useState<SortDirection>('desc')
   const [datasetMenuOpen, setDatasetMenuOpen] = useState(false)
@@ -507,15 +535,17 @@ function App() {
                   </td>
                 </tr>
               ) : null}
-              {visibleUnits.map((unit, index) => (
+              {visibleUnits.map((unit, index) => {
+                const teamLogoUrl = getTeamLogoUrl(activeDatasetId, unit.teamId)
+                return (
                 <tr key={`${unit.teamId}-${unit.role}`}>
                   <td className={`team-cell ${sortKey === 'teamName' ? 'sorted-column' : ''}`}>
                     <span className="rank-number">{String(index + 1).padStart(2, '0')}</span>
                     <span className="team-identity">
-                      {unit.teamId !== null && teamLogoUrls[unit.teamId] ? (
+                      {teamLogoUrl ? (
                         <img
                           className="team-logo"
-                          src={teamLogoUrls[unit.teamId]}
+                          src={teamLogoUrl}
                           alt=""
                           loading="lazy"
                           decoding="async"
@@ -541,7 +571,8 @@ function App() {
                     </td>
                   ))}
                 </tr>
-              ))}
+                )
+              })}
             </tbody>
             </table>
           </div>

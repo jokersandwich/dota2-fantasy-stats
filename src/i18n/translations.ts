@@ -75,8 +75,8 @@ export const translations = {
       support: '辅助',
     },
     performance: {
-      best: '最好表现',
-      average: '平均表现',
+      best: '最高分',
+      average: '平均分',
     },
     metrics: {
       kills: '击杀',

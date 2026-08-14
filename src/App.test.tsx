@@ -39,7 +39,8 @@ describe('App dataset switching', () => {
     await waitFor(() => {
       expect(within(container.querySelector('.hero-stats')!).getByText('29')).toBeTruthy()
     })
-    fireEvent.click(screen.getByRole('button', { name: 'Best Performance' }))
+    expect(screen.getByRole('button', { name: 'Best Performance' }).getAttribute('aria-pressed')).toBe('true')
+    expect(screen.getByRole('button', { name: 'Average Performance' }).getAttribute('aria-pressed')).toBe('false')
     fireEvent.click(screen.getByRole('button', { name: 'Support' }))
     fireEvent.click(screen.getByTitle('First Blood'))
 
@@ -98,6 +99,8 @@ describe('App dataset switching', () => {
     await waitFor(() => expect(within(container.querySelector('.hero-stats')!).getByText('29')).toBeTruthy())
     fireEvent.click(screen.getByRole('button', { name: 'Switch to Simplified Chinese' }))
     expect(document.documentElement.lang).toBe('zh-CN')
+    expect(screen.getByRole('button', { name: '最高分' }).getAttribute('aria-pressed')).toBe('true')
+    expect(screen.getByRole('button', { name: '平均分' }).getAttribute('aria-pressed')).toBe('false')
     expect(screen.getByText('赛事数据')).toBeTruthy()
 
     chooseDataset(container, 'TI14')
@@ -117,12 +120,22 @@ describe('App dataset switching', () => {
 
     await waitFor(() => expect(container.querySelectorAll('.team-cell')).toHaveLength(48))
     expect(container.querySelectorAll('.team-cell img')).toHaveLength(48)
+    const ti15LogoSources = new Set(
+      Array.from(container.querySelectorAll<HTMLImageElement>('.team-cell img'), (image) => image.getAttribute('src')),
+    )
+    expect(ti15LogoSources.size).toBe(16)
+    expect(Array.from(ti15LogoSources).every((source) => source?.startsWith('/assets/team-logos/ti15/'))).toBe(true)
 
     chooseDataset(container, 'TI15 · EWC')
     await waitFor(() => {
       expect(container.querySelector('.hero-dataset-card')?.getAttribute('data-active-dataset')).toBe('ti15-ewc-2026')
     })
     expect(container.querySelectorAll('.team-cell img')).toHaveLength(48)
+    expect(
+      Array.from(container.querySelectorAll<HTMLImageElement>('.team-cell img')).every((image) =>
+        image.getAttribute('src')?.startsWith('https://'),
+      ),
+    ).toBe(true)
 
     chooseDataset(container, 'TI14')
     await waitFor(() => {
