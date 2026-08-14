@@ -7,13 +7,13 @@ from scripts.fantasy.rulesets import get_ruleset
 
 
 class DatasetConfigTests(unittest.TestCase):
-    def test_default_dataset_is_current_ti15_ewc(self) -> None:
-        self.assertEqual(default_dataset_id(), "ti15-ewc-2026")
+    def test_default_dataset_is_current_ti15(self) -> None:
+        self.assertEqual(default_dataset_id(), "ti15")
         config = load_dataset()
-        self.assertEqual(config.dataset_id, "ti15-ewc-2026")
-        self.assertEqual(config.roster.roster_source_id, "ti15-2026")
-        self.assertEqual(config.match_source.match_source_id, "ewc-2026-opendota")
-        self.assertEqual(config.match_source.league_ids, (19785,))
+        self.assertEqual(config.dataset_id, "ti15")
+        self.assertEqual(config.roster.roster_source_id, "ti15-main-2026")
+        self.assertEqual(config.match_source.match_source_id, "ti15-2026-opendota")
+        self.assertEqual(config.match_source.league_ids, (19719,))
 
     def test_current_roster_invariants_are_configured(self) -> None:
         roster = load_dataset().roster
@@ -45,7 +45,7 @@ class DatasetConfigTests(unittest.TestCase):
 
     def test_validation_profile_matches_frozen_scope(self) -> None:
         expected = load_validation_expectations(load_dataset())
-        self.assertEqual(expected["matchesProcessed"], 157)
+        self.assertEqual(expected["matchesProcessed"], 29)
         self.assertEqual(expected["rosterPlayers"], 80)
         self.assertEqual(expected["roleUnits"], 48)
 

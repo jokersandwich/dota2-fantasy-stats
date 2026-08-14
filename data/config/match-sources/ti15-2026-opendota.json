@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "matchSourceId": "ti15-2026-opendota",
+  "competition": {
+    "code": "TI15",
+    "season": 2026
+  },
+  "provider": {
+    "id": "OpenDota",
+    "apiBase": "https://api.opendota.com/api",
+    "leagueIds": [19719]
+  },
+  "cacheNamespace": "ti15-2026-opendota",
+  "matchManifest": "data/manifests/ti15-2026-opendota.json",
+  "matchSelection": {
+    "stages": "all",
+    "excludedMatchIds": []
+  },
+  "expectations": {
+    "playersPerMatch": 10
+  }
+}

@@ -13,7 +13,8 @@ export const translations = {
     datasetLabel: '赛事数据',
     datasetSelectorAria: '选择赛事数据',
     datasetNames: {
-      'ti15-ewc-2026': 'EWC 2026',
+      ti15: 'TI15',
+      'ti15-ewc-2026': 'TI15 · EWC',
       ti14: 'TI14',
     } as Readonly<Record<string, string>>,
     datasetCopy: {
@@ -107,7 +108,8 @@ export const translations = {
     datasetLabel: 'DATASET',
     datasetSelectorAria: 'Select tournament dataset',
     datasetNames: {
-      'ti15-ewc-2026': 'EWC 2026',
+      ti15: 'TI15',
+      'ti15-ewc-2026': 'TI15 · EWC',
       ti14: 'TI14',
     } as Readonly<Record<string, string>>,
     datasetCopy: {

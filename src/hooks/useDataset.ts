@@ -15,15 +15,19 @@ export interface DatasetLoadError {
 
 type HistoryMode = 'none' | 'push' | 'replace'
 
-export function useDataset(defaultPayloadValue: unknown) {
-  const defaultPayload = validateRoleRankingsPayload(defaultPayloadValue, DEFAULT_DATASET_ID)
-  const cacheRef = useRef(new Map<string, RoleRankingsPayload>([[DEFAULT_DATASET_ID, defaultPayload]]))
+export function useDataset(defaultPayloadValue?: unknown) {
+  const defaultPayload = defaultPayloadValue === undefined
+    ? null
+    : validateRoleRankingsPayload(defaultPayloadValue, DEFAULT_DATASET_ID)
+  const cacheRef = useRef(new Map<string, RoleRankingsPayload>(
+    defaultPayload ? [[DEFAULT_DATASET_ID, defaultPayload]] : [],
+  ))
   const abortControllerRef = useRef<AbortController | null>(null)
   const requestIdRef = useRef(0)
   const activeDatasetIdRef = useRef(DEFAULT_DATASET_ID)
 
   const [activeDatasetId, setActiveDatasetId] = useState(DEFAULT_DATASET_ID)
-  const [payload, setPayload] = useState(defaultPayload)
+  const [payload, setPayload] = useState<RoleRankingsPayload | null>(defaultPayload)
   const [pendingDatasetId, setPendingDatasetId] = useState<string | null>(null)
   const [loadError, setLoadError] = useState<DatasetLoadError | null>(null)
 
@@ -42,8 +46,8 @@ export function useDataset(defaultPayloadValue: unknown) {
   const requestDataset = useCallback(
     async (datasetId: string, historyMode: HistoryMode) => {
       if (!isDatasetId(datasetId)) {
-        const fallback = cacheRef.current.get(DEFAULT_DATASET_ID)!
-        commitDataset(DEFAULT_DATASET_ID, fallback, 'replace')
+        const fallback = cacheRef.current.get(DEFAULT_DATASET_ID)
+        if (fallback) commitDataset(DEFAULT_DATASET_ID, fallback, 'replace')
         return false
       }
 
@@ -107,7 +111,10 @@ export function useDataset(defaultPayloadValue: unknown) {
       if (resolution.invalidDatasetId !== null) {
         updateDatasetUrl(DEFAULT_DATASET_ID, 'replace')
       }
-      if (resolution.datasetId === activeDatasetIdRef.current) {
+      if (
+        resolution.datasetId === activeDatasetIdRef.current &&
+        cacheRef.current.has(resolution.datasetId)
+      ) {
         setPendingDatasetId(null)
         setLoadError(null)
         return

@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "datasetId": "ti15",
+  "status": "verified",
+  "rosterSourceId": "ti15-main-2026",
+  "matchSourceId": "ti15-2026-opendota",
+  "rulesetId": "ti15-base-v1",
+  "populationPolicy": {
+    "playerRankings": "all-roster-participants",
+    "roleRankings": "configured-role-lineups",
+    "crossDatasetIntersection": false
+  },
+  "metricAvailabilityOverrides": [
+    {
+      "metric": "first_blood",
+      "matchIds": [8943142948],
+      "reason": "OpenDota First Blood attribution is unreliable for this match"
+    }
+  ],
+  "validationProfile": "ti15"
+}

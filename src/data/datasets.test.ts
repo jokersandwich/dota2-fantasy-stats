@@ -10,23 +10,27 @@ import {
 } from './datasets'
 
 describe('dataset registry', () => {
-  it('keeps TI15-EWC as the default and preserves registry order', () => {
-    expect(DEFAULT_DATASET_ID).toBe('ti15-ewc-2026')
-    expect(DATASET_IDS).toEqual(['ti15-ewc-2026', 'ti14'])
+  it('keeps TI15 as the default and preserves registry order', () => {
+    expect(DEFAULT_DATASET_ID).toBe('ti15')
+    expect(DATASET_IDS).toEqual(['ti15', 'ti15-ewc-2026', 'ti14'])
     expect(new Set(DATASET_IDS).size).toBe(DATASET_IDS.length)
   })
 
   it('resolves valid, missing, and invalid URL queries safely', () => {
     expect(resolveDatasetFromSearch('')).toEqual({
-      datasetId: 'ti15-ewc-2026',
+      datasetId: 'ti15',
       invalidDatasetId: null,
     })
     expect(resolveDatasetFromSearch('?dataset=ti14')).toEqual({
       datasetId: 'ti14',
       invalidDatasetId: null,
     })
-    expect(resolveDatasetFromSearch('?dataset=missing')).toEqual({
+    expect(resolveDatasetFromSearch('?dataset=ti15-ewc-2026')).toEqual({
       datasetId: 'ti15-ewc-2026',
+      invalidDatasetId: null,
+    })
+    expect(resolveDatasetFromSearch('?dataset=missing')).toEqual({
+      datasetId: 'ti15',
       invalidDatasetId: 'missing',
     })
   })

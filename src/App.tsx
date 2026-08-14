@@ -1,12 +1,10 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
-import defaultRoleRankingsData from '../data/processed/role-fantasy-rankings.json'
 import {
   DATASETS,
   datasetDisplayName,
   type MetricKey,
   type Role,
   type RoleMetric,
-  type RoleRankingsPayload,
   type RoleUnit,
 } from './data/datasets'
 import { useDataset } from './hooks/useDataset'
@@ -72,6 +70,7 @@ const teamLogoUrls: Record<number, string> = {
   9691969: 'https://cdn.steamusercontent.com/ugc/16578975333650734744/040492179D9E0E83DA0559848D88CFC17A1EFCAC/',
   9467224: 'https://cdn.steamusercontent.com/ugc/13052583756685508/22B0338D7E09FB2F021E5DB5BBEFFD170D5E5E1A/',
   8255888: 'https://cdn.steamusercontent.com/ugc/9995426432403529725/51E13136D4CCC8C7D8062861541A1D13B8ED87E0/',
+  10150413: 'https://cdn.steamusercontent.com/ugc/16903873521422862552/02513782FE03E7A567B8B8955A0DEF415EF2B624/',
   10182357: 'https://cdn.steamusercontent.com/ugc/10678669599334676082/E48827F4A163D4D02F817EA3C32166D5F1D5FC98/',
   9247354: 'https://cdn.steamusercontent.com/ugc/2314350571781870059/2B5C9FE9BA0A2DC303A13261444532AA08352843/',
   2163: 'https://steamcdn-a.akamaihd.net/apps/dota2/images/team_logos/2163.png',
@@ -163,7 +162,7 @@ function App() {
     loadError,
     selectDataset,
     retryDataset,
-  } = useDataset(defaultRoleRankingsData as unknown as RoleRankingsPayload)
+  } = useDataset()
   const [roleFilter, setRoleFilter] = useState<RoleFilter>('all')
   const [performanceMode, setPerformanceMode] = useState<PerformanceMode>('average')
   const [sortKey, setSortKey] = useState<SortKey>('gpm')
@@ -211,7 +210,7 @@ function App() {
     () => columns.filter(
       (column) =>
         !column.metric ||
-        payload.roleUnits.some((unit) => {
+        payload?.roleUnits.some((unit) => {
           const metric = unit.metrics[column.metric as MetricKey]
           return metric.best !== null || metric.average !== null
         }),
@@ -291,7 +290,7 @@ function App() {
 
   const visibleUnits = useMemo(() => {
     const direction = sortDirection === 'asc' ? 1 : -1
-    return payload.roleUnits
+    return (payload?.roleUnits ?? [])
       .filter((unit) => roleFilter === 'all' || unit.role === roleFilter)
       .sort((left, right) => {
         const leftValue = sortValue(left, sortKey, performanceMode)
@@ -334,7 +333,7 @@ function App() {
         <div className="brand-mark" aria-hidden="true">TI</div>
         <div className="brand-copy">
           <p>{translation.brandTitle}</p>
-          <span>{translation.leagueLabel} {payload.source.leagueId}</span>
+          <span>{translation.leagueLabel} {payload?.source.leagueId ?? '—'}</span>
         </div>
         <button
           type="button"
@@ -361,8 +360,8 @@ function App() {
             <div className="hero-stat-card hero-match-card">
               <span className="hero-stat-label">{translation.matches}</span>
               <span className="hero-stat-value">
-                {payload.source.matchesProcessed}
-                <small>/{payload.source.matchesProcessed}</small>
+                {payload?.source.matchesProcessed ?? '—'}
+                <small>/{payload?.source.matchesProcessed ?? '—'}</small>
               </span>
             </div>
             <div
@@ -390,15 +389,6 @@ function App() {
               </button>
               {datasetMenuOpen ? (
                 <div className="hero-dataset-menu" id="hero-dataset-menu" role="listbox">
-                  <button
-                    type="button"
-                    role="option"
-                    aria-selected="false"
-                    aria-disabled="true"
-                    disabled
-                  >
-                    <span>{translation.datasetCopy.ti15Upcoming}</span>
-                  </button>
                   {DATASETS.map((dataset) => {
                     const name = datasetDisplayName(translation.datasetNames, dataset.id)
                     const active = dataset.id === activeDatasetId
@@ -510,8 +500,12 @@ function App() {
               </tr>
             </thead>
             <tbody>
-              {visibleUnits.length === 0 ? (
-                <tr><td className="state-cell" colSpan={visibleColumns.length}>{translation.noData}</td></tr>
+              {payload === null || visibleUnits.length === 0 ? (
+                <tr>
+                  <td className="state-cell" colSpan={visibleColumns.length}>
+                    {payload === null ? translation.loading : translation.noData}
+                  </td>
+                </tr>
               ) : null}
               {visibleUnits.map((unit, index) => (
                 <tr key={`${unit.teamId}-${unit.role}`}>
@@ -587,7 +581,7 @@ function App() {
 
       <footer className="site-footer">
         <span>{datasetText(translation.datasetCopy.footerTitle, activeDatasetName)}</span>
-        <span>{translation.dataSource}: OpenDota · {translation.league} {payload.source.leagueId}</span>
+        <span>{translation.dataSource}: OpenDota · {translation.league} {payload?.source.leagueId ?? '—'}</span>
       </footer>
     </main>
   )
