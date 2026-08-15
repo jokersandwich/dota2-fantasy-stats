@@ -37,7 +37,7 @@ describe('App dataset switching', () => {
     const { container } = render(<App />)
 
     await waitFor(() => {
-      expect(within(container.querySelector('.hero-stats')!).getByText('59')).toBeTruthy()
+      expect(within(container.querySelector('.hero-stats')!).getByText('97')).toBeTruthy()
     })
     expect(screen.getByRole('button', { name: 'Best Performance' }).getAttribute('aria-pressed')).toBe('true')
     expect(screen.getByRole('button', { name: 'Average Performance' }).getAttribute('aria-pressed')).toBe('false')
@@ -60,7 +60,7 @@ describe('App dataset switching', () => {
     await waitFor(() => {
       expect(container.querySelector('.hero-dataset-card')?.getAttribute('data-active-dataset')).toBe('ti15')
     })
-    expect(within(container.querySelector('.hero-stats')!).getByText('59')).toBeTruthy()
+    expect(within(container.querySelector('.hero-stats')!).getByText('97')).toBeTruthy()
     expect(screen.getByRole('button', { name: 'Best Performance' }).getAttribute('aria-pressed')).toBe('true')
     expect(screen.getByRole('button', { name: 'Support' }).getAttribute('aria-pressed')).toBe('true')
     expect(screen.getByTitle('First Blood').closest('th')?.getAttribute('aria-sort')).toBe('descending')
@@ -77,12 +77,12 @@ describe('App dataset switching', () => {
     vi.stubGlobal('fetch', fetchMock)
     const { container } = render(<App />)
 
-    await waitFor(() => expect(within(container.querySelector('.hero-stats')!).getByText('59')).toBeTruthy())
+    await waitFor(() => expect(within(container.querySelector('.hero-stats')!).getByText('97')).toBeTruthy())
     chooseDataset(container, 'TI14')
     const alert = await screen.findByRole('alert')
     expect(alert.textContent).toContain('TI14 could not be loaded')
     expect(container.querySelector('.hero-dataset-card')?.getAttribute('data-active-dataset')).toBe('ti15')
-    expect(within(container.querySelector('.hero-stats')!).getByText('59')).toBeTruthy()
+    expect(within(container.querySelector('.hero-stats')!).getByText('97')).toBeTruthy()
 
     fireEvent.click(screen.getByRole('button', { name: 'Retry' }))
     await waitFor(() => {
@@ -96,7 +96,7 @@ describe('App dataset switching', () => {
     vi.stubGlobal('fetch', vi.fn(datasetFetch))
     const { container } = render(<App />)
 
-    await waitFor(() => expect(within(container.querySelector('.hero-stats')!).getByText('59')).toBeTruthy())
+    await waitFor(() => expect(within(container.querySelector('.hero-stats')!).getByText('97')).toBeTruthy())
     fireEvent.click(screen.getByRole('button', { name: 'Switch to Simplified Chinese' }))
     expect(document.documentElement.lang).toBe('zh-CN')
     expect(screen.getByRole('button', { name: '最高分' }).getAttribute('aria-pressed')).toBe('true')
@@ -148,7 +148,7 @@ describe('App dataset switching', () => {
     vi.stubGlobal('fetch', vi.fn(datasetFetch))
     const { container } = render(<App />)
 
-    await waitFor(() => expect(within(container.querySelector('.hero-stats')!).getByText('59')).toBeTruthy())
+    await waitFor(() => expect(within(container.querySelector('.hero-stats')!).getByText('97')).toBeTruthy())
     fireEvent.click(container.querySelector<HTMLButtonElement>('.hero-dataset-trigger')!)
     const options = screen.getAllByRole('option')
     expect(options).toHaveLength(3)

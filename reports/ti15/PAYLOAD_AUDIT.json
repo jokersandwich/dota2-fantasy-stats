@@ -4,22 +4,22 @@
   "matchSourceId": "ti15-2026-opendota",
   "rulesetId": "ti15-base-v1",
   "schemaVersion": 1,
-  "generatedAt": "2026-08-14T14:29:27.701065+00:00",
+  "generatedAt": "2026-08-15T22:31:25.736131+00:00",
   "status": "passed",
   "errors": [],
   "scope": {
-    "leagueRows": 59,
-    "manifestMatches": 59,
-    "payloadMatches": 59,
-    "playerMatchRows": 590,
+    "leagueRows": 97,
+    "manifestMatches": 97,
+    "payloadMatches": 97,
+    "playerMatchRows": 970,
     "uniqueAccountIds": 80,
     "teams": 16,
-    "series": 24,
-    "parsedMatches": 59,
-    "minimumDuration": 1293,
+    "series": 39,
+    "parsedMatches": 97,
+    "minimumDuration": 1102,
     "maximumDuration": 5678,
     "firstStartTime": 1786590206,
-    "lastStartTime": 1786712063
+    "lastStartTime": 1786804080
   },
   "roster": {
     "configuredPlayers": 80,
@@ -31,24 +31,24 @@
   },
   "fieldCoverage": {
     "requiredSourceMissing": {},
-    "smokeRows": 253,
-    "smokeTotal": 904,
-    "madstoneCandidateRows": 534,
-    "madstoneCandidateTotal": 6773,
+    "smokeRows": 418,
+    "smokeTotal": 1428,
+    "madstoneCandidateRows": 881,
+    "madstoneCandidateTotal": 10732,
     "watcherItemUsePaths": 0,
-    "lotusItemUsePaths": 46,
-    "tormentorRows": 90,
-    "tormentorTotal": 108,
-    "roshanPlayerTotal": 158,
-    "roshanObjectiveEvents": 158,
+    "lotusItemUsePaths": 62,
+    "tormentorRows": 144,
+    "tormentorTotal": 174,
+    "roshanPlayerTotal": 241,
+    "roshanObjectiveEvents": 241,
     "objectiveTypes": {
-      "CHAT_MESSAGE_AEGIS": 155,
+      "CHAT_MESSAGE_AEGIS": 238,
       "CHAT_MESSAGE_AEGIS_STOLEN": 3,
-      "CHAT_MESSAGE_COURIER_LOST": 266,
-      "CHAT_MESSAGE_FIRSTBLOOD": 58,
-      "CHAT_MESSAGE_MINIBOSS_KILL": 108,
-      "CHAT_MESSAGE_ROSHAN_KILL": 158,
-      "building_kill": 1155
+      "CHAT_MESSAGE_COURIER_LOST": 406,
+      "CHAT_MESSAGE_FIRSTBLOOD": 96,
+      "CHAT_MESSAGE_MINIBOSS_KILL": 174,
+      "CHAT_MESSAGE_ROSHAN_KILL": 241,
+      "building_kill": 1857
     }
   },
   "anomalies": {
@@ -69,6 +69,11 @@
         "matchId": 8943148045,
         "accountId": 16497807,
         "value": -5.1832275
+      },
+      {
+        "matchId": 8946285985,
+        "accountId": 191362875,
+        "value": -1.0505371
       }
     ],
     "matchPlayerCount": []
