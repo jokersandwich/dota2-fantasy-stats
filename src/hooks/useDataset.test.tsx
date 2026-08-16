@@ -37,7 +37,7 @@ describe('useDataset', () => {
 
     const { result } = renderHook(() => useDataset())
 
-    await waitFor(() => expect(result.current.payload?.source.matchesProcessed).toBe(97))
+    await waitFor(() => expect(result.current.payload?.source.matchesProcessed).toBe(109))
     expect(result.current.activeDatasetId).toBe('ti15')
     expect(fetchMock).toHaveBeenCalledWith(
       '/data/datasets/ti15/role-fantasy-rankings.json',
@@ -53,7 +53,7 @@ describe('useDataset', () => {
 
     const { result } = renderHook(() => useDataset())
 
-    await waitFor(() => expect(result.current.payload?.source.matchesProcessed).toBe(97))
+    await waitFor(() => expect(result.current.payload?.source.matchesProcessed).toBe(109))
     expect(result.current.activeDatasetId).toBe('ti15')
     expect(fetchMock).toHaveBeenCalledWith(
       '/data/datasets/ti15/role-fantasy-rankings.json',
@@ -71,13 +71,13 @@ describe('useDataset', () => {
     vi.stubGlobal('fetch', fetchMock)
     const { result } = renderHook(() => useDataset())
 
-    await waitFor(() => expect(result.current.payload?.source.matchesProcessed).toBe(97))
+    await waitFor(() => expect(result.current.payload?.source.matchesProcessed).toBe(109))
 
     await act(async () => {
       await result.current.selectDataset('ti14')
     })
     expect(result.current.activeDatasetId).toBe('ti15')
-    expect(result.current.payload?.source.matchesProcessed).toBe(97)
+    expect(result.current.payload?.source.matchesProcessed).toBe(109)
     expect(result.current.loadError).toEqual({ datasetId: 'ti14' })
     expect(new URL(window.location.href).searchParams.has('dataset')).toBe(false)
 
@@ -101,7 +101,7 @@ describe('useDataset', () => {
     vi.stubGlobal('fetch', fetchMock)
     const { result } = renderHook(() => useDataset())
 
-    await waitFor(() => expect(result.current.payload?.source.matchesProcessed).toBe(97))
+    await waitFor(() => expect(result.current.payload?.source.matchesProcessed).toBe(109))
 
     act(() => {
       void result.current.selectDataset('ti14')
@@ -117,7 +117,7 @@ describe('useDataset', () => {
     })
 
     expect(result.current.activeDatasetId).toBe('ti15')
-    expect(result.current.payload?.source.matchesProcessed).toBe(97)
+    expect(result.current.payload?.source.matchesProcessed).toBe(109)
     expect(new URL(window.location.href).searchParams.has('dataset')).toBe(false)
   })
 
@@ -131,7 +131,7 @@ describe('useDataset', () => {
     vi.stubGlobal('fetch', fetchMock)
     const { result } = renderHook(() => useDataset())
 
-    await waitFor(() => expect(result.current.payload?.source.matchesProcessed).toBe(97))
+    await waitFor(() => expect(result.current.payload?.source.matchesProcessed).toBe(109))
 
     await act(async () => {
       await result.current.selectDataset('ti14')

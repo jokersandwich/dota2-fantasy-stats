@@ -9,13 +9,13 @@
 
 | 检查 | 结果 |
 |---|---:|
-| Frozen manifest matches | 97 |
-| Cached payload matches | 97 |
-| Player-match rows | 970 |
+| Frozen manifest matches | 109 |
+| Cached payload matches | 109 |
+| Player-match rows | 1090 |
 | Unique account IDs | 80 |
 | Teams | 16 |
-| Series | 39 |
-| Parsed matches | 97 |
+| Series | 44 |
+| Parsed matches | 109 |
 | Duration range (seconds) | 1102–5678 |
 
 ## Roster / account_id
@@ -33,10 +33,10 @@
 - Madstones / Watchers / Lotuses：unavailable，继续沿用 `ti15-base-v1` 的 null 语义。
 - Tormentor：`killed.npc_dota_miniboss`，继续标记 medium reliability。
 - Required source-field missing counts：`{}`。
-- Smokes：418 rows / total 1428。
-- Madstone candidate（不计分）：881 rows / total 10732。
-- Tormentor candidate：144 rows / total 174。
-- Roshan attribution cross-check：players 241 / objectives 241。
+- Smokes：468 rows / total 1584。
+- Madstone candidate（不计分）：987 rows / total 11973。
+- Tormentor candidate：161 rows / total 191。
+- Roshan attribution cross-check：players 266 / objectives 266。
 
 ## 已隔离异常
 

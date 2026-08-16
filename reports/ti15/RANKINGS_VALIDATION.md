@@ -30,46 +30,46 @@ Best 的并列规则已验证：先取最高 FantasyScore，再按指标的优�
 
 | Team | Player | Account ID | Position | Games |
 |---|---|---:|---:|---:|
-| Aurora Gaming | Nightfall | 124801257 | 1 | 12 |
-| Aurora Gaming | Mikoto | 301750126 | 2 | 12 |
-| Aurora Gaming | Ws | 126842529 | 3 | 12 |
-| Aurora Gaming | Mira | 256156323 | 4 | 12 |
-| Aurora Gaming | kaori | 320219866 | 5 | 12 |
-| BoomBoys | Kiritych~ | 172099728 | 1 | 12 |
-| BoomBoys | gpk~ | 480412663 | 2 | 12 |
-| BoomBoys | MieRo | 165564598 | 3 | 12 |
-| BoomBoys | Save- | 317880638 | 4 | 12 |
-| BoomBoys | Kataomi | 196878136 | 5 | 12 |
-| Iron Wing | Pure | 331855530 | 1 | 14 |
-| Iron Wing | bzm | 93618577 | 2 | 14 |
-| Iron Wing | 33 | 86698277 | 3 | 14 |
-| Iron Wing | Ari | 346412363 | 4 | 14 |
-| Iron Wing | Whitemon | 136829091 | 5 | 14 |
-| Team Falcons | skiter | 100058342 | 1 | 15 |
-| Team Falcons | Malr1ne | 898455820 | 2 | 15 |
-| Team Falcons | ATF | 183719386 | 3 | 15 |
-| Team Falcons | Cr1t- | 25907144 | 4 | 15 |
-| Team Falcons | Sneyking | 10366616 | 5 | 15 |
+| Aurora Gaming | Nightfall | 124801257 | 1 | 14 |
+| Aurora Gaming | Mikoto | 301750126 | 2 | 14 |
+| Aurora Gaming | Ws | 126842529 | 3 | 14 |
+| Aurora Gaming | Mira | 256156323 | 4 | 14 |
+| Aurora Gaming | kaori | 320219866 | 5 | 14 |
+| BoomBoys | Kiritych~ | 172099728 | 1 | 14 |
+| BoomBoys | gpk~ | 480412663 | 2 | 14 |
+| BoomBoys | MieRo | 165564598 | 3 | 14 |
+| BoomBoys | Save- | 317880638 | 4 | 14 |
+| BoomBoys | Kataomi | 196878136 | 5 | 14 |
+| Iron Wing | Pure | 331855530 | 1 | 16 |
+| Iron Wing | bzm | 93618577 | 2 | 16 |
+| Iron Wing | 33 | 86698277 | 3 | 16 |
+| Iron Wing | Ari | 346412363 | 4 | 16 |
+| Iron Wing | Whitemon | 136829091 | 5 | 16 |
+| Team Falcons | skiter | 100058342 | 1 | 17 |
+| Team Falcons | Malr1ne | 898455820 | 2 | 17 |
+| Team Falcons | ATF | 183719386 | 3 | 17 |
+| Team Falcons | Cr1t- | 25907144 | 4 | 17 |
+| Team Falcons | Sneyking | 10366616 | 5 | 17 |
 | Team Liquid | m1CKe | 152962063 | 1 | 14 |
 | Team Liquid | Nisha | 201358612 | 2 | 14 |
 | Team Liquid | Ace | 97590558 | 3 | 14 |
 | Team Liquid | Boxi | 77490514 | 4 | 14 |
 | Team Liquid | tOfu | 16497807 | 5 | 14 |
-| Team Yandex | watson | 171262902 | 1 | 14 |
-| Team Yandex | CHIRA_JUNIOR | 312436974 | 2 | 14 |
-| Team Yandex | DM | 56351509 | 3 | 14 |
-| Team Yandex | Saksa | 103735745 | 4 | 14 |
-| Team Yandex | Malady | 93817671 | 5 | 14 |
+| Team Yandex | watson | 171262902 | 1 | 17 |
+| Team Yandex | CHIRA_JUNIOR | 312436974 | 2 | 17 |
+| Team Yandex | DM | 56351509 | 3 | 17 |
+| Team Yandex | Saksa | 103735745 | 4 | 17 |
+| Team Yandex | Malady | 93817671 | 5 | 17 |
 | Xtreme Gaming | Ame | 898754153 | 1 | 11 |
 | Xtreme Gaming | NothingToSay | 173978074 | 2 | 11 |
 | Xtreme Gaming | Xxs | 129958758 | 3 | 11 |
 | Xtreme Gaming | fy | 101695162 | 4 | 11 |
 | Xtreme Gaming | xNova | 94296097 | 5 | 11 |
-| Team Spirit | Yatoro | 321580662 | 1 | 11 |
-| Team Spirit | Larl | 106305042 | 2 | 11 |
-| Team Spirit | Collapse | 302214028 | 3 | 11 |
-| Team Spirit | not me | 218231587 | 4 | 11 |
-| Team Spirit | rue | 847565596 | 5 | 11 |
+| Team Spirit | Yatoro | 321580662 | 1 | 14 |
+| Team Spirit | Larl | 106305042 | 2 | 14 |
+| Team Spirit | Collapse | 302214028 | 3 | 14 |
+| Team Spirit | not me | 218231587 | 4 | 14 |
+| Team Spirit | rue | 847565596 | 5 | 14 |
 | TEAM VISION | Satanic | 1044002267 | 1 | 10 |
 | TEAM VISION | No[o]ne- | 106573901 | 2 | 10 |
 | TEAM VISION | Noticed | 195108598 | 3 | 10 |
@@ -85,26 +85,26 @@ Best 的并列规则已验证：先取最高 FantasyScore，再按指标的优�
 | HULIGANI | Corrupted | 92487440 | 3 | 10 |
 | HULIGANI | sayuw | 145065875 | 4 | 10 |
 | HULIGANI | RESPECT | 123787715 | 5 | 10 |
-| Team Resilience | YSR-04E | 170896543 | 1 | 13 |
-| Team Resilience | Echozz | 315272623 | 2 | 13 |
-| Team Resilience | niu | 145957968 | 3 | 13 |
-| Team Resilience | planet | 150961567 | 4 | 13 |
-| Team Resilience | zzq | 249835593 | 5 | 13 |
-| Vici Gaming | shiro | 320252024 | 1 | 12 |
-| Vici Gaming | Xm | 137129583 | 2 | 12 |
-| Vici Gaming | Bach | 118134220 | 3 | 12 |
-| Vici Gaming | XinQ | 157475523 | 4 | 12 |
-| Vici Gaming | y` | 111114687 | 5 | 12 |
-| LGD Gaming | Yuma | 177203952 | 1 | 13 |
-| LGD Gaming | Topson | 94054712 | 2 | 13 |
-| LGD Gaming | Wisper | 292921272 | 3 | 13 |
-| LGD Gaming | Thiolicor | 105045291 | 4 | 13 |
-| LGD Gaming | KJ | 81306398 | 5 | 13 |
-| GamerLegion | Ghost | 206642367 | 1 | 12 |
-| GamerLegion | RCY | 154974246 | 2 | 12 |
-| GamerLegion | Fayde | 160119017 | 3 | 12 |
-| GamerLegion | Bignum | 90423751 | 4 | 12 |
-| GamerLegion | Speeed | 191362875 | 5 | 12 |
+| Team Resilience | YSR-04E | 170896543 | 1 | 16 |
+| Team Resilience | Echozz | 315272623 | 2 | 16 |
+| Team Resilience | niu | 145957968 | 3 | 16 |
+| Team Resilience | planet | 150961567 | 4 | 16 |
+| Team Resilience | zzq | 249835593 | 5 | 16 |
+| Vici Gaming | shiro | 320252024 | 1 | 14 |
+| Vici Gaming | Xm | 137129583 | 2 | 14 |
+| Vici Gaming | Bach | 118134220 | 3 | 14 |
+| Vici Gaming | XinQ | 157475523 | 4 | 14 |
+| Vici Gaming | y` | 111114687 | 5 | 14 |
+| LGD Gaming | Yuma | 177203952 | 1 | 16 |
+| LGD Gaming | Topson | 94054712 | 2 | 16 |
+| LGD Gaming | Wisper | 292921272 | 3 | 16 |
+| LGD Gaming | Thiolicor | 105045291 | 4 | 16 |
+| LGD Gaming | KJ | 81306398 | 5 | 16 |
+| GamerLegion | Ghost | 206642367 | 1 | 14 |
+| GamerLegion | RCY | 154974246 | 2 | 14 |
+| GamerLegion | Fayde | 160119017 | 3 | 14 |
+| GamerLegion | Bignum | 90423751 | 4 | 14 |
+| GamerLegion | Speeed | 191362875 | 5 | 14 |
 | OG | Natsumi | 355168766 | 1 | 11 |
 | OG | Yopaj- | 324277900 | 2 | 11 |
 | OG | Raven | 132309493 | 3 | 11 |
@@ -115,24 +115,24 @@ Best 的并列规则已验证：先取最高 FantasyScore，再按指标的优�
 
 | 指标 | 最小 validGames | 最大 validGames | 全部 unavailable 的选手数 |
 |---|---:|---:|---:|
-| `kills` | 10 | 15 | 0 |
-| `deaths` | 10 | 15 | 0 |
-| `lastHitsAndDenies` | 10 | 15 | 0 |
-| `gpm` | 10 | 15 | 0 |
+| `kills` | 10 | 17 | 0 |
+| `deaths` | 10 | 17 | 0 |
+| `lastHitsAndDenies` | 10 | 17 | 0 |
+| `gpm` | 10 | 17 | 0 |
 | `madstones` | 0 | 0 | 80 |
-| `towerKills` | 10 | 15 | 0 |
-| `observerWards` | 10 | 15 | 0 |
-| `campsStacked` | 10 | 15 | 0 |
-| `runes` | 10 | 15 | 0 |
+| `towerKills` | 10 | 17 | 0 |
+| `observerWards` | 10 | 17 | 0 |
+| `campsStacked` | 10 | 17 | 0 |
+| `runes` | 10 | 17 | 0 |
 | `watchers` | 0 | 0 | 80 |
 | `lotuses` | 0 | 0 | 80 |
-| `roshanKills` | 10 | 15 | 0 |
-| `teamfightParticipation` | 10 | 15 | 0 |
-| `stunDuration` | 10 | 15 | 0 |
-| `tormentorKills` | 10 | 15 | 0 |
-| `courierKills` | 10 | 15 | 0 |
-| `firstBlood` | 9 | 15 | 0 |
-| `smokes` | 10 | 15 | 0 |
+| `roshanKills` | 10 | 17 | 0 |
+| `teamfightParticipation` | 10 | 17 | 0 |
+| `stunDuration` | 10 | 17 | 0 |
+| `tormentorKills` | 10 | 17 | 0 |
+| `courierKills` | 10 | 17 | 0 |
+| `firstBlood` | 9 | 17 | 0 |
+| `smokes` | 10 | 17 | 0 |
 
 ## 随机抽查
 
@@ -140,16 +140,16 @@ Best 的并列规则已验证：先取最高 FantasyScore，再按指标的优�
 
 | Team | Player | Account ID | 检查结果 |
 |---|---|---:|---|
-| Aurora Gaming | kaori | 320219866 | deaths=passed(12), gpm=passed(12), firstBlood=passed(12), teamfightParticipation=passed(12), runes=passed(12) |
+| Aurora Gaming | kaori | 320219866 | deaths=passed(14), gpm=passed(14), firstBlood=passed(14), teamfightParticipation=passed(14), runes=passed(14) |
 | TEAM VISION | Noticed | 195108598 | deaths=passed(10), gpm=passed(10), firstBlood=passed(10), teamfightParticipation=passed(10), runes=passed(10) |
 | Nigma Galaxy | lorenof | 210053851 | deaths=passed(10), gpm=passed(10), firstBlood=passed(10), teamfightParticipation=passed(10), runes=passed(10) |
-| Team Resilience | niu | 145957968 | deaths=passed(13), gpm=passed(13), firstBlood=passed(13), teamfightParticipation=passed(13), runes=passed(13) |
-| BoomBoys | MieRo | 165564598 | deaths=passed(12), gpm=passed(12), firstBlood=passed(12), teamfightParticipation=passed(12), runes=passed(12) |
+| Team Resilience | niu | 145957968 | deaths=passed(16), gpm=passed(16), firstBlood=passed(16), teamfightParticipation=passed(16), runes=passed(16) |
+| BoomBoys | MieRo | 165564598 | deaths=passed(14), gpm=passed(14), firstBlood=passed(14), teamfightParticipation=passed(14), runes=passed(14) |
 | TEAM VISION | Satanic | 1044002267 | deaths=passed(10), gpm=passed(10), firstBlood=passed(10), teamfightParticipation=passed(10), runes=passed(10) |
-| Team Resilience | YSR-04E | 170896543 | deaths=passed(13), gpm=passed(13), firstBlood=passed(13), teamfightParticipation=passed(13), runes=passed(13) |
-| Vici Gaming | shiro | 320252024 | deaths=passed(12), gpm=passed(12), firstBlood=passed(12), teamfightParticipation=passed(12), runes=passed(12) |
-| Team Spirit | Collapse | 302214028 | deaths=passed(11), gpm=passed(11), firstBlood=passed(11), teamfightParticipation=passed(11), runes=passed(11) |
-| GamerLegion | Fayde | 160119017 | deaths=passed(12), gpm=passed(12), firstBlood=passed(12), teamfightParticipation=passed(12), runes=passed(12) |
+| Team Resilience | YSR-04E | 170896543 | deaths=passed(16), gpm=passed(16), firstBlood=passed(16), teamfightParticipation=passed(16), runes=passed(16) |
+| Vici Gaming | shiro | 320252024 | deaths=passed(14), gpm=passed(14), firstBlood=passed(14), teamfightParticipation=passed(14), runes=passed(14) |
+| Team Spirit | Collapse | 302214028 | deaths=passed(14), gpm=passed(14), firstBlood=passed(14), teamfightParticipation=passed(14), runes=passed(14) |
+| GamerLegion | Fayde | 160119017 | deaths=passed(14), gpm=passed(14), firstBlood=passed(14), teamfightParticipation=passed(14), runes=passed(14) |
 
 ## 数据不可用说明
 

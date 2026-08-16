@@ -4,10 +4,10 @@
   "matchSourceId": "ti15-2026-opendota",
   "rulesetId": "ti15-base-v1",
   "schemaVersion": 1,
-  "generatedAt": "2026-08-15T22:32:08.488537+00:00",
+  "generatedAt": "2026-08-16T13:17:45.938538+00:00",
   "source": {
     "leagueId": 19719,
-    "matchesProcessed": 97,
+    "matchesProcessed": 109,
     "roleUnits": 48
   },
   "roleDefinitions": {
@@ -42,7 +42,7 @@
           "position": 3
         }
       ],
-      "gamesPlayedTogether": 12,
+      "gamesPlayedTogether": 14,
       "metrics": {
         "kills": {
           "best": {
@@ -65,9 +65,9 @@
             "fantasyScore": 1230.5
           },
           "average": {
-            "rawValue": 7.333333,
-            "fantasyScore": 784.666667,
-            "validGames": 12
+            "rawValue": 6.892857,
+            "fantasyScore": 737.535714,
+            "validGames": 14
           }
         },
         "deaths": {
@@ -91,9 +91,9 @@
             "fantasyScore": 1950
           },
           "average": {
-            "rawValue": 3.333333,
-            "fantasyScore": 1300,
-            "validGames": 12
+            "rawValue": 3.5,
+            "fantasyScore": 1267.5,
+            "validGames": 14
           }
         },
         "lastHitsAndDenies": {
@@ -117,9 +117,9 @@
             "fantasyScore": 2308.5
           },
           "average": {
-            "rawValue": 431.333333,
-            "fantasyScore": 1294,
-            "validGames": 12
+            "rawValue": 440.357143,
+            "fantasyScore": 1321.071429,
+            "validGames": 14
           }
         },
         "gpm": {
@@ -143,9 +143,9 @@
             "fantasyScore": 1552
           },
           "average": {
-            "rawValue": 675.291667,
-            "fantasyScore": 1350.583333,
-            "validGames": 12
+            "rawValue": 665.035714,
+            "fantasyScore": 1330.071429,
+            "validGames": 14
           }
         },
         "madstones": {
@@ -173,9 +173,9 @@
             "fantasyScore": 1232
           },
           "average": {
-            "rawValue": 2.041667,
-            "fantasyScore": 718.666667,
-            "validGames": 12
+            "rawValue": 1.857143,
+            "fantasyScore": 653.714286,
+            "validGames": 14
           }
         },
         "observerWards": {
@@ -199,35 +199,35 @@
             "fantasyScore": 58.5
           },
           "average": {
-            "rawValue": 0.166667,
-            "fantasyScore": 19.5,
-            "validGames": 12
+            "rawValue": 0.178571,
+            "fantasyScore": 20.892857,
+            "validGames": 14
           }
         },
         "campsStacked": {
           "best": {
-            "matchId": 8943097729,
+            "matchId": 8948026518,
             "members": [
               {
                 "playerAccountId": 124801257,
                 "playerName": "Nightfall",
-                "rawValue": 1,
-                "fantasyScore": 234
+                "rawValue": 5,
+                "fantasyScore": 1170
               },
               {
                 "playerAccountId": 126842529,
                 "playerName": "Ws",
-                "rawValue": 6,
-                "fantasyScore": 1404
+                "rawValue": 4,
+                "fantasyScore": 936
               }
             ],
-            "rawValue": 3.5,
-            "fantasyScore": 819
+            "rawValue": 4.5,
+            "fantasyScore": 1053
           },
           "average": {
-            "rawValue": 2.25,
-            "fantasyScore": 526.5,
-            "validGames": 12
+            "rawValue": 2.357143,
+            "fantasyScore": 551.571429,
+            "validGames": 14
           }
         },
         "runes": {
@@ -251,9 +251,9 @@
             "fantasyScore": 846
           },
           "average": {
-            "rawValue": 2.541667,
-            "fantasyScore": 358.375,
-            "validGames": 12
+            "rawValue": 2.607143,
+            "fantasyScore": 367.607143,
+            "validGames": 14
           }
         },
         "watchers": {
@@ -287,7 +287,7 @@
           "average": {
             "rawValue": 0.5,
             "fantasyScore": 586,
-            "validGames": 12
+            "validGames": 14
           }
         },
         "teamfightParticipation": {
@@ -311,35 +311,35 @@
             "fantasyScore": 1769.99993
           },
           "average": {
-            "rawValue": 0.625788,
-            "fantasyScore": 1329.172606,
-            "validGames": 12
+            "rawValue": 0.624823,
+            "fantasyScore": 1327.122747,
+            "validGames": 14
           }
         },
         "stunDuration": {
           "best": {
-            "matchId": 8944841068,
+            "matchId": 8948026518,
             "members": [
               {
                 "playerAccountId": 124801257,
                 "playerName": "Nightfall",
-                "rawValue": 5.883081,
-                "fantasyScore": 58.830805
+                "rawValue": 53.500526,
+                "fantasyScore": 535.00526
               },
               {
                 "playerAccountId": 126842529,
                 "playerName": "Ws",
-                "rawValue": 122.66521,
-                "fantasyScore": 1226.6521
+                "rawValue": 311.82883,
+                "fantasyScore": 3118.2883
               }
             ],
-            "rawValue": 64.274146,
-            "fantasyScore": 642.741453
+            "rawValue": 182.664678,
+            "fantasyScore": 1826.64678
           },
           "average": {
-            "rawValue": 25.123482,
-            "fantasyScore": 251.234823,
-            "validGames": 12
+            "rawValue": 35.775947,
+            "fantasyScore": 357.759473,
+            "validGames": 14
           }
         },
         "tormentorKills": {
@@ -363,20 +363,20 @@
             "fantasyScore": 439.5
           },
           "average": {
-            "rawValue": 0.333333,
-            "fantasyScore": 293,
-            "validGames": 12
+            "rawValue": 0.321429,
+            "fantasyScore": 282.535714,
+            "validGames": 14
           }
         },
         "courierKills": {
           "best": {
-            "matchId": 8943097729,
+            "matchId": 8948094765,
             "members": [
               {
                 "playerAccountId": 124801257,
                 "playerName": "Nightfall",
-                "rawValue": 1,
-                "fantasyScore": 703
+                "rawValue": 2,
+                "fantasyScore": 1406
               },
               {
                 "playerAccountId": 126842529,
@@ -385,13 +385,13 @@
                 "fantasyScore": 703
               }
             ],
-            "rawValue": 1,
-            "fantasyScore": 703
+            "rawValue": 1.5,
+            "fantasyScore": 1054.5
           },
           "average": {
-            "rawValue": 0.25,
-            "fantasyScore": 175.75,
-            "validGames": 12
+            "rawValue": 0.321429,
+            "fantasyScore": 225.964286,
+            "validGames": 14
           }
         },
         "firstBlood": {
@@ -415,9 +415,9 @@
             "fantasyScore": 967
           },
           "average": {
-            "rawValue": 0.041667,
-            "fantasyScore": 80.583333,
-            "validGames": 12
+            "rawValue": 0.035714,
+            "fantasyScore": 69.071429,
+            "validGames": 14
           }
         },
         "smokes": {
@@ -441,9 +441,9 @@
             "fantasyScore": 146.5
           },
           "average": {
-            "rawValue": 0.041667,
-            "fantasyScore": 12.208333,
-            "validGames": 12
+            "rawValue": 0.035714,
+            "fantasyScore": 10.464286,
+            "validGames": 14
           }
         }
       }
@@ -459,7 +459,7 @@
           "position": 2
         }
       ],
-      "gamesPlayedTogether": 12,
+      "gamesPlayedTogether": 14,
       "metrics": {
         "kills": {
           "best": {
@@ -476,9 +476,9 @@
             "fantasyScore": 1712
           },
           "average": {
-            "rawValue": 7.583333,
-            "fantasyScore": 811.416667,
-            "validGames": 12
+            "rawValue": 8,
+            "fantasyScore": 856,
+            "validGames": 14
           }
         },
         "deaths": {
@@ -496,9 +496,9 @@
             "fantasyScore": 1755
           },
           "average": {
-            "rawValue": 3.583333,
-            "fantasyScore": 1251.25,
-            "validGames": 12
+            "rawValue": 3.857143,
+            "fantasyScore": 1197.857143,
+            "validGames": 14
           }
         },
         "lastHitsAndDenies": {
@@ -516,9 +516,9 @@
             "fantasyScore": 2532
           },
           "average": {
-            "rawValue": 376.416667,
-            "fantasyScore": 1129.25,
-            "validGames": 12
+            "rawValue": 386.642857,
+            "fantasyScore": 1159.928571,
+            "validGames": 14
           }
         },
         "gpm": {
@@ -536,9 +536,9 @@
             "fantasyScore": 1554
           },
           "average": {
-            "rawValue": 624.833333,
-            "fantasyScore": 1249.666667,
-            "validGames": 12
+            "rawValue": 622.642857,
+            "fantasyScore": 1245.285714,
+            "validGames": 14
           }
         },
         "madstones": {
@@ -560,9 +560,9 @@
             "fantasyScore": 1056
           },
           "average": {
-            "rawValue": 0.75,
-            "fantasyScore": 264,
-            "validGames": 12
+            "rawValue": 0.785714,
+            "fantasyScore": 276.571429,
+            "validGames": 14
           }
         },
         "observerWards": {
@@ -580,9 +580,9 @@
             "fantasyScore": 351
           },
           "average": {
-            "rawValue": 2.166667,
-            "fantasyScore": 253.5,
-            "validGames": 12
+            "rawValue": 2.142857,
+            "fantasyScore": 250.714286,
+            "validGames": 14
           }
         },
         "campsStacked": {
@@ -600,9 +600,9 @@
             "fantasyScore": 936
           },
           "average": {
-            "rawValue": 1.416667,
-            "fantasyScore": 331.5,
-            "validGames": 12
+            "rawValue": 1.571429,
+            "fantasyScore": 367.714286,
+            "validGames": 14
           }
         },
         "runes": {
@@ -620,9 +620,9 @@
             "fantasyScore": 2961
           },
           "average": {
-            "rawValue": 10.75,
-            "fantasyScore": 1515.75,
-            "validGames": 12
+            "rawValue": 10.285714,
+            "fantasyScore": 1450.285714,
+            "validGames": 14
           }
         },
         "watchers": {
@@ -648,9 +648,9 @@
             "fantasyScore": 1172
           },
           "average": {
-            "rawValue": 0.25,
-            "fantasyScore": 293,
-            "validGames": 12
+            "rawValue": 0.214286,
+            "fantasyScore": 251.142857,
+            "validGames": 14
           }
         },
         "teamfightParticipation": {
@@ -668,29 +668,29 @@
             "fantasyScore": 1947.000071
           },
           "average": {
-            "rawValue": 0.700252,
-            "fantasyScore": 1487.335117,
-            "validGames": 12
+            "rawValue": 0.708496,
+            "fantasyScore": 1504.844647,
+            "validGames": 14
           }
         },
         "stunDuration": {
           "best": {
-            "matchId": 8944931337,
+            "matchId": 8948026518,
             "members": [
               {
                 "playerAccountId": 301750126,
                 "playerName": "Mikoto",
-                "rawValue": 77.37146,
-                "fantasyScore": 773.7146
+                "rawValue": 139.53793,
+                "fantasyScore": 1395.3793
               }
             ],
-            "rawValue": 77.37146,
-            "fantasyScore": 773.7146
+            "rawValue": 139.53793,
+            "fantasyScore": 1395.3793
           },
           "average": {
-            "rawValue": 34.417344,
-            "fantasyScore": 344.173443,
-            "validGames": 12
+            "rawValue": 42.136569,
+            "fantasyScore": 421.365694,
+            "validGames": 14
           }
         },
         "tormentorKills": {
@@ -708,9 +708,9 @@
             "fantasyScore": 879
           },
           "average": {
-            "rawValue": 0.166667,
-            "fantasyScore": 146.5,
-            "validGames": 12
+            "rawValue": 0.214286,
+            "fantasyScore": 188.357143,
+            "validGames": 14
           }
         },
         "courierKills": {
@@ -728,9 +728,9 @@
             "fantasyScore": 703
           },
           "average": {
-            "rawValue": 0.166667,
-            "fantasyScore": 117.166667,
-            "validGames": 12
+            "rawValue": 0.142857,
+            "fantasyScore": 100.428571,
+            "validGames": 14
           }
         },
         "firstBlood": {
@@ -748,9 +748,9 @@
             "fantasyScore": 1934
           },
           "average": {
-            "rawValue": 0.25,
-            "fantasyScore": 483.5,
-            "validGames": 12
+            "rawValue": 0.214286,
+            "fantasyScore": 414.428571,
+            "validGames": 14
           }
         },
         "smokes": {
@@ -770,7 +770,7 @@
           "average": {
             "rawValue": 0,
             "fantasyScore": 0,
-            "validGames": 12
+            "validGames": 14
           }
         }
       }
@@ -791,7 +791,7 @@
           "position": 5
         }
       ],
-      "gamesPlayedTogether": 12,
+      "gamesPlayedTogether": 14,
       "metrics": {
         "kills": {
           "best": {
@@ -814,9 +814,9 @@
             "fantasyScore": 588.5
           },
           "average": {
-            "rawValue": 3.041667,
-            "fantasyScore": 325.458333,
-            "validGames": 12
+            "rawValue": 3.214286,
+            "fantasyScore": 343.928571,
+            "validGames": 14
           }
         },
         "deaths": {
@@ -840,35 +840,35 @@
             "fantasyScore": 1560
           },
           "average": {
-            "rawValue": 6.083333,
-            "fantasyScore": 820.625,
-            "validGames": 12
+            "rawValue": 6.285714,
+            "fantasyScore": 780,
+            "validGames": 14
           }
         },
         "lastHitsAndDenies": {
           "best": {
-            "matchId": 8943097729,
+            "matchId": 8948026518,
             "members": [
               {
                 "playerAccountId": 256156323,
                 "playerName": "Mira",
-                "rawValue": 135,
-                "fantasyScore": 405
+                "rawValue": 152,
+                "fantasyScore": 456
               },
               {
                 "playerAccountId": 320219866,
                 "playerName": "kaori",
-                "rawValue": 108,
-                "fantasyScore": 324
+                "rawValue": 127,
+                "fantasyScore": 381
               }
             ],
-            "rawValue": 121.5,
-            "fantasyScore": 364.5
+            "rawValue": 139.5,
+            "fantasyScore": 418.5
           },
           "average": {
-            "rawValue": 72.541667,
-            "fantasyScore": 217.625,
-            "validGames": 12
+            "rawValue": 76.892857,
+            "fantasyScore": 230.678571,
+            "validGames": 14
           }
         },
         "gpm": {
@@ -892,9 +892,9 @@
             "fantasyScore": 770
           },
           "average": {
-            "rawValue": 330,
-            "fantasyScore": 660,
-            "validGames": 12
+            "rawValue": 328.071429,
+            "fantasyScore": 656.142857,
+            "validGames": 14
           }
         },
         "madstones": {
@@ -922,9 +922,9 @@
             "fantasyScore": 176
           },
           "average": {
-            "rawValue": 0.208333,
-            "fantasyScore": 73.333333,
-            "validGames": 12
+            "rawValue": 0.178571,
+            "fantasyScore": 62.857143,
+            "validGames": 14
           }
         },
         "observerWards": {
@@ -948,9 +948,9 @@
             "fantasyScore": 1638
           },
           "average": {
-            "rawValue": 8.416667,
-            "fantasyScore": 984.75,
-            "validGames": 12
+            "rawValue": 8.607143,
+            "fantasyScore": 1007.035714,
+            "validGames": 14
           }
         },
         "campsStacked": {
@@ -974,9 +974,9 @@
             "fantasyScore": 1521
           },
           "average": {
-            "rawValue": 3.625,
-            "fantasyScore": 848.25,
-            "validGames": 12
+            "rawValue": 3.642857,
+            "fantasyScore": 852.428571,
+            "validGames": 14
           }
         },
         "runes": {
@@ -1000,9 +1000,9 @@
             "fantasyScore": 987
           },
           "average": {
-            "rawValue": 3.458333,
-            "fantasyScore": 487.625,
-            "validGames": 12
+            "rawValue": 3.642857,
+            "fantasyScore": 513.642857,
+            "validGames": 14
           }
         },
         "watchers": {
@@ -1034,9 +1034,9 @@
             "fantasyScore": 586
           },
           "average": {
-            "rawValue": 0.041667,
-            "fantasyScore": 48.833333,
-            "validGames": 12
+            "rawValue": 0.035714,
+            "fantasyScore": 41.857143,
+            "validGames": 14
           }
         },
         "teamfightParticipation": {
@@ -1060,9 +1060,9 @@
             "fantasyScore": 1612.666647
           },
           "average": {
-            "rawValue": 0.627617,
-            "fantasyScore": 1333.058074,
-            "validGames": 12
+            "rawValue": 0.63899,
+            "fantasyScore": 1357.214421,
+            "validGames": 14
           }
         },
         "stunDuration": {
@@ -1086,9 +1086,9 @@
             "fantasyScore": 914.16747
           },
           "average": {
-            "rawValue": 44.176535,
-            "fantasyScore": 441.765352,
-            "validGames": 12
+            "rawValue": 45.557163,
+            "fantasyScore": 455.571623,
+            "validGames": 14
           }
         },
         "tormentorKills": {
@@ -1112,9 +1112,9 @@
             "fantasyScore": 439.5
           },
           "average": {
-            "rawValue": 0.041667,
-            "fantasyScore": 36.625,
-            "validGames": 12
+            "rawValue": 0.035714,
+            "fantasyScore": 31.392857,
+            "validGames": 14
           }
         },
         "courierKills": {
@@ -1138,9 +1138,9 @@
             "fantasyScore": 1406
           },
           "average": {
-            "rawValue": 0.791667,
-            "fantasyScore": 556.541667,
-            "validGames": 12
+            "rawValue": 0.714286,
+            "fantasyScore": 502.142857,
+            "validGames": 14
           }
         },
         "firstBlood": {
@@ -1164,9 +1164,9 @@
             "fantasyScore": 967
           },
           "average": {
-            "rawValue": 0.041667,
-            "fantasyScore": 80.583333,
-            "validGames": 12
+            "rawValue": 0.107143,
+            "fantasyScore": 207.214286,
+            "validGames": 14
           }
         },
         "smokes": {
@@ -1190,9 +1190,9 @@
             "fantasyScore": 1318.5
           },
           "average": {
-            "rawValue": 3,
-            "fantasyScore": 879,
-            "validGames": 12
+            "rawValue": 3.071429,
+            "fantasyScore": 899.928571,
+            "validGames": 14
           }
         }
       }
@@ -1213,32 +1213,32 @@
           "position": 3
         }
       ],
-      "gamesPlayedTogether": 12,
+      "gamesPlayedTogether": 14,
       "metrics": {
         "kills": {
           "best": {
-            "matchId": 8943357930,
+            "matchId": 8948026518,
             "members": [
               {
                 "playerAccountId": 172099728,
                 "playerName": "Kiritych~",
-                "rawValue": 9,
-                "fantasyScore": 963
+                "rawValue": 17,
+                "fantasyScore": 1819
               },
               {
                 "playerAccountId": 165564598,
                 "playerName": "MieRo",
-                "rawValue": 13,
-                "fantasyScore": 1391
+                "rawValue": 6,
+                "fantasyScore": 642
               }
             ],
-            "rawValue": 11,
-            "fantasyScore": 1177
+            "rawValue": 11.5,
+            "fantasyScore": 1230.5
           },
           "average": {
-            "rawValue": 5.791667,
-            "fantasyScore": 619.708333,
-            "validGames": 12
+            "rawValue": 6.178571,
+            "fantasyScore": 661.107143,
+            "validGames": 14
           }
         },
         "deaths": {
@@ -1262,9 +1262,9 @@
             "fantasyScore": 1852.5
           },
           "average": {
-            "rawValue": 3.791667,
-            "fantasyScore": 1210.625,
-            "validGames": 12
+            "rawValue": 3.857143,
+            "fantasyScore": 1197.857143,
+            "validGames": 14
           }
         },
         "lastHitsAndDenies": {
@@ -1288,35 +1288,35 @@
             "fantasyScore": 2406
           },
           "average": {
-            "rawValue": 488.833333,
-            "fantasyScore": 1466.5,
-            "validGames": 12
+            "rawValue": 499.821429,
+            "fantasyScore": 1499.464286,
+            "validGames": 14
           }
         },
         "gpm": {
           "best": {
-            "matchId": 8943055466,
+            "matchId": 8948026518,
             "members": [
               {
                 "playerAccountId": 172099728,
                 "playerName": "Kiritych~",
-                "rawValue": 857,
-                "fantasyScore": 1714
+                "rawValue": 1105,
+                "fantasyScore": 2210
               },
               {
                 "playerAccountId": 165564598,
                 "playerName": "MieRo",
-                "rawValue": 712,
-                "fantasyScore": 1424
+                "rawValue": 514,
+                "fantasyScore": 1028
               }
             ],
-            "rawValue": 784.5,
-            "fantasyScore": 1569
+            "rawValue": 809.5,
+            "fantasyScore": 1619
           },
           "average": {
-            "rawValue": 652.458333,
-            "fantasyScore": 1304.916667,
-            "validGames": 12
+            "rawValue": 667.464286,
+            "fantasyScore": 1334.928571,
+            "validGames": 14
           }
         },
         "madstones": {
@@ -1344,9 +1344,9 @@
             "fantasyScore": 1584
           },
           "average": {
-            "rawValue": 1.791667,
-            "fantasyScore": 630.666667,
-            "validGames": 12
+            "rawValue": 1.821429,
+            "fantasyScore": 641.142857,
+            "validGames": 14
           }
         },
         "observerWards": {
@@ -1372,59 +1372,59 @@
           "average": {
             "rawValue": 0,
             "fantasyScore": 0,
-            "validGames": 12
+            "validGames": 14
           }
         },
         "campsStacked": {
           "best": {
-            "matchId": 8943013334,
+            "matchId": 8948094765,
             "members": [
               {
                 "playerAccountId": 172099728,
                 "playerName": "Kiritych~",
-                "rawValue": 7,
-                "fantasyScore": 1638
+                "rawValue": 9,
+                "fantasyScore": 2106
+              },
+              {
+                "playerAccountId": 165564598,
+                "playerName": "MieRo",
+                "rawValue": 4,
+                "fantasyScore": 936
+              }
+            ],
+            "rawValue": 6.5,
+            "fantasyScore": 1521
+          },
+          "average": {
+            "rawValue": 3.178571,
+            "fantasyScore": 743.785714,
+            "validGames": 14
+          }
+        },
+        "runes": {
+          "best": {
+            "matchId": 8948026518,
+            "members": [
+              {
+                "playerAccountId": 172099728,
+                "playerName": "Kiritych~",
+                "rawValue": 12,
+                "fantasyScore": 1692
               },
               {
                 "playerAccountId": 165564598,
                 "playerName": "MieRo",
                 "rawValue": 3,
-                "fantasyScore": 702
+                "fantasyScore": 423
               }
             ],
-            "rawValue": 5,
-            "fantasyScore": 1170
+            "rawValue": 7.5,
+            "fantasyScore": 1057.5
           },
           "average": {
-            "rawValue": 2.833333,
-            "fantasyScore": 663,
-            "validGames": 12
-          }
-        },
-        "runes": {
-          "best": {
-            "matchId": 8943357930,
-            "members": [
-              {
-                "playerAccountId": 172099728,
-                "playerName": "Kiritych~",
-                "rawValue": 7,
-                "fantasyScore": 987
-              },
-              {
-                "playerAccountId": 165564598,
-                "playerName": "MieRo",
-                "rawValue": 7,
-                "fantasyScore": 987
-              }
-            ],
-            "rawValue": 7,
-            "fantasyScore": 987
-          },
-          "average": {
-            "rawValue": 2.958333,
-            "fantasyScore": 417.125,
-            "validGames": 12
+            "rawValue": 3.357143,
+            "fantasyScore": 473.357143,
+            "validGames": 14
           }
         },
         "watchers": {
@@ -1456,35 +1456,35 @@
             "fantasyScore": 1758
           },
           "average": {
-            "rawValue": 0.416667,
-            "fantasyScore": 488.333333,
-            "validGames": 12
+            "rawValue": 0.428571,
+            "fantasyScore": 502.285714,
+            "validGames": 14
           }
         },
         "teamfightParticipation": {
           "best": {
-            "matchId": 8944612322,
+            "matchId": 8948026518,
             "members": [
               {
                 "playerAccountId": 172099728,
                 "playerName": "Kiritych~",
-                "rawValue": 0.69697,
-                "fantasyScore": 1480.363643
+                "rawValue": 0.777778,
+                "fantasyScore": 1652.000047
               },
               {
                 "playerAccountId": 165564598,
                 "playerName": "MieRo",
-                "rawValue": 0.818182,
-                "fantasyScore": 1737.818143
+                "rawValue": 0.75,
+                "fantasyScore": 1593
               }
             ],
-            "rawValue": 0.757576,
-            "fantasyScore": 1609.090893
+            "rawValue": 0.763889,
+            "fantasyScore": 1622.500024
           },
           "average": {
-            "rawValue": 0.63776,
-            "fantasyScore": 1354.601189,
-            "validGames": 12
+            "rawValue": 0.650904,
+            "fantasyScore": 1382.519967,
+            "validGames": 14
           }
         },
         "stunDuration": {
@@ -1508,9 +1508,9 @@
             "fantasyScore": 1958.68552
           },
           "average": {
-            "rawValue": 37.589164,
-            "fantasyScore": 375.891639,
-            "validGames": 12
+            "rawValue": 40.915608,
+            "fantasyScore": 409.15608,
+            "validGames": 14
           }
         },
         "tormentorKills": {
@@ -1534,9 +1534,9 @@
             "fantasyScore": 879
           },
           "average": {
-            "rawValue": 0.375,
-            "fantasyScore": 329.625,
-            "validGames": 12
+            "rawValue": 0.321429,
+            "fantasyScore": 282.535714,
+            "validGames": 14
           }
         },
         "courierKills": {
@@ -1560,9 +1560,9 @@
             "fantasyScore": 351.5
           },
           "average": {
-            "rawValue": 0.125,
-            "fantasyScore": 87.875,
-            "validGames": 12
+            "rawValue": 0.107143,
+            "fantasyScore": 75.321429,
+            "validGames": 14
           }
         },
         "firstBlood": {
@@ -1586,9 +1586,9 @@
             "fantasyScore": 967
           },
           "average": {
-            "rawValue": 0.125,
-            "fantasyScore": 241.75,
-            "validGames": 12
+            "rawValue": 0.107143,
+            "fantasyScore": 207.214286,
+            "validGames": 14
           }
         },
         "smokes": {
@@ -1614,7 +1614,7 @@
           "average": {
             "rawValue": 0,
             "fantasyScore": 0,
-            "validGames": 12
+            "validGames": 14
           }
         }
       }
@@ -1630,7 +1630,7 @@
           "position": 2
         }
       ],
-      "gamesPlayedTogether": 12,
+      "gamesPlayedTogether": 14,
       "metrics": {
         "kills": {
           "best": {
@@ -1647,9 +1647,9 @@
             "fantasyScore": 1498
           },
           "average": {
-            "rawValue": 7,
-            "fantasyScore": 749,
-            "validGames": 12
+            "rawValue": 7.357143,
+            "fantasyScore": 787.214286,
+            "validGames": 14
           }
         },
         "deaths": {
@@ -1667,9 +1667,9 @@
             "fantasyScore": 1755
           },
           "average": {
-            "rawValue": 3.25,
-            "fantasyScore": 1316.25,
-            "validGames": 12
+            "rawValue": 3.142857,
+            "fantasyScore": 1337.142857,
+            "validGames": 14
           }
         },
         "lastHitsAndDenies": {
@@ -1687,9 +1687,9 @@
             "fantasyScore": 2184
           },
           "average": {
-            "rawValue": 470.666667,
-            "fantasyScore": 1412,
-            "validGames": 12
+            "rawValue": 468.642857,
+            "fantasyScore": 1405.928571,
+            "validGames": 14
           }
         },
         "gpm": {
@@ -1707,9 +1707,9 @@
             "fantasyScore": 1536
           },
           "average": {
-            "rawValue": 611.583333,
-            "fantasyScore": 1223.166667,
-            "validGames": 12
+            "rawValue": 615.071429,
+            "fantasyScore": 1230.142857,
+            "validGames": 14
           }
         },
         "madstones": {
@@ -1731,9 +1731,9 @@
             "fantasyScore": 2464
           },
           "average": {
-            "rawValue": 0.916667,
-            "fantasyScore": 322.666667,
-            "validGames": 12
+            "rawValue": 1.285714,
+            "fantasyScore": 452.571429,
+            "validGames": 14
           }
         },
         "observerWards": {
@@ -1751,9 +1751,9 @@
             "fantasyScore": 234
           },
           "average": {
-            "rawValue": 1.833333,
-            "fantasyScore": 214.5,
-            "validGames": 12
+            "rawValue": 1.785714,
+            "fantasyScore": 208.928571,
+            "validGames": 14
           }
         },
         "campsStacked": {
@@ -1771,9 +1771,9 @@
             "fantasyScore": 1872
           },
           "average": {
-            "rawValue": 3.333333,
-            "fantasyScore": 780,
-            "validGames": 12
+            "rawValue": 3,
+            "fantasyScore": 702,
+            "validGames": 14
           }
         },
         "runes": {
@@ -1791,9 +1791,9 @@
             "fantasyScore": 2397
           },
           "average": {
-            "rawValue": 10.583333,
-            "fantasyScore": 1492.25,
-            "validGames": 12
+            "rawValue": 9.785714,
+            "fantasyScore": 1379.785714,
+            "validGames": 14
           }
         },
         "watchers": {
@@ -1819,29 +1819,29 @@
             "fantasyScore": 2344
           },
           "average": {
-            "rawValue": 0.333333,
-            "fantasyScore": 390.666667,
-            "validGames": 12
+            "rawValue": 0.357143,
+            "fantasyScore": 418.571429,
+            "validGames": 14
           }
         },
         "teamfightParticipation": {
           "best": {
-            "matchId": 8946416702,
+            "matchId": 8948094765,
             "members": [
               {
                 "playerAccountId": 480412663,
                 "playerName": "gpk~",
-                "rawValue": 0.9,
-                "fantasyScore": 1911.6
+                "rawValue": 0.913044,
+                "fantasyScore": 1939.304394
               }
             ],
-            "rawValue": 0.9,
-            "fantasyScore": 1911.6
+            "rawValue": 0.913044,
+            "fantasyScore": 1939.304394
           },
           "average": {
-            "rawValue": 0.700753,
-            "fantasyScore": 1488.399337,
-            "validGames": 12
+            "rawValue": 0.709514,
+            "fantasyScore": 1507.006886,
+            "validGames": 14
           }
         },
         "stunDuration": {
@@ -1859,9 +1859,9 @@
             "fantasyScore": 1285.7097
           },
           "average": {
-            "rawValue": 48.850257,
-            "fantasyScore": 488.502571,
-            "validGames": 12
+            "rawValue": 47.143293,
+            "fantasyScore": 471.432925,
+            "validGames": 14
           }
         },
         "tormentorKills": {
@@ -1879,9 +1879,9 @@
             "fantasyScore": 879
           },
           "average": {
-            "rawValue": 0.166667,
-            "fantasyScore": 146.5,
-            "validGames": 12
+            "rawValue": 0.214286,
+            "fantasyScore": 188.357143,
+            "validGames": 14
           }
         },
         "courierKills": {
@@ -1901,7 +1901,7 @@
           "average": {
             "rawValue": 0.5,
             "fantasyScore": 351.5,
-            "validGames": 12
+            "validGames": 14
           }
         },
         "firstBlood": {
@@ -1921,7 +1921,7 @@
           "average": {
             "rawValue": 0,
             "fantasyScore": 0,
-            "validGames": 12
+            "validGames": 14
           }
         },
         "smokes": {
@@ -1941,7 +1941,7 @@
           "average": {
             "rawValue": 0,
             "fantasyScore": 0,
-            "validGames": 12
+            "validGames": 14
           }
         }
       }
@@ -1962,7 +1962,7 @@
           "position": 5
         }
       ],
-      "gamesPlayedTogether": 12,
+      "gamesPlayedTogether": 14,
       "metrics": {
         "kills": {
           "best": {
@@ -1985,9 +1985,9 @@
             "fantasyScore": 588.5
           },
           "average": {
-            "rawValue": 2.625,
-            "fantasyScore": 280.875,
-            "validGames": 12
+            "rawValue": 2.464286,
+            "fantasyScore": 263.678571,
+            "validGames": 14
           }
         },
         "deaths": {
@@ -2011,9 +2011,9 @@
             "fantasyScore": 1560
           },
           "average": {
-            "rawValue": 6.041667,
-            "fantasyScore": 788.125,
-            "validGames": 12
+            "rawValue": 6.357143,
+            "fantasyScore": 738.214286,
+            "validGames": 14
           }
         },
         "lastHitsAndDenies": {
@@ -2037,9 +2037,9 @@
             "fantasyScore": 406.5
           },
           "average": {
-            "rawValue": 80.333333,
-            "fantasyScore": 241,
-            "validGames": 12
+            "rawValue": 81.142857,
+            "fantasyScore": 243.428571,
+            "validGames": 14
           }
         },
         "gpm": {
@@ -2063,9 +2063,9 @@
             "fantasyScore": 785
           },
           "average": {
-            "rawValue": 321.875,
-            "fantasyScore": 643.75,
-            "validGames": 12
+            "rawValue": 326.785714,
+            "fantasyScore": 653.571429,
+            "validGames": 14
           }
         },
         "madstones": {
@@ -2093,9 +2093,9 @@
             "fantasyScore": 352
           },
           "average": {
-            "rawValue": 0.208333,
-            "fantasyScore": 73.333333,
-            "validGames": 12
+            "rawValue": 0.178571,
+            "fantasyScore": 62.857143,
+            "validGames": 14
           }
         },
         "observerWards": {
@@ -2119,9 +2119,9 @@
             "fantasyScore": 1755
           },
           "average": {
-            "rawValue": 9.875,
-            "fantasyScore": 1155.375,
-            "validGames": 12
+            "rawValue": 10,
+            "fantasyScore": 1170,
+            "validGames": 14
           }
         },
         "campsStacked": {
@@ -2145,35 +2145,35 @@
             "fantasyScore": 1755
           },
           "average": {
-            "rawValue": 3.083333,
-            "fantasyScore": 721.5,
-            "validGames": 12
+            "rawValue": 2.964286,
+            "fantasyScore": 693.642857,
+            "validGames": 14
           }
         },
         "runes": {
           "best": {
-            "matchId": 8946648249,
+            "matchId": 8948026518,
             "members": [
               {
                 "playerAccountId": 317880638,
                 "playerName": "Save-",
-                "rawValue": 7,
-                "fantasyScore": 987
+                "rawValue": 4,
+                "fantasyScore": 564
               },
               {
                 "playerAccountId": 196878136,
                 "playerName": "Kataomi",
-                "rawValue": 3,
-                "fantasyScore": 423
+                "rawValue": 7,
+                "fantasyScore": 987
               }
             ],
-            "rawValue": 5,
-            "fantasyScore": 705
+            "rawValue": 5.5,
+            "fantasyScore": 775.5
           },
           "average": {
-            "rawValue": 2.375,
-            "fantasyScore": 334.875,
-            "validGames": 12
+            "rawValue": 2.607143,
+            "fantasyScore": 367.607143,
+            "validGames": 14
           }
         },
         "watchers": {
@@ -2207,33 +2207,33 @@
           "average": {
             "rawValue": 0,
             "fantasyScore": 0,
-            "validGames": 12
+            "validGames": 14
           }
         },
         "teamfightParticipation": {
           "best": {
-            "matchId": 8944612322,
+            "matchId": 8948026518,
             "members": [
               {
                 "playerAccountId": 317880638,
                 "playerName": "Save-",
-                "rawValue": 0.848485,
-                "fantasyScore": 1802.181928
+                "rawValue": 0.861111,
+                "fantasyScore": 1828.999976
               },
               {
                 "playerAccountId": 196878136,
                 "playerName": "Kataomi",
-                "rawValue": 0.575758,
-                "fantasyScore": 1222.909057
+                "rawValue": 0.666667,
+                "fantasyScore": 1416.000071
               }
             ],
-            "rawValue": 0.712122,
-            "fantasyScore": 1512.545493
+            "rawValue": 0.763889,
+            "fantasyScore": 1622.500024
           },
           "average": {
-            "rawValue": 0.627315,
-            "fantasyScore": 1332.416569,
-            "validGames": 12
+            "rawValue": 0.626424,
+            "fantasyScore": 1330.523212,
+            "validGames": 14
           }
         },
         "stunDuration": {
@@ -2257,9 +2257,9 @@
             "fantasyScore": 1291.35782
           },
           "average": {
-            "rawValue": 44.589379,
-            "fantasyScore": 445.893784,
-            "validGames": 12
+            "rawValue": 43.974262,
+            "fantasyScore": 439.742622,
+            "validGames": 14
           }
         },
         "tormentorKills": {
@@ -2283,9 +2283,9 @@
             "fantasyScore": 439.5
           },
           "average": {
-            "rawValue": 0.041667,
-            "fantasyScore": 36.625,
-            "validGames": 12
+            "rawValue": 0.035714,
+            "fantasyScore": 31.392857,
+            "validGames": 14
           }
         },
         "courierKills": {
@@ -2309,9 +2309,9 @@
             "fantasyScore": 1054.5
           },
           "average": {
-            "rawValue": 0.583333,
-            "fantasyScore": 410.083333,
-            "validGames": 12
+            "rawValue": 0.535714,
+            "fantasyScore": 376.607143,
+            "validGames": 14
           }
         },
         "firstBlood": {
@@ -2335,9 +2335,9 @@
             "fantasyScore": 967
           },
           "average": {
-            "rawValue": 0.041667,
-            "fantasyScore": 80.583333,
-            "validGames": 12
+            "rawValue": 0.035714,
+            "fantasyScore": 69.071429,
+            "validGames": 14
           }
         },
         "smokes": {
@@ -2361,9 +2361,9 @@
             "fantasyScore": 1611.5
           },
           "average": {
-            "rawValue": 3.583333,
-            "fantasyScore": 1049.916667,
-            "validGames": 12
+            "rawValue": 3.642857,
+            "fantasyScore": 1067.357143,
+            "validGames": 14
           }
         }
       }
@@ -2384,7 +2384,7 @@
           "position": 3
         }
       ],
-      "gamesPlayedTogether": 14,
+      "gamesPlayedTogether": 16,
       "metrics": {
         "kills": {
           "best": {
@@ -2407,9 +2407,9 @@
             "fantasyScore": 1605
           },
           "average": {
-            "rawValue": 7.535714,
-            "fantasyScore": 806.321429,
-            "validGames": 14
+            "rawValue": 7.53125,
+            "fantasyScore": 805.84375,
+            "validGames": 16
           }
         },
         "deaths": {
@@ -2433,9 +2433,9 @@
             "fantasyScore": 1950
           },
           "average": {
-            "rawValue": 4.535714,
-            "fantasyScore": 1065.535714,
-            "validGames": 14
+            "rawValue": 4.21875,
+            "fantasyScore": 1127.34375,
+            "validGames": 16
           }
         },
         "lastHitsAndDenies": {
@@ -2459,9 +2459,9 @@
             "fantasyScore": 2232
           },
           "average": {
-            "rawValue": 521.714286,
-            "fantasyScore": 1565.142857,
-            "validGames": 14
+            "rawValue": 501.4375,
+            "fantasyScore": 1504.3125,
+            "validGames": 16
           }
         },
         "gpm": {
@@ -2485,9 +2485,9 @@
             "fantasyScore": 1665
           },
           "average": {
-            "rawValue": 692.25,
-            "fantasyScore": 1384.5,
-            "validGames": 14
+            "rawValue": 691.90625,
+            "fantasyScore": 1383.8125,
+            "validGames": 16
           }
         },
         "madstones": {
@@ -2515,9 +2515,9 @@
             "fantasyScore": 1584
           },
           "average": {
-            "rawValue": 2.071429,
-            "fantasyScore": 729.142857,
-            "validGames": 14
+            "rawValue": 2.21875,
+            "fantasyScore": 781,
+            "validGames": 16
           }
         },
         "observerWards": {
@@ -2541,9 +2541,9 @@
             "fantasyScore": 58.5
           },
           "average": {
-            "rawValue": 0.178571,
-            "fantasyScore": 20.892857,
-            "validGames": 14
+            "rawValue": 0.21875,
+            "fantasyScore": 25.59375,
+            "validGames": 16
           }
         },
         "campsStacked": {
@@ -2567,9 +2567,9 @@
             "fantasyScore": 2106
           },
           "average": {
-            "rawValue": 3.892857,
-            "fantasyScore": 910.928571,
-            "validGames": 14
+            "rawValue": 3.71875,
+            "fantasyScore": 870.1875,
+            "validGames": 16
           }
         },
         "runes": {
@@ -2593,9 +2593,9 @@
             "fantasyScore": 916.5
           },
           "average": {
-            "rawValue": 3.785714,
-            "fantasyScore": 533.785714,
-            "validGames": 14
+            "rawValue": 3.625,
+            "fantasyScore": 511.125,
+            "validGames": 16
           }
         },
         "watchers": {
@@ -2627,9 +2627,9 @@
             "fantasyScore": 1758
           },
           "average": {
-            "rawValue": 0.464286,
-            "fantasyScore": 544.142857,
-            "validGames": 14
+            "rawValue": 0.5,
+            "fantasyScore": 586,
+            "validGames": 16
           }
         },
         "teamfightParticipation": {
@@ -2653,9 +2653,9 @@
             "fantasyScore": 1648.894717
           },
           "average": {
-            "rawValue": 0.640996,
-            "fantasyScore": 1361.474909,
-            "validGames": 14
+            "rawValue": 0.630338,
+            "fantasyScore": 1338.836639,
+            "validGames": 16
           }
         },
         "stunDuration": {
@@ -2679,9 +2679,9 @@
             "fantasyScore": 720.485875
           },
           "average": {
-            "rawValue": 21.138794,
-            "fantasyScore": 211.387937,
-            "validGames": 14
+            "rawValue": 20.776615,
+            "fantasyScore": 207.766147,
+            "validGames": 16
           }
         },
         "tormentorKills": {
@@ -2705,9 +2705,9 @@
             "fantasyScore": 439.5
           },
           "average": {
-            "rawValue": 0.25,
-            "fantasyScore": 219.75,
-            "validGames": 14
+            "rawValue": 0.21875,
+            "fantasyScore": 192.28125,
+            "validGames": 16
           }
         },
         "courierKills": {
@@ -2731,9 +2731,9 @@
             "fantasyScore": 703
           },
           "average": {
-            "rawValue": 0.285714,
-            "fantasyScore": 200.857143,
-            "validGames": 14
+            "rawValue": 0.28125,
+            "fantasyScore": 197.71875,
+            "validGames": 16
           }
         },
         "firstBlood": {
@@ -2757,9 +2757,9 @@
             "fantasyScore": 967
           },
           "average": {
-            "rawValue": 0.25,
-            "fantasyScore": 483.5,
-            "validGames": 14
+            "rawValue": 0.28125,
+            "fantasyScore": 543.9375,
+            "validGames": 16
           }
         },
         "smokes": {
@@ -2783,9 +2783,9 @@
             "fantasyScore": 293
           },
           "average": {
-            "rawValue": 0.071429,
-            "fantasyScore": 20.928571,
-            "validGames": 14
+            "rawValue": 0.0625,
+            "fantasyScore": 18.3125,
+            "validGames": 16
           }
         }
       }
@@ -2801,7 +2801,7 @@
           "position": 2
         }
       ],
-      "gamesPlayedTogether": 14,
+      "gamesPlayedTogether": 16,
       "metrics": {
         "kills": {
           "best": {
@@ -2818,9 +2818,9 @@
             "fantasyScore": 1498
           },
           "average": {
-            "rawValue": 6.928571,
-            "fantasyScore": 741.357143,
-            "validGames": 14
+            "rawValue": 7.5,
+            "fantasyScore": 802.5,
+            "validGames": 16
           }
         },
         "deaths": {
@@ -2838,9 +2838,9 @@
             "fantasyScore": 1755
           },
           "average": {
-            "rawValue": 4.428571,
-            "fantasyScore": 1100.357143,
-            "validGames": 14
+            "rawValue": 4,
+            "fantasyScore": 1182.1875,
+            "validGames": 16
           }
         },
         "lastHitsAndDenies": {
@@ -2858,9 +2858,9 @@
             "fantasyScore": 2202
           },
           "average": {
-            "rawValue": 453.428571,
-            "fantasyScore": 1360.285714,
-            "validGames": 14
+            "rawValue": 436.4375,
+            "fantasyScore": 1309.3125,
+            "validGames": 16
           }
         },
         "gpm": {
@@ -2878,9 +2878,9 @@
             "fantasyScore": 1724
           },
           "average": {
-            "rawValue": 646.714286,
-            "fantasyScore": 1293.428571,
-            "validGames": 14
+            "rawValue": 654.4375,
+            "fantasyScore": 1308.875,
+            "validGames": 16
           }
         },
         "madstones": {
@@ -2902,9 +2902,9 @@
             "fantasyScore": 2112
           },
           "average": {
-            "rawValue": 1.071429,
-            "fantasyScore": 377.142857,
-            "validGames": 14
+            "rawValue": 1.125,
+            "fantasyScore": 396,
+            "validGames": 16
           }
         },
         "observerWards": {
@@ -2922,9 +2922,9 @@
             "fantasyScore": 234
           },
           "average": {
-            "rawValue": 1.357143,
-            "fantasyScore": 158.785714,
-            "validGames": 14
+            "rawValue": 1.4375,
+            "fantasyScore": 168.1875,
+            "validGames": 16
           }
         },
         "campsStacked": {
@@ -2942,9 +2942,9 @@
             "fantasyScore": 1404
           },
           "average": {
-            "rawValue": 3.142857,
-            "fantasyScore": 735.428571,
-            "validGames": 14
+            "rawValue": 2.875,
+            "fantasyScore": 672.75,
+            "validGames": 16
           }
         },
         "runes": {
@@ -2962,9 +2962,9 @@
             "fantasyScore": 2961
           },
           "average": {
-            "rawValue": 12.214286,
-            "fantasyScore": 1722.214286,
-            "validGames": 14
+            "rawValue": 12.5,
+            "fantasyScore": 1762.5,
+            "validGames": 16
           }
         },
         "watchers": {
@@ -2990,9 +2990,9 @@
             "fantasyScore": 1172
           },
           "average": {
-            "rawValue": 0.071429,
-            "fantasyScore": 83.714286,
-            "validGames": 14
+            "rawValue": 0.125,
+            "fantasyScore": 146.5,
+            "validGames": 16
           }
         },
         "teamfightParticipation": {
@@ -3010,9 +3010,9 @@
             "fantasyScore": 1864.975651
           },
           "average": {
-            "rawValue": 0.712261,
-            "fantasyScore": 1512.842152,
-            "validGames": 14
+            "rawValue": 0.710338,
+            "fantasyScore": 1508.757195,
+            "validGames": 16
           }
         },
         "stunDuration": {
@@ -3030,9 +3030,9 @@
             "fantasyScore": 1654.9883
           },
           "average": {
-            "rawValue": 52.886871,
-            "fantasyScore": 528.868711,
-            "validGames": 14
+            "rawValue": 48.926057,
+            "fantasyScore": 489.260571,
+            "validGames": 16
           }
         },
         "tormentorKills": {
@@ -3050,29 +3050,29 @@
             "fantasyScore": 879
           },
           "average": {
-            "rawValue": 0.142857,
-            "fantasyScore": 125.571429,
-            "validGames": 14
+            "rawValue": 0.25,
+            "fantasyScore": 219.75,
+            "validGames": 16
           }
         },
         "courierKills": {
           "best": {
-            "matchId": 8943000927,
+            "matchId": 8948155771,
             "members": [
               {
                 "playerAccountId": 93618577,
                 "playerName": "bzm",
-                "rawValue": 0,
-                "fantasyScore": 0
+                "rawValue": 1,
+                "fantasyScore": 703
               }
             ],
-            "rawValue": 0,
-            "fantasyScore": 0
+            "rawValue": 1,
+            "fantasyScore": 703
           },
           "average": {
-            "rawValue": 0,
-            "fantasyScore": 0,
-            "validGames": 14
+            "rawValue": 0.125,
+            "fantasyScore": 87.875,
+            "validGames": 16
           }
         },
         "firstBlood": {
@@ -3092,7 +3092,7 @@
           "average": {
             "rawValue": 0,
             "fantasyScore": 0,
-            "validGames": 14
+            "validGames": 16
           }
         },
         "smokes": {
@@ -3112,7 +3112,7 @@
           "average": {
             "rawValue": 0,
             "fantasyScore": 0,
-            "validGames": 14
+            "validGames": 16
           }
         }
       }
@@ -3133,7 +3133,7 @@
           "position": 5
         }
       ],
-      "gamesPlayedTogether": 14,
+      "gamesPlayedTogether": 16,
       "metrics": {
         "kills": {
           "best": {
@@ -3156,9 +3156,9 @@
             "fantasyScore": 856
           },
           "average": {
-            "rawValue": 4.107143,
-            "fantasyScore": 439.464286,
-            "validGames": 14
+            "rawValue": 3.875,
+            "fantasyScore": 414.625,
+            "validGames": 16
           }
         },
         "deaths": {
@@ -3182,9 +3182,9 @@
             "fantasyScore": 1560
           },
           "average": {
-            "rawValue": 6.321429,
-            "fantasyScore": 738.214286,
-            "validGames": 14
+            "rawValue": 6.125,
+            "fantasyScore": 773.90625,
+            "validGames": 16
           }
         },
         "lastHitsAndDenies": {
@@ -3208,9 +3208,9 @@
             "fantasyScore": 490.5
           },
           "average": {
-            "rawValue": 79.5,
-            "fantasyScore": 238.5,
-            "validGames": 14
+            "rawValue": 75.0625,
+            "fantasyScore": 225.1875,
+            "validGames": 16
           }
         },
         "gpm": {
@@ -3234,9 +3234,9 @@
             "fantasyScore": 827
           },
           "average": {
-            "rawValue": 331.785714,
-            "fantasyScore": 663.571429,
-            "validGames": 14
+            "rawValue": 333.96875,
+            "fantasyScore": 667.9375,
+            "validGames": 16
           }
         },
         "madstones": {
@@ -3264,9 +3264,9 @@
             "fantasyScore": 352
           },
           "average": {
-            "rawValue": 0.214286,
-            "fantasyScore": 75.428571,
-            "validGames": 14
+            "rawValue": 0.21875,
+            "fantasyScore": 77,
+            "validGames": 16
           }
         },
         "observerWards": {
@@ -3290,9 +3290,9 @@
             "fantasyScore": 1755
           },
           "average": {
-            "rawValue": 10.5,
-            "fantasyScore": 1228.5,
-            "validGames": 14
+            "rawValue": 10.03125,
+            "fantasyScore": 1173.65625,
+            "validGames": 16
           }
         },
         "campsStacked": {
@@ -3316,9 +3316,9 @@
             "fantasyScore": 2223
           },
           "average": {
-            "rawValue": 5.392857,
-            "fantasyScore": 1261.928571,
-            "validGames": 14
+            "rawValue": 5,
+            "fantasyScore": 1170,
+            "validGames": 16
           }
         },
         "runes": {
@@ -3342,9 +3342,9 @@
             "fantasyScore": 775.5
           },
           "average": {
-            "rawValue": 2.928571,
-            "fantasyScore": 412.928571,
-            "validGames": 14
+            "rawValue": 2.8125,
+            "fantasyScore": 396.5625,
+            "validGames": 16
           }
         },
         "watchers": {
@@ -3376,9 +3376,9 @@
             "fantasyScore": 586
           },
           "average": {
-            "rawValue": 0.035714,
-            "fantasyScore": 41.857143,
-            "validGames": 14
+            "rawValue": 0.03125,
+            "fantasyScore": 36.625,
+            "validGames": 16
           }
         },
         "teamfightParticipation": {
@@ -3402,9 +3402,9 @@
             "fantasyScore": 1686.705889
           },
           "average": {
-            "rawValue": 0.674282,
-            "fantasyScore": 1432.173465,
-            "validGames": 14
+            "rawValue": 0.655296,
+            "fantasyScore": 1391.847876,
+            "validGames": 16
           }
         },
         "stunDuration": {
@@ -3428,9 +3428,9 @@
             "fantasyScore": 1788.3353
           },
           "average": {
-            "rawValue": 67.333436,
-            "fantasyScore": 673.334363,
-            "validGames": 14
+            "rawValue": 65.171975,
+            "fantasyScore": 651.719752,
+            "validGames": 16
           }
         },
         "tormentorKills": {
@@ -3454,9 +3454,9 @@
             "fantasyScore": 439.5
           },
           "average": {
-            "rawValue": 0.071429,
-            "fantasyScore": 62.785714,
-            "validGames": 14
+            "rawValue": 0.0625,
+            "fantasyScore": 54.9375,
+            "validGames": 16
           }
         },
         "courierKills": {
@@ -3480,9 +3480,9 @@
             "fantasyScore": 1406
           },
           "average": {
-            "rawValue": 0.357143,
-            "fantasyScore": 251.071429,
-            "validGames": 14
+            "rawValue": 0.34375,
+            "fantasyScore": 241.65625,
+            "validGames": 16
           }
         },
         "firstBlood": {
@@ -3506,9 +3506,9 @@
             "fantasyScore": 967
           },
           "average": {
-            "rawValue": 0.178571,
-            "fantasyScore": 345.357143,
-            "validGames": 14
+            "rawValue": 0.15625,
+            "fantasyScore": 302.1875,
+            "validGames": 16
           }
         },
         "smokes": {
@@ -3532,9 +3532,9 @@
             "fantasyScore": 1611.5
           },
           "average": {
-            "rawValue": 3.607143,
-            "fantasyScore": 1056.892857,
-            "validGames": 14
+            "rawValue": 3.46875,
+            "fantasyScore": 1016.34375,
+            "validGames": 16
           }
         }
       }
@@ -3555,7 +3555,7 @@
           "position": 3
         }
       ],
-      "gamesPlayedTogether": 15,
+      "gamesPlayedTogether": 17,
       "metrics": {
         "kills": {
           "best": {
@@ -3578,14 +3578,14 @@
             "fantasyScore": 1123.5
           },
           "average": {
-            "rawValue": 6.366667,
-            "fantasyScore": 681.233333,
-            "validGames": 15
+            "rawValue": 6.352941,
+            "fantasyScore": 679.764706,
+            "validGames": 17
           }
         },
         "deaths": {
           "best": {
-            "matchId": 8946285985,
+            "matchId": 8947983249,
             "members": [
               {
                 "playerAccountId": 100058342,
@@ -3596,17 +3596,17 @@
               {
                 "playerAccountId": 183719386,
                 "playerName": "ATF",
-                "rawValue": 2,
-                "fantasyScore": 1560
+                "rawValue": 1,
+                "fantasyScore": 1755
               }
             ],
-            "rawValue": 1,
-            "fantasyScore": 1755
+            "rawValue": 0.5,
+            "fantasyScore": 1852.5
           },
           "average": {
-            "rawValue": 5.3,
-            "fantasyScore": 929.5,
-            "validGames": 15
+            "rawValue": 4.794118,
+            "fantasyScore": 1026.617647,
+            "validGames": 17
           }
         },
         "lastHitsAndDenies": {
@@ -3630,9 +3630,9 @@
             "fantasyScore": 3627
           },
           "average": {
-            "rawValue": 549.1,
-            "fantasyScore": 1647.3,
-            "validGames": 15
+            "rawValue": 545.852941,
+            "fantasyScore": 1637.558824,
+            "validGames": 17
           }
         },
         "gpm": {
@@ -3656,9 +3656,9 @@
             "fantasyScore": 1659
           },
           "average": {
-            "rawValue": 689.066667,
-            "fantasyScore": 1378.133333,
-            "validGames": 15
+            "rawValue": 694.205882,
+            "fantasyScore": 1388.411765,
+            "validGames": 17
           }
         },
         "madstones": {
@@ -3686,9 +3686,9 @@
             "fantasyScore": 1584
           },
           "average": {
-            "rawValue": 1.9,
-            "fantasyScore": 668.8,
-            "validGames": 15
+            "rawValue": 2.088235,
+            "fantasyScore": 735.058824,
+            "validGames": 17
           }
         },
         "observerWards": {
@@ -3712,9 +3712,9 @@
             "fantasyScore": 117
           },
           "average": {
-            "rawValue": 0.2,
-            "fantasyScore": 23.4,
-            "validGames": 15
+            "rawValue": 0.176471,
+            "fantasyScore": 20.647059,
+            "validGames": 17
           }
         },
         "campsStacked": {
@@ -3738,9 +3738,9 @@
             "fantasyScore": 1872
           },
           "average": {
-            "rawValue": 3.533333,
-            "fantasyScore": 826.8,
-            "validGames": 15
+            "rawValue": 3.382353,
+            "fantasyScore": 791.470588,
+            "validGames": 17
           }
         },
         "runes": {
@@ -3764,9 +3764,9 @@
             "fantasyScore": 1480.5
           },
           "average": {
-            "rawValue": 4.533333,
-            "fantasyScore": 639.2,
-            "validGames": 15
+            "rawValue": 4.323529,
+            "fantasyScore": 609.617647,
+            "validGames": 17
           }
         },
         "watchers": {
@@ -3798,9 +3798,9 @@
             "fantasyScore": 1172
           },
           "average": {
-            "rawValue": 0.433333,
-            "fantasyScore": 507.866667,
-            "validGames": 15
+            "rawValue": 0.470588,
+            "fantasyScore": 551.529412,
+            "validGames": 17
           }
         },
         "teamfightParticipation": {
@@ -3824,9 +3824,9 @@
             "fantasyScore": 1624.235332
           },
           "average": {
-            "rawValue": 0.596312,
-            "fantasyScore": 1266.565601,
-            "validGames": 15
+            "rawValue": 0.59352,
+            "fantasyScore": 1260.635681,
+            "validGames": 17
           }
         },
         "stunDuration": {
@@ -3850,9 +3850,9 @@
             "fantasyScore": 909.181075
           },
           "average": {
-            "rawValue": 34.147161,
-            "fantasyScore": 341.471614,
-            "validGames": 15
+            "rawValue": 32.313258,
+            "fantasyScore": 323.132578,
+            "validGames": 17
           }
         },
         "tormentorKills": {
@@ -3876,9 +3876,9 @@
             "fantasyScore": 879
           },
           "average": {
-            "rawValue": 0.333333,
-            "fantasyScore": 293,
-            "validGames": 15
+            "rawValue": 0.382353,
+            "fantasyScore": 336.088235,
+            "validGames": 17
           }
         },
         "courierKills": {
@@ -3902,9 +3902,9 @@
             "fantasyScore": 1054.5
           },
           "average": {
-            "rawValue": 0.366667,
-            "fantasyScore": 257.766667,
-            "validGames": 15
+            "rawValue": 0.352941,
+            "fantasyScore": 248.117647,
+            "validGames": 17
           }
         },
         "firstBlood": {
@@ -3928,9 +3928,9 @@
             "fantasyScore": 967
           },
           "average": {
-            "rawValue": 0.1,
-            "fantasyScore": 193.4,
-            "validGames": 15
+            "rawValue": 0.088235,
+            "fantasyScore": 170.647059,
+            "validGames": 17
           }
         },
         "smokes": {
@@ -3956,7 +3956,7 @@
           "average": {
             "rawValue": 0,
             "fantasyScore": 0,
-            "validGames": 15
+            "validGames": 17
           }
         }
       }
@@ -3972,7 +3972,7 @@
           "position": 2
         }
       ],
-      "gamesPlayedTogether": 15,
+      "gamesPlayedTogether": 17,
       "metrics": {
         "kills": {
           "best": {
@@ -3989,9 +3989,9 @@
             "fantasyScore": 1819
           },
           "average": {
-            "rawValue": 8.933333,
-            "fantasyScore": 955.866667,
-            "validGames": 15
+            "rawValue": 9,
+            "fantasyScore": 963,
+            "validGames": 17
           }
         },
         "deaths": {
@@ -4009,9 +4009,9 @@
             "fantasyScore": 1755
           },
           "average": {
-            "rawValue": 4.133333,
-            "fantasyScore": 1144,
-            "validGames": 15
+            "rawValue": 3.941176,
+            "fantasyScore": 1181.470588,
+            "validGames": 17
           }
         },
         "lastHitsAndDenies": {
@@ -4029,9 +4029,9 @@
             "fantasyScore": 3237
           },
           "average": {
-            "rawValue": 474.866667,
-            "fantasyScore": 1424.6,
-            "validGames": 15
+            "rawValue": 470,
+            "fantasyScore": 1410,
+            "validGames": 17
           }
         },
         "gpm": {
@@ -4049,9 +4049,9 @@
             "fantasyScore": 1684
           },
           "average": {
-            "rawValue": 648,
-            "fantasyScore": 1296,
-            "validGames": 15
+            "rawValue": 657.705882,
+            "fantasyScore": 1315.411765,
+            "validGames": 17
           }
         },
         "madstones": {
@@ -4073,9 +4073,9 @@
             "fantasyScore": 2112
           },
           "average": {
-            "rawValue": 2.066667,
-            "fantasyScore": 727.466667,
-            "validGames": 15
+            "rawValue": 2,
+            "fantasyScore": 704,
+            "validGames": 17
           }
         },
         "observerWards": {
@@ -4093,29 +4093,29 @@
             "fantasyScore": 351
           },
           "average": {
-            "rawValue": 1.6,
-            "fantasyScore": 187.2,
-            "validGames": 15
+            "rawValue": 1.647059,
+            "fantasyScore": 192.705882,
+            "validGames": 17
           }
         },
         "campsStacked": {
           "best": {
-            "matchId": 8943072784,
+            "matchId": 8947983249,
             "members": [
               {
                 "playerAccountId": 898455820,
                 "playerName": "Malr1ne",
-                "rawValue": 6,
-                "fantasyScore": 1404
+                "rawValue": 8,
+                "fantasyScore": 1872
               }
             ],
-            "rawValue": 6,
-            "fantasyScore": 1404
+            "rawValue": 8,
+            "fantasyScore": 1872
           },
           "average": {
-            "rawValue": 2,
-            "fantasyScore": 468,
-            "validGames": 15
+            "rawValue": 2.294118,
+            "fantasyScore": 536.823529,
+            "validGames": 17
           }
         },
         "runes": {
@@ -4133,9 +4133,9 @@
             "fantasyScore": 2538
           },
           "average": {
-            "rawValue": 9,
-            "fantasyScore": 1269,
-            "validGames": 15
+            "rawValue": 9.882353,
+            "fantasyScore": 1393.411765,
+            "validGames": 17
           }
         },
         "watchers": {
@@ -4161,9 +4161,9 @@
             "fantasyScore": 2344
           },
           "average": {
-            "rawValue": 0.4,
-            "fantasyScore": 468.8,
-            "validGames": 15
+            "rawValue": 0.352941,
+            "fantasyScore": 413.647059,
+            "validGames": 17
           }
         },
         "teamfightParticipation": {
@@ -4181,9 +4181,9 @@
             "fantasyScore": 2124
           },
           "average": {
-            "rawValue": 0.679586,
-            "fantasyScore": 1443.440321,
-            "validGames": 15
+            "rawValue": 0.685024,
+            "fantasyScore": 1454.990031,
+            "validGames": 17
           }
         },
         "stunDuration": {
@@ -4201,9 +4201,9 @@
             "fantasyScore": 588.009
           },
           "average": {
-            "rawValue": 30.739767,
-            "fantasyScore": 307.39767,
-            "validGames": 15
+            "rawValue": 31.282096,
+            "fantasyScore": 312.820962,
+            "validGames": 17
           }
         },
         "tormentorKills": {
@@ -4221,9 +4221,9 @@
             "fantasyScore": 879
           },
           "average": {
-            "rawValue": 0.466667,
-            "fantasyScore": 410.2,
-            "validGames": 15
+            "rawValue": 0.411765,
+            "fantasyScore": 361.941176,
+            "validGames": 17
           }
         },
         "courierKills": {
@@ -4241,9 +4241,9 @@
             "fantasyScore": 1406
           },
           "average": {
-            "rawValue": 0.333333,
-            "fantasyScore": 234.333333,
-            "validGames": 15
+            "rawValue": 0.294118,
+            "fantasyScore": 206.764706,
+            "validGames": 17
           }
         },
         "firstBlood": {
@@ -4261,9 +4261,9 @@
             "fantasyScore": 1934
           },
           "average": {
-            "rawValue": 0.2,
-            "fantasyScore": 386.8,
-            "validGames": 15
+            "rawValue": 0.235294,
+            "fantasyScore": 455.058824,
+            "validGames": 17
           }
         },
         "smokes": {
@@ -4281,9 +4281,9 @@
             "fantasyScore": 293
           },
           "average": {
-            "rawValue": 0.066667,
-            "fantasyScore": 19.533333,
-            "validGames": 15
+            "rawValue": 0.117647,
+            "fantasyScore": 34.470588,
+            "validGames": 17
           }
         }
       }
@@ -4304,7 +4304,7 @@
           "position": 5
         }
       ],
-      "gamesPlayedTogether": 15,
+      "gamesPlayedTogether": 17,
       "metrics": {
         "kills": {
           "best": {
@@ -4327,9 +4327,9 @@
             "fantasyScore": 535
           },
           "average": {
-            "rawValue": 2.366667,
-            "fantasyScore": 253.233333,
-            "validGames": 15
+            "rawValue": 2.617647,
+            "fantasyScore": 280.088235,
+            "validGames": 17
           }
         },
         "deaths": {
@@ -4353,9 +4353,9 @@
             "fantasyScore": 1657.5
           },
           "average": {
-            "rawValue": 7.9,
-            "fantasyScore": 604.5,
-            "validGames": 15
+            "rawValue": 7.205882,
+            "fantasyScore": 716.911765,
+            "validGames": 17
           }
         },
         "lastHitsAndDenies": {
@@ -4379,35 +4379,35 @@
             "fantasyScore": 879
           },
           "average": {
-            "rawValue": 130.266667,
-            "fantasyScore": 390.8,
-            "validGames": 15
+            "rawValue": 131.264706,
+            "fantasyScore": 393.794118,
+            "validGames": 17
           }
         },
         "gpm": {
           "best": {
-            "matchId": 8946161660,
+            "matchId": 8948040486,
             "members": [
               {
                 "playerAccountId": 25907144,
                 "playerName": "Cr1t-",
-                "rawValue": 327,
-                "fantasyScore": 654
+                "rawValue": 345,
+                "fantasyScore": 690
               },
               {
                 "playerAccountId": 10366616,
                 "playerName": "Sneyking",
-                "rawValue": 521,
-                "fantasyScore": 1042
+                "rawValue": 532,
+                "fantasyScore": 1064
               }
             ],
-            "rawValue": 424,
-            "fantasyScore": 848
+            "rawValue": 438.5,
+            "fantasyScore": 877
           },
           "average": {
-            "rawValue": 359.833333,
-            "fantasyScore": 719.666667,
-            "validGames": 15
+            "rawValue": 366.029412,
+            "fantasyScore": 732.058824,
+            "validGames": 17
           }
         },
         "madstones": {
@@ -4435,9 +4435,9 @@
             "fantasyScore": 528
           },
           "average": {
-            "rawValue": 0.466667,
-            "fantasyScore": 164.266667,
-            "validGames": 15
+            "rawValue": 0.441176,
+            "fantasyScore": 155.294118,
+            "validGames": 17
           }
         },
         "observerWards": {
@@ -4461,9 +4461,9 @@
             "fantasyScore": 2281.5
           },
           "average": {
-            "rawValue": 10.5,
-            "fantasyScore": 1228.5,
-            "validGames": 15
+            "rawValue": 10.235294,
+            "fantasyScore": 1197.529412,
+            "validGames": 17
           }
         },
         "campsStacked": {
@@ -4487,9 +4487,9 @@
             "fantasyScore": 2691
           },
           "average": {
-            "rawValue": 5.533333,
-            "fantasyScore": 1294.8,
-            "validGames": 15
+            "rawValue": 5.470588,
+            "fantasyScore": 1280.117647,
+            "validGames": 17
           }
         },
         "runes": {
@@ -4513,9 +4513,9 @@
             "fantasyScore": 987
           },
           "average": {
-            "rawValue": 3.7,
-            "fantasyScore": 521.7,
-            "validGames": 15
+            "rawValue": 3.529412,
+            "fantasyScore": 497.647059,
+            "validGames": 17
           }
         },
         "watchers": {
@@ -4547,9 +4547,9 @@
             "fantasyScore": 586
           },
           "average": {
-            "rawValue": 0.1,
-            "fantasyScore": 117.2,
-            "validGames": 15
+            "rawValue": 0.088235,
+            "fantasyScore": 103.411765,
+            "validGames": 17
           }
         },
         "teamfightParticipation": {
@@ -4573,9 +4573,9 @@
             "fantasyScore": 1737.818239
           },
           "average": {
-            "rawValue": 0.643267,
-            "fantasyScore": 1366.299469,
-            "validGames": 15
+            "rawValue": 0.64349,
+            "fantasyScore": 1366.772774,
+            "validGames": 17
           }
         },
         "stunDuration": {
@@ -4599,9 +4599,9 @@
             "fantasyScore": 1257.66725
           },
           "average": {
-            "rawValue": 46.335844,
-            "fantasyScore": 463.358438,
-            "validGames": 15
+            "rawValue": 46.287518,
+            "fantasyScore": 462.875175,
+            "validGames": 17
           }
         },
         "tormentorKills": {
@@ -4625,9 +4625,9 @@
             "fantasyScore": 439.5
           },
           "average": {
-            "rawValue": 0.1,
-            "fantasyScore": 87.9,
-            "validGames": 15
+            "rawValue": 0.088235,
+            "fantasyScore": 77.558824,
+            "validGames": 17
           }
         },
         "courierKills": {
@@ -4651,9 +4651,9 @@
             "fantasyScore": 1054.5
           },
           "average": {
-            "rawValue": 0.6,
-            "fantasyScore": 421.8,
-            "validGames": 15
+            "rawValue": 0.588235,
+            "fantasyScore": 413.529412,
+            "validGames": 17
           }
         },
         "firstBlood": {
@@ -4677,9 +4677,9 @@
             "fantasyScore": 967
           },
           "average": {
-            "rawValue": 0.066667,
-            "fantasyScore": 128.933333,
-            "validGames": 15
+            "rawValue": 0.058824,
+            "fantasyScore": 113.764706,
+            "validGames": 17
           }
         },
         "smokes": {
@@ -4703,9 +4703,9 @@
             "fantasyScore": 2051
           },
           "average": {
-            "rawValue": 4.033333,
-            "fantasyScore": 1181.766667,
-            "validGames": 15
+            "rawValue": 3.941176,
+            "fantasyScore": 1154.764706,
+            "validGames": 17
           }
         }
       }
@@ -5897,7 +5897,7 @@
           "position": 3
         }
       ],
-      "gamesPlayedTogether": 14,
+      "gamesPlayedTogether": 17,
       "metrics": {
         "kills": {
           "best": {
@@ -5920,9 +5920,9 @@
             "fantasyScore": 1070
           },
           "average": {
-            "rawValue": 5.464286,
-            "fantasyScore": 584.678571,
-            "validGames": 14
+            "rawValue": 5.676471,
+            "fantasyScore": 607.382353,
+            "validGames": 17
           }
         },
         "deaths": {
@@ -5946,61 +5946,61 @@
             "fantasyScore": 1852.5
           },
           "average": {
-            "rawValue": 3.357143,
-            "fantasyScore": 1295.357143,
-            "validGames": 14
+            "rawValue": 3.323529,
+            "fantasyScore": 1301.911765,
+            "validGames": 17
           }
         },
         "lastHitsAndDenies": {
           "best": {
-            "matchId": 8946161629,
+            "matchId": 8948533452,
             "members": [
               {
                 "playerAccountId": 171262902,
                 "playerName": "watson",
-                "rawValue": 1137,
-                "fantasyScore": 3411
+                "rawValue": 951,
+                "fantasyScore": 2853
               },
               {
                 "playerAccountId": 56351509,
                 "playerName": "DM",
-                "rawValue": 478,
-                "fantasyScore": 1434
+                "rawValue": 676,
+                "fantasyScore": 2028
               }
             ],
-            "rawValue": 807.5,
-            "fantasyScore": 2422.5
+            "rawValue": 813.5,
+            "fantasyScore": 2440.5
           },
           "average": {
-            "rawValue": 453.857143,
-            "fantasyScore": 1361.571429,
-            "validGames": 14
+            "rawValue": 464.205882,
+            "fantasyScore": 1392.617647,
+            "validGames": 17
           }
         },
         "gpm": {
           "best": {
-            "matchId": 8944841068,
+            "matchId": 8948533452,
             "members": [
               {
                 "playerAccountId": 171262902,
                 "playerName": "watson",
-                "rawValue": 956,
-                "fantasyScore": 1912
+                "rawValue": 900,
+                "fantasyScore": 1800
               },
               {
                 "playerAccountId": 56351509,
                 "playerName": "DM",
-                "rawValue": 638,
-                "fantasyScore": 1276
+                "rawValue": 767,
+                "fantasyScore": 1534
               }
             ],
-            "rawValue": 797,
-            "fantasyScore": 1594
+            "rawValue": 833.5,
+            "fantasyScore": 1667
           },
           "average": {
-            "rawValue": 670.892857,
-            "fantasyScore": 1341.785714,
-            "validGames": 14
+            "rawValue": 676.294118,
+            "fantasyScore": 1352.588235,
+            "validGames": 17
           }
         },
         "madstones": {
@@ -6028,9 +6028,9 @@
             "fantasyScore": 1408
           },
           "average": {
-            "rawValue": 1.571429,
-            "fantasyScore": 553.142857,
-            "validGames": 14
+            "rawValue": 1.647059,
+            "fantasyScore": 579.764706,
+            "validGames": 17
           }
         },
         "observerWards": {
@@ -6054,35 +6054,35 @@
             "fantasyScore": 58.5
           },
           "average": {
-            "rawValue": 0.107143,
-            "fantasyScore": 12.535714,
-            "validGames": 14
+            "rawValue": 0.147059,
+            "fantasyScore": 17.205882,
+            "validGames": 17
           }
         },
         "campsStacked": {
           "best": {
-            "matchId": 8946260898,
+            "matchId": 8948533452,
             "members": [
               {
                 "playerAccountId": 171262902,
                 "playerName": "watson",
-                "rawValue": 5,
-                "fantasyScore": 1170
+                "rawValue": 8,
+                "fantasyScore": 1872
               },
               {
                 "playerAccountId": 56351509,
                 "playerName": "DM",
-                "rawValue": 5,
-                "fantasyScore": 1170
+                "rawValue": 4,
+                "fantasyScore": 936
               }
             ],
-            "rawValue": 5,
-            "fantasyScore": 1170
+            "rawValue": 6,
+            "fantasyScore": 1404
           },
           "average": {
-            "rawValue": 2.678571,
-            "fantasyScore": 626.785714,
-            "validGames": 14
+            "rawValue": 2.941176,
+            "fantasyScore": 688.235294,
+            "validGames": 17
           }
         },
         "runes": {
@@ -6106,9 +6106,9 @@
             "fantasyScore": 916.5
           },
           "average": {
-            "rawValue": 3.607143,
-            "fantasyScore": 508.607143,
-            "validGames": 14
+            "rawValue": 3.558824,
+            "fantasyScore": 501.794118,
+            "validGames": 17
           }
         },
         "watchers": {
@@ -6121,54 +6121,54 @@
         },
         "roshanKills": {
           "best": {
-            "matchId": 8944841068,
+            "matchId": 8948533452,
             "members": [
               {
                 "playerAccountId": 171262902,
                 "playerName": "watson",
-                "rawValue": 0,
-                "fantasyScore": 0
+                "rawValue": 2,
+                "fantasyScore": 2344
               },
               {
                 "playerAccountId": 56351509,
                 "playerName": "DM",
-                "rawValue": 2,
-                "fantasyScore": 2344
+                "rawValue": 1,
+                "fantasyScore": 1172
               }
             ],
-            "rawValue": 1,
-            "fantasyScore": 1172
+            "rawValue": 1.5,
+            "fantasyScore": 1758
           },
           "average": {
-            "rawValue": 0.321429,
-            "fantasyScore": 376.714286,
-            "validGames": 14
+            "rawValue": 0.352941,
+            "fantasyScore": 413.647059,
+            "validGames": 17
           }
         },
         "teamfightParticipation": {
           "best": {
-            "matchId": 8946161629,
+            "matchId": 8948533452,
             "members": [
               {
                 "playerAccountId": 171262902,
                 "playerName": "watson",
-                "rawValue": 0.741936,
-                "fantasyScore": 1575.871002
+                "rawValue": 0.625,
+                "fantasyScore": 1327.5
               },
               {
                 "playerAccountId": 56351509,
                 "playerName": "DM",
-                "rawValue": 0.677419,
-                "fantasyScore": 1438.838721
+                "rawValue": 0.95,
+                "fantasyScore": 2017.8
               }
             ],
-            "rawValue": 0.709678,
-            "fantasyScore": 1507.354862
+            "rawValue": 0.7875,
+            "fantasyScore": 1672.65
           },
           "average": {
-            "rawValue": 0.566381,
-            "fantasyScore": 1202.992318,
-            "validGames": 14
+            "rawValue": 0.586997,
+            "fantasyScore": 1246.781641,
+            "validGames": 17
           }
         },
         "stunDuration": {
@@ -6192,9 +6192,9 @@
             "fantasyScore": 631.328635
           },
           "average": {
-            "rawValue": 24.100844,
-            "fantasyScore": 241.008442,
-            "validGames": 14
+            "rawValue": 26.25271,
+            "fantasyScore": 262.527101,
+            "validGames": 17
           }
         },
         "tormentorKills": {
@@ -6218,9 +6218,9 @@
             "fantasyScore": 439.5
           },
           "average": {
-            "rawValue": 0.071429,
-            "fantasyScore": 62.785714,
-            "validGames": 14
+            "rawValue": 0.117647,
+            "fantasyScore": 103.411765,
+            "validGames": 17
           }
         },
         "courierKills": {
@@ -6244,9 +6244,9 @@
             "fantasyScore": 1054.5
           },
           "average": {
-            "rawValue": 0.428571,
-            "fantasyScore": 301.285714,
-            "validGames": 14
+            "rawValue": 0.382353,
+            "fantasyScore": 268.794118,
+            "validGames": 17
           }
         },
         "firstBlood": {
@@ -6270,9 +6270,9 @@
             "fantasyScore": 967
           },
           "average": {
-            "rawValue": 0.076923,
-            "fantasyScore": 148.769231,
-            "validGames": 13
+            "rawValue": 0.125,
+            "fantasyScore": 241.75,
+            "validGames": 16
           }
         },
         "smokes": {
@@ -6298,7 +6298,7 @@
           "average": {
             "rawValue": 0,
             "fantasyScore": 0,
-            "validGames": 14
+            "validGames": 17
           }
         }
       }
@@ -6314,26 +6314,26 @@
           "position": 2
         }
       ],
-      "gamesPlayedTogether": 14,
+      "gamesPlayedTogether": 17,
       "metrics": {
         "kills": {
           "best": {
-            "matchId": 8943182700,
+            "matchId": 8948533452,
             "members": [
               {
                 "playerAccountId": 312436974,
                 "playerName": "CHIRA_JUNIOR",
-                "rawValue": 14,
-                "fantasyScore": 1498
+                "rawValue": 17,
+                "fantasyScore": 1819
               }
             ],
-            "rawValue": 14,
-            "fantasyScore": 1498
+            "rawValue": 17,
+            "fantasyScore": 1819
           },
           "average": {
-            "rawValue": 6.785714,
-            "fantasyScore": 726.071429,
-            "validGames": 14
+            "rawValue": 7.117647,
+            "fantasyScore": 761.588235,
+            "validGames": 17
           }
         },
         "deaths": {
@@ -6351,49 +6351,49 @@
             "fantasyScore": 1950
           },
           "average": {
-            "rawValue": 4.214286,
-            "fantasyScore": 1128.214286,
-            "validGames": 14
+            "rawValue": 4.117647,
+            "fantasyScore": 1147.058824,
+            "validGames": 17
           }
         },
         "lastHitsAndDenies": {
           "best": {
-            "matchId": 8946161629,
+            "matchId": 8948533452,
             "members": [
               {
                 "playerAccountId": 312436974,
                 "playerName": "CHIRA_JUNIOR",
-                "rawValue": 531,
-                "fantasyScore": 1593
+                "rawValue": 638,
+                "fantasyScore": 1914
               }
             ],
-            "rawValue": 531,
-            "fantasyScore": 1593
+            "rawValue": 638,
+            "fantasyScore": 1914
           },
           "average": {
-            "rawValue": 333.214286,
-            "fantasyScore": 999.642857,
-            "validGames": 14
+            "rawValue": 345.647059,
+            "fantasyScore": 1036.941176,
+            "validGames": 17
           }
         },
         "gpm": {
           "best": {
-            "matchId": 8944475950,
+            "matchId": 8948533452,
             "members": [
               {
                 "playerAccountId": 312436974,
                 "playerName": "CHIRA_JUNIOR",
-                "rawValue": 699,
-                "fantasyScore": 1398
+                "rawValue": 744,
+                "fantasyScore": 1488
               }
             ],
-            "rawValue": 699,
-            "fantasyScore": 1398
+            "rawValue": 744,
+            "fantasyScore": 1488
           },
           "average": {
-            "rawValue": 557.071429,
-            "fantasyScore": 1114.142857,
-            "validGames": 14
+            "rawValue": 566.882353,
+            "fantasyScore": 1133.764706,
+            "validGames": 17
           }
         },
         "madstones": {
@@ -6415,9 +6415,9 @@
             "fantasyScore": 1408
           },
           "average": {
-            "rawValue": 0.714286,
-            "fantasyScore": 251.428571,
-            "validGames": 14
+            "rawValue": 0.882353,
+            "fantasyScore": 310.588235,
+            "validGames": 17
           }
         },
         "observerWards": {
@@ -6435,9 +6435,9 @@
             "fantasyScore": 234
           },
           "average": {
-            "rawValue": 1.785714,
-            "fantasyScore": 208.928571,
-            "validGames": 14
+            "rawValue": 1.647059,
+            "fantasyScore": 192.705882,
+            "validGames": 17
           }
         },
         "campsStacked": {
@@ -6455,9 +6455,9 @@
             "fantasyScore": 1872
           },
           "average": {
-            "rawValue": 1.857143,
-            "fantasyScore": 434.571429,
-            "validGames": 14
+            "rawValue": 1.588235,
+            "fantasyScore": 371.647059,
+            "validGames": 17
           }
         },
         "runes": {
@@ -6475,9 +6475,9 @@
             "fantasyScore": 1833
           },
           "average": {
-            "rawValue": 6.071429,
-            "fantasyScore": 856.071429,
-            "validGames": 14
+            "rawValue": 6.176471,
+            "fantasyScore": 870.882353,
+            "validGames": 17
           }
         },
         "watchers": {
@@ -6490,42 +6490,42 @@
         },
         "roshanKills": {
           "best": {
-            "matchId": 8943182700,
+            "matchId": 8948420293,
             "members": [
               {
                 "playerAccountId": 312436974,
                 "playerName": "CHIRA_JUNIOR",
-                "rawValue": 1,
-                "fantasyScore": 1172
+                "rawValue": 2,
+                "fantasyScore": 2344
               }
             ],
-            "rawValue": 1,
-            "fantasyScore": 1172
+            "rawValue": 2,
+            "fantasyScore": 2344
           },
           "average": {
-            "rawValue": 0.071429,
-            "fantasyScore": 83.714286,
-            "validGames": 14
+            "rawValue": 0.176471,
+            "fantasyScore": 206.823529,
+            "validGames": 17
           }
         },
         "teamfightParticipation": {
           "best": {
-            "matchId": 8946161629,
+            "matchId": 8948533452,
             "members": [
               {
                 "playerAccountId": 312436974,
                 "playerName": "CHIRA_JUNIOR",
-                "rawValue": 0.903226,
-                "fantasyScore": 1918.451599
+                "rawValue": 0.95,
+                "fantasyScore": 2017.8
               }
             ],
-            "rawValue": 0.903226,
-            "fantasyScore": 1918.451599
+            "rawValue": 0.95,
+            "fantasyScore": 2017.8
           },
           "average": {
-            "rawValue": 0.661366,
-            "fantasyScore": 1404.741375,
-            "validGames": 14
+            "rawValue": 0.657756,
+            "fantasyScore": 1397.073647,
+            "validGames": 17
           }
         },
         "stunDuration": {
@@ -6543,9 +6543,9 @@
             "fantasyScore": 955.0602
           },
           "average": {
-            "rawValue": 38.060497,
-            "fantasyScore": 380.604965,
-            "validGames": 14
+            "rawValue": 36.922509,
+            "fantasyScore": 369.225086,
+            "validGames": 17
           }
         },
         "tormentorKills": {
@@ -6563,9 +6563,9 @@
             "fantasyScore": 879
           },
           "average": {
-            "rawValue": 0.071429,
-            "fantasyScore": 62.785714,
-            "validGames": 14
+            "rawValue": 0.117647,
+            "fantasyScore": 103.411765,
+            "validGames": 17
           }
         },
         "courierKills": {
@@ -6583,9 +6583,9 @@
             "fantasyScore": 703
           },
           "average": {
-            "rawValue": 0.285714,
-            "fantasyScore": 200.857143,
-            "validGames": 14
+            "rawValue": 0.294118,
+            "fantasyScore": 206.764706,
+            "validGames": 17
           }
         },
         "firstBlood": {
@@ -6603,9 +6603,9 @@
             "fantasyScore": 1934
           },
           "average": {
-            "rawValue": 0.076923,
-            "fantasyScore": 148.769231,
-            "validGames": 13
+            "rawValue": 0.0625,
+            "fantasyScore": 120.875,
+            "validGames": 16
           }
         },
         "smokes": {
@@ -6623,9 +6623,9 @@
             "fantasyScore": 293
           },
           "average": {
-            "rawValue": 0.071429,
-            "fantasyScore": 20.928571,
-            "validGames": 14
+            "rawValue": 0.058824,
+            "fantasyScore": 17.235294,
+            "validGames": 17
           }
         }
       }
@@ -6646,7 +6646,7 @@
           "position": 5
         }
       ],
-      "gamesPlayedTogether": 14,
+      "gamesPlayedTogether": 17,
       "metrics": {
         "kills": {
           "best": {
@@ -6669,9 +6669,9 @@
             "fantasyScore": 535
           },
           "average": {
-            "rawValue": 2.642857,
-            "fantasyScore": 282.785714,
-            "validGames": 14
+            "rawValue": 2.617647,
+            "fantasyScore": 280.088235,
+            "validGames": 17
           }
         },
         "deaths": {
@@ -6695,9 +6695,9 @@
             "fantasyScore": 1755
           },
           "average": {
-            "rawValue": 7.642857,
-            "fantasyScore": 571.071429,
-            "validGames": 14
+            "rawValue": 7.411765,
+            "fantasyScore": 596.470588,
+            "validGames": 17
           }
         },
         "lastHitsAndDenies": {
@@ -6721,9 +6721,9 @@
             "fantasyScore": 447
           },
           "average": {
-            "rawValue": 81.464286,
-            "fantasyScore": 244.392857,
-            "validGames": 14
+            "rawValue": 77.882353,
+            "fantasyScore": 233.647059,
+            "validGames": 17
           }
         },
         "gpm": {
@@ -6747,9 +6747,9 @@
             "fantasyScore": 865
           },
           "average": {
-            "rawValue": 329.964286,
-            "fantasyScore": 659.928571,
-            "validGames": 14
+            "rawValue": 331.147059,
+            "fantasyScore": 662.294118,
+            "validGames": 17
           }
         },
         "madstones": {
@@ -6777,20 +6777,20 @@
             "fantasyScore": 704
           },
           "average": {
-            "rawValue": 0.25,
-            "fantasyScore": 88,
-            "validGames": 14
+            "rawValue": 0.235294,
+            "fantasyScore": 82.823529,
+            "validGames": 17
           }
         },
         "observerWards": {
           "best": {
-            "matchId": 8946161629,
+            "matchId": 8948533452,
             "members": [
               {
                 "playerAccountId": 103735745,
                 "playerName": "Saksa",
-                "rawValue": 16,
-                "fantasyScore": 1872
+                "rawValue": 17,
+                "fantasyScore": 1989
               },
               {
                 "playerAccountId": 93817671,
@@ -6799,13 +6799,13 @@
                 "fantasyScore": 1404
               }
             ],
-            "rawValue": 14,
-            "fantasyScore": 1638
+            "rawValue": 14.5,
+            "fantasyScore": 1696.5
           },
           "average": {
-            "rawValue": 8.214286,
-            "fantasyScore": 961.071429,
-            "validGames": 14
+            "rawValue": 8.5,
+            "fantasyScore": 994.5,
+            "validGames": 17
           }
         },
         "campsStacked": {
@@ -6829,20 +6829,20 @@
             "fantasyScore": 1638
           },
           "average": {
-            "rawValue": 3.714286,
-            "fantasyScore": 869.142857,
-            "validGames": 14
+            "rawValue": 3.382353,
+            "fantasyScore": 791.470588,
+            "validGames": 17
           }
         },
         "runes": {
           "best": {
-            "matchId": 8944475950,
+            "matchId": 8948533452,
             "members": [
               {
                 "playerAccountId": 103735745,
                 "playerName": "Saksa",
-                "rawValue": 9,
-                "fantasyScore": 1269
+                "rawValue": 12,
+                "fantasyScore": 1692
               },
               {
                 "playerAccountId": 93817671,
@@ -6851,13 +6851,13 @@
                 "fantasyScore": 846
               }
             ],
-            "rawValue": 7.5,
-            "fantasyScore": 1057.5
+            "rawValue": 9,
+            "fantasyScore": 1269
           },
           "average": {
-            "rawValue": 3.678571,
-            "fantasyScore": 518.678571,
-            "validGames": 14
+            "rawValue": 4.117647,
+            "fantasyScore": 580.588235,
+            "validGames": 17
           }
         },
         "watchers": {
@@ -6889,9 +6889,9 @@
             "fantasyScore": 586
           },
           "average": {
-            "rawValue": 0.071429,
-            "fantasyScore": 83.714286,
-            "validGames": 14
+            "rawValue": 0.058824,
+            "fantasyScore": 68.941176,
+            "validGames": 17
           }
         },
         "teamfightParticipation": {
@@ -6915,9 +6915,9 @@
             "fantasyScore": 1644.3871
           },
           "average": {
-            "rawValue": 0.636408,
-            "fantasyScore": 1351.729603,
-            "validGames": 14
+            "rawValue": 0.624323,
+            "fantasyScore": 1326.062348,
+            "validGames": 17
           }
         },
         "stunDuration": {
@@ -6941,9 +6941,9 @@
             "fantasyScore": 844.344325
           },
           "average": {
-            "rawValue": 33.286777,
-            "fantasyScore": 332.867769,
-            "validGames": 14
+            "rawValue": 32.959152,
+            "fantasyScore": 329.591519,
+            "validGames": 17
           }
         },
         "tormentorKills": {
@@ -6969,18 +6969,18 @@
           "average": {
             "rawValue": 0,
             "fantasyScore": 0,
-            "validGames": 14
+            "validGames": 17
           }
         },
         "courierKills": {
           "best": {
-            "matchId": 8943142948,
+            "matchId": 8948533452,
             "members": [
               {
                 "playerAccountId": 103735745,
                 "playerName": "Saksa",
-                "rawValue": 1,
-                "fantasyScore": 703
+                "rawValue": 9,
+                "fantasyScore": 6327
               },
               {
                 "playerAccountId": 93817671,
@@ -6989,13 +6989,13 @@
                 "fantasyScore": 703
               }
             ],
-            "rawValue": 1,
-            "fantasyScore": 703
+            "rawValue": 5,
+            "fantasyScore": 3515
           },
           "average": {
-            "rawValue": 0.5,
-            "fantasyScore": 351.5,
-            "validGames": 14
+            "rawValue": 0.941176,
+            "fantasyScore": 661.647059,
+            "validGames": 17
           }
         },
         "firstBlood": {
@@ -7019,35 +7019,35 @@
             "fantasyScore": 967
           },
           "average": {
-            "rawValue": 0.076923,
-            "fantasyScore": 148.769231,
-            "validGames": 13
+            "rawValue": 0.0625,
+            "fantasyScore": 120.875,
+            "validGames": 16
           }
         },
         "smokes": {
           "best": {
-            "matchId": 8944475950,
+            "matchId": 8948533452,
             "members": [
               {
                 "playerAccountId": 103735745,
                 "playerName": "Saksa",
-                "rawValue": 5,
-                "fantasyScore": 1465
+                "rawValue": 2,
+                "fantasyScore": 586
               },
               {
                 "playerAccountId": 93817671,
                 "playerName": "Malady",
-                "rawValue": 4,
-                "fantasyScore": 1172
+                "rawValue": 9,
+                "fantasyScore": 2637
               }
             ],
-            "rawValue": 4.5,
-            "fantasyScore": 1318.5
+            "rawValue": 5.5,
+            "fantasyScore": 1611.5
           },
           "average": {
-            "rawValue": 2.785714,
-            "fantasyScore": 816.214286,
-            "validGames": 14
+            "rawValue": 2.911765,
+            "fantasyScore": 853.147059,
+            "validGames": 17
           }
         }
       }
@@ -8239,7 +8239,7 @@
           "position": 3
         }
       ],
-      "gamesPlayedTogether": 11,
+      "gamesPlayedTogether": 14,
       "metrics": {
         "kills": {
           "best": {
@@ -8262,35 +8262,35 @@
             "fantasyScore": 1979.5
           },
           "average": {
-            "rawValue": 7.681818,
-            "fantasyScore": 821.954545,
-            "validGames": 11
+            "rawValue": 7.285714,
+            "fantasyScore": 779.571429,
+            "validGames": 14
           }
         },
         "deaths": {
           "best": {
-            "matchId": 8943200897,
+            "matchId": 8948235815,
             "members": [
               {
                 "playerAccountId": 321580662,
                 "playerName": "Yatoro",
-                "rawValue": 1,
-                "fantasyScore": 1755
+                "rawValue": 0,
+                "fantasyScore": 1950
               },
               {
                 "playerAccountId": 302214028,
                 "playerName": "Collapse",
-                "rawValue": 3,
-                "fantasyScore": 1365
+                "rawValue": 2,
+                "fantasyScore": 1560
               }
             ],
-            "rawValue": 2,
-            "fantasyScore": 1560
+            "rawValue": 1,
+            "fantasyScore": 1755
           },
           "average": {
-            "rawValue": 4.136364,
-            "fantasyScore": 1143.409091,
-            "validGames": 11
+            "rawValue": 4,
+            "fantasyScore": 1170,
+            "validGames": 14
           }
         },
         "lastHitsAndDenies": {
@@ -8314,9 +8314,9 @@
             "fantasyScore": 2446.5
           },
           "average": {
-            "rawValue": 576.863636,
-            "fantasyScore": 1730.590909,
-            "validGames": 11
+            "rawValue": 549.75,
+            "fantasyScore": 1649.25,
+            "validGames": 14
           }
         },
         "gpm": {
@@ -8340,9 +8340,9 @@
             "fantasyScore": 1653
           },
           "average": {
-            "rawValue": 727,
-            "fantasyScore": 1454,
-            "validGames": 11
+            "rawValue": 720.464286,
+            "fantasyScore": 1440.928571,
+            "validGames": 14
           }
         },
         "madstones": {
@@ -8370,9 +8370,9 @@
             "fantasyScore": 1408
           },
           "average": {
-            "rawValue": 2.454545,
-            "fantasyScore": 864,
-            "validGames": 11
+            "rawValue": 2.464286,
+            "fantasyScore": 867.428571,
+            "validGames": 14
           }
         },
         "observerWards": {
@@ -8396,9 +8396,9 @@
             "fantasyScore": 117
           },
           "average": {
-            "rawValue": 0.590909,
-            "fantasyScore": 69.136364,
-            "validGames": 11
+            "rawValue": 0.571429,
+            "fantasyScore": 66.857143,
+            "validGames": 14
           }
         },
         "campsStacked": {
@@ -8422,9 +8422,9 @@
             "fantasyScore": 1287
           },
           "average": {
-            "rawValue": 3.363636,
-            "fantasyScore": 787.090909,
-            "validGames": 11
+            "rawValue": 3.107143,
+            "fantasyScore": 727.071429,
+            "validGames": 14
           }
         },
         "runes": {
@@ -8448,9 +8448,9 @@
             "fantasyScore": 846
           },
           "average": {
-            "rawValue": 4.045455,
-            "fantasyScore": 570.409091,
-            "validGames": 11
+            "rawValue": 3.75,
+            "fantasyScore": 528.75,
+            "validGames": 14
           }
         },
         "watchers": {
@@ -8482,9 +8482,9 @@
             "fantasyScore": 1172
           },
           "average": {
-            "rawValue": 0.318182,
-            "fantasyScore": 372.909091,
-            "validGames": 11
+            "rawValue": 0.285714,
+            "fantasyScore": 334.857143,
+            "validGames": 14
           }
         },
         "teamfightParticipation": {
@@ -8508,9 +8508,9 @@
             "fantasyScore": 1659.375
           },
           "average": {
-            "rawValue": 0.6234,
-            "fantasyScore": 1324.100149,
-            "validGames": 11
+            "rawValue": 0.602176,
+            "fantasyScore": 1279.021689,
+            "validGames": 14
           }
         },
         "stunDuration": {
@@ -8534,9 +8534,9 @@
             "fantasyScore": 2174.383
           },
           "average": {
-            "rawValue": 56.353672,
-            "fantasyScore": 563.536722,
-            "validGames": 11
+            "rawValue": 52.249255,
+            "fantasyScore": 522.492548,
+            "validGames": 14
           }
         },
         "tormentorKills": {
@@ -8560,35 +8560,35 @@
             "fantasyScore": 1318.5
           },
           "average": {
-            "rawValue": 0.681818,
-            "fantasyScore": 599.318182,
-            "validGames": 11
+            "rawValue": 0.571429,
+            "fantasyScore": 502.285714,
+            "validGames": 14
           }
         },
         "courierKills": {
           "best": {
-            "matchId": 8946858055,
+            "matchId": 8948151326,
             "members": [
               {
                 "playerAccountId": 321580662,
                 "playerName": "Yatoro",
-                "rawValue": 2,
-                "fantasyScore": 1406
+                "rawValue": 0,
+                "fantasyScore": 0
               },
               {
                 "playerAccountId": 302214028,
                 "playerName": "Collapse",
-                "rawValue": 0,
-                "fantasyScore": 0
+                "rawValue": 5,
+                "fantasyScore": 3515
               }
             ],
-            "rawValue": 1,
-            "fantasyScore": 703
+            "rawValue": 2.5,
+            "fantasyScore": 1757.5
           },
           "average": {
-            "rawValue": 0.181818,
-            "fantasyScore": 127.818182,
-            "validGames": 11
+            "rawValue": 0.392857,
+            "fantasyScore": 276.178571,
+            "validGames": 14
           }
         },
         "firstBlood": {
@@ -8612,9 +8612,9 @@
             "fantasyScore": 967
           },
           "average": {
-            "rawValue": 0.090909,
-            "fantasyScore": 175.818182,
-            "validGames": 11
+            "rawValue": 0.107143,
+            "fantasyScore": 207.214286,
+            "validGames": 14
           }
         },
         "smokes": {
@@ -8638,9 +8638,9 @@
             "fantasyScore": 146.5
           },
           "average": {
-            "rawValue": 0.272727,
-            "fantasyScore": 79.909091,
-            "validGames": 11
+            "rawValue": 0.214286,
+            "fantasyScore": 62.785714,
+            "validGames": 14
           }
         }
       }
@@ -8656,7 +8656,7 @@
           "position": 2
         }
       ],
-      "gamesPlayedTogether": 11,
+      "gamesPlayedTogether": 14,
       "metrics": {
         "kills": {
           "best": {
@@ -8673,9 +8673,9 @@
             "fantasyScore": 2354
           },
           "average": {
-            "rawValue": 8.181818,
-            "fantasyScore": 875.454545,
-            "validGames": 11
+            "rawValue": 7.714286,
+            "fantasyScore": 825.428571,
+            "validGames": 14
           }
         },
         "deaths": {
@@ -8693,9 +8693,9 @@
             "fantasyScore": 1755
           },
           "average": {
-            "rawValue": 5.454545,
-            "fantasyScore": 886.363636,
-            "validGames": 11
+            "rawValue": 5.642857,
+            "fantasyScore": 905.357143,
+            "validGames": 14
           }
         },
         "lastHitsAndDenies": {
@@ -8713,9 +8713,9 @@
             "fantasyScore": 2127
           },
           "average": {
-            "rawValue": 437.090909,
-            "fantasyScore": 1311.272727,
-            "validGames": 11
+            "rawValue": 413.785714,
+            "fantasyScore": 1241.357143,
+            "validGames": 14
           }
         },
         "gpm": {
@@ -8733,9 +8733,9 @@
             "fantasyScore": 1516
           },
           "average": {
-            "rawValue": 596.909091,
-            "fantasyScore": 1193.818182,
-            "validGames": 11
+            "rawValue": 587.714286,
+            "fantasyScore": 1175.428571,
+            "validGames": 14
           }
         },
         "madstones": {
@@ -8757,9 +8757,9 @@
             "fantasyScore": 1056
           },
           "average": {
-            "rawValue": 0.909091,
-            "fantasyScore": 320,
-            "validGames": 11
+            "rawValue": 0.714286,
+            "fantasyScore": 251.428571,
+            "validGames": 14
           }
         },
         "observerWards": {
@@ -8777,29 +8777,29 @@
             "fantasyScore": 234
           },
           "average": {
-            "rawValue": 0.727273,
-            "fantasyScore": 85.090909,
-            "validGames": 11
+            "rawValue": 0.714286,
+            "fantasyScore": 83.571429,
+            "validGames": 14
           }
         },
         "campsStacked": {
           "best": {
-            "matchId": 8943200897,
+            "matchId": 8948235815,
             "members": [
               {
                 "playerAccountId": 106305042,
                 "playerName": "Larl",
-                "rawValue": 2,
-                "fantasyScore": 468
+                "rawValue": 3,
+                "fantasyScore": 702
               }
             ],
-            "rawValue": 2,
-            "fantasyScore": 468
+            "rawValue": 3,
+            "fantasyScore": 702
           },
           "average": {
-            "rawValue": 0.909091,
-            "fantasyScore": 212.727273,
-            "validGames": 11
+            "rawValue": 1.071429,
+            "fantasyScore": 250.714286,
+            "validGames": 14
           }
         },
         "runes": {
@@ -8817,9 +8817,9 @@
             "fantasyScore": 2679
           },
           "average": {
-            "rawValue": 10.636364,
-            "fantasyScore": 1499.727273,
-            "validGames": 11
+            "rawValue": 10.5,
+            "fantasyScore": 1480.5,
+            "validGames": 14
           }
         },
         "watchers": {
@@ -8845,9 +8845,9 @@
             "fantasyScore": 1172
           },
           "average": {
-            "rawValue": 0.272727,
-            "fantasyScore": 319.636364,
-            "validGames": 11
+            "rawValue": 0.285714,
+            "fantasyScore": 334.857143,
+            "validGames": 14
           }
         },
         "teamfightParticipation": {
@@ -8865,9 +8865,9 @@
             "fantasyScore": 1754.608661
           },
           "average": {
-            "rawValue": 0.694855,
-            "fantasyScore": 1475.871236,
-            "validGames": 11
+            "rawValue": 0.682833,
+            "fantasyScore": 1450.336544,
+            "validGames": 14
           }
         },
         "stunDuration": {
@@ -8885,9 +8885,9 @@
             "fantasyScore": 1616.6939
           },
           "average": {
-            "rawValue": 51.490808,
-            "fantasyScore": 514.908079,
-            "validGames": 11
+            "rawValue": 50.452296,
+            "fantasyScore": 504.522958,
+            "validGames": 14
           }
         },
         "tormentorKills": {
@@ -8905,9 +8905,9 @@
             "fantasyScore": 1758
           },
           "average": {
-            "rawValue": 0.272727,
-            "fantasyScore": 239.727273,
-            "validGames": 11
+            "rawValue": 0.214286,
+            "fantasyScore": 188.357143,
+            "validGames": 14
           }
         },
         "courierKills": {
@@ -8925,9 +8925,9 @@
             "fantasyScore": 703
           },
           "average": {
-            "rawValue": 0.090909,
-            "fantasyScore": 63.909091,
-            "validGames": 11
+            "rawValue": 0.071429,
+            "fantasyScore": 50.214286,
+            "validGames": 14
           }
         },
         "firstBlood": {
@@ -8945,29 +8945,29 @@
             "fantasyScore": 1934
           },
           "average": {
-            "rawValue": 0.090909,
-            "fantasyScore": 175.818182,
-            "validGames": 11
+            "rawValue": 0.071429,
+            "fantasyScore": 138.142857,
+            "validGames": 14
           }
         },
         "smokes": {
           "best": {
-            "matchId": 8943143428,
+            "matchId": 8948151326,
             "members": [
               {
                 "playerAccountId": 106305042,
                 "playerName": "Larl",
-                "rawValue": 0,
-                "fantasyScore": 0
+                "rawValue": 1,
+                "fantasyScore": 293
               }
             ],
-            "rawValue": 0,
-            "fantasyScore": 0
+            "rawValue": 1,
+            "fantasyScore": 293
           },
           "average": {
-            "rawValue": 0,
-            "fantasyScore": 0,
-            "validGames": 11
+            "rawValue": 0.071429,
+            "fantasyScore": 20.928571,
+            "validGames": 14
           }
         }
       }
@@ -8988,7 +8988,7 @@
           "position": 5
         }
       ],
-      "gamesPlayedTogether": 11,
+      "gamesPlayedTogether": 14,
       "metrics": {
         "kills": {
           "best": {
@@ -9011,35 +9011,35 @@
             "fantasyScore": 802.5
           },
           "average": {
-            "rawValue": 3.136364,
-            "fantasyScore": 335.590909,
-            "validGames": 11
+            "rawValue": 3.392857,
+            "fantasyScore": 363.035714,
+            "validGames": 14
           }
         },
         "deaths": {
           "best": {
-            "matchId": 8944819470,
+            "matchId": 8948094346,
             "members": [
               {
                 "playerAccountId": 218231587,
                 "playerName": "not me",
-                "rawValue": 5,
-                "fantasyScore": 975
+                "rawValue": 2,
+                "fantasyScore": 1560
               },
               {
                 "playerAccountId": 847565596,
                 "playerName": "rue",
-                "rawValue": 7,
-                "fantasyScore": 585
+                "rawValue": 2,
+                "fantasyScore": 1560
               }
             ],
-            "rawValue": 6,
-            "fantasyScore": 780
+            "rawValue": 2,
+            "fantasyScore": 1560
           },
           "average": {
-            "rawValue": 9.045455,
-            "fantasyScore": 327.954545,
-            "validGames": 11
+            "rawValue": 8.428571,
+            "fantasyScore": 445.714286,
+            "validGames": 14
           }
         },
         "lastHitsAndDenies": {
@@ -9063,9 +9063,9 @@
             "fantasyScore": 346.5
           },
           "average": {
-            "rawValue": 78.227273,
-            "fantasyScore": 234.681818,
-            "validGames": 11
+            "rawValue": 72.5,
+            "fantasyScore": 217.5,
+            "validGames": 14
           }
         },
         "gpm": {
@@ -9089,9 +9089,9 @@
             "fantasyScore": 794
           },
           "average": {
-            "rawValue": 330.636364,
-            "fantasyScore": 661.272727,
-            "validGames": 11
+            "rawValue": 330.714286,
+            "fantasyScore": 661.428571,
+            "validGames": 14
           }
         },
         "madstones": {
@@ -9119,9 +9119,9 @@
             "fantasyScore": 176
           },
           "average": {
-            "rawValue": 0.181818,
-            "fantasyScore": 64,
-            "validGames": 11
+            "rawValue": 0.178571,
+            "fantasyScore": 62.857143,
+            "validGames": 14
           }
         },
         "observerWards": {
@@ -9145,9 +9145,9 @@
             "fantasyScore": 1579.5
           },
           "average": {
-            "rawValue": 10.136364,
-            "fantasyScore": 1185.954545,
-            "validGames": 11
+            "rawValue": 9.821429,
+            "fantasyScore": 1149.107143,
+            "validGames": 14
           }
         },
         "campsStacked": {
@@ -9171,9 +9171,9 @@
             "fantasyScore": 1872
           },
           "average": {
-            "rawValue": 4.409091,
-            "fantasyScore": 1031.727273,
-            "validGames": 11
+            "rawValue": 4.392857,
+            "fantasyScore": 1027.928571,
+            "validGames": 14
           }
         },
         "runes": {
@@ -9197,9 +9197,9 @@
             "fantasyScore": 916.5
           },
           "average": {
-            "rawValue": 2.590909,
-            "fantasyScore": 365.318182,
-            "validGames": 11
+            "rawValue": 2.535714,
+            "fantasyScore": 357.535714,
+            "validGames": 14
           }
         },
         "watchers": {
@@ -9231,9 +9231,9 @@
             "fantasyScore": 586
           },
           "average": {
-            "rawValue": 0.090909,
-            "fantasyScore": 106.545455,
-            "validGames": 11
+            "rawValue": 0.107143,
+            "fantasyScore": 125.571429,
+            "validGames": 14
           }
         },
         "teamfightParticipation": {
@@ -9257,9 +9257,9 @@
             "fantasyScore": 1570.875036
           },
           "average": {
-            "rawValue": 0.60527,
-            "fantasyScore": 1285.592343,
-            "validGames": 11
+            "rawValue": 0.617723,
+            "fantasyScore": 1312.042124,
+            "validGames": 14
           }
         },
         "stunDuration": {
@@ -9283,14 +9283,14 @@
             "fantasyScore": 1476.3285
           },
           "average": {
-            "rawValue": 67.709984,
-            "fantasyScore": 677.099842,
-            "validGames": 11
+            "rawValue": 60.694713,
+            "fantasyScore": 606.947126,
+            "validGames": 14
           }
         },
         "tormentorKills": {
           "best": {
-            "matchId": 8943143428,
+            "matchId": 8948151326,
             "members": [
               {
                 "playerAccountId": 218231587,
@@ -9301,17 +9301,17 @@
               {
                 "playerAccountId": 847565596,
                 "playerName": "rue",
-                "rawValue": 0,
-                "fantasyScore": 0
+                "rawValue": 1,
+                "fantasyScore": 879
               }
             ],
-            "rawValue": 0,
-            "fantasyScore": 0
+            "rawValue": 0.5,
+            "fantasyScore": 439.5
           },
           "average": {
-            "rawValue": 0,
-            "fantasyScore": 0,
-            "validGames": 11
+            "rawValue": 0.035714,
+            "fantasyScore": 31.392857,
+            "validGames": 14
           }
         },
         "courierKills": {
@@ -9335,9 +9335,9 @@
             "fantasyScore": 1054.5
           },
           "average": {
-            "rawValue": 0.545455,
-            "fantasyScore": 383.454545,
-            "validGames": 11
+            "rawValue": 0.428571,
+            "fantasyScore": 301.285714,
+            "validGames": 14
           }
         },
         "firstBlood": {
@@ -9361,9 +9361,9 @@
             "fantasyScore": 967
           },
           "average": {
-            "rawValue": 0.136364,
-            "fantasyScore": 263.727273,
-            "validGames": 11
+            "rawValue": 0.142857,
+            "fantasyScore": 276.285714,
+            "validGames": 14
           }
         },
         "smokes": {
@@ -9387,9 +9387,9 @@
             "fantasyScore": 1318.5
           },
           "average": {
-            "rawValue": 3.727273,
-            "fantasyScore": 1092.090909,
-            "validGames": 11
+            "rawValue": 3.535714,
+            "fantasyScore": 1035.964286,
+            "validGames": 14
           }
         }
       }
@@ -12923,11 +12923,11 @@
           "position": 3
         }
       ],
-      "gamesPlayedTogether": 13,
+      "gamesPlayedTogether": 16,
       "metrics": {
         "kills": {
           "best": {
-            "matchId": 8943235603,
+            "matchId": 8948151326,
             "members": [
               {
                 "playerAccountId": 170896543,
@@ -12938,17 +12938,17 @@
               {
                 "playerAccountId": 145957968,
                 "playerName": "niu",
-                "rawValue": 7,
-                "fantasyScore": 749
+                "rawValue": 10,
+                "fantasyScore": 1070
               }
             ],
-            "rawValue": 14.5,
-            "fantasyScore": 1551.5
+            "rawValue": 16,
+            "fantasyScore": 1712
           },
           "average": {
-            "rawValue": 7.615385,
-            "fantasyScore": 814.846154,
-            "validGames": 13
+            "rawValue": 7.625,
+            "fantasyScore": 815.875,
+            "validGames": 16
           }
         },
         "deaths": {
@@ -12972,9 +12972,9 @@
             "fantasyScore": 1755
           },
           "average": {
-            "rawValue": 5.615385,
-            "fantasyScore": 885,
-            "validGames": 13
+            "rawValue": 5.46875,
+            "fantasyScore": 907.96875,
+            "validGames": 16
           }
         },
         "lastHitsAndDenies": {
@@ -12998,9 +12998,9 @@
             "fantasyScore": 3103.5
           },
           "average": {
-            "rawValue": 477.923077,
-            "fantasyScore": 1433.769231,
-            "validGames": 13
+            "rawValue": 463.5,
+            "fantasyScore": 1390.5,
+            "validGames": 16
           }
         },
         "gpm": {
@@ -13024,9 +13024,9 @@
             "fantasyScore": 1552
           },
           "average": {
-            "rawValue": 634.730769,
-            "fantasyScore": 1269.461538,
-            "validGames": 13
+            "rawValue": 632.25,
+            "fantasyScore": 1264.5,
+            "validGames": 16
           }
         },
         "madstones": {
@@ -13054,9 +13054,9 @@
             "fantasyScore": 1584
           },
           "average": {
-            "rawValue": 1.807692,
-            "fantasyScore": 636.307692,
-            "validGames": 13
+            "rawValue": 1.8125,
+            "fantasyScore": 638,
+            "validGames": 16
           }
         },
         "observerWards": {
@@ -13080,9 +13080,9 @@
             "fantasyScore": 117
           },
           "average": {
-            "rawValue": 0.115385,
-            "fantasyScore": 13.5,
-            "validGames": 13
+            "rawValue": 0.15625,
+            "fantasyScore": 18.28125,
+            "validGames": 16
           }
         },
         "campsStacked": {
@@ -13106,9 +13106,9 @@
             "fantasyScore": 819
           },
           "average": {
-            "rawValue": 2.192308,
-            "fantasyScore": 513,
-            "validGames": 13
+            "rawValue": 2.125,
+            "fantasyScore": 497.25,
+            "validGames": 16
           }
         },
         "runes": {
@@ -13132,9 +13132,9 @@
             "fantasyScore": 1128
           },
           "average": {
-            "rawValue": 3.076923,
-            "fantasyScore": 433.846154,
-            "validGames": 13
+            "rawValue": 3.03125,
+            "fantasyScore": 427.40625,
+            "validGames": 16
           }
         },
         "watchers": {
@@ -13166,9 +13166,9 @@
             "fantasyScore": 1172
           },
           "average": {
-            "rawValue": 0.461538,
-            "fantasyScore": 540.923077,
-            "validGames": 13
+            "rawValue": 0.4375,
+            "fantasyScore": 512.75,
+            "validGames": 16
           }
         },
         "teamfightParticipation": {
@@ -13192,9 +13192,9 @@
             "fantasyScore": 1593
           },
           "average": {
-            "rawValue": 0.597002,
-            "fantasyScore": 1268.031814,
-            "validGames": 13
+            "rawValue": 0.599813,
+            "fantasyScore": 1274.002048,
+            "validGames": 16
           }
         },
         "stunDuration": {
@@ -13218,9 +13218,9 @@
             "fantasyScore": 987.125374
           },
           "average": {
-            "rawValue": 36.038194,
-            "fantasyScore": 360.381938,
-            "validGames": 13
+            "rawValue": 33.96088,
+            "fantasyScore": 339.608799,
+            "validGames": 16
           }
         },
         "tormentorKills": {
@@ -13244,9 +13244,9 @@
             "fantasyScore": 1318.5
           },
           "average": {
-            "rawValue": 0.576923,
-            "fantasyScore": 507.115385,
-            "validGames": 13
+            "rawValue": 0.53125,
+            "fantasyScore": 466.96875,
+            "validGames": 16
           }
         },
         "courierKills": {
@@ -13270,9 +13270,9 @@
             "fantasyScore": 703
           },
           "average": {
-            "rawValue": 0.192308,
-            "fantasyScore": 135.192308,
-            "validGames": 13
+            "rawValue": 0.1875,
+            "fantasyScore": 131.8125,
+            "validGames": 16
           }
         },
         "firstBlood": {
@@ -13296,9 +13296,9 @@
             "fantasyScore": 967
           },
           "average": {
-            "rawValue": 0.115385,
-            "fantasyScore": 223.153846,
-            "validGames": 13
+            "rawValue": 0.125,
+            "fantasyScore": 241.75,
+            "validGames": 16
           }
         },
         "smokes": {
@@ -13322,9 +13322,9 @@
             "fantasyScore": 146.5
           },
           "average": {
-            "rawValue": 0.038462,
-            "fantasyScore": 11.269231,
-            "validGames": 13
+            "rawValue": 0.0625,
+            "fantasyScore": 18.3125,
+            "validGames": 16
           }
         }
       }
@@ -13340,7 +13340,7 @@
           "position": 2
         }
       ],
-      "gamesPlayedTogether": 13,
+      "gamesPlayedTogether": 16,
       "metrics": {
         "kills": {
           "best": {
@@ -13357,9 +13357,9 @@
             "fantasyScore": 1605
           },
           "average": {
-            "rawValue": 7.461538,
-            "fantasyScore": 798.384615,
-            "validGames": 13
+            "rawValue": 7.25,
+            "fantasyScore": 775.75,
+            "validGames": 16
           }
         },
         "deaths": {
@@ -13377,9 +13377,9 @@
             "fantasyScore": 1755
           },
           "average": {
-            "rawValue": 4.615385,
-            "fantasyScore": 1065,
-            "validGames": 13
+            "rawValue": 4.375,
+            "fantasyScore": 1109.0625,
+            "validGames": 16
           }
         },
         "lastHitsAndDenies": {
@@ -13397,9 +13397,9 @@
             "fantasyScore": 3186
           },
           "average": {
-            "rawValue": 397.692308,
-            "fantasyScore": 1193.076923,
-            "validGames": 13
+            "rawValue": 389.3125,
+            "fantasyScore": 1167.9375,
+            "validGames": 16
           }
         },
         "gpm": {
@@ -13417,9 +13417,9 @@
             "fantasyScore": 1482
           },
           "average": {
-            "rawValue": 579.538462,
-            "fantasyScore": 1159.076923,
-            "validGames": 13
+            "rawValue": 580.875,
+            "fantasyScore": 1161.75,
+            "validGames": 16
           }
         },
         "madstones": {
@@ -13443,7 +13443,7 @@
           "average": {
             "rawValue": 1,
             "fantasyScore": 352,
-            "validGames": 13
+            "validGames": 16
           }
         },
         "observerWards": {
@@ -13461,29 +13461,29 @@
             "fantasyScore": 351
           },
           "average": {
-            "rawValue": 1.461538,
-            "fantasyScore": 171,
-            "validGames": 13
+            "rawValue": 1.4375,
+            "fantasyScore": 168.1875,
+            "validGames": 16
           }
         },
         "campsStacked": {
           "best": {
-            "matchId": 8944628326,
+            "matchId": 8948094346,
             "members": [
               {
                 "playerAccountId": 315272623,
                 "playerName": "Echozz",
-                "rawValue": 4,
-                "fantasyScore": 936
+                "rawValue": 5,
+                "fantasyScore": 1170
               }
             ],
-            "rawValue": 4,
-            "fantasyScore": 936
+            "rawValue": 5,
+            "fantasyScore": 1170
           },
           "average": {
-            "rawValue": 1.538462,
-            "fantasyScore": 360,
-            "validGames": 13
+            "rawValue": 1.6875,
+            "fantasyScore": 394.875,
+            "validGames": 16
           }
         },
         "runes": {
@@ -13501,9 +13501,9 @@
             "fantasyScore": 2961
           },
           "average": {
-            "rawValue": 10.307692,
-            "fantasyScore": 1453.384615,
-            "validGames": 13
+            "rawValue": 10,
+            "fantasyScore": 1410,
+            "validGames": 16
           }
         },
         "watchers": {
@@ -13529,9 +13529,9 @@
             "fantasyScore": 2344
           },
           "average": {
-            "rawValue": 0.230769,
-            "fantasyScore": 270.461538,
-            "validGames": 13
+            "rawValue": 0.1875,
+            "fantasyScore": 219.75,
+            "validGames": 16
           }
         },
         "teamfightParticipation": {
@@ -13549,9 +13549,9 @@
             "fantasyScore": 1898.042572
           },
           "average": {
-            "rawValue": 0.734605,
-            "fantasyScore": 1560.301793,
-            "validGames": 13
+            "rawValue": 0.732945,
+            "fantasyScore": 1556.774976,
+            "validGames": 16
           }
         },
         "stunDuration": {
@@ -13569,9 +13569,9 @@
             "fantasyScore": 3448.1442
           },
           "average": {
-            "rawValue": 80.983876,
-            "fantasyScore": 809.838757,
-            "validGames": 13
+            "rawValue": 74.788862,
+            "fantasyScore": 747.888623,
+            "validGames": 16
           }
         },
         "tormentorKills": {
@@ -13589,9 +13589,9 @@
             "fantasyScore": 879
           },
           "average": {
-            "rawValue": 0.076923,
-            "fantasyScore": 67.615385,
-            "validGames": 13
+            "rawValue": 0.0625,
+            "fantasyScore": 54.9375,
+            "validGames": 16
           }
         },
         "courierKills": {
@@ -13609,9 +13609,9 @@
             "fantasyScore": 1406
           },
           "average": {
-            "rawValue": 0.230769,
-            "fantasyScore": 162.230769,
-            "validGames": 13
+            "rawValue": 0.3125,
+            "fantasyScore": 219.6875,
+            "validGames": 16
           }
         },
         "firstBlood": {
@@ -13631,7 +13631,7 @@
           "average": {
             "rawValue": 0,
             "fantasyScore": 0,
-            "validGames": 13
+            "validGames": 16
           }
         },
         "smokes": {
@@ -13649,9 +13649,9 @@
             "fantasyScore": 293
           },
           "average": {
-            "rawValue": 0.076923,
-            "fantasyScore": 22.538462,
-            "validGames": 13
+            "rawValue": 0.0625,
+            "fantasyScore": 18.3125,
+            "validGames": 16
           }
         }
       }
@@ -13672,7 +13672,7 @@
           "position": 5
         }
       ],
-      "gamesPlayedTogether": 13,
+      "gamesPlayedTogether": 16,
       "metrics": {
         "kills": {
           "best": {
@@ -13695,9 +13695,9 @@
             "fantasyScore": 963
           },
           "average": {
-            "rawValue": 3.961538,
-            "fantasyScore": 423.884615,
-            "validGames": 13
+            "rawValue": 3.59375,
+            "fantasyScore": 384.53125,
+            "validGames": 16
           }
         },
         "deaths": {
@@ -13721,9 +13721,9 @@
             "fantasyScore": 1267.5
           },
           "average": {
-            "rawValue": 7.692308,
-            "fantasyScore": 630,
-            "validGames": 13
+            "rawValue": 7.5,
+            "fantasyScore": 633.75,
+            "validGames": 16
           }
         },
         "lastHitsAndDenies": {
@@ -13747,9 +13747,9 @@
             "fantasyScore": 951
           },
           "average": {
-            "rawValue": 137.615385,
-            "fantasyScore": 412.846154,
-            "validGames": 13
+            "rawValue": 126.875,
+            "fantasyScore": 380.625,
+            "validGames": 16
           }
         },
         "gpm": {
@@ -13773,9 +13773,9 @@
             "fantasyScore": 928
           },
           "average": {
-            "rawValue": 369.576923,
-            "fantasyScore": 739.153846,
-            "validGames": 13
+            "rawValue": 358.4375,
+            "fantasyScore": 716.875,
+            "validGames": 16
           }
         },
         "madstones": {
@@ -13803,9 +13803,9 @@
             "fantasyScore": 176
           },
           "average": {
-            "rawValue": 0.153846,
-            "fantasyScore": 54.153846,
-            "validGames": 13
+            "rawValue": 0.15625,
+            "fantasyScore": 55,
+            "validGames": 16
           }
         },
         "observerWards": {
@@ -13829,9 +13829,9 @@
             "fantasyScore": 1930.5
           },
           "average": {
-            "rawValue": 9.923077,
-            "fantasyScore": 1161,
-            "validGames": 13
+            "rawValue": 9.625,
+            "fantasyScore": 1126.125,
+            "validGames": 16
           }
         },
         "campsStacked": {
@@ -13855,9 +13855,9 @@
             "fantasyScore": 1287
           },
           "average": {
-            "rawValue": 4.076923,
-            "fantasyScore": 954,
-            "validGames": 13
+            "rawValue": 3.6875,
+            "fantasyScore": 862.875,
+            "validGames": 16
           }
         },
         "runes": {
@@ -13881,9 +13881,9 @@
             "fantasyScore": 775.5
           },
           "average": {
-            "rawValue": 2.961538,
-            "fantasyScore": 417.576923,
-            "validGames": 13
+            "rawValue": 2.75,
+            "fantasyScore": 387.75,
+            "validGames": 16
           }
         },
         "watchers": {
@@ -13915,9 +13915,9 @@
             "fantasyScore": 586
           },
           "average": {
-            "rawValue": 0.038462,
-            "fantasyScore": 45.076923,
-            "validGames": 13
+            "rawValue": 0.03125,
+            "fantasyScore": 36.625,
+            "validGames": 16
           }
         },
         "teamfightParticipation": {
@@ -13941,9 +13941,9 @@
             "fantasyScore": 1699.200053
           },
           "average": {
-            "rawValue": 0.657653,
-            "fantasyScore": 1396.854453,
-            "validGames": 13
+            "rawValue": 0.656615,
+            "fantasyScore": 1394.649604,
+            "validGames": 16
           }
         },
         "stunDuration": {
@@ -13967,9 +13967,9 @@
             "fantasyScore": 611.53829
           },
           "average": {
-            "rawValue": 28.608885,
-            "fantasyScore": 286.088847,
-            "validGames": 13
+            "rawValue": 27.417296,
+            "fantasyScore": 274.172959,
+            "validGames": 16
           }
         },
         "tormentorKills": {
@@ -13995,7 +13995,7 @@
           "average": {
             "rawValue": 0,
             "fantasyScore": 0,
-            "validGames": 13
+            "validGames": 16
           }
         },
         "courierKills": {
@@ -14019,9 +14019,9 @@
             "fantasyScore": 1054.5
           },
           "average": {
-            "rawValue": 0.538462,
-            "fantasyScore": 378.538462,
-            "validGames": 13
+            "rawValue": 0.46875,
+            "fantasyScore": 329.53125,
+            "validGames": 16
           }
         },
         "firstBlood": {
@@ -14045,9 +14045,9 @@
             "fantasyScore": 967
           },
           "average": {
-            "rawValue": 0.076923,
-            "fantasyScore": 148.769231,
-            "validGames": 13
+            "rawValue": 0.0625,
+            "fantasyScore": 120.875,
+            "validGames": 16
           }
         },
         "smokes": {
@@ -14071,9 +14071,9 @@
             "fantasyScore": 1611.5
           },
           "average": {
-            "rawValue": 3.576923,
-            "fantasyScore": 1048.038462,
-            "validGames": 13
+            "rawValue": 3.40625,
+            "fantasyScore": 998.03125,
+            "validGames": 16
           }
         }
       }
@@ -14094,7 +14094,7 @@
           "position": 3
         }
       ],
-      "gamesPlayedTogether": 12,
+      "gamesPlayedTogether": 14,
       "metrics": {
         "kills": {
           "best": {
@@ -14117,9 +14117,9 @@
             "fantasyScore": 1070
           },
           "average": {
-            "rawValue": 5.291667,
-            "fantasyScore": 566.208333,
-            "validGames": 12
+            "rawValue": 4.75,
+            "fantasyScore": 508.25,
+            "validGames": 14
           }
         },
         "deaths": {
@@ -14143,9 +14143,9 @@
             "fantasyScore": 1462.5
           },
           "average": {
-            "rawValue": 4.291667,
-            "fantasyScore": 1113.125,
-            "validGames": 12
+            "rawValue": 4.5,
+            "fantasyScore": 1072.5,
+            "validGames": 14
           }
         },
         "lastHitsAndDenies": {
@@ -14169,9 +14169,9 @@
             "fantasyScore": 2221.5
           },
           "average": {
-            "rawValue": 537.25,
-            "fantasyScore": 1611.75,
-            "validGames": 12
+            "rawValue": 520.678571,
+            "fantasyScore": 1562.035714,
+            "validGames": 14
           }
         },
         "gpm": {
@@ -14195,9 +14195,9 @@
             "fantasyScore": 1544
           },
           "average": {
-            "rawValue": 642.791667,
-            "fantasyScore": 1285.583333,
-            "validGames": 12
+            "rawValue": 629.392857,
+            "fantasyScore": 1258.785714,
+            "validGames": 14
           }
         },
         "madstones": {
@@ -14225,9 +14225,9 @@
             "fantasyScore": 1936
           },
           "average": {
-            "rawValue": 2.125,
-            "fantasyScore": 748,
-            "validGames": 12
+            "rawValue": 2.035714,
+            "fantasyScore": 716.571429,
+            "validGames": 14
           }
         },
         "observerWards": {
@@ -14251,9 +14251,9 @@
             "fantasyScore": 58.5
           },
           "average": {
-            "rawValue": 0.083333,
-            "fantasyScore": 9.75,
-            "validGames": 12
+            "rawValue": 0.071429,
+            "fantasyScore": 8.357143,
+            "validGames": 14
           }
         },
         "campsStacked": {
@@ -14277,9 +14277,9 @@
             "fantasyScore": 1404
           },
           "average": {
-            "rawValue": 2.458333,
-            "fantasyScore": 575.25,
-            "validGames": 12
+            "rawValue": 2.5,
+            "fantasyScore": 585,
+            "validGames": 14
           }
         },
         "runes": {
@@ -14303,9 +14303,9 @@
             "fantasyScore": 564
           },
           "average": {
-            "rawValue": 2.291667,
-            "fantasyScore": 323.125,
-            "validGames": 12
+            "rawValue": 2.321429,
+            "fantasyScore": 327.321429,
+            "validGames": 14
           }
         },
         "watchers": {
@@ -14337,9 +14337,9 @@
             "fantasyScore": 1172
           },
           "average": {
-            "rawValue": 0.291667,
-            "fantasyScore": 341.833333,
-            "validGames": 12
+            "rawValue": 0.285714,
+            "fantasyScore": 334.857143,
+            "validGames": 14
           }
         },
         "teamfightParticipation": {
@@ -14363,9 +14363,9 @@
             "fantasyScore": 1747.161248
           },
           "average": {
-            "rawValue": 0.669972,
-            "fantasyScore": 1423.019201,
-            "validGames": 12
+            "rawValue": 0.664629,
+            "fantasyScore": 1411.672299,
+            "validGames": 14
           }
         },
         "stunDuration": {
@@ -14389,9 +14389,9 @@
             "fantasyScore": 536.185935
           },
           "average": {
-            "rawValue": 27.079411,
-            "fantasyScore": 270.794111,
-            "validGames": 12
+            "rawValue": 26.089499,
+            "fantasyScore": 260.894987,
+            "validGames": 14
           }
         },
         "tormentorKills": {
@@ -14417,7 +14417,7 @@
           "average": {
             "rawValue": 0.25,
             "fantasyScore": 219.75,
-            "validGames": 12
+            "validGames": 14
           }
         },
         "courierKills": {
@@ -14441,14 +14441,14 @@
             "fantasyScore": 703
           },
           "average": {
-            "rawValue": 0.166667,
-            "fantasyScore": 117.166667,
-            "validGames": 12
+            "rawValue": 0.178571,
+            "fantasyScore": 125.535714,
+            "validGames": 14
           }
         },
         "firstBlood": {
           "best": {
-            "matchId": 8943091110,
+            "matchId": 8948040486,
             "members": [
               {
                 "playerAccountId": 320252024,
@@ -14459,17 +14459,17 @@
               {
                 "playerAccountId": 118134220,
                 "playerName": "Bach",
-                "rawValue": 0,
-                "fantasyScore": 0
+                "rawValue": 1,
+                "fantasyScore": 1934
               }
             ],
-            "rawValue": 0,
-            "fantasyScore": 0
+            "rawValue": 0.5,
+            "fantasyScore": 967
           },
           "average": {
-            "rawValue": 0,
-            "fantasyScore": 0,
-            "validGames": 12
+            "rawValue": 0.035714,
+            "fantasyScore": 69.071429,
+            "validGames": 14
           }
         },
         "smokes": {
@@ -14495,7 +14495,7 @@
           "average": {
             "rawValue": 0,
             "fantasyScore": 0,
-            "validGames": 12
+            "validGames": 14
           }
         }
       }
@@ -14511,7 +14511,7 @@
           "position": 2
         }
       ],
-      "gamesPlayedTogether": 12,
+      "gamesPlayedTogether": 14,
       "metrics": {
         "kills": {
           "best": {
@@ -14528,9 +14528,9 @@
             "fantasyScore": 856
           },
           "average": {
-            "rawValue": 4.75,
-            "fantasyScore": 508.25,
-            "validGames": 12
+            "rawValue": 4.428571,
+            "fantasyScore": 473.857143,
+            "validGames": 14
           }
         },
         "deaths": {
@@ -14548,9 +14548,9 @@
             "fantasyScore": 1950
           },
           "average": {
-            "rawValue": 4.666667,
-            "fantasyScore": 1056.25,
-            "validGames": 12
+            "rawValue": 4.714286,
+            "fantasyScore": 1044.642857,
+            "validGames": 14
           }
         },
         "lastHitsAndDenies": {
@@ -14568,9 +14568,9 @@
             "fantasyScore": 2253
           },
           "average": {
-            "rawValue": 499.25,
-            "fantasyScore": 1497.75,
-            "validGames": 12
+            "rawValue": 485.571429,
+            "fantasyScore": 1456.714286,
+            "validGames": 14
           }
         },
         "gpm": {
@@ -14588,9 +14588,9 @@
             "fantasyScore": 1398
           },
           "average": {
-            "rawValue": 603.416667,
-            "fantasyScore": 1206.833333,
-            "validGames": 12
+            "rawValue": 594.5,
+            "fantasyScore": 1189,
+            "validGames": 14
           }
         },
         "madstones": {
@@ -14612,29 +14612,29 @@
             "fantasyScore": 352
           },
           "average": {
-            "rawValue": 0.416667,
-            "fantasyScore": 146.666667,
-            "validGames": 12
+            "rawValue": 0.357143,
+            "fantasyScore": 125.714286,
+            "validGames": 14
           }
         },
         "observerWards": {
           "best": {
-            "matchId": 8943091110,
+            "matchId": 8947983249,
             "members": [
               {
                 "playerAccountId": 137129583,
                 "playerName": "Xm",
-                "rawValue": 2,
-                "fantasyScore": 234
+                "rawValue": 3,
+                "fantasyScore": 351
               }
             ],
-            "rawValue": 2,
-            "fantasyScore": 234
+            "rawValue": 3,
+            "fantasyScore": 351
           },
           "average": {
-            "rawValue": 1.666667,
-            "fantasyScore": 195,
-            "validGames": 12
+            "rawValue": 1.785714,
+            "fantasyScore": 208.928571,
+            "validGames": 14
           }
         },
         "campsStacked": {
@@ -14652,9 +14652,9 @@
             "fantasyScore": 702
           },
           "average": {
-            "rawValue": 1.25,
-            "fantasyScore": 292.5,
-            "validGames": 12
+            "rawValue": 1.214286,
+            "fantasyScore": 284.142857,
+            "validGames": 14
           }
         },
         "runes": {
@@ -14672,9 +14672,9 @@
             "fantasyScore": 2256
           },
           "average": {
-            "rawValue": 9.166667,
-            "fantasyScore": 1292.5,
-            "validGames": 12
+            "rawValue": 9.214286,
+            "fantasyScore": 1299.214286,
+            "validGames": 14
           }
         },
         "watchers": {
@@ -14700,9 +14700,9 @@
             "fantasyScore": 1172
           },
           "average": {
-            "rawValue": 0.083333,
-            "fantasyScore": 97.666667,
-            "validGames": 12
+            "rawValue": 0.071429,
+            "fantasyScore": 83.714286,
+            "validGames": 14
           }
         },
         "teamfightParticipation": {
@@ -14720,9 +14720,9 @@
             "fantasyScore": 2124
           },
           "average": {
-            "rawValue": 0.731802,
-            "fantasyScore": 1554.348184,
-            "validGames": 12
+            "rawValue": 0.750636,
+            "fantasyScore": 1594.350395,
+            "validGames": 14
           }
         },
         "stunDuration": {
@@ -14740,9 +14740,9 @@
             "fantasyScore": 637.32666
           },
           "average": {
-            "rawValue": 31.902463,
-            "fantasyScore": 319.024632,
-            "validGames": 12
+            "rawValue": 30.319028,
+            "fantasyScore": 303.190275,
+            "validGames": 14
           }
         },
         "tormentorKills": {
@@ -14760,9 +14760,9 @@
             "fantasyScore": 879
           },
           "average": {
-            "rawValue": 0.25,
-            "fantasyScore": 219.75,
-            "validGames": 12
+            "rawValue": 0.214286,
+            "fantasyScore": 188.357143,
+            "validGames": 14
           }
         },
         "courierKills": {
@@ -14780,9 +14780,9 @@
             "fantasyScore": 703
           },
           "average": {
-            "rawValue": 0.333333,
-            "fantasyScore": 234.333333,
-            "validGames": 12
+            "rawValue": 0.285714,
+            "fantasyScore": 200.857143,
+            "validGames": 14
           }
         },
         "firstBlood": {
@@ -14800,9 +14800,9 @@
             "fantasyScore": 1934
           },
           "average": {
-            "rawValue": 0.166667,
-            "fantasyScore": 322.333333,
-            "validGames": 12
+            "rawValue": 0.142857,
+            "fantasyScore": 276.285714,
+            "validGames": 14
           }
         },
         "smokes": {
@@ -14822,7 +14822,7 @@
           "average": {
             "rawValue": 0,
             "fantasyScore": 0,
-            "validGames": 12
+            "validGames": 14
           }
         }
       }
@@ -14843,7 +14843,7 @@
           "position": 5
         }
       ],
-      "gamesPlayedTogether": 12,
+      "gamesPlayedTogether": 14,
       "metrics": {
         "kills": {
           "best": {
@@ -14866,9 +14866,9 @@
             "fantasyScore": 428
           },
           "average": {
-            "rawValue": 2.458333,
-            "fantasyScore": 263.041667,
-            "validGames": 12
+            "rawValue": 2.321429,
+            "fantasyScore": 248.392857,
+            "validGames": 14
           }
         },
         "deaths": {
@@ -14893,8 +14893,8 @@
           },
           "average": {
             "rawValue": 7.25,
-            "fantasyScore": 625.625,
-            "validGames": 12
+            "fantasyScore": 612.857143,
+            "validGames": 14
           }
         },
         "lastHitsAndDenies": {
@@ -14918,9 +14918,9 @@
             "fantasyScore": 505.5
           },
           "average": {
-            "rawValue": 98.958333,
-            "fantasyScore": 296.875,
-            "validGames": 12
+            "rawValue": 96.964286,
+            "fantasyScore": 290.892857,
+            "validGames": 14
           }
         },
         "gpm": {
@@ -14944,9 +14944,9 @@
             "fantasyScore": 771
           },
           "average": {
-            "rawValue": 324.916667,
-            "fantasyScore": 649.833333,
-            "validGames": 12
+            "rawValue": 321.321429,
+            "fantasyScore": 642.642857,
+            "validGames": 14
           }
         },
         "madstones": {
@@ -14974,9 +14974,9 @@
             "fantasyScore": 176
           },
           "average": {
-            "rawValue": 0.041667,
-            "fantasyScore": 14.666667,
-            "validGames": 12
+            "rawValue": 0.071429,
+            "fantasyScore": 25.142857,
+            "validGames": 14
           }
         },
         "observerWards": {
@@ -15000,9 +15000,9 @@
             "fantasyScore": 1521
           },
           "average": {
-            "rawValue": 10.458333,
-            "fantasyScore": 1223.625,
-            "validGames": 12
+            "rawValue": 10.178571,
+            "fantasyScore": 1190.892857,
+            "validGames": 14
           }
         },
         "campsStacked": {
@@ -15026,9 +15026,9 @@
             "fantasyScore": 1053
           },
           "average": {
-            "rawValue": 2.625,
-            "fantasyScore": 614.25,
-            "validGames": 12
+            "rawValue": 2.464286,
+            "fantasyScore": 576.642857,
+            "validGames": 14
           }
         },
         "runes": {
@@ -15052,9 +15052,9 @@
             "fantasyScore": 846
           },
           "average": {
-            "rawValue": 2.625,
-            "fantasyScore": 370.125,
-            "validGames": 12
+            "rawValue": 2.428571,
+            "fantasyScore": 342.428571,
+            "validGames": 14
           }
         },
         "watchers": {
@@ -15086,9 +15086,9 @@
             "fantasyScore": 586
           },
           "average": {
-            "rawValue": 0.041667,
-            "fantasyScore": 48.833333,
-            "validGames": 12
+            "rawValue": 0.035714,
+            "fantasyScore": 41.857143,
+            "validGames": 14
           }
         },
         "teamfightParticipation": {
@@ -15112,9 +15112,9 @@
             "fantasyScore": 1712.903263
           },
           "average": {
-            "rawValue": 0.67499,
-            "fantasyScore": 1433.67908,
-            "validGames": 12
+            "rawValue": 0.674884,
+            "fantasyScore": 1433.452204,
+            "validGames": 14
           }
         },
         "stunDuration": {
@@ -15138,9 +15138,9 @@
             "fantasyScore": 1318.84042
           },
           "average": {
-            "rawValue": 60.083346,
-            "fantasyScore": 600.833456,
-            "validGames": 12
+            "rawValue": 53.551212,
+            "fantasyScore": 535.512118,
+            "validGames": 14
           }
         },
         "tormentorKills": {
@@ -15164,9 +15164,9 @@
             "fantasyScore": 439.5
           },
           "average": {
-            "rawValue": 0.041667,
-            "fantasyScore": 36.625,
-            "validGames": 12
+            "rawValue": 0.035714,
+            "fantasyScore": 31.392857,
+            "validGames": 14
           }
         },
         "courierKills": {
@@ -15190,9 +15190,9 @@
             "fantasyScore": 703
           },
           "average": {
-            "rawValue": 0.333333,
-            "fantasyScore": 234.333333,
-            "validGames": 12
+            "rawValue": 0.285714,
+            "fantasyScore": 200.857143,
+            "validGames": 14
           }
         },
         "firstBlood": {
@@ -15216,9 +15216,9 @@
             "fantasyScore": 967
           },
           "average": {
-            "rawValue": 0.125,
-            "fantasyScore": 241.75,
-            "validGames": 12
+            "rawValue": 0.107143,
+            "fantasyScore": 207.214286,
+            "validGames": 14
           }
         },
         "smokes": {
@@ -15242,9 +15242,9 @@
             "fantasyScore": 1465
           },
           "average": {
-            "rawValue": 4.083333,
-            "fantasyScore": 1196.416667,
-            "validGames": 12
+            "rawValue": 3.928571,
+            "fantasyScore": 1151.071429,
+            "validGames": 14
           }
         }
       }
@@ -15265,7 +15265,7 @@
           "position": 3
         }
       ],
-      "gamesPlayedTogether": 13,
+      "gamesPlayedTogether": 16,
       "metrics": {
         "kills": {
           "best": {
@@ -15288,9 +15288,9 @@
             "fantasyScore": 1819
           },
           "average": {
-            "rawValue": 9,
-            "fantasyScore": 963,
-            "validGames": 13
+            "rawValue": 8.375,
+            "fantasyScore": 896.125,
+            "validGames": 16
           }
         },
         "deaths": {
@@ -15314,9 +15314,9 @@
             "fantasyScore": 1755
           },
           "average": {
-            "rawValue": 4.5,
-            "fantasyScore": 1072.5,
-            "validGames": 13
+            "rawValue": 4.59375,
+            "fantasyScore": 1054.21875,
+            "validGames": 16
           }
         },
         "lastHitsAndDenies": {
@@ -15340,9 +15340,9 @@
             "fantasyScore": 2874
           },
           "average": {
-            "rawValue": 667.461538,
-            "fantasyScore": 2002.384615,
-            "validGames": 13
+            "rawValue": 636.59375,
+            "fantasyScore": 1909.78125,
+            "validGames": 16
           }
         },
         "gpm": {
@@ -15366,9 +15366,9 @@
             "fantasyScore": 1844
           },
           "average": {
-            "rawValue": 749.384615,
-            "fantasyScore": 1498.769231,
-            "validGames": 13
+            "rawValue": 726.21875,
+            "fantasyScore": 1452.4375,
+            "validGames": 16
           }
         },
         "madstones": {
@@ -15396,9 +15396,9 @@
             "fantasyScore": 1584
           },
           "average": {
-            "rawValue": 2.076923,
-            "fantasyScore": 731.076923,
-            "validGames": 13
+            "rawValue": 1.8125,
+            "fantasyScore": 638,
+            "validGames": 16
           }
         },
         "observerWards": {
@@ -15422,9 +15422,9 @@
             "fantasyScore": 58.5
           },
           "average": {
-            "rawValue": 0.115385,
-            "fantasyScore": 13.5,
-            "validGames": 13
+            "rawValue": 0.1875,
+            "fantasyScore": 21.9375,
+            "validGames": 16
           }
         },
         "campsStacked": {
@@ -15448,9 +15448,9 @@
             "fantasyScore": 2106
           },
           "average": {
-            "rawValue": 3.846154,
-            "fantasyScore": 900,
-            "validGames": 13
+            "rawValue": 3.71875,
+            "fantasyScore": 870.1875,
+            "validGames": 16
           }
         },
         "runes": {
@@ -15474,9 +15474,9 @@
             "fantasyScore": 1339.5
           },
           "average": {
-            "rawValue": 5.076923,
-            "fantasyScore": 715.846154,
-            "validGames": 13
+            "rawValue": 4.4375,
+            "fantasyScore": 625.6875,
+            "validGames": 16
           }
         },
         "watchers": {
@@ -15508,9 +15508,9 @@
             "fantasyScore": 1758
           },
           "average": {
-            "rawValue": 0.538462,
-            "fantasyScore": 631.076923,
-            "validGames": 13
+            "rawValue": 0.46875,
+            "fantasyScore": 549.375,
+            "validGames": 16
           }
         },
         "teamfightParticipation": {
@@ -15534,9 +15534,9 @@
             "fantasyScore": 1715.538509
           },
           "average": {
-            "rawValue": 0.67798,
-            "fantasyScore": 1440.029295,
-            "validGames": 13
+            "rawValue": 0.6723,
+            "fantasyScore": 1427.965261,
+            "validGames": 16
           }
         },
         "stunDuration": {
@@ -15560,9 +15560,9 @@
             "fantasyScore": 632.15343
           },
           "average": {
-            "rawValue": 36.98734,
-            "fantasyScore": 369.873395,
-            "validGames": 13
+            "rawValue": 36.279271,
+            "fantasyScore": 362.792706,
+            "validGames": 16
           }
         },
         "tormentorKills": {
@@ -15586,9 +15586,9 @@
             "fantasyScore": 879
           },
           "average": {
-            "rawValue": 0.423077,
-            "fantasyScore": 371.884615,
-            "validGames": 13
+            "rawValue": 0.34375,
+            "fantasyScore": 302.15625,
+            "validGames": 16
           }
         },
         "courierKills": {
@@ -15612,9 +15612,9 @@
             "fantasyScore": 1054.5
           },
           "average": {
-            "rawValue": 0.384615,
-            "fantasyScore": 270.384615,
-            "validGames": 13
+            "rawValue": 0.34375,
+            "fantasyScore": 241.65625,
+            "validGames": 16
           }
         },
         "firstBlood": {
@@ -15638,9 +15638,9 @@
             "fantasyScore": 967
           },
           "average": {
-            "rawValue": 0.153846,
-            "fantasyScore": 297.538462,
-            "validGames": 13
+            "rawValue": 0.15625,
+            "fantasyScore": 302.1875,
+            "validGames": 16
           }
         },
         "smokes": {
@@ -15666,7 +15666,7 @@
           "average": {
             "rawValue": 0,
             "fantasyScore": 0,
-            "validGames": 13
+            "validGames": 16
           }
         }
       }
@@ -15682,7 +15682,7 @@
           "position": 2
         }
       ],
-      "gamesPlayedTogether": 13,
+      "gamesPlayedTogether": 16,
       "metrics": {
         "kills": {
           "best": {
@@ -15699,9 +15699,9 @@
             "fantasyScore": 1712
           },
           "average": {
-            "rawValue": 7.230769,
-            "fantasyScore": 773.692308,
-            "validGames": 13
+            "rawValue": 7.3125,
+            "fantasyScore": 782.4375,
+            "validGames": 16
           }
         },
         "deaths": {
@@ -15719,29 +15719,29 @@
             "fantasyScore": 1755
           },
           "average": {
-            "rawValue": 4.846154,
-            "fantasyScore": 1005,
-            "validGames": 13
+            "rawValue": 4.625,
+            "fantasyScore": 1048.125,
+            "validGames": 16
           }
         },
         "lastHitsAndDenies": {
           "best": {
-            "matchId": 8943332564,
+            "matchId": 8948533452,
             "members": [
               {
                 "playerAccountId": 94054712,
                 "playerName": "Topson",
-                "rawValue": 768,
-                "fantasyScore": 2304
+                "rawValue": 780,
+                "fantasyScore": 2340
               }
             ],
-            "rawValue": 768,
-            "fantasyScore": 2304
+            "rawValue": 780,
+            "fantasyScore": 2340
           },
           "average": {
-            "rawValue": 525,
-            "fantasyScore": 1575,
-            "validGames": 13
+            "rawValue": 522.125,
+            "fantasyScore": 1566.375,
+            "validGames": 16
           }
         },
         "gpm": {
@@ -15759,9 +15759,9 @@
             "fantasyScore": 1572
           },
           "average": {
-            "rawValue": 645.076923,
-            "fantasyScore": 1290.153846,
-            "validGames": 13
+            "rawValue": 652.625,
+            "fantasyScore": 1305.25,
+            "validGames": 16
           }
         },
         "madstones": {
@@ -15770,22 +15770,22 @@
         },
         "towerKills": {
           "best": {
-            "matchId": 8946231092,
+            "matchId": 8948311007,
             "members": [
               {
                 "playerAccountId": 94054712,
                 "playerName": "Topson",
-                "rawValue": 5,
-                "fantasyScore": 1760
+                "rawValue": 6,
+                "fantasyScore": 2112
               }
             ],
-            "rawValue": 5,
-            "fantasyScore": 1760
+            "rawValue": 6,
+            "fantasyScore": 2112
           },
           "average": {
-            "rawValue": 1.615385,
-            "fantasyScore": 568.615385,
-            "validGames": 13
+            "rawValue": 1.875,
+            "fantasyScore": 660,
+            "validGames": 16
           }
         },
         "observerWards": {
@@ -15803,9 +15803,9 @@
             "fantasyScore": 234
           },
           "average": {
-            "rawValue": 1.307692,
-            "fantasyScore": 153,
-            "validGames": 13
+            "rawValue": 1.3125,
+            "fantasyScore": 153.5625,
+            "validGames": 16
           }
         },
         "campsStacked": {
@@ -15823,9 +15823,9 @@
             "fantasyScore": 1872
           },
           "average": {
-            "rawValue": 1.769231,
-            "fantasyScore": 414,
-            "validGames": 13
+            "rawValue": 1.625,
+            "fantasyScore": 380.25,
+            "validGames": 16
           }
         },
         "runes": {
@@ -15843,9 +15843,9 @@
             "fantasyScore": 2820
           },
           "average": {
-            "rawValue": 13.769231,
-            "fantasyScore": 1941.461538,
-            "validGames": 13
+            "rawValue": 12.6875,
+            "fantasyScore": 1788.9375,
+            "validGames": 16
           }
         },
         "watchers": {
@@ -15871,9 +15871,9 @@
             "fantasyScore": 2344
           },
           "average": {
-            "rawValue": 0.384615,
-            "fantasyScore": 450.769231,
-            "validGames": 13
+            "rawValue": 0.375,
+            "fantasyScore": 439.5,
+            "validGames": 16
           }
         },
         "teamfightParticipation": {
@@ -15891,9 +15891,9 @@
             "fantasyScore": 1840.800071
           },
           "average": {
-            "rawValue": 0.701352,
-            "fantasyScore": 1489.671872,
-            "validGames": 13
+            "rawValue": 0.707056,
+            "fantasyScore": 1501.787693,
+            "validGames": 16
           }
         },
         "stunDuration": {
@@ -15911,9 +15911,9 @@
             "fantasyScore": 1407.0346
           },
           "average": {
-            "rawValue": 52.002391,
-            "fantasyScore": 520.023912,
-            "validGames": 13
+            "rawValue": 50.558394,
+            "fantasyScore": 505.583941,
+            "validGames": 16
           }
         },
         "tormentorKills": {
@@ -15931,9 +15931,9 @@
             "fantasyScore": 2637
           },
           "average": {
-            "rawValue": 0.461538,
-            "fantasyScore": 405.692308,
-            "validGames": 13
+            "rawValue": 0.4375,
+            "fantasyScore": 384.5625,
+            "validGames": 16
           }
         },
         "courierKills": {
@@ -15951,9 +15951,9 @@
             "fantasyScore": 1406
           },
           "average": {
-            "rawValue": 0.230769,
-            "fantasyScore": 162.230769,
-            "validGames": 13
+            "rawValue": 0.25,
+            "fantasyScore": 175.75,
+            "validGames": 16
           }
         },
         "firstBlood": {
@@ -15971,9 +15971,9 @@
             "fantasyScore": 1934
           },
           "average": {
-            "rawValue": 0.076923,
-            "fantasyScore": 148.769231,
-            "validGames": 13
+            "rawValue": 0.0625,
+            "fantasyScore": 120.875,
+            "validGames": 16
           }
         },
         "smokes": {
@@ -15991,9 +15991,9 @@
             "fantasyScore": 293
           },
           "average": {
-            "rawValue": 0.153846,
-            "fantasyScore": 45.076923,
-            "validGames": 13
+            "rawValue": 0.125,
+            "fantasyScore": 36.625,
+            "validGames": 16
           }
         }
       }
@@ -16014,7 +16014,7 @@
           "position": 5
         }
       ],
-      "gamesPlayedTogether": 13,
+      "gamesPlayedTogether": 16,
       "metrics": {
         "kills": {
           "best": {
@@ -16037,9 +16037,9 @@
             "fantasyScore": 642
           },
           "average": {
-            "rawValue": 2.769231,
-            "fantasyScore": 296.307692,
-            "validGames": 13
+            "rawValue": 2.5625,
+            "fantasyScore": 274.1875,
+            "validGames": 16
           }
         },
         "deaths": {
@@ -16063,9 +16063,9 @@
             "fantasyScore": 1755
           },
           "average": {
-            "rawValue": 7.807692,
-            "fantasyScore": 577.5,
-            "validGames": 13
+            "rawValue": 7.59375,
+            "fantasyScore": 597.1875,
+            "validGames": 16
           }
         },
         "lastHitsAndDenies": {
@@ -16089,9 +16089,9 @@
             "fantasyScore": 538.5
           },
           "average": {
-            "rawValue": 101.615385,
-            "fantasyScore": 304.846154,
-            "validGames": 13
+            "rawValue": 95.4375,
+            "fantasyScore": 286.3125,
+            "validGames": 16
           }
         },
         "gpm": {
@@ -16115,9 +16115,9 @@
             "fantasyScore": 845
           },
           "average": {
-            "rawValue": 341.769231,
-            "fantasyScore": 683.538462,
-            "validGames": 13
+            "rawValue": 331.75,
+            "fantasyScore": 663.5,
+            "validGames": 16
           }
         },
         "madstones": {
@@ -16145,9 +16145,9 @@
             "fantasyScore": 176
           },
           "average": {
-            "rawValue": 0.076923,
-            "fantasyScore": 27.076923,
-            "validGames": 13
+            "rawValue": 0.0625,
+            "fantasyScore": 22,
+            "validGames": 16
           }
         },
         "observerWards": {
@@ -16171,9 +16171,9 @@
             "fantasyScore": 1989
           },
           "average": {
-            "rawValue": 11.576923,
-            "fantasyScore": 1354.5,
-            "validGames": 13
+            "rawValue": 11.15625,
+            "fantasyScore": 1305.28125,
+            "validGames": 16
           }
         },
         "campsStacked": {
@@ -16197,9 +16197,9 @@
             "fantasyScore": 2925
           },
           "average": {
-            "rawValue": 5.461538,
-            "fantasyScore": 1278,
-            "validGames": 13
+            "rawValue": 5.5625,
+            "fantasyScore": 1301.625,
+            "validGames": 16
           }
         },
         "runes": {
@@ -16223,9 +16223,9 @@
             "fantasyScore": 916.5
           },
           "average": {
-            "rawValue": 4.576923,
-            "fantasyScore": 645.346154,
-            "validGames": 13
+            "rawValue": 4.53125,
+            "fantasyScore": 638.90625,
+            "validGames": 16
           }
         },
         "watchers": {
@@ -16257,9 +16257,9 @@
             "fantasyScore": 586
           },
           "average": {
-            "rawValue": 0.038462,
-            "fantasyScore": 45.076923,
-            "validGames": 13
+            "rawValue": 0.03125,
+            "fantasyScore": 36.625,
+            "validGames": 16
           }
         },
         "teamfightParticipation": {
@@ -16283,9 +16283,9 @@
             "fantasyScore": 1548.750071
           },
           "average": {
-            "rawValue": 0.655748,
-            "fantasyScore": 1392.80875,
-            "validGames": 13
+            "rawValue": 0.649123,
+            "fantasyScore": 1378.736301,
+            "validGames": 16
           }
         },
         "stunDuration": {
@@ -16309,9 +16309,9 @@
             "fantasyScore": 1821.21521
           },
           "average": {
-            "rawValue": 74.457776,
-            "fantasyScore": 744.577762,
-            "validGames": 13
+            "rawValue": 70.937521,
+            "fantasyScore": 709.375206,
+            "validGames": 16
           }
         },
         "tormentorKills": {
@@ -16335,9 +16335,9 @@
             "fantasyScore": 439.5
           },
           "average": {
-            "rawValue": 0.038462,
-            "fantasyScore": 33.807692,
-            "validGames": 13
+            "rawValue": 0.03125,
+            "fantasyScore": 27.46875,
+            "validGames": 16
           }
         },
         "courierKills": {
@@ -16361,9 +16361,9 @@
             "fantasyScore": 2109
           },
           "average": {
-            "rawValue": 1.269231,
-            "fantasyScore": 892.269231,
-            "validGames": 13
+            "rawValue": 1.21875,
+            "fantasyScore": 856.78125,
+            "validGames": 16
           }
         },
         "firstBlood": {
@@ -16387,9 +16387,9 @@
             "fantasyScore": 967
           },
           "average": {
-            "rawValue": 0.076923,
-            "fantasyScore": 148.769231,
-            "validGames": 13
+            "rawValue": 0.0625,
+            "fantasyScore": 120.875,
+            "validGames": 16
           }
         },
         "smokes": {
@@ -16413,9 +16413,9 @@
             "fantasyScore": 1758
           },
           "average": {
-            "rawValue": 4,
-            "fantasyScore": 1172,
-            "validGames": 13
+            "rawValue": 3.9375,
+            "fantasyScore": 1153.6875,
+            "validGames": 16
           }
         }
       }
@@ -16436,7 +16436,7 @@
           "position": 3
         }
       ],
-      "gamesPlayedTogether": 12,
+      "gamesPlayedTogether": 14,
       "metrics": {
         "kills": {
           "best": {
@@ -16459,9 +16459,9 @@
             "fantasyScore": 1123.5
           },
           "average": {
-            "rawValue": 5.916667,
-            "fantasyScore": 633.083333,
-            "validGames": 12
+            "rawValue": 5.357143,
+            "fantasyScore": 573.214286,
+            "validGames": 14
           }
         },
         "deaths": {
@@ -16485,9 +16485,9 @@
             "fantasyScore": 1852.5
           },
           "average": {
-            "rawValue": 3.666667,
-            "fantasyScore": 1235,
-            "validGames": 12
+            "rawValue": 4.071429,
+            "fantasyScore": 1156.071429,
+            "validGames": 14
           }
         },
         "lastHitsAndDenies": {
@@ -16511,9 +16511,9 @@
             "fantasyScore": 2227.5
           },
           "average": {
-            "rawValue": 492.208333,
-            "fantasyScore": 1476.625,
-            "validGames": 12
+            "rawValue": 466.678571,
+            "fantasyScore": 1400.035714,
+            "validGames": 14
           }
         },
         "gpm": {
@@ -16537,9 +16537,9 @@
             "fantasyScore": 1574
           },
           "average": {
-            "rawValue": 648.5,
-            "fantasyScore": 1297,
-            "validGames": 12
+            "rawValue": 623.321429,
+            "fantasyScore": 1246.642857,
+            "validGames": 14
           }
         },
         "madstones": {
@@ -16567,9 +16567,9 @@
             "fantasyScore": 1760
           },
           "average": {
-            "rawValue": 2.125,
-            "fantasyScore": 748,
-            "validGames": 12
+            "rawValue": 1.928571,
+            "fantasyScore": 678.857143,
+            "validGames": 14
           }
         },
         "observerWards": {
@@ -16593,9 +16593,9 @@
             "fantasyScore": 58.5
           },
           "average": {
-            "rawValue": 0.125,
-            "fantasyScore": 14.625,
-            "validGames": 12
+            "rawValue": 0.107143,
+            "fantasyScore": 12.535714,
+            "validGames": 14
           }
         },
         "campsStacked": {
@@ -16619,9 +16619,9 @@
             "fantasyScore": 1404
           },
           "average": {
-            "rawValue": 3.041667,
-            "fantasyScore": 711.75,
-            "validGames": 12
+            "rawValue": 2.857143,
+            "fantasyScore": 668.571429,
+            "validGames": 14
           }
         },
         "runes": {
@@ -16645,9 +16645,9 @@
             "fantasyScore": 1057.5
           },
           "average": {
-            "rawValue": 4.083333,
-            "fantasyScore": 575.75,
-            "validGames": 12
+            "rawValue": 3.678571,
+            "fantasyScore": 518.678571,
+            "validGames": 14
           }
         },
         "watchers": {
@@ -16679,9 +16679,9 @@
             "fantasyScore": 1758
           },
           "average": {
-            "rawValue": 0.583333,
-            "fantasyScore": 683.666667,
-            "validGames": 12
+            "rawValue": 0.5,
+            "fantasyScore": 586,
+            "validGames": 14
           }
         },
         "teamfightParticipation": {
@@ -16705,9 +16705,9 @@
             "fantasyScore": 1448.181804
           },
           "average": {
-            "rawValue": 0.580952,
-            "fantasyScore": 1233.941649,
-            "validGames": 12
+            "rawValue": 0.560116,
+            "fantasyScore": 1189.684877,
+            "validGames": 14
           }
         },
         "stunDuration": {
@@ -16731,9 +16731,9 @@
             "fantasyScore": 926.64176
           },
           "average": {
-            "rawValue": 37.440024,
-            "fantasyScore": 374.400234,
-            "validGames": 12
+            "rawValue": 35.450934,
+            "fantasyScore": 354.509335,
+            "validGames": 14
           }
         },
         "tormentorKills": {
@@ -16757,9 +16757,9 @@
             "fantasyScore": 879
           },
           "average": {
-            "rawValue": 0.166667,
-            "fantasyScore": 146.5,
-            "validGames": 12
+            "rawValue": 0.142857,
+            "fantasyScore": 125.571429,
+            "validGames": 14
           }
         },
         "courierKills": {
@@ -16783,9 +16783,9 @@
             "fantasyScore": 351.5
           },
           "average": {
-            "rawValue": 0.25,
-            "fantasyScore": 175.75,
-            "validGames": 12
+            "rawValue": 0.214286,
+            "fantasyScore": 150.642857,
+            "validGames": 14
           }
         },
         "firstBlood": {
@@ -16809,9 +16809,9 @@
             "fantasyScore": 967
           },
           "average": {
-            "rawValue": 0.125,
-            "fantasyScore": 241.75,
-            "validGames": 12
+            "rawValue": 0.107143,
+            "fantasyScore": 207.214286,
+            "validGames": 14
           }
         },
         "smokes": {
@@ -16835,9 +16835,9 @@
             "fantasyScore": 146.5
           },
           "average": {
-            "rawValue": 0.125,
-            "fantasyScore": 36.625,
-            "validGames": 12
+            "rawValue": 0.107143,
+            "fantasyScore": 31.392857,
+            "validGames": 14
           }
         }
       }
@@ -16853,7 +16853,7 @@
           "position": 2
         }
       ],
-      "gamesPlayedTogether": 12,
+      "gamesPlayedTogether": 14,
       "metrics": {
         "kills": {
           "best": {
@@ -16870,9 +16870,9 @@
             "fantasyScore": 1391
           },
           "average": {
-            "rawValue": 7.916667,
-            "fantasyScore": 847.083333,
-            "validGames": 12
+            "rawValue": 7.428571,
+            "fantasyScore": 794.857143,
+            "validGames": 14
           }
         },
         "deaths": {
@@ -16890,9 +16890,9 @@
             "fantasyScore": 1950
           },
           "average": {
-            "rawValue": 3.25,
-            "fantasyScore": 1316.25,
-            "validGames": 12
+            "rawValue": 3.071429,
+            "fantasyScore": 1351.071429,
+            "validGames": 14
           }
         },
         "lastHitsAndDenies": {
@@ -16910,9 +16910,9 @@
             "fantasyScore": 2403
           },
           "average": {
-            "rawValue": 435.666667,
-            "fantasyScore": 1307,
-            "validGames": 12
+            "rawValue": 419.714286,
+            "fantasyScore": 1259.142857,
+            "validGames": 14
           }
         },
         "gpm": {
@@ -16930,9 +16930,9 @@
             "fantasyScore": 1620
           },
           "average": {
-            "rawValue": 631.25,
-            "fantasyScore": 1262.5,
-            "validGames": 12
+            "rawValue": 620.285714,
+            "fantasyScore": 1240.571429,
+            "validGames": 14
           }
         },
         "madstones": {
@@ -16954,9 +16954,9 @@
             "fantasyScore": 704
           },
           "average": {
-            "rawValue": 1.25,
-            "fantasyScore": 440,
-            "validGames": 12
+            "rawValue": 1.285714,
+            "fantasyScore": 452.571429,
+            "validGames": 14
           }
         },
         "observerWards": {
@@ -16974,9 +16974,9 @@
             "fantasyScore": 351
           },
           "average": {
-            "rawValue": 1.833333,
-            "fantasyScore": 214.5,
-            "validGames": 12
+            "rawValue": 1.642857,
+            "fantasyScore": 192.214286,
+            "validGames": 14
           }
         },
         "campsStacked": {
@@ -16994,9 +16994,9 @@
             "fantasyScore": 1170
           },
           "average": {
-            "rawValue": 1.833333,
-            "fantasyScore": 429,
-            "validGames": 12
+            "rawValue": 1.642857,
+            "fantasyScore": 384.428571,
+            "validGames": 14
           }
         },
         "runes": {
@@ -17014,9 +17014,9 @@
             "fantasyScore": 1692
           },
           "average": {
-            "rawValue": 8,
-            "fantasyScore": 1128,
-            "validGames": 12
+            "rawValue": 7.571429,
+            "fantasyScore": 1067.571429,
+            "validGames": 14
           }
         },
         "watchers": {
@@ -17042,9 +17042,9 @@
             "fantasyScore": 1172
           },
           "average": {
-            "rawValue": 0.083333,
-            "fantasyScore": 97.666667,
-            "validGames": 12
+            "rawValue": 0.071429,
+            "fantasyScore": 83.714286,
+            "validGames": 14
           }
         },
         "teamfightParticipation": {
@@ -17062,9 +17062,9 @@
             "fantasyScore": 1888.000024
           },
           "average": {
-            "rawValue": 0.721375,
-            "fantasyScore": 1532.199721,
-            "validGames": 12
+            "rawValue": 0.715849,
+            "fantasyScore": 1520.462402,
+            "validGames": 14
           }
         },
         "stunDuration": {
@@ -17082,9 +17082,9 @@
             "fantasyScore": 1634.6788
           },
           "average": {
-            "rawValue": 49.844318,
-            "fantasyScore": 498.443176,
-            "validGames": 12
+            "rawValue": 49.049844,
+            "fantasyScore": 490.498444,
+            "validGames": 14
           }
         },
         "tormentorKills": {
@@ -17102,9 +17102,9 @@
             "fantasyScore": 879
           },
           "average": {
-            "rawValue": 0.083333,
-            "fantasyScore": 73.25,
-            "validGames": 12
+            "rawValue": 0.071429,
+            "fantasyScore": 62.785714,
+            "validGames": 14
           }
         },
         "courierKills": {
@@ -17122,9 +17122,9 @@
             "fantasyScore": 703
           },
           "average": {
-            "rawValue": 0.166667,
-            "fantasyScore": 117.166667,
-            "validGames": 12
+            "rawValue": 0.214286,
+            "fantasyScore": 150.642857,
+            "validGames": 14
           }
         },
         "firstBlood": {
@@ -17142,9 +17142,9 @@
             "fantasyScore": 1934
           },
           "average": {
-            "rawValue": 0.083333,
-            "fantasyScore": 161.166667,
-            "validGames": 12
+            "rawValue": 0.071429,
+            "fantasyScore": 138.142857,
+            "validGames": 14
           }
         },
         "smokes": {
@@ -17164,7 +17164,7 @@
           "average": {
             "rawValue": 0,
             "fantasyScore": 0,
-            "validGames": 12
+            "validGames": 14
           }
         }
       }
@@ -17185,7 +17185,7 @@
           "position": 5
         }
       ],
-      "gamesPlayedTogether": 12,
+      "gamesPlayedTogether": 14,
       "metrics": {
         "kills": {
           "best": {
@@ -17208,9 +17208,9 @@
             "fantasyScore": 749
           },
           "average": {
-            "rawValue": 3.75,
-            "fantasyScore": 401.25,
-            "validGames": 12
+            "rawValue": 3.642857,
+            "fantasyScore": 389.785714,
+            "validGames": 14
           }
         },
         "deaths": {
@@ -17234,9 +17234,9 @@
             "fantasyScore": 1657.5
           },
           "average": {
-            "rawValue": 5.75,
-            "fantasyScore": 877.5,
-            "validGames": 12
+            "rawValue": 6.071429,
+            "fantasyScore": 807.857143,
+            "validGames": 14
           }
         },
         "lastHitsAndDenies": {
@@ -17260,9 +17260,9 @@
             "fantasyScore": 588
           },
           "average": {
-            "rawValue": 85.875,
-            "fantasyScore": 257.625,
-            "validGames": 12
+            "rawValue": 79.642857,
+            "fantasyScore": 238.928571,
+            "validGames": 14
           }
         },
         "gpm": {
@@ -17286,9 +17286,9 @@
             "fantasyScore": 877
           },
           "average": {
-            "rawValue": 337.875,
-            "fantasyScore": 675.75,
-            "validGames": 12
+            "rawValue": 327.607143,
+            "fantasyScore": 655.214286,
+            "validGames": 14
           }
         },
         "madstones": {
@@ -17316,9 +17316,9 @@
             "fantasyScore": 352
           },
           "average": {
-            "rawValue": 0.166667,
-            "fantasyScore": 58.666667,
-            "validGames": 12
+            "rawValue": 0.142857,
+            "fantasyScore": 50.285714,
+            "validGames": 14
           }
         },
         "observerWards": {
@@ -17342,9 +17342,9 @@
             "fantasyScore": 1638
           },
           "average": {
-            "rawValue": 9.541667,
-            "fantasyScore": 1116.375,
-            "validGames": 12
+            "rawValue": 9.285714,
+            "fantasyScore": 1086.428571,
+            "validGames": 14
           }
         },
         "campsStacked": {
@@ -17368,9 +17368,9 @@
             "fantasyScore": 2106
           },
           "average": {
-            "rawValue": 3.125,
-            "fantasyScore": 731.25,
-            "validGames": 12
+            "rawValue": 3,
+            "fantasyScore": 702,
+            "validGames": 14
           }
         },
         "runes": {
@@ -17394,9 +17394,9 @@
             "fantasyScore": 1057.5
           },
           "average": {
-            "rawValue": 4.333333,
-            "fantasyScore": 611,
-            "validGames": 12
+            "rawValue": 4.035714,
+            "fantasyScore": 569.035714,
+            "validGames": 14
           }
         },
         "watchers": {
@@ -17428,9 +17428,9 @@
             "fantasyScore": 586
           },
           "average": {
-            "rawValue": 0.041667,
-            "fantasyScore": 48.833333,
-            "validGames": 12
+            "rawValue": 0.035714,
+            "fantasyScore": 41.857143,
+            "validGames": 14
           }
         },
         "teamfightParticipation": {
@@ -17454,9 +17454,9 @@
             "fantasyScore": 1705.636411
           },
           "average": {
-            "rawValue": 0.65613,
-            "fantasyScore": 1393.61973,
-            "validGames": 12
+            "rawValue": 0.664217,
+            "fantasyScore": 1410.796995,
+            "validGames": 14
           }
         },
         "stunDuration": {
@@ -17480,9 +17480,9 @@
             "fantasyScore": 1501.8332
           },
           "average": {
-            "rawValue": 59.581557,
-            "fantasyScore": 595.815567,
-            "validGames": 11
+            "rawValue": 57.958068,
+            "fantasyScore": 579.580678,
+            "validGames": 13
           }
         },
         "tormentorKills": {
@@ -17508,7 +17508,7 @@
           "average": {
             "rawValue": 0,
             "fantasyScore": 0,
-            "validGames": 12
+            "validGames": 14
           }
         },
         "courierKills": {
@@ -17532,9 +17532,9 @@
             "fantasyScore": 2812
           },
           "average": {
-            "rawValue": 0.708333,
-            "fantasyScore": 497.958333,
-            "validGames": 12
+            "rawValue": 0.607143,
+            "fantasyScore": 426.821429,
+            "validGames": 14
           }
         },
         "firstBlood": {
@@ -17558,9 +17558,9 @@
             "fantasyScore": 967
           },
           "average": {
-            "rawValue": 0.125,
-            "fantasyScore": 241.75,
-            "validGames": 12
+            "rawValue": 0.107143,
+            "fantasyScore": 207.214286,
+            "validGames": 14
           }
         },
         "smokes": {
@@ -17584,9 +17584,9 @@
             "fantasyScore": 1465
           },
           "average": {
-            "rawValue": 3.416667,
-            "fantasyScore": 1001.083333,
-            "validGames": 12
+            "rawValue": 3.357143,
+            "fantasyScore": 983.642857,
+            "validGames": 14
           }
         }
       }
