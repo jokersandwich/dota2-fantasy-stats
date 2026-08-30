@@ -2,7 +2,7 @@
 
 A React + TypeScript + Vite frontend backed by build-time Python data
 pipelines for Dota 2 Fantasy analysis. The current published dataset is TI15
-Fantasy player performance based on EWC 2026 and TI14 matches from OpenDota.
+Fantasy player performance based on TI14, EWC 2026 and TI14 matches from OpenDota.
 
 https://dota2-fantasy-stats.netlify.app/
 
